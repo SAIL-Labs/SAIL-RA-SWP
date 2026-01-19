@@ -21,7 +21,7 @@ related_docs:
 
 Use this form to assist you to complete risk assessments for hazardous activities and processes. Any serious or ongoing hazards should be reported via RiskWare to ensure that appropriate corrective actions are tracked and completed.
 
-<div class="metadata-table">
+<div class="metadata-table" markdown="1">
 
 | | | |
 |---|---|---|
@@ -36,7 +36,7 @@ Use this form to assist you to complete risk assessments for hazardous activitie
 
 ---
 
-<div class="activity-persons-table">
+<div class="activity-persons-table" markdown="1">
 
 | **Identify the activity and the location** | **Identify who may be at risk**<br><small>This might include fellow workers, students, visitors, contractors, patients, research participants and the public.</small> |
 |---|---|
@@ -87,7 +87,7 @@ The information gathered from the **risk assessment** process must be used to de
 
 ## Hazard Assessment Table
 
-<div class="hazard-table-wrapper">
+<div class="hazard-table-wrapper" markdown="1">
 
 | Task or scenario | Hazard/s | Associated harm, e.g. what could go wrong? | Existing Risk Controls | Current risk rating | Any additional controls required? | Residual risk rating |
 |---|---|---|---|---|---|---|
@@ -216,7 +216,7 @@ The information gathered from the **risk assessment** process must be used to de
 
 ## REVIEW
 
-<div class="review-table">
+<div class="review-table" markdown="1">
 
 | | 1 year | 2 years | 3 years |
 |---|---|---|---|
