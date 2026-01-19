@@ -2,57 +2,54 @@
 layout: document
 title: Risk Assessment - Bambu Lab H2D Laser Edition
 doc_type: Risk Assessment
-status: draft
+status: approved
 permalink: /risk-assessments/bambu-h2d/
 metadata:
   reference: SAIL-RA-BAMBU-H2D-001
   title: Bambu Lab H2D Laser Edition with 10W Laser Module
   version: "1.0"
   issue_date: January 2026
+  next_review_date: January 2027
   prepared_by: Chris Betters
   supervisors: Chris Betters, Sergio Leon-Saval
-  review_date: January 2027
-critical_warning: |
-  **CLASS 4 LASER HAZARD**
-  
-  The Bambu Lab H2D uses a **CLASS 4 laser module** (455nm, 10W blue laser). This is the highest and most dangerous laser classification.
-  
-  - **Class 4 lasers can cause:** Immediate permanent eye damage and blindness, severe skin burns, fire ignition, hazardous reflections from any surface
-  - **The system operates as Class 1 (safe) ONLY when:** All laser safety windows are intact, all door interlocks are functioning, all safety systems are enabled, the enclosure is fully closed during operation
-  
-  **NEVER defeat, bypass, or disable ANY safety system.**
+  faculty_school: School of Physics
 related_docs:
   - title: Safe Work Procedure
     url: /safe-work-procedures/bambu-h2d/
     description: Detailed operating procedures
-  - title: Laser Safety Guide
-    url: /laser-safety-guide/
-    description: Class 4 laser safety information
-show_review: true
 ---
-  - Laser engraving and cutting
-  - 3D printing (dual nozzle)
-  - Material processing (wood, acrylic, leather, etc.)
 
-**Location:** Maker space / Fabrication laboratory
+Use this form to assist you to complete risk assessments for hazardous activities and processes. Any serious or ongoing hazards should be reported via RiskWare to ensure that appropriate corrective actions are tracked and completed.
 
-### Persons at risk:
+<div class="metadata-table">
 
-- Laboratory staff
-- Research students
-- Technicians
-- Visitors to laboratory
+| | | |
+|---|---|---|
+| **Faculty/School:** | School of Physics | **Initial Issue Date:** {{ page.metadata.issue_date }} |
+| | | **Next Review Date:** {{ page.metadata.next_review_date }} |
+| **Risk Assessment Reference Number:** | {{ page.metadata.reference }} | |
+| **Risk Assessment Name:** | {{ page.metadata.title }} | |
+| **Prepared by:** | {{ page.metadata.prepared_by }} | |
+| **Responsible supervisor/s:** | {{ page.metadata.supervisors }} | |
 
-### Risk assessment team (who was consulted?):
-
-- Laboratory manager
-- Safety officer
-- Equipment users
-- Laser safety advisor
+</div>
 
 ---
 
-## List of Legislation, Code of Practice, Australian Standards, Guidance Materials
+<div class="activity-persons-table">
+
+| **Identify the activity and the location** | **Identify who may be at risk**<br><small>This might include fellow workers, students, visitors, contractors, patients, research participants and the public.</small> |
+|---|---|
+| **Activity or process:**<br><br>- Laser engraving and cutting<br>- 3D printing (dual nozzle)<br>- Material processing (wood, acrylic, leather, etc.) | **Persons at risk:**<br><br>- Laboratory staff<br>- Research students<br>- Technicians<br>- Visitors to laboratory |
+| **Location:**<br><br>Maker space / Fabrication laboratory | **Risk assessment team** (who was consulted?)**:**<br><br>- Laboratory manager<br>- Safety officer<br>- Equipment users<br>- Laser safety advisor |
+
+</div>
+
+---
+
+<div class="legislation-box">
+
+**List of Legislation, Code of Practice, Australian Standards, Guidance Materials used to determine control measures**
 
 - AS/NZS IEC 60825.1:2014 - Safety of laser products
 - AS 2211.13-1999 - Safety of industrial laser equipment
@@ -63,9 +60,13 @@ show_review: true
 - Bambu Lab H2D Laser Safety Document and User Manual
 - University WHS policies and procedures for Class 4 lasers
 
+</div>
+
 ---
 
-## Risk Assessment Methodology
+<div class="methodology-box">
+
+**Risk Assessment Methodology**
 
 Assessing the risk is a brainstorming exercise, which is most effectively carried out in a team environment with the people required to complete the activity or process. Most activities or processes are broken down into a variety of separate tasks. For each task, consider the hazards, the potential harm or negative outcomes and the conditions required for those negative outcomes to occur.
 
@@ -78,268 +79,37 @@ Whenever assessing the health and safety risks associated with a task, always co
 
 The information gathered from the **risk assessment** process must be used to develop a **Safe Work Procedure (SWP)** or **clinical protocol** for the activity.
 
+</div>
+
 ---
+
+<div class="page-break"></div>
 
 ## Hazard Assessment Table
 
-### Task 1: Laser engraving and cutting operations
-
-**Hazard/s:** Class 4 laser radiation (455nm, 10W blue laser). Operates as Class 1 ONLY when all safety systems intact
-
-**Associated harm:**
-- Eye damage
-- Permanent blindness
-- Severe skin burns
-- Retinal injury
-- Fire ignition
-
-**Existing Risk Controls:**
-- Laser safety windows
-- Door interlocks (front, top)
-- Safety window interlocks
-- Emergency stop button
-- Auto-stop when opened
-
-**Current risk rating:** High
-
-**Additional controls required:**
-- Mandatory laser safety training
-- NEVER defeat interlocks
-- NEVER operate with doors/covers open
-- Regular interlock testing
-- Class 4 warning signage
-- Tag out if damaged
-
-**Residual risk rating:** Low
-
----
-
-### Task 2: Operating with defeated or damaged safety systems
-
-**Hazard/s:** Direct exposure to Class 4 laser
-
-**Associated harm:**
-- Severe eye injury
-- Permanent blindness
-- Severe burns
-- Fire hazard
-
-**Existing Risk Controls:**
-- Prohibition policy
-- Equipment design prevents easy bypass
-
-**Current risk rating:** Very High
-
-**Additional controls required:**
-- ABSOLUTE PROHIBITION
-- Disciplinary action
-- Lock out if damaged
-- Annual verification by qualified technician
-
-**Residual risk rating:** Low (must not occur)
-
----
-
-### Task 3: Laser processing of materials
-
-**Hazard/s:** Fire and ignition of materials
-
-**Associated harm:**
-- Burns
-- Fire
-- Smoke inhalation
-- Property damage
-
-**Existing Risk Controls:**
-- 5 flame sensors
-- AI fire detection
-- Flame-retardant chamber
-- Emergency stop
-- Audible alarm
-
-**Current risk rating:** Medium
-
-**Additional controls required:**
-- NEVER leave unattended
-- Fire extinguisher nearby (CO₂/dry powder)
-- Clear flammable materials
-- Emergency procedures
-- Regular fire sensor testing
-
-**Residual risk rating:** Low
-
----
-
-### Task 4: High-temperature operation
-
-**Hazard/s:** Thermal burns (350°C nozzle, 65°C chamber)
-
-**Associated harm:** Severe burns to hands, arms
-
-**Existing Risk Controls:**
-- Warning labels
-- Limited access during operation
-- Cool-down period
-
-**Current risk rating:** Medium
-
-**Additional controls required:**
-- Heat-resistant gloves available
-- Cool-down procedures
-- Training on hot surfaces
-
-**Residual risk rating:** Low
-
----
-
-### Task 5: Laser and cutting operations
-
-**Hazard/s:** Inhalation of fumes, smoke, particulates
-
-**Associated harm:**
-- Respiratory irritation
-- Long-term lung damage
-- Allergic reactions
-
-**Existing Risk Controls:**
-- Exhaust system fitted
-- Air filtration capable
-- Enclosed chamber
-
-**Current risk rating:** Medium
-
-**Additional controls required:**
-- LEV connected
-- Air purifier recommended
-- Respiratory protection if needed
-- Check material SDS
-- Regular filter maintenance
-
-**Residual risk rating:** Low
-
----
-
-### Task 6: General operation
-
-**Hazard/s:** Electrical hazards (240V mains)
-
-**Associated harm:**
-- Electric shock
-- Electrocution
-- Burns
-
-**Existing Risk Controls:**
-- RCD protection
-- Earthed equipment
-- Enclosed components
-
-**Current risk rating:** Medium
-
-**Additional controls required:**
-- Regular testing (test & tag)
-- No wet conditions
-- Qualified electrician for repairs
-- Inspect power cords
-
-**Residual risk rating:** Low
-
----
-
-### Task 7: Material loading and operation
-
-**Hazard/s:** Moving mechanical parts (XY motion, print head)
-
-**Associated harm:** Crushing injuries to fingers, hands
-
-**Existing Risk Controls:**
-- Enclosed design
-- Door interlocks
-- Emergency stop accessible
-
-**Current risk rating:** Low
-
-**Additional controls required:**
-- Keep hands clear
-- Training on safe loading
-- Wait for motion to stop
-
-**Residual risk rating:** Very Low
-
----
-
-### Task 8: Processing specific materials
-
-**Hazard/s:** Toxic fumes (acrylic, PVC, etc.)
-
-**Associated harm:**
-- Respiratory damage
-- Chemical poisoning
-
-**Existing Risk Controls:**
-- Material compatibility guidance
-- Ventilation system
-
-**Current risk rating:** Medium
-
-**Additional controls required:**
-- Prohibited materials list (PVC, polycarbonate)
-- Pre-approval for new materials
-- Consult SDS before use
-- Enhanced ventilation
-
-**Residual risk rating:** Low
-
----
-
-### Task 9: Alarm systems
-
-**Hazard/s:** Acoustic hazards
-
-**Associated harm:**
-- Hearing damage
-- Startle response
-
-**Existing Risk Controls:** Audible alarm fitted
-
-**Current risk rating:** Low
-
-**Additional controls required:**
-- Appropriate volume
-- Hearing protection if prolonged
-- Training on alarm meaning
-
-**Residual risk rating:** Very Low
-
----
-
-### Task 10: Daily operation
-
-**Hazard/s:** Unattended operation
-
-**Associated harm:**
-- Fire
-- Equipment damage
-- Delayed emergency response
-
-**Existing Risk Controls:**
-- Camera monitoring
-- Multiple safety sensors
-
-**Current risk rating:** High
-
-**Additional controls required:**
-- PROHIBITION of unattended laser operations
-- Visual line of sight or constant camera monitoring
-- Sign-in/sign-out procedures
-
-**Residual risk rating:** Low
+<div class="hazard-table-wrapper">
+
+| Task or scenario | Hazard/s | Associated harm, e.g. what could go wrong? | Existing Risk Controls | Current risk rating | Any additional controls required? | Residual risk rating |
+|---|---|---|---|---|---|---|
+| Laser engraving and cutting operations | Class 4 laser radiation (455nm, 10W blue laser). Operates as Class 1 ONLY when all safety systems intact | - Eye damage<br>- Permanent blindness<br>- Severe skin burns<br>- Retinal injury<br>- Fire ignition | - Laser safety windows<br>- Door interlocks (front, top)<br>- Safety window interlocks<br>- Emergency stop button<br>- Auto-stop when opened | **High** | - Mandatory laser safety training<br>- NEVER defeat interlocks<br>- NEVER operate with doors/covers open<br>- Regular interlock testing<br>- Class 4 warning signage<br>- Tag out if damaged | **Low** |
+| Operating with defeated or damaged safety systems | Direct exposure to Class 4 laser | - Severe eye injury<br>- Permanent blindness<br>- Severe burns<br>- Fire hazard | - Prohibition policy<br>- Equipment design prevents easy bypass | **Very High** | - ABSOLUTE PROHIBITION<br>- Disciplinary action<br>- Lock out if damaged<br>- Annual verification by qualified technician | **Low** (must not occur) |
+| Laser processing of materials | Fire and ignition of materials | - Burns<br>- Fire<br>- Smoke inhalation<br>- Property damage | - 5 flame sensors<br>- AI fire detection<br>- Flame-retardant chamber<br>- Emergency stop<br>- Audible alarm | **Medium** | - NEVER leave unattended<br>- Fire extinguisher nearby (CO₂/dry powder)<br>- Clear flammable materials<br>- Emergency procedures<br>- Regular fire sensor testing | **Low** |
+| High-temperature operation | Thermal burns (350°C nozzle, 65°C chamber) | - Severe burns to hands, arms | - Warning labels<br>- Limited access during operation<br>- Cool-down period | **Medium** | - Heat-resistant gloves available<br>- Cool-down procedures<br>- Training on hot surfaces | **Low** |
+| Laser and cutting operations | Inhalation of fumes, smoke, particulates | - Respiratory irritation<br>- Long-term lung damage<br>- Allergic reactions | - Exhaust system fitted<br>- Air filtration capable<br>- Enclosed chamber | **Medium** | - LEV connected<br>- Air purifier recommended<br>- Respiratory protection if needed<br>- Check material SDS<br>- Regular filter maintenance | **Low** |
+| General operation | Electrical hazards (240V mains) | - Electric shock<br>- Electrocution<br>- Burns | - RCD protection<br>- Earthed equipment<br>- Enclosed components | **Medium** | - Regular testing (test & tag)<br>- No wet conditions<br>- Qualified electrician for repairs<br>- Inspect power cords | **Low** |
+| Material loading and operation | Moving mechanical parts (XY motion, print head) | - Crushing injuries to fingers, hands | - Enclosed design<br>- Door interlocks<br>- Emergency stop accessible | **Low** | - Keep hands clear<br>- Training on safe loading<br>- Wait for motion to stop | **Very Low** |
+| Processing specific materials | Toxic fumes (acrylic, PVC, etc.) | - Respiratory damage<br>- Chemical poisoning | - Material compatibility guidance<br>- Ventilation system | **Medium** | - Prohibited materials list (PVC, polycarbonate)<br>- Pre-approval for new materials<br>- Consult SDS before use<br>- Enhanced ventilation | **Low** |
+| Alarm systems | Acoustic hazards | - Hearing damage<br>- Startle response | - Audible alarm fitted | **Low** | - Appropriate volume<br>- Hearing protection if prolonged<br>- Training on alarm meaning | **Very Low** |
+| Daily operation | Unattended operation | - Fire<br>- Equipment damage<br>- Delayed emergency response | - Camera monitoring<br>- Multiple safety sensors | **High** | - PROHIBITION of unattended laser operations<br>- Visual line of sight or constant camera monitoring<br>- Sign-in/sign-out procedures | **Low** |
+
+</div>
 
 ---
 
 ## Implementation of Additional Risk Controls
 
 | Additional controls needed | Resources required | Responsible person | Date of implementation | RiskWare Reference |
-|---------------------------|-------------------|-------------------|----------------------|-------------------|
+|---|---|---|---|---|
 | Write the Safe Work Procedure (SWP) for laser operations | Time (approx 2 hours) | Supervisor | Prior to use | N/A |
 | Develop Class 4 laser safety protocol and emergency procedures | Time (2 hours), laser safety advisor | Safety Officer | Prior to use | N/A |
 | Annual safety interlock testing and verification by qualified technician | Qualified laser safety technician, test equipment | Laboratory Manager | Annually | TBD |
@@ -356,7 +126,11 @@ The information gathered from the **risk assessment** process must be used to de
 
 ---
 
-## List Emergency Controls
+<div class="emergency-box">
+
+**List emergency controls**
+
+<small>These might include how to deal with fires, spills, emergency shutdown of equipment, exposure to hazardous materials and adverse reactions or the deteriorating condition of patients/research participants in our care.</small>
 
 ### CRITICAL: Class 4 Laser Safety
 
@@ -434,28 +208,37 @@ The information gathered from the **risk assessment** process must be used to de
 - Safety Officer: [insert name and number]
 - First Aiders: [listed on notice board]
 
+</div>
+
 ---
+
+<div class="page-break"></div>
 
 ## REVIEW
 
-| Scheduled review date | 1 year | 2 years | 3 years |
-|----------------------|---------|---------|---------|
-| Are control measures in place (YES/NO) | | | |
-| Are controls eliminating or minimising the risk (YES/NO) | | | |
-| Are there any new problems with the risk (YES/NO) | | | |
-| Reviewed by: | | | |
-| Actual Review date: | | | |
+<div class="review-table">
+
+| | 1 year | 2 years | 3 years |
+|---|---|---|---|
+| **Scheduled review date** | | | |
+| **Are control measures in place (YES/NO)** | | | |
+| **Are controls eliminating or minimising the risk (YES/NO)** | | | |
+| **Are there any new problems with the risk (YES/NO)** | | | |
+| **Reviewed by:** | | | |
+| **Actual Review date:** | | | |
+
+</div>
 
 ---
 
 ## Risk Matrix
 
-*[Insert your organisation's risk matrix here]*
+![Risk Assessment Matrix]({{ '/assets/images/RA-Matrix.png' | relative_url }})
 
-The risk matrix should define:
-- Likelihood levels (Rare, Unlikely, Possible, Likely, Almost Certain)
-- Consequence levels (Insignificant, Minor, Moderate, Major, Severe)
-- Risk ratings (Low, Medium, High, Very High)
+The risk matrix defines:
+- **Likelihood levels:** Rare, Unlikely, Possible, Likely, Almost Certain
+- **Consequence levels:** Insignificant, Minor, Moderate, Major, Severe
+- **Risk ratings:** Low, Medium, High, Very High
 
 ---
 

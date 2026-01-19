@@ -613,3 +613,184 @@ footer {
   background: #cce5ff;
   border-color: #b8daff;
 }
+
+/* Risk Assessment specific styling to match LaTeX template */
+
+/* Metadata table at start of RA */
+.metadata-table table {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.metadata-table table td:first-child {
+  background-color: var(--header-blue);
+  font-weight: bold;
+  width: 40%;
+}
+
+.metadata-table table td {
+  border: 1px solid var(--border-color);
+  padding: 10px 15px;
+}
+
+/* Activity and persons table */
+.activity-persons-table table {
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.activity-persons-table table th {
+  background-color: var(--header-blue);
+  font-weight: bold;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+}
+
+.activity-persons-table table td {
+  border: 1px solid var(--border-color);
+  padding: 12px 15px;
+  vertical-align: top;
+}
+
+/* Legislation and methodology boxes */
+.legislation-box,
+.methodology-box {
+  border: 1px solid var(--border-color);
+  margin: 20px 0;
+}
+
+.legislation-box > strong:first-child,
+.methodology-box > strong:first-child {
+  display: block;
+  background-color: var(--header-blue);
+  padding: 12px 15px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.legislation-box,
+.methodology-box {
+  padding: 0;
+}
+
+.legislation-box > *:not(:first-child),
+.methodology-box > *:not(:first-child) {
+  padding: 0 15px;
+}
+
+.legislation-box ul,
+.methodology-box ul {
+  margin: 15px 0;
+  padding-left: 45px;
+}
+
+/* Hazard assessment table - landscape style */
+.hazard-table-wrapper {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.hazard-table-wrapper table {
+  width: 100%;
+  min-width: 1400px;
+  border: 1px solid var(--border-color);
+  font-size: 0.85em;
+}
+
+.hazard-table-wrapper table th {
+  background-color: var(--header-blue);
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+  vertical-align: top;
+}
+
+.hazard-table-wrapper table td {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  vertical-align: top;
+}
+
+.hazard-table-wrapper table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Emergency controls box */
+.emergency-box {
+  border: 1px solid var(--border-color);
+  margin: 20px 0;
+  padding: 0;
+}
+
+.emergency-box > strong:first-child {
+  display: block;
+  background-color: var(--header-blue);
+  padding: 12px 15px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.emergency-box > small {
+  display: block;
+  background-color: var(--header-blue);
+  padding: 8px 15px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9em;
+}
+
+.emergency-box > *:not(:first-child):not(small) {
+  padding: 0 15px;
+}
+
+.emergency-box h3,
+.emergency-box h4 {
+  background: none;
+  border: none;
+  margin-top: 15px;
+  padding: 0;
+}
+
+/* Review table */
+.review-table table {
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.review-table table th,
+.review-table table td {
+  border: 1px solid var(--border-color);
+  padding: 10px 15px;
+}
+
+.review-table table td:first-child {
+  background-color: var(--header-blue);
+  font-weight: bold;
+  width: 45%;
+}
+
+/* Page breaks for print */
+.page-break {
+  page-break-before: always;
+}
+
+@media print {
+  .page-break {
+    page-break-before: always;
+  }
+
+  .hazard-table-wrapper {
+    page-break-inside: avoid;
+  }
+
+  /* Rotate hazard table to landscape if needed */
+  .hazard-table-wrapper {
+    transform-origin: top left;
+  }
+
+  /* Force landscape for hazard assessment table page */
+  @page hazard-page {
+    size: landscape;
+  }
+}
