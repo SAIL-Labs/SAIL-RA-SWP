@@ -3,9 +3,11 @@ layout: default
 title: Home
 ---
 
-# SAIL Laboratory Safety Documentation
-
-Welcome to the safety documentation portal for the SAIL Laboratory at the School of Physics, University of Sydney.
+<div class="hero-section">
+  <h1>SAIL Laboratory Safety Documentation</h1>
+  <p>Your comprehensive resource for laboratory safety procedures and risk assessments</p>
+  <p style="font-size: 1.1em; margin-top: 20px;">School of Physics, University of Sydney</p>
+</div>
 
 <div class="danger-box">
 <h3>⚠️ SAFETY FIRST ⚠️</h3>
@@ -21,62 +23,79 @@ Welcome to the safety documentation portal for the SAIL Laboratory at the School
 
 ---
 
-## Risk Assessments
+## Risk Assessments {#risk-assessments}
 
-Risk Assessments identify hazards, assess risks, and define control measures for laboratory equipment and processes.
+<p style="font-size: 1.1em; margin-bottom: 30px;">Risk Assessments identify hazards, assess risks, and define control measures for laboratory equipment and processes.</p>
 
-<div class="document-list">
+<div class="document-grid">
 
-### Bambu Lab H2D Laser Edition
-**Reference:** SAIL-RA-BAMBU-H2D-001 | **Version:** 1.0 | **Status:** <span class="metadata-badge status-approved">Approved</span>
+<div class="document-card">
+  <h3>Bambu Lab H2D Laser Edition</h3>
+  <div class="card-meta">
+    <strong>Reference:</strong> SAIL-RA-BAMBU-H2D-001 | <strong>Version:</strong> 1.0 | <strong>Status:</strong> <span class="metadata-badge status-approved">Approved</span>
+  </div>
+  <p>Comprehensive risk assessment for the Bambu H2D with 10W Class 4 laser module. Covers laser radiation hazards, fire risks, thermal hazards, inhalation risks, and complete emergency procedures.</p>
+  <p><strong>Key hazards:</strong> Class 4 laser radiation, fire ignition, thermal burns (350°C), hazardous fumes</p>
+  <a href="/risk-assessments/bambu-h2d/" class="cta-button">View Risk Assessment →</a>
+</div>
 
-Comprehensive risk assessment for the Bambu H2D with 10W Class 4 laser module, covering laser radiation hazards, fire risks, thermal hazards, and emergency procedures.
-
-<a href="/risk-assessments/bambu-h2d/" class="metadata-badge">View Risk Assessment →</a>
-
----
+<!-- Add more risk assessments here as new equipment is added -->
 
 </div>
 
 <div class="info-box">
-<h3>📄 Need to Create a New Risk Assessment?</h3>
-<p>Use our <a href="/templates/risk-assessment-template/">Risk Assessment Template</a> to create a comprehensive safety assessment for new equipment or processes.</p>
+<h3>📄 Create a New Risk Assessment</h3>
+<p>Use our comprehensive <strong><a href="/templates/risk-assessment-template/">Risk Assessment Template</a></strong> to create safety assessments for new equipment or processes.</p>
+<p>The template includes all required sections: hazard identification, risk ratings, control measures, emergency procedures, and review schedules.</p>
 </div>
 
 ---
 
-## Safe Work Procedures (SWPs)
+## Safe Work Procedures (SWPs) {#safe-work-procedures-swps}
 
-Safe Work Procedures provide detailed step-by-step instructions for safely operating laboratory equipment.
+<p style="font-size: 1.1em; margin-bottom: 30px;">Safe Work Procedures provide detailed step-by-step instructions for safely operating laboratory equipment.</p>
 
-<div class="document-list">
+<div class="document-grid">
 
-### Bambu Lab H2D Laser Edition
-**Reference:** SAIL-SWP-BAMBU-H2D-001 | **Version:** 1.0 | **Status:** <span class="metadata-badge status-approved">Approved</span>
+<div class="document-card">
+  <h3>Bambu Lab H2D Laser Edition</h3>
+  <div class="card-meta">
+    <strong>Reference:</strong> SAIL-SWP-BAMBU-H2D-001 | <strong>Version:</strong> 1.0 | <strong>Status:</strong> <span class="metadata-badge status-approved">Approved</span>
+  </div>
+  <p>Detailed operating procedures covering pre-operation safety checks (including critical interlock testing), material preparation, equipment operation for both 3D printing and laser functions, emergency shutdown procedures, and competency requirements.</p>
+  <p><strong>Includes:</strong> Mandatory safety checks, emergency procedures, cleanup protocols, training requirements</p>
+  <a href="/safe-work-procedures/bambu-h2d/" class="cta-button">View Safe Work Procedure →</a>
+</div>
 
-Detailed operating procedures covering pre-operation safety checks, material preparation, equipment operation (3D printing and laser functions), emergency shutdown procedures, and competency requirements.
-
-<a href="/safe-work-procedures/bambu-h2d/" class="metadata-badge">View Safe Work Procedure →</a>
-
----
+<!-- Add more SWPs here as new equipment is added -->
 
 </div>
 
 <div class="info-box">
-<h3>📄 Need to Create a New Safe Work Procedure?</h3>
-<p>Use our <a href="/templates/safe-work-procedure-template/">Safe Work Procedure Template</a> to create detailed operating instructions for new equipment or processes.</p>
+<h3>📄 Create a New Safe Work Procedure</h3>
+<p>Use our comprehensive <strong><a href="/templates/safe-work-procedure-template/">Safe Work Procedure Template</a></strong> to create detailed operating instructions for new equipment or processes.</p>
+<p>The template provides a complete structure for documenting safety checks, step-by-step procedures, emergency protocols, and competency requirements.</p>
 </div>
 
 ---
 
 ## Additional Resources
 
-### [Class 4 Laser Safety Guide](laser-safety-guide)
-**Supplementary Document** | **Date:** January 2026
+<div class="feature-grid">
 
-Essential reading for all users of Class 4 laser equipment, covering laser hazards, safety systems, prohibitions, and emergency procedures.
+<div class="feature-box">
+  <h4>📋 Document Templates</h4>
+  <p>Access templates for creating new Risk Assessments and Safe Work Procedures with comprehensive guidance.</p>
+  <a href="/templates/">Browse Templates →</a>
+</div>
 
-<a href="laser-safety-guide" class="metadata-badge">View Laser Safety Guide →</a>
+<div class="feature-box">
+  <h4>🔧 Template Usage Guide</h4>
+  <p>Learn how to use our templates effectively, including best practices and document control procedures.</p>
+  <a href="/templates/">View Guide →</a>
+</div>
+
+</div>
 
 ---
 
@@ -93,106 +112,101 @@ Essential reading for all users of Class 4 laser equipment, covering laser hazar
 </ul>
 </div>
 
-<div class="info-box">
-<h3>📋 General Pre-Operation Checklist</h3>
-<p>While each piece of equipment has specific requirements, these general steps apply to most laboratory equipment:</p>
+<div class="document-grid">
+
+<div class="feature-box">
+<h4>📋 Pre-Operation Checklist</h4>
+<p>General steps that apply to most laboratory equipment:</p>
 <ol>
 <li>Sign in to the equipment log book</li>
 <li>Perform visual inspection for damage</li>
 <li>Test all safety systems and interlocks</li>
-<li>Verify emergency equipment is accessible and functional</li>
-<li>Check environmental controls (ventilation, lighting, etc.)</li>
+<li>Verify emergency equipment is accessible</li>
+<li>Check environmental controls</li>
 <li>Clear work area of hazards</li>
 <li>Review the specific SWP before operation</li>
 </ol>
 <p><strong>If ANY check fails: DO NOT USE - Lock out and report immediately</strong></p>
 </div>
 
----
-
-## Emergency Contacts
-
-<table>
-<thead>
-<tr>
-<th>Emergency Type</th>
-<th>Contact</th>
-<th>Number</th>
-</tr>
-</thead>
+<div class="feature-box">
+<h4>🚨 Emergency Contacts</h4>
+<table style="margin-top: 15px;">
 <tbody>
 <tr>
 <td><strong>Emergency Services</strong></td>
-<td>Fire, Medical, Police</td>
 <td><strong>000</strong></td>
 </tr>
 <tr>
-<td><strong>University Security</strong></td>
-<td>After hours</td>
+<td>University Security</td>
 <td>[Insert number]</td>
 </tr>
 <tr>
-<td><strong>Supervisor</strong></td>
-<td>Chris Betters</td>
+<td>Supervisor: Chris Betters</td>
 <td>[Insert number]</td>
 </tr>
 <tr>
-<td><strong>Safety Officer</strong></td>
-<td>[Insert name]</td>
+<td>Safety Officer</td>
 <td>[Insert number]</td>
 </tr>
 <tr>
-<td><strong>First Aid</strong></td>
-<td>[Location]</td>
+<td>First Aid</td>
 <td>[Insert number]</td>
 </tr>
 </tbody>
 </table>
+</div>
+
+</div>
 
 ---
 
 ## Document Management
 
-### Creating New Safety Documents
+<div class="feature-grid">
 
-1. **Select the appropriate template:**
-   - [Risk Assessment Template](/templates/risk-assessment-template/) for hazard identification and risk analysis
-   - [Safe Work Procedure Template](/templates/safe-work-procedure-template/) for detailed operating instructions
+<div class="feature-box">
+<h4>✅ Creating New Documents</h4>
+<ol>
+<li>Select the appropriate template (RA or SWP)</li>
+<li>Complete all sections thoroughly</li>
+<li>Consult with users and safety officer</li>
+<li>Submit for review and approval</li>
+<li>Add to this index when approved</li>
+</ol>
+</div>
 
-2. **Complete all sections** thoroughly and accurately
+<div class="feature-box">
+<h4>📅 Review Requirements</h4>
+<p>All documents must be reviewed:</p>
+<ul>
+<li><strong>Annually</strong> at minimum</li>
+<li>After any incident or near-miss</li>
+<li>When equipment is modified</li>
+<li>When new hazards are identified</li>
+<li>When procedures change</li>
+</ul>
+</div>
 
-3. **Consult with:**
-   - Equipment users
-   - Safety officer
-   - Relevant subject matter experts
-   - Manufacturer documentation
+<div class="feature-box">
+<h4>📊 Document Statuses</h4>
+<ul>
+<li><span class="metadata-badge status-draft">Draft</span> Work in progress</li>
+<li><span class="metadata-badge status-approved">Approved</span> Ready for use</li>
+<li><span class="metadata-badge">Archived</span> Superseded version</li>
+</ul>
+</div>
 
-4. **Submit for review and approval** to your supervisor and safety officer
-
-5. **Once approved:**
-   - Add document to this index
-   - Display near relevant equipment
-   - Provide training to all users
-   - Add users to authorised users list
-
-### Review Requirements
-
-All Risk Assessments and Safe Work Procedures must be reviewed:
-
-- **Annually** at minimum
-- After any incident or near-miss
-- When equipment is modified or upgraded
-- When new hazards are identified
-- When procedures change
-- When Australian Standards are updated
+</div>
 
 ---
 
-<div class="info-box">
-<p><strong>Questions or concerns about safety?</strong></p>
-<p>Contact your supervisor or safety officer immediately. Do not operate equipment if you have any doubts about safety procedures or equipment condition.</p>
+<div class="info-box" style="text-align: center; padding: 30px;">
+<h3 style="margin-top: 0;">❓ Questions or Concerns About Safety?</h3>
+<p style="font-size: 1.1em;">Contact your supervisor or safety officer immediately.</p>
+<p style="font-size: 1.1em; margin-bottom: 0;"><strong>Do not operate equipment if you have any doubts about safety procedures or equipment condition.</strong></p>
 </div>
 
-<div class="warning-box">
-<p><strong>Remember:</strong> Safety documentation exists to protect you and others. Always follow approved procedures and never take shortcuts with safety.</p>
+<div class="warning-box" style="text-align: center; margin-top: 20px;">
+<p style="font-size: 1.1em; margin: 0;"><strong>Remember:</strong> Safety documentation exists to protect you and others. Always follow approved procedures and never take shortcuts with safety.</p>
 </div>

@@ -9,12 +9,24 @@
 </head>
 <body>
   <header>
+    <div class="header-logos">
+      <div class="logo-left">
+        <img src="{{ '/assets/usyd-logo.png' | relative_url }}" alt="University of Sydney Logo" class="header-logo">
+      </div>
+      <div class="header-title">
+        <h1>SAIL Laboratory</h1>
+        <p class="subtitle">Safety Documentation Portal</p>
+      </div>
+      <div class="logo-right">
+        <img src="{{ '/assets/sail-logo.png' | relative_url }}" alt="SAIL Laboratory Logo" class="header-logo">
+      </div>
+    </div>
     <nav>
       <ul>
         <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
         <li><a href="{{ '/#risk-assessments' | relative_url }}" {% if page.url contains 'risk-assessment' %}class="active"{% endif %}>Risk Assessments</a></li>
         <li><a href="{{ '/#safe-work-procedures-swps' | relative_url }}" {% if page.url contains 'safe-work-procedure' %}class="active"{% endif %}>Safe Work Procedures</a></li>
-        <li><a href="{{ '/laser-safety-guide' | relative_url }}" {% if page.url contains 'laser-safety' %}class="active"{% endif %}>Resources</a></li>
+        <li><a href="{{ '/#additional-resources' | relative_url }}">Resources</a></li>
       </ul>
     </nav>
   </header>
@@ -24,11 +36,10 @@
     <div class="document-header">
       <div class="logo-row">
         <div class="logo-left">
-          <strong>School of Physics</strong><br>
-          <em>University of Sydney</em>
+          <img src="{{ '/assets/usyd-logo.png' | relative_url }}" alt="University of Sydney Logo" class="doc-logo">
         </div>
         <div class="logo-right">
-          <strong>SAIL Laboratory</strong>
+          <img src="{{ '/assets/sail-logo.png' | relative_url }}" alt="SAIL Laboratory Logo" class="doc-logo">
         </div>
       </div>
       <div class="title-row">

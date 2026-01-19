@@ -2,7 +2,7 @@
 layout: document
 title: Safe Work Procedure - Bambu Lab H2D
 doc_type: Safe Work Procedure
-status: approved
+status: draft
 permalink: /safe-work-procedures/bambu-h2d/
 metadata:
   reference: SAIL-SWP-BAMBU-H2D-001
@@ -12,14 +12,6 @@ metadata:
   prepared_by: Chris Betters
   supervisors: Chris Betters, Sergio Leon-Saval
   review_date: January 2027
-critical_warning: |
-  **BEFORE OPERATING THIS EQUIPMENT:**
-  
-  - You MUST have completed Class 4 laser safety training
-  - You MUST be assessed as competent
-  - You MUST be listed on the authorised users list
-  - You MUST NEVER leave equipment unattended during laser operations
-  - You MUST NEVER defeat or bypass any safety system
 related_docs:
   - title: Risk Assessment
     url: /risk-assessments/bambu-h2d/
