@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+{% if page.status %}
+<div style="margin-bottom: 20px;">
+  <span class="metadata-badge status-{{ page.status }}">
+    Status: {{ page.status | capitalize }}
+  </span>
+  {% if page.metadata.version %}
+  <span class="metadata-badge">Version {{ page.metadata.version }}</span>
+  {% endif %}
+  {% if page.metadata.issue_date %}
+  <span class="metadata-badge">Issued: {{ page.metadata.issue_date }}</span>
+  {% endif %}
+</div>
+{% endif %}
+
+{{ content }}
+
+{% if page.related_docs %}
+<hr>
+<h2>Related Documents</h2>
+<ul>
+  {% for doc in page.related_docs %}
+  <li><a href="{{ doc.url | relative_url }}">{{ doc.title }}</a> - {{ doc.description }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if page.show_review %}
+<hr>
+<h2>Document Control</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Version</th>
+      <th>Date</th>
+      <th>Author</th>
+      <th>Changes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ page.metadata.version | default: "1.0" }}</td>
+      <td>{{ page.metadata.issue_date }}</td>
+      <td>{{ page.metadata.prepared_by }}</td>
+      <td>Initial release</td>
+    </tr>
+  </tbody>
+</table>
+{% endif %}

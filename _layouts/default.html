@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+        <li><a href="{{ '/risk-assessment' | relative_url }}" {% if page.url contains 'risk-assessment' %}class="active"{% endif %}>Risk Assessment</a></li>
+        <li><a href="{{ '/swp' | relative_url }}" {% if page.url contains 'swp' %}class="active"{% endif %}>Safe Work Procedure</a></li>
+        <li><a href="{{ '/laser-safety-guide' | relative_url }}" {% if page.url contains 'laser-safety' %}class="active"{% endif %}>Laser Safety Guide</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% if page.doc_type %}
+    <div class="document-header">
+      <div class="logo-row">
+        <div class="logo-left">
+          <strong>School of Physics</strong><br>
+          <em>University of Sydney</em>
+        </div>
+        <div class="logo-right">
+          <strong>SAIL Laboratory</strong>
+        </div>
+      </div>
+      <div class="title-row">
+        {{ page.doc_type | upcase }}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if page.metadata %}
+    <table class="metadata-table">
+      {% if page.metadata.reference %}
+      <tr>
+        <td class="label">Reference Number:</td>
+        <td colspan="2">{{ page.metadata.reference }}</td>
+      </tr>
+      {% endif %}
+      {% if page.metadata.title %}
+      <tr>
+        <td class="label">Title:</td>
+        <td colspan="2">{{ page.metadata.title }}</td>
+      </tr>
+      {% endif %}
+      {% if page.metadata.version %}
+      <tr>
+        <td class="label">Version:</td>
+        <td>{{ page.metadata.version }}</td>
+        <td><strong>Issue Date:</strong> {{ page.metadata.issue_date }}</td>
+      </tr>
+      {% endif %}
+      {% if page.metadata.prepared_by %}
+      <tr>
+        <td class="label">Prepared by:</td>
+        <td colspan="2">{{ page.metadata.prepared_by }}</td>
+      </tr>
+      {% endif %}
+      {% if page.metadata.supervisors %}
+      <tr>
+        <td class="label">Responsible Supervisors:</td>
+        <td colspan="2">{{ page.metadata.supervisors }}</td>
+      </tr>
+      {% endif %}
+      {% if page.metadata.review_date %}
+      <tr>
+        <td class="label">Next Review Date:</td>
+        <td colspan="2">{{ page.metadata.review_date }}</td>
+      </tr>
+      {% endif %}
+    </table>
+    {% endif %}
+
+    {% if page.critical_warning %}
+    <div class="critical-safety">
+      <h3>⚠️ CRITICAL SAFETY INFORMATION ⚠️</h3>
+      {{ page.critical_warning | markdownify }}
+    </div>
+    {% endif %}
+
+    <article>
+      {{ content }}
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; {{ 'now' | date: "%Y" }} School of Physics, University of Sydney. SAIL Laboratory.</p>
+    <p><em>These documents are safety-critical. Always refer to the latest approved version.</em></p>
+  </footer>
+</body>
+</html>

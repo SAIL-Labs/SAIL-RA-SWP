@@ -1,0 +1,387 @@
+/* Custom styles to match LaTeX/Word template */
+
+:root {
+  --header-blue: rgb(203, 216, 240);
+  --text-color: #333;
+  --border-color: #000;
+  --link-color: #0066cc;
+}
+
+/* Use sans-serif font like Helvetica */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+}
+
+/* Document header styling */
+.document-header {
+  border: 2px solid var(--border-color);
+  margin-bottom: 30px;
+  background: #fff;
+}
+
+.document-header .logo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.document-header .title-row {
+  background: var(--header-blue);
+  padding: 15px 20px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Main heading styles */
+h1 {
+  color: var(--text-color);
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--header-blue);
+  padding-bottom: 10px;
+}
+
+h2 {
+  color: var(--text-color);
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  background: var(--header-blue);
+  padding: 10px 15px;
+  border: 1px solid var(--border-color);
+}
+
+h3 {
+  color: var(--text-color);
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  color: var(--text-color);
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Table styling to match LaTeX template */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.95em;
+}
+
+table thead tr {
+  background-color: var(--header-blue);
+  font-weight: bold;
+}
+
+table th,
+table td {
+  border: 1px solid var(--border-color);
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: top;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Metadata table at top of document */
+.metadata-table {
+  border: 2px solid var(--border-color);
+  margin-bottom: 30px;
+}
+
+.metadata-table td {
+  padding: 10px 15px;
+}
+
+.metadata-table .label {
+  background: var(--header-blue);
+  font-weight: bold;
+  width: 30%;
+}
+
+/* Lists styling */
+ul, ol {
+  margin: 10px 0;
+  padding-left: 30px;
+}
+
+ul li, ol li {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* Nested lists */
+ul ul, ol ul, ul ol, ol ol {
+  margin: 5px 0;
+  padding-left: 25px;
+}
+
+/* Warning boxes for critical information */
+.warning-box {
+  background: #fff3cd;
+  border: 2px solid #856404;
+  border-left: 6px solid #856404;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.danger-box {
+  background: #f8d7da;
+  border: 2px solid #721c24;
+  border-left: 6px solid #721c24;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.info-box {
+  background: #d1ecf1;
+  border: 2px solid #0c5460;
+  border-left: 6px solid #0c5460;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+/* Code and pre blocks */
+code {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 15px;
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+  background: var(--header-blue);
+  border: 2px solid var(--border-color);
+  padding: 15px 20px;
+  margin-bottom: 30px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav a {
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 8px 15px;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+nav a:hover {
+  background: #f0f0f0;
+  text-decoration: none;
+}
+
+nav a.active {
+  background: var(--text-color);
+  color: #fff;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--header-blue);
+  padding-left: 20px;
+  margin: 20px 0;
+  color: #666;
+  font-style: italic;
+}
+
+/* HR styling */
+hr {
+  border: none;
+  border-top: 2px solid var(--header-blue);
+  margin: 30px 0;
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 2px solid var(--header-blue);
+  text-align: center;
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Print styles */
+@media print {
+  body {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  nav {
+    display: none;
+  }
+  
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  table {
+    page-break-inside: avoid;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  table {
+    font-size: 0.85em;
+  }
+  
+  table th,
+  table td {
+    padding: 8px 10px;
+  }
+}
+
+/* Special styling for step-by-step procedures */
+.procedure-step {
+  margin: 20px 0;
+  padding: 15px;
+  background: #f9f9f9;
+  border-left: 4px solid var(--header-blue);
+}
+
+.procedure-step h3,
+.procedure-step h4 {
+  margin-top: 0;
+  color: var(--text-color);
+}
+
+/* Emergency procedures highlighting */
+.emergency-procedure {
+  background: #fff3cd;
+  border: 2px solid #856404;
+  padding: 15px 20px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+.emergency-procedure h3,
+.emergency-procedure h4 {
+  color: #856404;
+  margin-top: 0;
+}
+
+/* Critical safety information */
+.critical-safety {
+  background: #f8d7da;
+  border: 3px solid #721c24;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.critical-safety h3,
+.critical-safety h4 {
+  color: #721c24;
+  margin-top: 0;
+}
+
+/* Document metadata badges */
+.metadata-badge {
+  display: inline-block;
+  background: var(--header-blue);
+  border: 1px solid var(--border-color);
+  padding: 5px 12px;
+  margin: 5px 5px 5px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+/* Status indicators */
+.status-approved {
+  color: #155724;
+  background: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.status-draft {
+  color: #856404;
+  background: #fff3cd;
+  border-color: #ffeaa7;
+}
+
+.status-review {
+  color: #004085;
+  background: #cce5ff;
+  border-color: #b8daff;
+}

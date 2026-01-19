@@ -1,0 +1,30 @@
+title: SAIL Laboratory Safety Documentation
+description: Risk Assessments and Safe Work Procedures for Laboratory Equipment
+theme: minima
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# GitHub Pages settings
+url: ""
+baseurl: ""
+
+# Navigation
+header_pages:
+  - index.md
+  - docs/risk-assessment.md
+  - docs/swp.md
+  - docs/laser-safety-guide.md
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /docs/:path/
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
