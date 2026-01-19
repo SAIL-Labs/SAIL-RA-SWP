@@ -7,13 +7,12 @@ kramdown:
   syntax_highlighter: rouge
 
 # GitHub Pages settings
-url: ""
-baseurl: ""
+url: "https://sail-labs.github.io"
+baseurl: "/SAIL-RA-SWP"
 
 # Navigation
 header_pages:
   - index.md
-  - laser-safety-guide.md
 
 # Collections
 collections:

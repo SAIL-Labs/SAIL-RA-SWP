@@ -36,7 +36,7 @@ title: Home
   </div>
   <p>Comprehensive risk assessment for the Bambu H2D with 10W Class 4 laser module. Covers laser radiation hazards, fire risks, thermal hazards, inhalation risks, and complete emergency procedures.</p>
   <p><strong>Key hazards:</strong> Class 4 laser radiation, fire ignition, thermal burns (350°C), hazardous fumes</p>
-  <a href="/risk-assessments/bambu-h2d/" class="cta-button">View Risk Assessment →</a>
+  <a href="{{ '/risk-assessments/bambu-h2d/' | relative_url }}" class="cta-button">View Risk Assessment →</a>
 </div>
 
 <!-- Add more risk assessments here as new equipment is added -->
@@ -45,7 +45,7 @@ title: Home
 
 <div class="info-box">
 <h3>📄 Create a New Risk Assessment</h3>
-<p>Use our comprehensive <strong><a href="/templates/risk-assessment-template/">Risk Assessment Template</a></strong> to create safety assessments for new equipment or processes.</p>
+<p>Use our comprehensive <strong><a href="{{ '/templates/risk-assessment-template/' | relative_url }}">Risk Assessment Template</a></strong> to create safety assessments for new equipment or processes.</p>
 <p>The template includes all required sections: hazard identification, risk ratings, control measures, emergency procedures, and review schedules.</p>
 </div>
 
@@ -64,7 +64,7 @@ title: Home
   </div>
   <p>Detailed operating procedures covering pre-operation safety checks (including critical interlock testing), material preparation, equipment operation for both 3D printing and laser functions, emergency shutdown procedures, and competency requirements.</p>
   <p><strong>Includes:</strong> Mandatory safety checks, emergency procedures, cleanup protocols, training requirements</p>
-  <a href="/safe-work-procedures/bambu-h2d/" class="cta-button">View Safe Work Procedure →</a>
+  <a href="{{ '/safe-work-procedures/bambu-h2d/' | relative_url }}" class="cta-button">View Safe Work Procedure →</a>
 </div>
 
 <!-- Add more SWPs here as new equipment is added -->
@@ -73,7 +73,7 @@ title: Home
 
 <div class="info-box">
 <h3>📄 Create a New Safe Work Procedure</h3>
-<p>Use our comprehensive <strong><a href="/templates/safe-work-procedure-template/">Safe Work Procedure Template</a></strong> to create detailed operating instructions for new equipment or processes.</p>
+<p>Use our comprehensive <strong><a href="{{ '/templates/safe-work-procedure-template/' | relative_url }}">Safe Work Procedure Template</a></strong> to create detailed operating instructions for new equipment or processes.</p>
 <p>The template provides a complete structure for documenting safety checks, step-by-step procedures, emergency protocols, and competency requirements.</p>
 </div>
 
@@ -86,13 +86,13 @@ title: Home
 <div class="feature-box">
   <h4>📋 Document Templates</h4>
   <p>Access templates for creating new Risk Assessments and Safe Work Procedures with comprehensive guidance.</p>
-  <a href="/templates/">Browse Templates →</a>
+  <a href="{{ '/templates/' | relative_url }}">Browse Templates →</a>
 </div>
 
 <div class="feature-box">
   <h4>🔧 Template Usage Guide</h4>
   <p>Learn how to use our templates effectively, including best practices and document control procedures.</p>
-  <a href="/templates/">View Guide →</a>
+  <a href="{{ '/templates/' | relative_url }}">View Guide →</a>
 </div>
 
 </div>
