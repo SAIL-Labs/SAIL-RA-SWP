@@ -3,7 +3,7 @@ layout: document
 title: Risk Assessment - Bambu Lab H2D Laser Edition
 doc_type: Risk Assessment
 status: approved
-permalink: /risk-assessment/
+permalink: /risk-assessments/bambu-h2d/
 metadata:
   reference: SAIL-RA-BAMBU-H2D-001
   title: Bambu Lab H2D Laser Edition with 10W Laser Module
@@ -23,7 +23,7 @@ critical_warning: |
   **NEVER defeat, bypass, or disable ANY safety system.**
 related_docs:
   - title: Safe Work Procedure
-    url: /swp/
+    url: /safe-work-procedures/bambu-h2d/
     description: Detailed operating procedures
   - title: Laser Safety Guide
     url: /laser-safety-guide/

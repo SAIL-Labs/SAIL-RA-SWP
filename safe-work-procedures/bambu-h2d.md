@@ -3,7 +3,7 @@ layout: document
 title: Safe Work Procedure - Bambu Lab H2D
 doc_type: Safe Work Procedure
 status: approved
-permalink: /swp/
+permalink: /safe-work-procedures/bambu-h2d/
 metadata:
   reference: SAIL-SWP-BAMBU-H2D-001
   title: Operation of Bambu Lab H2D Laser Edition with 10W Class 4 Laser Module
@@ -22,7 +22,7 @@ critical_warning: |
   - You MUST NEVER defeat or bypass any safety system
 related_docs:
   - title: Risk Assessment
-    url: /risk-assessment/
+    url: /risk-assessments/bambu-h2d/
     description: Hazard identification and controls
   - title: Laser Safety Guide
     url: /laser-safety-guide/

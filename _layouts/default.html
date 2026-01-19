@@ -12,9 +12,9 @@
     <nav>
       <ul>
         <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-        <li><a href="{{ '/risk-assessment' | relative_url }}" {% if page.url contains 'risk-assessment' %}class="active"{% endif %}>Risk Assessment</a></li>
-        <li><a href="{{ '/swp' | relative_url }}" {% if page.url contains 'swp' %}class="active"{% endif %}>Safe Work Procedure</a></li>
-        <li><a href="{{ '/laser-safety-guide' | relative_url }}" {% if page.url contains 'laser-safety' %}class="active"{% endif %}>Laser Safety Guide</a></li>
+        <li><a href="{{ '/#risk-assessments' | relative_url }}" {% if page.url contains 'risk-assessment' %}class="active"{% endif %}>Risk Assessments</a></li>
+        <li><a href="{{ '/#safe-work-procedures-swps' | relative_url }}" {% if page.url contains 'safe-work-procedure' %}class="active"{% endif %}>Safe Work Procedures</a></li>
+        <li><a href="{{ '/laser-safety-guide' | relative_url }}" {% if page.url contains 'laser-safety' %}class="active"{% endif %}>Resources</a></li>
       </ul>
     </nav>
   </header>

@@ -13,15 +13,19 @@ baseurl: ""
 # Navigation
 header_pages:
   - index.md
-  - docs/risk-assessment.md
-  - docs/swp.md
-  - docs/laser-safety-guide.md
+  - laser-safety-guide.md
 
 # Collections
 collections:
-  docs:
+  risk_assessments:
     output: true
-    permalink: /docs/:path/
+    permalink: /risk-assessments/:name/
+  safe_work_procedures:
+    output: true
+    permalink: /safe-work-procedures/:name/
+  templates:
+    output: true
+    permalink: /templates/:name/
 
 # Exclude from processing
 exclude:

@@ -5,94 +5,110 @@ title: Home
 
 # SAIL Laboratory Safety Documentation
 
-## Bambu Lab H2D Laser Edition with 10W Class 4 Laser Module
-
-Welcome to the safety documentation portal for the Bambu Lab H2D equipment in the SAIL Laboratory.
+Welcome to the safety documentation portal for the SAIL Laboratory at the School of Physics, University of Sydney.
 
 <div class="danger-box">
-<h3>⚠️ CLASS 4 LASER EQUIPMENT ⚠️</h3>
-<p>This equipment contains a <strong>CLASS 4 laser</strong> - the most hazardous laser classification. Operating as Class 1 (safe) ONLY when all safety systems are intact and functioning properly.</p>
-<p><strong>Mandatory requirements before use:</strong></p>
+<h3>⚠️ SAFETY FIRST ⚠️</h3>
+<p>All laboratory equipment must be operated in accordance with approved Risk Assessments and Safe Work Procedures.</p>
+<p><strong>Before using ANY equipment:</strong></p>
 <ul>
-<li>Complete Class 4 laser safety training</li>
-<li>Pass theory and practical assessments</li>
-<li>Be listed on authorised users list</li>
-<li>Read and understand all safety documentation</li>
+<li>Complete required safety training</li>
+<li>Read and understand the Risk Assessment and Safe Work Procedure</li>
+<li>Be listed on the authorised users list</li>
+<li>Perform all mandatory pre-operation safety checks</li>
 </ul>
 </div>
 
-## Available Documents
+---
 
-### [Risk Assessment](risk-assessment)
-**Reference:** SAIL-RA-BAMBU-H2D-001 | **Version:** 1.0 | **Date:** January 2026
+## Risk Assessments
 
-Comprehensive risk assessment identifying all hazards associated with operating the Bambu H2D Laser Edition, including:
-- Class 4 laser radiation hazards
-- Fire and ignition risks
-- Thermal hazards
-- Inhalation hazards
-- Emergency procedures
+Risk Assessments identify hazards, assess risks, and define control measures for laboratory equipment and processes.
 
-<a href="risk-assessment" class="metadata-badge">View Risk Assessment →</a>
+<div class="document-list">
+
+### Bambu Lab H2D Laser Edition
+**Reference:** SAIL-RA-BAMBU-H2D-001 | **Version:** 1.0 | **Status:** <span class="metadata-badge status-approved">Approved</span>
+
+Comprehensive risk assessment for the Bambu H2D with 10W Class 4 laser module, covering laser radiation hazards, fire risks, thermal hazards, and emergency procedures.
+
+<a href="/risk-assessments/bambu-h2d/" class="metadata-badge">View Risk Assessment →</a>
 
 ---
 
-### [Safe Work Procedure (SWP)](swp)
-**Reference:** SAIL-SWP-BAMBU-H2D-001 | **Version:** 1.0 | **Date:** January 2026
+</div>
 
-Detailed step-by-step operating procedures covering:
-- Mandatory pre-operation safety checks (including interlock testing)
-- Material preparation and approval
-- Equipment operation (3D printing and laser functions)
-- Emergency shutdown and response procedures
-- Cleanup and maintenance
-- Training and competency requirements
-
-<a href="swp" class="metadata-badge">View Safe Work Procedure →</a>
+<div class="info-box">
+<h3>📄 Need to Create a New Risk Assessment?</h3>
+<p>Use our <a href="/templates/risk-assessment-template/">Risk Assessment Template</a> to create a comprehensive safety assessment for new equipment or processes.</p>
+</div>
 
 ---
+
+## Safe Work Procedures (SWPs)
+
+Safe Work Procedures provide detailed step-by-step instructions for safely operating laboratory equipment.
+
+<div class="document-list">
+
+### Bambu Lab H2D Laser Edition
+**Reference:** SAIL-SWP-BAMBU-H2D-001 | **Version:** 1.0 | **Status:** <span class="metadata-badge status-approved">Approved</span>
+
+Detailed operating procedures covering pre-operation safety checks, material preparation, equipment operation (3D printing and laser functions), emergency shutdown procedures, and competency requirements.
+
+<a href="/safe-work-procedures/bambu-h2d/" class="metadata-badge">View Safe Work Procedure →</a>
+
+---
+
+</div>
+
+<div class="info-box">
+<h3>📄 Need to Create a New Safe Work Procedure?</h3>
+<p>Use our <a href="/templates/safe-work-procedure-template/">Safe Work Procedure Template</a> to create detailed operating instructions for new equipment or processes.</p>
+</div>
+
+---
+
+## Additional Resources
 
 ### [Class 4 Laser Safety Guide](laser-safety-guide)
 **Supplementary Document** | **Date:** January 2026
 
-Essential reading for all users covering:
-- Understanding Class 4 laser hazards
-- Why the H2D is safe when used correctly
-- Absolute prohibitions
-- Safety system verification
-- Emergency procedures
-- Training requirements
+Essential reading for all users of Class 4 laser equipment, covering laser hazards, safety systems, prohibitions, and emergency procedures.
 
 <a href="laser-safety-guide" class="metadata-badge">View Laser Safety Guide →</a>
 
 ---
 
-## Quick Reference
+## Quick Safety Reference
+
+<div class="warning-box">
+<h3>🚫 Universal Safety Prohibitions</h3>
+<ul>
+<li><strong>NEVER</strong> operate equipment you are not trained and authorised to use</li>
+<li><strong>NEVER</strong> defeat or bypass safety systems or interlocks</li>
+<li><strong>NEVER</strong> leave hazardous equipment unattended during operation</li>
+<li><strong>NEVER</strong> operate damaged or malfunctioning equipment</li>
+<li><strong>NEVER</strong> skip mandatory pre-operation safety checks</li>
+</ul>
+</div>
 
 <div class="info-box">
-<h3>📋 Before Every Use - Mandatory Checks</h3>
+<h3>📋 General Pre-Operation Checklist</h3>
+<p>While each piece of equipment has specific requirements, these general steps apply to most laboratory equipment:</p>
 <ol>
-<li><strong>Sign in</strong> to equipment log book</li>
-<li><strong>Visual inspection</strong> of laser safety windows (check for damage)</li>
-<li><strong>Test door interlocks</strong> - CRITICAL: laser must stop when doors opened</li>
-<li><strong>Test emergency stop</strong> button</li>
-<li><strong>Verify ventilation</strong> (LEV/air purifier operating)</li>
-<li><strong>Check fire extinguisher</strong> (present and in-date)</li>
-<li><strong>Clear work area</strong> of flammable materials</li>
+<li>Sign in to the equipment log book</li>
+<li>Perform visual inspection for damage</li>
+<li>Test all safety systems and interlocks</li>
+<li>Verify emergency equipment is accessible and functional</li>
+<li>Check environmental controls (ventilation, lighting, etc.)</li>
+<li>Clear work area of hazards</li>
+<li>Review the specific SWP before operation</li>
 </ol>
 <p><strong>If ANY check fails: DO NOT USE - Lock out and report immediately</strong></p>
 </div>
 
-<div class="warning-box">
-<h3>🚫 Absolute Prohibitions</h3>
-<ul>
-<li><strong>NEVER</strong> defeat or bypass any safety interlock</li>
-<li><strong>NEVER</strong> operate with doors/covers open</li>
-<li><strong>NEVER</strong> leave equipment unattended during laser operations</li>
-<li><strong>NEVER</strong> use prohibited materials (PVC, polycarbonate, etc.)</li>
-<li><strong>NEVER</strong> operate with damaged safety windows</li>
-</ul>
-</div>
+---
 
 ## Emergency Contacts
 
@@ -133,108 +149,42 @@ Essential reading for all users covering:
 </tbody>
 </table>
 
-## Equipment Status
-
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Status</th>
-<th>Last Check</th>
-<th>Next Due</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Safety Interlocks</td>
-<td><span class="metadata-badge status-approved">Operational</span></td>
-<td>Pre-operation check</td>
-<td>Every use</td>
-</tr>
-<tr>
-<td>Laser Safety Windows</td>
-<td><span class="metadata-badge status-approved">Intact</span></td>
-<td>Pre-operation check</td>
-<td>Every use</td>
-</tr>
-<tr>
-<td>Fire Detection System</td>
-<td><span class="metadata-badge status-approved">Operational</span></td>
-<td>[Date]</td>
-<td>Monthly</td>
-</tr>
-<tr>
-<td>Electrical Safety</td>
-<td><span class="metadata-badge status-approved">Test & Tag Current</span></td>
-<td>[Date]</td>
-<td>Annual</td>
-</tr>
-<tr>
-<td>Exhaust Filters</td>
-<td><span class="metadata-badge status-approved">Clean</span></td>
-<td>[Date]</td>
-<td>Quarterly</td>
-</tr>
-</tbody>
-</table>
-
-## Training and Authorisation
-
-To operate this equipment you must:
-
-1. ✅ Complete **Class 4 Laser Safety Training**
-2. ✅ Complete **Equipment-Specific Training**
-3. ✅ Pass **Theory Assessment** (100% on safety questions, 80% overall)
-4. ✅ Pass **Practical Competency Assessment**
-5. ✅ Be signed off by **Authorised Assessor**
-6. ✅ Be added to **Authorised Users List**
-
-**Current Authorised Users:** [Display list or link to list]
-
-**Authorised Assessors:**
-- Chris Betters (Supervisor)
-- Sergio Leon-Saval (Supervisor)
-
 ---
 
-## Document Information
+## Document Management
 
-<table>
-<thead>
-<tr>
-<th>Document</th>
-<th>Reference</th>
-<th>Version</th>
-<th>Date</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="risk-assessment">Risk Assessment</a></td>
-<td>SAIL-RA-BAMBU-H2D-001</td>
-<td>1.0</td>
-<td>January 2026</td>
-<td><span class="metadata-badge status-approved">Approved</span></td>
-</tr>
-<tr>
-<td><a href="swp">Safe Work Procedure</a></td>
-<td>SAIL-SWP-BAMBU-H2D-001</td>
-<td>1.0</td>
-<td>January 2026</td>
-<td><span class="metadata-badge status-approved">Approved</span></td>
-</tr>
-<tr>
-<td><a href="laser-safety-guide">Laser Safety Guide</a></td>
-<td>Supplementary</td>
-<td>1.0</td>
-<td>January 2026</td>
-<td><span class="metadata-badge status-approved">Current</span></td>
-</tr>
-</tbody>
-</table>
+### Creating New Safety Documents
 
-**Review Schedule:** All documents reviewed annually or after any incident.
+1. **Select the appropriate template:**
+   - [Risk Assessment Template](/templates/risk-assessment-template/) for hazard identification and risk analysis
+   - [Safe Work Procedure Template](/templates/safe-work-procedure-template/) for detailed operating instructions
+
+2. **Complete all sections** thoroughly and accurately
+
+3. **Consult with:**
+   - Equipment users
+   - Safety officer
+   - Relevant subject matter experts
+   - Manufacturer documentation
+
+4. **Submit for review and approval** to your supervisor and safety officer
+
+5. **Once approved:**
+   - Add document to this index
+   - Display near relevant equipment
+   - Provide training to all users
+   - Add users to authorised users list
+
+### Review Requirements
+
+All Risk Assessments and Safe Work Procedures must be reviewed:
+
+- **Annually** at minimum
+- After any incident or near-miss
+- When equipment is modified or upgraded
+- When new hazards are identified
+- When procedures change
+- When Australian Standards are updated
 
 ---
 
@@ -244,5 +194,5 @@ To operate this equipment you must:
 </div>
 
 <div class="warning-box">
-<p><strong>Remember:</strong> This equipment is completely safe when all safety procedures are followed and all safety systems are functioning. Class 4 laser exposure can cause permanent blindness. Never compromise on safety.</p>
+<p><strong>Remember:</strong> Safety documentation exists to protect you and others. Always follow approved procedures and never take shortcuts with safety.</p>
 </div>
