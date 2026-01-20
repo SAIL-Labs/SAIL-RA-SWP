@@ -1,9 +1,9 @@
 ---
 layout: document
-title: Safe Work Procedure - [Equipment/Process Name]
+title: Safe Work Procedure Template
 doc_type: Safe Work Procedure
 status: draft
-permalink: /safe-work-procedures/[equipment-slug]/
+permalink: /templates/safe-work-procedure-template/
 metadata:
   reference: SAIL-SWP-[EQUIPMENT]-XXX
   title: Operation of [Full Equipment/Process Name]

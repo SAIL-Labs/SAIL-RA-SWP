@@ -1,9 +1,9 @@
 ---
 layout: document
-title: Risk Assessment - [Equipment/Process Name]
+title: Risk Assessment Template
 doc_type: Risk Assessment
 status: draft
-permalink: /risk-assessments/[equipment-slug]/
+permalink: /templates/risk-assessment-template/
 metadata:
   reference: SAIL-RA-[EQUIPMENT]-XXX
   title: [Full Equipment/Process Name]
