@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
+
 <body>
   <header>
     <div class="header-logos">
@@ -14,8 +16,8 @@
         <img src="{{ '/assets/usyd-logo.png' | relative_url }}" alt="University of Sydney Logo" class="header-logo">
       </div>
       <div class="header-title">
-        <h1>SAIL Laboratory</h1>
-        <p class="subtitle">Safety Documentation Portal</p>
+        <h3>SAIL - Safety Documentation Portal</h3>
+        <!-- <p class="subtitle"></p> -->
       </div>
       <div class="logo-right">
         <img src="{{ '/assets/sail-logo.png' | relative_url }}" alt="SAIL Laboratory Logo" class="header-logo">
@@ -23,9 +25,11 @@
     </div>
     <nav>
       <ul>
-        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-        <li><a href="{{ '/#risk-assessments' | relative_url }}" {% if page.url contains 'risk-assessment' %}class="active"{% endif %}>Risk Assessments</a></li>
-        <li><a href="{{ '/#safe-work-procedures-swps' | relative_url }}" {% if page.url contains 'safe-work-procedure' %}class="active"{% endif %}>Safe Work Procedures</a></li>
+        <li><a href="{{ '/' | relative_url }}" {% if page.url=='/' %}class="active" {% endif %}>Home</a></li>
+        <li><a href="{{ '/#risk-assessments' | relative_url }}" {% if page.url contains 'risk-assessment'
+            %}class="active" {% endif %}>Risk Assessments</a></li>
+        <li><a href="{{ '/#safe-work-procedures-swps' | relative_url }}" {% if page.url contains 'safe-work-procedure'
+            %}class="active" {% endif %}>Safe Work Procedures</a></li>
         <li><a href="{{ '/#additional-resources' | relative_url }}">Resources</a></li>
       </ul>
     </nav>
@@ -33,6 +37,41 @@
 
   <main>
     {% if page.doc_type %}
+    <div class="doc-info-section no-print">
+      {% if page.metadata.reference or page.metadata.title %}
+      <div class="doc-title-id">
+        {% if page.metadata.reference %}
+        <div class="doc-id">{{ page.metadata.reference }}</div>
+        {% endif %}
+        {% if page.metadata.title %}
+        <div class="doc-title">{{ page.metadata.title }}</div>
+        {% endif %}
+      </div>
+      {% endif %}
+      <div class="status-badges">
+        <div class="status-left">
+          {% if page.status %}
+          <span class="metadata-badge status-{{ page.status }}">
+            Status: {{ page.status | capitalize }}
+          </span>
+          {% endif %}
+          {% if page.metadata.version %}
+          <span class="metadata-badge">Version {{ page.metadata.version }}</span>
+          {% endif %}
+          {% if page.metadata.issue_date %}
+          <span class="metadata-badge">Issued: {{ page.metadata.issue_date }}</span>
+          {% endif %}
+        </div>
+        {% if page.related_docs %}
+        <div class="related-links">
+          {% for doc in page.related_docs %}
+          <a href="{{ doc.url | relative_url }}" class="related-link">{{ doc.title }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
     <div class="document-header">
       <div class="logo-row">
         <div class="logo-left">
@@ -48,7 +87,7 @@
     </div>
     {% endif %}
 
-    {% if page.metadata %}
+    <!-- {% if page.metadata %}
     <table class="metadata-table">
       {% if page.metadata.reference %}
       <tr>
@@ -88,7 +127,7 @@
       </tr>
       {% endif %}
     </table>
-    {% endif %}
+    {% endif %} -->
 
     {% if page.critical_warning %}
     <div class="critical-safety">
@@ -107,4 +146,5 @@
     <p><em>These documents are safety-critical. Always refer to the latest approved version.</em></p>
   </footer>
 </body>
+
 </html>

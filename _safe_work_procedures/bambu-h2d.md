@@ -16,10 +16,8 @@ related_docs:
   - title: Risk Assessment
     url: /risk-assessments/bambu-h2d/
     description: Hazard identification and controls
-  - title: Laser Safety Guide
-    url: /laser-safety-guide/
-    description: Class 4 laser safety information
 show_review: true
+
 ---
 ## SWP Title
 Operation of Bambu Lab H2D Laser Edition with 10W Class 4 Laser Module

@@ -2,7 +2,7 @@
 layout: document
 title: Risk Assessment - Bambu Lab H2D Laser Edition
 doc_type: Risk Assessment
-status: approved
+status: draft
 permalink: /risk-assessments/bambu-h2d/
 metadata:
   reference: SAIL-RA-BAMBU-H2D-001
@@ -17,24 +17,22 @@ related_docs:
   - title: Safe Work Procedure
     url: /safe-work-procedures/bambu-h2d/
     description: Detailed operating procedures
+show_review: true
 ---
 
 Use this form to assist you to complete risk assessments for hazardous activities and processes. Any serious or ongoing hazards should be reported via RiskWare to ensure that appropriate corrective actions are tracked and completed.
 
 <div class="metadata-table" markdown="1">
 
-| | | |
-|---|---|---|
-| **Faculty/School:** | School of Physics | **Initial Issue Date:** {{ page.metadata.issue_date }} |
-| | | **Next Review Date:** {{ page.metadata.next_review_date }} |
-| **Risk Assessment Reference Number:** | {{ page.metadata.reference }} | |
-| **Risk Assessment Name:** | {{ page.metadata.title }} | |
-| **Prepared by:** | {{ page.metadata.prepared_by }} | |
-| **Responsible supervisor/s:** | {{ page.metadata.supervisors }} | |
+**Faculty/School:** | School of Physics 
+**Initial Issue Date:** | {{ page.metadata.issue_date }}
+**Next Review Date:** | {{ page.metadata.next_review_date }}
+**Risk Assessment Reference Number:** | {{ page.metadata.reference }}
+**Risk Assessment Name:** | {{ page.metadata.title }}
+**Prepared by:** | {{ page.metadata.prepared_by }}
+**Responsible supervisor/s:** | {{ page.metadata.supervisors }}
 
 </div>
-
----
 
 <div class="activity-persons-table" markdown="1">
 
@@ -45,9 +43,7 @@ Use this form to assist you to complete risk assessments for hazardous activitie
 
 </div>
 
----
-
-<div class="legislation-box">
+<div class="legislation-box" markdown="1">
 
 **List of Legislation, Code of Practice, Australian Standards, Guidance Materials used to determine control measures**
 
@@ -62,9 +58,7 @@ Use this form to assist you to complete risk assessments for hazardous activitie
 
 </div>
 
----
-
-<div class="methodology-box">
+<div class="methodology-box" markdown="1">
 
 **Risk Assessment Methodology**
 
@@ -81,14 +75,9 @@ The information gathered from the **risk assessment** process must be used to de
 
 </div>
 
----
-
-<div class="page-break"></div>
-
 ## Hazard Assessment Table
 
 <div class="hazard-table-wrapper" markdown="1">
-
 | Task or scenario | Hazard/s | Associated harm, e.g. what could go wrong? | Existing Risk Controls | Current risk rating | Any additional controls required? | Residual risk rating |
 |---|---|---|---|---|---|---|
 | Laser engraving and cutting operations | Class 4 laser radiation (455nm, 10W blue laser). Operates as Class 1 ONLY when all safety systems intact | - Eye damage<br>- Permanent blindness<br>- Severe skin burns<br>- Retinal injury<br>- Fire ignition | - Laser safety windows<br>- Door interlocks (front, top)<br>- Safety window interlocks<br>- Emergency stop button<br>- Auto-stop when opened | **High** | - Mandatory laser safety training<br>- NEVER defeat interlocks<br>- NEVER operate with doors/covers open<br>- Regular interlock testing<br>- Class 4 warning signage<br>- Tag out if damaged | **Low** |
@@ -103,8 +92,6 @@ The information gathered from the **risk assessment** process must be used to de
 | Daily operation | Unattended operation | - Fire<br>- Equipment damage<br>- Delayed emergency response | - Camera monitoring<br>- Multiple safety sensors | **High** | - PROHIBITION of unattended laser operations<br>- Visual line of sight or constant camera monitoring<br>- Sign-in/sign-out procedures | **Low** |
 
 </div>
-
----
 
 ## Implementation of Additional Risk Controls
 
@@ -124,13 +111,11 @@ The information gathered from the **risk assessment** process must be used to de
 | Ventilation filter maintenance schedule | Replacement filters, labour | Technician | Quarterly | N/A |
 | Laser safety eye examination programme (baseline and periodic) | Occupational health service | Laboratory Manager | Prior to use, then as required | TBD |
 
----
 
-<div class="emergency-box">
-
-**List emergency controls**
-
+## List emergency controls
 <small>These might include how to deal with fires, spills, emergency shutdown of equipment, exposure to hazardous materials and adverse reactions or the deteriorating condition of patients/research participants in our care.</small>
+
+<div class="emergency-box" markdown="1">
 
 ### CRITICAL: Class 4 Laser Safety
 
@@ -210,8 +195,6 @@ The information gathered from the **risk assessment** process must be used to de
 
 </div>
 
----
-
 <div class="page-break"></div>
 
 ## REVIEW
@@ -229,7 +212,6 @@ The information gathered from the **risk assessment** process must be used to de
 
 </div>
 
----
 
 ## Risk Matrix
 

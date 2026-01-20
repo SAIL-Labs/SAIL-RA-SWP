@@ -2,20 +2,6 @@
 layout: default
 ---
 
-{% if page.status %}
-<div style="margin-bottom: 20px;">
-  <span class="metadata-badge status-{{ page.status }}">
-    Status: {{ page.status | capitalize }}
-  </span>
-  {% if page.metadata.version %}
-  <span class="metadata-badge">Version {{ page.metadata.version }}</span>
-  {% endif %}
-  {% if page.metadata.issue_date %}
-  <span class="metadata-badge">Issued: {{ page.metadata.issue_date }}</span>
-  {% endif %}
-</div>
-{% endif %}
-
 {{ content }}
 
 {% if page.related_docs %}

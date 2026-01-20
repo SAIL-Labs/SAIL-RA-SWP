@@ -4,9 +4,9 @@ title: Home
 ---
 
 <div class="hero-section">
-  <h1>SAIL Laboratory Safety Documentation</h1>
+  <h1>SAIL - Safety Documentation Portal</h1>
   <p>Your comprehensive resource for laboratory safety procedures and risk assessments</p>
-  <p style="font-size: 1.1em; margin-top: 20px;">School of Physics, University of Sydney</p>
+  <p style="font-size: 1.1em; margin-top: 10px;">School of Physics, University of Sydney</p>
 </div>
 
 <div class="danger-box">

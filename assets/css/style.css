@@ -4,7 +4,7 @@
   --header-blue: rgb(203, 216, 240);
   --text-color: #333;
   --border-color: #000;
-  --link-color: #0066cc;
+  --link-color: #468BC5;
 }
 
 /* Use sans-serif font like Helvetica */
@@ -18,24 +18,86 @@ body {
   background: #fff;
 }
 
-/* Document header styling */
-.document-header {
-  border: 2px solid var(--border-color);
-  margin-bottom: 30px;
-  background: #fff;
+/* Document info section */
+.doc-info-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--header-blue);
 }
 
-.document-header .logo-row {
+.doc-title-id {
+  margin-bottom: 15px;
+}
+
+.doc-id {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.doc-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* Status badges styling */
+.status-badges {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border-bottom: 2px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.status-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.related-links {
+  display: flex;
+  gap: 10px;
+}
+
+.related-link {
+  padding: 8px 16px;
+  background: #0066cc;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: background 0.2s;
+}
+
+.related-link:hover {
+  background: #0052a3;
+  text-decoration: none !important;
+}
+
+/* Document header styling */
+.document-header {
+  margin-bottom: 30px;
+}
+
+.document-header .logo-row {
+  display: none;
+}
+
+@media print {
+  .document-header .logo-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
 }
 
 .document-header .title-row {
-  background: var(--header-blue);
-  padding: 15px 20px;
+  padding: 15px 0;
   text-align: right;
   font-weight: bold;
   font-size: 1.2em;
@@ -104,37 +166,49 @@ table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-/* Metadata table at top of document */
-.metadata-table {
-  border: 2px solid var(--border-color);
-  margin-bottom: 30px;
-}
-
-.metadata-table td {
-  padding: 10px 15px;
-}
-
-.metadata-table .label {
-  background: var(--header-blue);
-  font-weight: bold;
-  width: 30%;
-}
-
 /* Lists styling */
 ul, ol {
-  margin: 10px 0;
-  padding-left: 30px;
+  margin: 10px 0 10px 10px;
+  padding-inline-start: 20px;
 }
 
-ul li, ol li {
+li {
   margin: 5px 0;
   line-height: 1.5;
 }
 
 /* Nested lists */
 ul ul, ol ul, ul ol, ol ol {
-  margin: 5px 0;
-  padding-left: 25px;
+  margin: 5px 0 5px 0;
+  padding-inline-start: 25px;
+}
+
+/* Lists in table cells */
+table td ul,
+table td ol {
+  margin: 5px 0 5px 5px;
+  padding-inline-start: 20px;
+}
+
+table td li {
+  margin: 3px 0;
+  line-height: 1.4;
+}
+
+/* Metadata table at top of document */
+.metadata-table {
+  /* border: 2px solid var(--border-color); */
+  /* margin-bottom: 30px; */
+}
+
+.metadata-table td {
+  /* padding: 10px 15px; */
+}
+
+.metadata-table .label {
+  background: var(--header-blue);
+  font-weight: bold;
+  width: 30%;
 }
 
 /* Warning boxes for critical information */
@@ -224,19 +298,35 @@ header {
 }
 
 .header-logo {
-  max-width: 300px;
-  /* max-height: 80px; */
   width: auto;
   height: auto;
   object-fit: contain;
 }
 
-.doc-logo {
+.logo-left .header-logo {
+  max-width: 300px;
+  max-height: 60px;
+}
+
+.logo-right .header-logo {
   max-width: 300px;
   max-height: 80px;
+}
+
+.doc-logo {
   width: auto;
   height: auto;
   object-fit: contain;
+}
+
+.logo-left .doc-logo {
+  max-width: 300px;
+  max-height: 80px;
+}
+
+.logo-right .doc-logo {
+  max-width: 300px;
+  max-height: 80px;
 }
 
 .header-title {
@@ -377,9 +467,9 @@ footer {
 
 /* Landing page specific styles */
 .hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #004D99 0%, #468BC5 100%);
   color: white;
-  padding: 60px 40px;
+  padding: 10px 10px;
   border-radius: 8px;
   margin-bottom: 40px;
   text-align: center;
@@ -492,12 +582,22 @@ footer {
     margin: 10px 0;
   }
 
-  .header-logo {
+  .logo-left .header-logo {
     max-width: 150px;
     max-height: 80px;
   }
 
-  .doc-logo {
+  .logo-right .header-logo {
+    max-width: 150px;
+    max-height: 80px;
+  }
+
+  .logo-left .doc-logo {
+    max-width: 120px;
+    max-height: 60px;
+  }
+
+  .logo-right .doc-logo {
     max-width: 120px;
     max-height: 60px;
   }
@@ -619,8 +719,8 @@ footer {
 /* Metadata table at start of RA */
 .metadata-table table {
   width: 100%;
-  border: 1px solid var(--border-color);
-  margin-bottom: 20px;
+  /* border: 1px solid var(--border-color); */
+  /* margin-bottom: 20px; */
 }
 
 .metadata-table table td:first-child {
@@ -630,8 +730,8 @@ footer {
 }
 
 .metadata-table table td {
-  border: 1px solid var(--border-color);
-  padding: 10px 15px;
+  /* border: 1px solid var(--border-color); */
+  /* padding: 10px 15px; */
 }
 
 /* Activity and persons table */
@@ -658,44 +758,50 @@ footer {
 .methodology-box {
   border: 1px solid var(--border-color);
   margin: 20px 0;
+  padding: 0;
 }
 
-.legislation-box > strong:first-child,
-.methodology-box > strong:first-child {
-  display: block;
+.legislation-box > p:first-child,
+.methodology-box > p:first-child {
   background-color: var(--header-blue);
   padding: 12px 15px;
   font-weight: bold;
   border-bottom: 1px solid var(--border-color);
+  margin: 0;
 }
 
-.legislation-box,
-.methodology-box {
-  padding: 0;
+.legislation-box > p:first-child strong,
+.methodology-box > p:first-child strong {
+  font-weight: bold;
 }
 
 .legislation-box > *:not(:first-child),
 .methodology-box > *:not(:first-child) {
   padding: 0 15px;
-}
-
-.legislation-box ul,
-.methodology-box ul {
   margin: 15px 0;
-  padding-left: 45px;
 }
 
-/* Hazard assessment table - landscape style */
+
+.legislation-box p,
+.methodology-box p {
+  margin: 15px 0;
+}
+
+/* Hazard assessment table */
 .hazard-table-wrapper {
-  overflow-x: auto;
   margin: 20px 0;
+}
+
+.hazard-table-wrapper > p {
+  margin: 0;
 }
 
 .hazard-table-wrapper table {
   width: 100%;
-  min-width: 1400px;
   border: 1px solid var(--border-color);
   font-size: 0.85em;
+  table-layout: fixed;
+  margin: 0;
 }
 
 .hazard-table-wrapper table th {
@@ -717,6 +823,28 @@ footer {
   background-color: #f9f9f9;
 }
 
+/* Hazard table column widths */
+.hazard-table-wrapper table th:nth-child(1),
+.hazard-table-wrapper table td:nth-child(1) { width: 12%; } /* Task/scenario */
+
+.hazard-table-wrapper table th:nth-child(2),
+.hazard-table-wrapper table td:nth-child(2) { width: 12%; } /* Hazards */
+
+.hazard-table-wrapper table th:nth-child(3),
+.hazard-table-wrapper table td:nth-child(3) { width: 14%; } /* Associated harm */
+
+.hazard-table-wrapper table th:nth-child(4),
+.hazard-table-wrapper table td:nth-child(4) { width: 18%; } /* Existing controls */
+
+.hazard-table-wrapper table th:nth-child(5),
+.hazard-table-wrapper table td:nth-child(5) { width: 8%; } /* Current risk */
+
+.hazard-table-wrapper table th:nth-child(6),
+.hazard-table-wrapper table td:nth-child(6) { width: 28%; } /* Additional controls */
+
+.hazard-table-wrapper table th:nth-child(7),
+.hazard-table-wrapper table td:nth-child(7) { width: 8%; } /* Residual risk */
+
 /* Emergency controls box */
 .emergency-box {
   border: 1px solid var(--border-color);
@@ -724,24 +852,29 @@ footer {
   padding: 0;
 }
 
-.emergency-box > strong:first-child {
-  display: block;
+.emergency-box > p:first-child {
   background-color: var(--header-blue);
   padding: 12px 15px;
   font-weight: bold;
   border-bottom: 1px solid var(--border-color);
+  margin: 0;
 }
 
-.emergency-box > small {
-  display: block;
+.emergency-box > p:first-child strong {
+  font-weight: bold;
+}
+
+.emergency-box > p:nth-child(2) {
   background-color: var(--header-blue);
   padding: 8px 15px;
   border-bottom: 1px solid var(--border-color);
   font-size: 0.9em;
+  margin: 0;
 }
 
-.emergency-box > *:not(:first-child):not(small) {
+.emergency-box > *:not(:first-child):not(:nth-child(2)) {
   padding: 0 15px;
+  margin: 15px 0;
 }
 
 .emergency-box h3,
@@ -750,6 +883,11 @@ footer {
   border: none;
   margin-top: 15px;
   padding: 0;
+}
+
+
+.emergency-box p {
+  margin: 15px 0;
 }
 
 /* Review table */
@@ -776,21 +914,69 @@ footer {
 }
 
 @media print {
+  /* Preserve colors when printing */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Hide elements that shouldn't print */
+  .no-print,
+  .doc-info-section {
+    display: none !important;
+  }
+
   .page-break {
     page-break-before: always;
   }
 
-  .hazard-table-wrapper {
+  /* Keep headers with their following content */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  /* Prevent page breaks inside critical sections only */
+  .critical-safety,
+  .danger-box,
+  .warning-box {
     page-break-inside: avoid;
   }
 
-  /* Rotate hazard table to landscape if needed */
-  .hazard-table-wrapper {
-    transform-origin: top left;
+  /* Allow tables to split across pages */
+  table {
+    page-break-inside: auto;
   }
 
-  /* Force landscape for hazard assessment table page */
-  @page hazard-page {
-    size: landscape;
+  /* Avoid breaking table rows */
+  tr {
+    page-break-inside: avoid;
+  }
+
+  /* Optimize hazard table for printing */
+  .hazard-table-wrapper table {
+    font-size: 8pt;
+    line-height: 1.3;
+  }
+
+  .hazard-table-wrapper table th,
+  .hazard-table-wrapper table td {
+    padding: 6px 8px;
+  }
+
+  .hazard-table-wrapper table th {
+    font-size: 8.5pt;
+  }
+
+  /* Compact spacing for lists in tables when printing */
+  table ul,
+  table ol {
+    margin: 3px 0 3px 5px;
+    padding-inline-start: 18px;
+  }
+
+  table li {
+    margin: 2px 0;
+    line-height: 1.3;
   }
 }
