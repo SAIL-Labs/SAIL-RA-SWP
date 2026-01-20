@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Emergency Safety Issue
+    url: tel:000
+    about: For immediate safety emergencies, call 000 and notify your supervisor directly
+  - name: Safety Officer Contact
+    url: https://sydney.edu.au/research/facilities/sydney-nanoscience-hub/safety.html
+    about: Contact the safety officer for non-urgent safety consultations
