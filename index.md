@@ -29,17 +29,31 @@ title: Home
 
 <div class="document-grid">
 
-<div class="document-card">
-  <h3>Bambu Lab H2D Laser Edition</h3>
-  <div class="card-meta">
-    <strong>Reference:</strong> SAIL-RA-BAMBU-H2D-001 | <strong>Version:</strong> 1.0 | <strong>Status:</strong> <span class="metadata-badge status-approved">Approved</span>
-  </div>
-  <p>Comprehensive risk assessment for the Bambu H2D with 10W Class 4 laser module. Covers laser radiation hazards, fire risks, thermal hazards, inhalation risks, and complete emergency procedures.</p>
-  <p><strong>Key hazards:</strong> Class 4 laser radiation, fire ignition, thermal burns (350°C), hazardous fumes</p>
-  <a href="{{ '/risk-assessments/bambu-h2d/' | relative_url }}" class="cta-button">View Risk Assessment →</a>
-</div>
+{% assign approved_ras = site.risk_assessments | where: "status", "Approved" | sort: "equipment_name" %}
+{% assign draft_ras = site.risk_assessments | where: "status", "Draft" | sort: "equipment_name" %}
+{% assign all_ras = approved_ras | concat: draft_ras %}
 
-<!-- Add more risk assessments here as new equipment is added -->
+{% if all_ras.size > 0 %}
+  {% for ra in all_ras %}
+  <div class="document-card">
+    <h3>{{ ra.equipment_name }}</h3>
+    <div class="card-meta">
+      <strong>Reference:</strong> {{ ra.reference }} | <strong>Version:</strong> {{ ra.version }} | <strong>Status:</strong> <span class="metadata-badge status-{{ ra.status | downcase }}">{{ ra.status }}</span>
+    </div>
+    {% if ra.description %}
+    <p>{{ ra.description }}</p>
+    {% endif %}
+    {% if ra.key_hazards %}
+    <p><strong>Key hazards:</strong> {{ ra.key_hazards }}</p>
+    {% endif %}
+    <a href="{{ ra.url | relative_url }}" class="cta-button">View Risk Assessment →</a>
+  </div>
+  {% endfor %}
+{% else %}
+  <div class="info-box">
+    <p><em>No risk assessments available yet. Use the template to create your first risk assessment.</em></p>
+  </div>
+{% endif %}
 
 </div>
 
@@ -57,17 +71,31 @@ title: Home
 
 <div class="document-grid">
 
-<div class="document-card">
-  <h3>Bambu Lab H2D Laser Edition</h3>
-  <div class="card-meta">
-    <strong>Reference:</strong> SAIL-SWP-BAMBU-H2D-001 | <strong>Version:</strong> 1.0 | <strong>Status:</strong> <span class="metadata-badge status-approved">Approved</span>
-  </div>
-  <p>Detailed operating procedures covering pre-operation safety checks (including critical interlock testing), material preparation, equipment operation for both 3D printing and laser functions, emergency shutdown procedures, and competency requirements.</p>
-  <p><strong>Includes:</strong> Mandatory safety checks, emergency procedures, cleanup protocols, training requirements</p>
-  <a href="{{ '/safe-work-procedures/bambu-h2d/' | relative_url }}" class="cta-button">View Safe Work Procedure →</a>
-</div>
+{% assign approved_swps = site.safe_work_procedures | where: "status", "Approved" | sort: "equipment_name" %}
+{% assign draft_swps = site.safe_work_procedures | where: "status", "Draft" | sort: "equipment_name" %}
+{% assign all_swps = approved_swps | concat: draft_swps %}
 
-<!-- Add more SWPs here as new equipment is added -->
+{% if all_swps.size > 0 %}
+  {% for swp in all_swps %}
+  <div class="document-card">
+    <h3>{{ swp.equipment_name }}</h3>
+    <div class="card-meta">
+      <strong>Reference:</strong> {{ swp.reference }} | <strong>Version:</strong> {{ swp.version }} | <strong>Status:</strong> <span class="metadata-badge status-{{ swp.status | downcase }}">{{ swp.status }}</span>
+    </div>
+    {% if swp.description %}
+    <p>{{ swp.description }}</p>
+    {% endif %}
+    {% if swp.includes %}
+    <p><strong>Includes:</strong> {{ swp.includes }}</p>
+    {% endif %}
+    <a href="{{ swp.url | relative_url }}" class="cta-button">View Safe Work Procedure →</a>
+  </div>
+  {% endfor %}
+{% else %}
+  <div class="info-box">
+    <p><em>No safe work procedures available yet. Use the template to create your first SWP.</em></p>
+  </div>
+{% endif %}
 
 </div>
 

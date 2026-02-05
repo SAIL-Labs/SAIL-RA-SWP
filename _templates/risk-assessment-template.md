@@ -1,77 +1,70 @@
 ---
 layout: document
-title: Risk Assessment Template
+title: Risk Assessment - [Equipment Name]
 doc_type: Risk Assessment
-status: draft
-permalink: /templates/risk-assessment-template/
+status: Draft
+permalink: /risk-assessments/[equipment-slug]/
+# Fields for auto-population on index page (update these when creating a new RA)
+equipment_name: "[Equipment Name]"  # e.g., "Bambu Lab H2D Laser Edition"
+reference: "SAIL-RA-[EQUIPMENT]-XXX"
+version: "1.0"
+description: "[Brief 1-2 sentence description of what this risk assessment covers and main hazards]"
+key_hazards: "[Comma-separated list of main hazards]"  # e.g., "Laser radiation, fire risk, thermal burns"
 metadata:
   reference: SAIL-RA-[EQUIPMENT]-XXX
   title: [Full Equipment/Process Name]
   version: "1.0"
   issue_date: [Month Year]
+  next_review_date: [Month Year - typically 1 year from issue]
   prepared_by: [Your Name]
   supervisors: [Supervisor Names]
-  review_date: [Month Year - typically 1 year from issue]
-critical_warning: |
-  **[CRITICAL SAFETY WARNING IF APPLICABLE]**
-
-  [Describe the most critical hazards and why this equipment/process requires special attention]
-
-  - **Key hazards:** [List main hazards]
-  - **Safety requirements:** [List key safety requirements]
-
-  **NEVER [list absolute prohibitions].**
+  faculty_school: School of Physics
 related_docs:
   - title: Safe Work Procedure
     url: /safe-work-procedures/[equipment-slug]/
     description: Detailed operating procedures
-  - title: [Other Related Document]
-    url: /[path]/
-    description: [Brief description]
 show_review: true
 ---
 
-## Activity, Process, or Equipment Name
+Use this form to assist you to complete risk assessments for hazardous activities and processes. Any serious or ongoing hazards should be reported via RiskWare to ensure that appropriate corrective actions are tracked and completed.
 
-[Full name of the equipment, process, or activity being assessed]
+<div class="metadata-table" markdown="1">
 
-**Reference Number:** [e.g., SAIL-RA-EQUIPMENT-001]
+**Faculty/School:** | School of Physics
+**Initial Issue Date:** | {{ page.metadata.issue_date }}
+**Next Review Date:** | {{ page.metadata.next_review_date }}
+**Risk Assessment Reference Number:** | {{ page.metadata.reference }}
+**Risk Assessment Name:** | {{ page.metadata.title }}
+**Prepared by:** | {{ page.metadata.prepared_by }}
+**Responsible supervisor/s:** | {{ page.metadata.supervisors }}
 
-### Purpose/use:
+</div>
 
-- [Primary use 1]
-- [Primary use 2]
-- [Primary use 3]
+<div class="activity-persons-table" markdown="1">
 
-**Location:** [Where is this equipment/process located?]
+| **Identify the activity and the location** | **Identify who may be at risk**<br><small>This might include fellow workers, students, visitors, contractors, patients, research participants and the public.</small> |
+|---|---|
+| **Activity or process:**<br><br>- [List main activities]<br>- [List processes]<br>- [List operations] | **Persons at risk:**<br><br>- [List who may be affected]<br>- [e.g., Laboratory staff]<br>- [e.g., Students] |
+| **Location:**<br><br>[Specific location, room number, building] | **Risk assessment team** (who was consulted?)**:**<br><br>- [Laboratory manager]<br>- [Safety officer]<br>- [Equipment users]<br>- [Subject matter experts] |
 
-### Persons at risk:
+</div>
 
-- [Person category 1, e.g., Laboratory staff]
-- [Person category 2, e.g., Research students]
-- [Person category 3, e.g., Visitors]
+<div class="legislation-box" markdown="1">
 
-### Risk assessment team (who was consulted?):
+**List of Legislation, Code of Practice, Australian Standards, Guidance Materials used to determine control measures**
 
-- [Role/person 1, e.g., Laboratory manager]
-- [Role/person 2, e.g., Safety officer]
-- [Role/person 3, e.g., Equipment users]
-
----
-
-## List of Legislation, Code of Practice, Australian Standards, Guidance Materials
-
-- [Relevant Australian Standard 1]
-- [Relevant Australian Standard 2]
 - Work Health and Safety Act 2011
 - Work Health and Safety Regulation 2017
-- [Equipment-specific standards]
-- [Manufacturer documentation]
+- [List relevant Australian Standards - e.g., AS/NZS specific to equipment]
+- [List relevant codes of practice]
+- [Manufacturer documentation and manuals]
 - [University WHS policies and procedures]
 
----
+</div>
 
-## Risk Assessment Methodology
+<div class="methodology-box" markdown="1">
+
+**Risk Assessment Methodology**
 
 Assessing the risk is a brainstorming exercise, which is most effectively carried out in a team environment with the people required to complete the activity or process. Most activities or processes are broken down into a variety of separate tasks. For each task, consider the hazards, the potential harm or negative outcomes and the conditions required for those negative outcomes to occur.
 
@@ -84,92 +77,101 @@ Whenever assessing the health and safety risks associated with a task, always co
 
 The information gathered from the **risk assessment** process must be used to develop a **Safe Work Procedure (SWP)** or **clinical protocol** for the activity.
 
----
+</div>
 
 ## Hazard Assessment Table
 
-### Task 1: [Primary task description]
+<div class="hazard-table-wrapper" markdown="1">
+| Task or scenario | Hazard/s | Associated harm, e.g. what could go wrong? | Existing Risk Controls | Current risk rating | Any additional controls required? | Residual risk rating |
+|---|---|---|---|---|---|---|
+| [Describe specific task or scenario] | [Identify hazard - be specific] | - [List potential injuries/harm]<br>- [List potential consequences]<br>- [What could go wrong] | - [List existing safety features]<br>- [List engineering controls]<br>- [List admin controls] | **[High/Medium/Low/Very High]** | - [Additional safety measures needed]<br>- [Training requirements]<br>- [PPE requirements]<br>- [Procedures to implement] | **[Low/Very Low]** |
+| [Next task] | [Next hazard] | - [Harm 1]<br>- [Harm 2] | - [Control 1]<br>- [Control 2] | **[Rating]** | - [Additional control 1]<br>- [Additional control 2] | **[Rating]** |
 
-**Hazard/s:** [Describe the hazard]
+**Example rows - replace with actual hazards for your equipment:**
 
-**Associated harm:**
-- [Potential harm 1]
-- [Potential harm 2]
-- [Potential harm 3]
+| Operation of [equipment] | Electrical hazards (240V) | - Electric shock<br>- Electrocution<br>- Burns | - RCD protection<br>- Earthed equipment<br>- Enclosed components | **Medium** | - Regular testing (test & tag)<br>- No wet conditions<br>- Qualified electrician for repairs<br>- Inspect power cords | **Low** |
+| High-temperature operation | Thermal burns ([temperature]°C surfaces) | - Severe burns to hands, arms<br>- Skin damage | - Warning labels<br>- Limited access during operation<br>- Cool-down period | **Medium** | - Heat-resistant gloves available<br>- Cool-down procedures<br>- Training on hot surfaces | **Low** |
+| General operation | Moving mechanical parts | - Crushing injuries to fingers, hands<br>- Entanglement | - Enclosed design<br>- Guards fitted<br>- Emergency stop accessible | **Low** | - Keep hands clear<br>- Training on safe operation<br>- Wait for motion to stop | **Very Low** |
 
-**Existing Risk Controls:**
-- [Existing control 1]
-- [Existing control 2]
-- [Existing control 3]
-
-**Current risk rating:** [Very Low / Low / Medium / High / Very High]
-
-**Additional controls required:**
-- [Additional control 1]
-- [Additional control 2]
-- [Additional control 3]
-
-**Residual risk rating:** [Very Low / Low / Medium / High / Very High]
-
----
-
-### Task 2: [Second task description]
-
-**Hazard/s:** [Describe the hazard]
-
-**Associated harm:**
-- [Potential harm 1]
-- [Potential harm 2]
-
-**Existing Risk Controls:**
-- [Existing control 1]
-- [Existing control 2]
-
-**Current risk rating:** [Very Low / Low / Medium / High / Very High]
-
-**Additional controls required:**
-- [Additional control 1]
-- [Additional control 2]
-
-**Residual risk rating:** [Very Low / Low / Medium / High / Very High]
-
----
-
-[Add additional tasks as needed - copy the template above]
-
----
+</div>
 
 ## Implementation of Additional Risk Controls
 
 | Additional controls needed | Resources required | Responsible person | Date of implementation | RiskWare Reference |
-|---------------------------|-------------------|-------------------|----------------------|-------------------|
-| [Control 1] | [Resources needed] | [Person/role] | [Date or "Prior to use"] | [Reference or N/A] |
-| [Control 2] | [Resources needed] | [Person/role] | [Date or "Prior to use"] | [Reference or N/A] |
-| [Control 3] | [Resources needed] | [Person/role] | [Date or "Prior to use"] | [Reference or N/A] |
+|---|---|---|---|---|
+| Write the Safe Work Procedure (SWP) | Time (approx 2 hours) | Supervisor | Prior to use | N/A |
+| [List each additional control identified in hazard table] | [Resources needed] | [Who is responsible] | [When it will be done] | [Reference if applicable] |
+| Mandatory operator training programme | Time, training materials, subject matter expert | Laboratory Manager | Prior to use | N/A |
+| Installation of [safety equipment] | [Equipment costs], installation | Facilities / Laboratory Manager | Prior to use | TBD |
+| Procurement of emergency equipment ([list items]) | Equipment costs | Laboratory Manager | Prior to use | N/A |
+| Establish regular inspection schedule | Time, monthly inspections | Technician | Ongoing | TBD |
+| Develop sign-in/sign-out log and supervision procedures | Log book or electronic system | Laboratory Manager | Prior to use | N/A |
+| [Safety testing - specify type] | Qualified technician | Facilities | Prior to use, then [frequency] | TBD |
 
----
 
-## List Emergency Controls
+## List emergency controls
+<small>These might include how to deal with fires, spills, emergency shutdown of equipment, exposure to hazardous materials and adverse reactions or the deteriorating condition of patients/research participants in our care.</small>
+
+<div class="emergency-box" markdown="1">
+
+### CRITICAL: [Main Safety Concern - e.g., "Class 4 Laser Safety", "High Voltage", "Chemical Hazards"]
+
+- [List absolute prohibitions]
+- NEVER [critical safety rule]
+- NEVER [critical safety rule]
+- [System operates safely ONLY when all safety systems are intact and functioning]
+- If any safety system fails, immediately stop use and lock out equipment
 
 ### Emergency Shutdown:
 
-- [Emergency stop procedure step 1]
-- [Emergency stop procedure step 2]
-- [When not to restart]
+- [Describe emergency stop procedure - location of button, how to activate]
+- If emergency stop fails, [backup shutdown method]
+- Do not resume operation until issue resolved and equipment inspected
 
-### [Emergency Type 1 - e.g., Fire Emergency]:
+### [Specific Emergency Type - e.g., "Fire Emergency", "Chemical Spill", "Equipment Failure"]:
 
-- [Response step 1]
-- [Response step 2]
-- [Response step 3]
-- [Evacuation procedures if needed]
+- [Step 1 - immediate action]
+- [Step 2 - containment/control]
+- [Step 3 - when to escalate]
+- [Step 4 - evacuation criteria]
+- [Step 5 - who to notify]
 
-### [Emergency Type 2 - e.g., Exposure to Hazardous Substance]:
+**Example - Fire Emergency:**
+- Press emergency stop button immediately
+- Equipment has [describe fire detection systems if applicable]
+- Do not open chamber/doors (introduces oxygen, may worsen fire)
+- Use [appropriate fire extinguisher type] if safe to do so
+- If fire cannot be controlled immediately:
+  - Evacuate area
+  - Activate building fire alarm
+  - Call emergency services (000)
+  - Notify building warden
 
-- [Response step 1]
-- [Response step 2]
-- [Medical attention requirements]
-- [Reporting requirements]
+### Equipment Malfunction or Safety System Failure:
+
+- Press emergency stop button immediately
+- Isolate power if safe to do so
+- Do NOT attempt to operate with damaged safety systems
+- Lock out and tag equipment as defective immediately
+- Report to supervisor and safety officer
+- Arrange qualified technician inspection
+- Equipment must NOT be used until all safety systems verified functional
+
+### [Exposure/Injury Type - specific to equipment hazards]:
+
+**Example - Thermal Burns:**
+- Remove from heat source immediately
+- Cool affected area with running cool water for 20 minutes
+- Remove jewellery or tight clothing near burn (unless stuck to skin)
+- Cover with clean, non-fluffy material (cling film ideal)
+- Seek medical attention for serious burns (larger than 20p coin, on face/hands/joints)
+- Complete first aid documentation and incident report
+
+**Example - Chemical Exposure:**
+- [Immediate first aid specific to chemical]
+- Consult SDS for specific treatment
+- Seek medical attention if [criteria]
+- Provide SDS to medical personnel
 
 ### Emergency Contacts:
 
@@ -177,30 +179,36 @@ The information gathered from the **risk assessment** process must be used to de
 - University Security (after hours): [insert number]
 - Supervisor: [name and number]
 - Safety Officer: [name and number]
-- First Aiders: [location or notice board reference]
+- First Aiders: [location/contact]
 
----
+</div>
+
+<div class="page-break"></div>
 
 ## REVIEW
 
-| Scheduled review date | 1 year | 2 years | 3 years |
-|----------------------|---------|---------|---------|
-| Are control measures in place (YES/NO) | | | |
-| Are controls eliminating or minimising the risk (YES/NO) | | | |
-| Are there any new problems with the risk (YES/NO) | | | |
-| Reviewed by: | | | |
-| Actual Review date: | | | |
+<div class="review-table" markdown="1">
 
----
+| | 1 year | 2 years | 3 years |
+|---|---|---|---|
+| **Scheduled review date** | | | |
+| **Are control measures in place (YES/NO)** | | | |
+| **Are controls eliminating or minimising the risk (YES/NO)** | | | |
+| **Are there any new problems with the risk (YES/NO)** | | | |
+| **Reviewed by:** | | | |
+| **Actual Review date:** | | | |
+
+</div>
+
 
 ## Risk Matrix
 
-*[Insert your organisation's risk matrix here]*
+![Risk Assessment Matrix]({{ '/assets/images/RA-Matrix.png' | relative_url }})
 
-The risk matrix should define:
-- Likelihood levels (Rare, Unlikely, Possible, Likely, Almost Certain)
-- Consequence levels (Insignificant, Minor, Moderate, Major, Severe)
-- Risk ratings (Low, Medium, High, Very High)
+The risk matrix defines:
+- **Likelihood levels:** Rare, Unlikely, Possible, Likely, Almost Certain
+- **Consequence levels:** Insignificant, Minor, Moderate, Major, Severe
+- **Risk ratings:** Low, Medium, High, Very High
 
 ---
 

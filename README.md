@@ -5,17 +5,20 @@ GitHub Pages site for laboratory safety documentation including Risk Assessments
 ## 📁 Repository Structure
 
 ```
-filesghpages/
-├── index.md                           # Home page with document lists
+SAIL-RA-SWP/
+├── index.md                           # Home page with auto-populating document lists
 ├── laser-safety-guide.md              # Class 4 laser safety guide
+├── DOCUMENTATION.md                   # Auto-population documentation
 │
-├── risk-assessments/                  # Risk Assessment documents
-│   └── bambu-h2d.md                  # Bambu H2D Risk Assessment
+├── _risk_assessments/                 # Risk Assessment documents (auto-indexed)
+│   ├── bambu-h2d.md                  # Bambu H2D Risk Assessment
+│   └── 3sae-cms.md                   # 3SAE CMS Risk Assessment
 │
-├── safe-work-procedures/              # Safe Work Procedure documents
-│   └── bambu-h2d.md                  # Bambu H2D SWP
+├── _safe_work_procedures/             # Safe Work Procedure documents (auto-indexed)
+│   ├── bambu-h2d.md                  # Bambu H2D SWP
+│   └── 3sae-cms.md                   # 3SAE CMS SWP
 │
-├── templates/                         # Templates for new documents
+├── _templates/                        # Templates for new documents
 │   ├── README.md                     # Template usage guide
 │   ├── risk-assessment-template.md   # RA template
 │   └── safe-work-procedure-template.md # SWP template
@@ -28,7 +31,7 @@ filesghpages/
 │   └── css/
 │       └── style.css                 # Custom styling
 │
-└── _config.yml                        # Jekyll configuration
+└── _config.yml                        # Jekyll configuration with collections
 ```
 
 ## 🚀 Viewing the Site
@@ -46,37 +49,58 @@ Then open http://localhost:4000 in your browser.
 
 ## 📝 Adding New Documents
 
+### ✨ Auto-Population Feature
+
+**The index page automatically populates with new documents!** You no longer need to manually edit `index.md` to add new Risk Assessments or Safe Work Procedures.
+
+Just create a document in the appropriate collection folder with the required front matter fields, and it will automatically appear on the front page.
+
+For detailed information, see [DOCUMENTATION.md](DOCUMENTATION.md)
+
 ### Adding a New Risk Assessment
 
 1. Copy the template:
    ```bash
-   cp templates/risk-assessment-template.md risk-assessments/[equipment-name].md
+   cp _templates/risk-assessment-template.md _risk_assessments/[equipment-name].md
    ```
 
-2. Edit the new file and replace all `[placeholders]` with your information
-
-3. Update the permalink:
+2. Edit the new file and update the front matter:
    ```yaml
+   equipment_name: "[Equipment Name]"
+   reference: "SAIL-RA-EQUIPMENT-XXX"
+   version: "1.0"
+   status: "Draft"  # Change to "Approved" when ready
+   description: "[Brief description for the index card]"
+   key_hazards: "[Main hazards]"
    permalink: /risk-assessments/[equipment-name]/
    ```
 
-4. Add the document to `index.md` under the Risk Assessments section
+3. Replace all `[placeholders]` with your information
+
+4. **That's it!** The document will automatically appear on the index page when you commit and push
 
 ### Adding a New Safe Work Procedure
 
 1. Copy the template:
    ```bash
-   cp templates/safe-work-procedure-template.md safe-work-procedures/[equipment-name].md
+   cp _templates/safe-work-procedure-template.md _safe_work_procedures/[equipment-name].md
    ```
 
-2. Edit the new file and replace all `[placeholders]` with your information
-
-3. Update the permalink:
+2. Edit the new file and update the front matter:
    ```yaml
+   equipment_name: "[Equipment Name]"
+   reference: "SAIL-SWP-EQUIPMENT-XXX"
+   version: "1.0"
+   status: "Draft"  # Change to "Approved" when ready
+   description: "[Brief description for the index card]"
+   includes: "[What the procedure covers]"
    permalink: /safe-work-procedures/[equipment-name]/
    ```
 
-4. Add the document to `index.md` under the Safe Work Procedures section
+3. Replace all `[placeholders]` with your information
+
+4. **That's it!** The document will automatically appear on the index page when you commit and push
+
 
 ### Template Structure
 
