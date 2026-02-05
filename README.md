@@ -9,6 +9,8 @@ SAIL-RA-SWP/
 ├── index.md                           # Home page with auto-populating document lists
 ├── laser-safety-guide.md              # Class 4 laser safety guide
 ├── DOCUMENTATION.md                   # Auto-population documentation
+├── CLAUDE_PROMPT.md                   # User prompts for Claude assistance
+├── SYSTEM_PROMPTS.md                  # System prompts for Claude Projects/API
 │
 ├── _risk_assessments/                 # Risk Assessment documents (auto-indexed)
 │   ├── bambu-h2d.md                  # Bambu H2D Risk Assessment
@@ -22,6 +24,16 @@ SAIL-RA-SWP/
 │   ├── README.md                     # Template usage guide
 │   ├── risk-assessment-template.md   # RA template
 │   └── safe-work-procedure-template.md # SWP template
+│
+├── .github/                           # GitHub templates and guides
+│   ├── ISSUE_TEMPLATE/               # Issue templates
+│   │   ├── new-equipment-documentation.md
+│   │   ├── document-review.md
+│   │   ├── safety-concern.md
+│   │   ├── website-improvement.md
+│   │   └── config.yml
+│   ├── pull_request_template.md      # PR template
+│   └── CONTRIBUTING.md               # Contribution guide
 │
 ├── _layouts/                          # Jekyll layouts
 │   ├── default.html                  # Main layout with navigation
@@ -101,6 +113,20 @@ For detailed information, see [DOCUMENTATION.md](DOCUMENTATION.md)
 
 4. **That's it!** The document will automatically appear on the index page when you commit and push
 
+### 🤖 Using Claude AI to Help Fill Templates
+
+You can use Claude to help generate safety documentation content. See:
+- **[CLAUDE_PROMPT.md](CLAUDE_PROMPT.md)** - Detailed prompts to paste into Claude conversations
+- **[SYSTEM_PROMPTS.md](SYSTEM_PROMPTS.md)** - System prompts for Claude Projects or API integration
+
+These prompts guide Claude to:
+- Generate equipment-specific Risk Assessments with proper hazard analysis
+- Create detailed Safe Work Procedures with step-by-step instructions
+- Review documents for completeness and compliance
+- Use Australian standards and terminology
+- Follow the SAIL template format exactly
+
+**Important:** Always review AI-generated content with subject matter experts and verify all technical specifications against manufacturer documentation.
 
 ### Template Structure
 
