@@ -2,8 +2,13 @@
 layout: document
 title: Safe Work Procedure - Bambu Lab H2D
 doc_type: Safe Work Procedure
-status: draft
+status: Draft
 permalink: /safe-work-procedures/bambu-h2d/
+equipment_name: Bambu Lab H2D Laser Edition
+reference: SAIL-SWP-BAMBU-H2D-001
+version: "1.0"
+description: "Detailed operating procedures covering pre-operation safety checks (including critical interlock testing), material preparation, equipment operation for both 3D printing and laser functions, emergency shutdown procedures, and competency requirements."
+includes: "Mandatory safety checks, emergency procedures, cleanup protocols, training requirements"
 metadata:
   reference: SAIL-SWP-BAMBU-H2D-001
   title: Operation of Bambu Lab H2D Laser Edition with 10W Class 4 Laser Module

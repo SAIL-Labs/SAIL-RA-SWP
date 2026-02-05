@@ -2,8 +2,13 @@
 layout: document
 title: Risk Assessment - Bambu Lab H2D Laser Edition
 doc_type: Risk Assessment
-status: draft
+status: Draft
 permalink: /risk-assessments/bambu-h2d/
+equipment_name: Bambu Lab H2D Laser Edition
+reference: SAIL-RA-BAMBU-H2D-001
+version: "1.0"
+description: "Comprehensive risk assessment for the Bambu H2D with 10W Class 4 laser module. Covers laser radiation hazards, fire risks, thermal hazards, inhalation risks, and complete emergency procedures."
+key_hazards: "Class 4 laser radiation, fire ignition, thermal burns (350°C), hazardous fumes"
 metadata:
   reference: SAIL-RA-BAMBU-H2D-001
   title: Bambu Lab H2D Laser Edition with 10W Laser Module
