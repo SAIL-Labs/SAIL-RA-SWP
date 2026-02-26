@@ -1,0 +1,23 @@
+{
+  "name": "sail-ra-swp",
+  "version": "1.0.0",
+  "description": "GitHub Pages site for laboratory safety documentation including Risk Assessments and Safe Work Procedures.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SAIL-Labs/SAIL-RA-SWP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SAIL-Labs/SAIL-RA-SWP/issues"
+  },
+  "homepage": "https://github.com/SAIL-Labs/SAIL-RA-SWP#readme",
+  "dependencies": {
+    "playwright": "^1.58.1"
+  }
+}
