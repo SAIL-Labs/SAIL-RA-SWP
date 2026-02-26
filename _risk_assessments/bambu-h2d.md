@@ -2,7 +2,7 @@
 layout: document
 title: Risk Assessment - Bambu Lab H2D Laser Edition
 doc_type: Risk Assessment
-status: draft
+status: Draft
 permalink: /risk-assessments/bambu-h2d/
 equipment_name: "Bambu Lab H2D Laser Edition"
 reference: "SAIL-RA-BAMBU-H2D-001"
