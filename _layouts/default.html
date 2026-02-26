@@ -62,15 +62,11 @@
           <span class="metadata-badge">Issued: {{ page.metadata.issue_date }}</span>
           {% endif %}
           {% if page.doc_type == "Risk Assessment" %}
-          {% assign url_parts = page.url | split: "/" %}
-          {% assign slug = url_parts | last %}
-          <a href="{{ '/pdfs/risk-assessments/SAIL-RA-' | append: slug | append: '.pdf' | relative_url }}" class="pdf-download-btn" download>
+          <a href="{{ '/pdfs/risk-assessments/SAIL-RA-' | append: page.slug | append: '.pdf' | relative_url }}" class="pdf-download-btn" download>
             📄 Download PDF
           </a>
           {% elsif page.doc_type == "Safe Work Procedure" %}
-          {% assign url_parts = page.url | split: "/" %}
-          {% assign slug = url_parts | last %}
-          <a href="{{ '/pdfs/safe-work-procedures/SAIL-SWP-' | append: slug | append: '.pdf' | relative_url }}" class="pdf-download-btn" download>
+          <a href="{{ '/pdfs/safe-work-procedures/SAIL-SWP-' | append: page.slug | append: '.pdf' | relative_url }}" class="pdf-download-btn" download>
             📄 Download PDF
           </a>
           {% endif %}

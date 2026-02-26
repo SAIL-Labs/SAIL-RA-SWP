@@ -28,5 +28,13 @@ collections:
 # Exclude from processing
 exclude:
   - README.md
+  - DOCUMENTATION.md
+  - QUICKSTART.md
+  - SYSTEM_PROMPTS.md
   - Gemfile
   - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - generate-pdfs-server.sh
+  - serve.sh
