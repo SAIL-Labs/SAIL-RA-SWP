@@ -73,7 +73,7 @@ const { chromium } = require('playwright');
 
 async function generatePDF(url, outputPath) {
   const browser = await chromium.launch();
-  const page = await browser.newPage();
+  const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 
   // Load from web server
   await page.goto(url, { waitUntil: 'networkidle' });
@@ -82,7 +82,7 @@ async function generatePDF(url, outputPath) {
   await page.pdf({
     path: outputPath,
     format: 'A4',
-    margin: { top: '15mm', right: '15mm', bottom: '15mm', left: '15mm' },
+    margin: { top: '10mm', right: '10mm', bottom: '10mm', left: '10mm' },
     printBackground: true,
     preferCSSPageSize: false
   });

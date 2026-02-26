@@ -109,10 +109,22 @@ body {
 
 @media print {
   .document-header .logo-row {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+  }
+
+  .document-header .logo-row .logo-left,
+  .document-header .logo-row .logo-right {
+    flex: 0 0 auto !important;
+    width: auto !important;
+  }
+
+  .document-header .logo-row .doc-logo {
+    max-width: 300px !important;
+    max-height: 80px !important;
   }
 }
 
