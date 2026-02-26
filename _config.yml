@@ -23,8 +23,7 @@ collections:
     output: true
     permalink: /safe-work-procedures/:name/
   templates:
-    output: true
-    permalink: /templates/:name/
+    output: false  # Templates are reference only, not published pages
 
 # Exclude from processing
 exclude:

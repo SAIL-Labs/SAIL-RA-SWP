@@ -55,6 +55,26 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  align-items: center;
+}
+
+.pdf-download-btn {
+  padding: 8px 16px;
+  background: #28a745;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pdf-download-btn:hover {
+  background: #218838;
+  text-decoration: none !important;
 }
 
 .related-links {
