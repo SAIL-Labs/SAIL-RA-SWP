@@ -12,11 +12,10 @@ jobs:
     # Guard conditions:
     #   1. The comment is on an issue, not a pull request
     #   2. The comment body contains the trigger command
-    #   3. The commenter is the repository owner
+    #   3. The commenter has repo admin permission (checked via API in first step)
     if: >-
       github.event.issue.pull_request == null &&
-      contains(github.event.comment.body, '/generate-docs') &&
-      github.event.comment.author_association == 'OWNER'
+      contains(github.event.comment.body, '/generate-docs')
 
     runs-on: ubuntu-latest
 
@@ -26,6 +25,23 @@ jobs:
       issues: write         # comment on the issue
 
     steps:
+      # Exit early if the commenter is not a repo admin.
+      # author_association is unreliable for org repos (org admins get 'MEMBER',
+      # not 'OWNER'), so we check the actual repo permission via the GitHub API.
+      - name: Verify repo admin permission
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          COMMENTER: ${{ github.event.comment.user.login }}
+        run: |
+          PERM=$(gh api "repos/${REPO}/collaborators/${COMMENTER}/permission" \
+            --jq '.permission' 2>/dev/null || echo "none")
+          if [ "$PERM" != "admin" ]; then
+            echo "User ${COMMENTER} has permission '${PERM}' — repo admin required to generate documents."
+            exit 1
+          fi
+          echo "✓ ${COMMENTER} confirmed as repo admin."
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
