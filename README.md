@@ -113,10 +113,23 @@ For detailed information, see [DOCUMENTATION.md](DOCUMENTATION.md)
 
 4. **That's it!** The document will automatically appear on the index page when you commit and push
 
-### 🤖 Using Claude AI to Help Fill Templates
+### 🤖 Automated AI Document Generation (Recommended)
 
-You can use Claude to help generate safety documentation content. See:
-- **[CLAUDE_PROMPT.md](CLAUDE_PROMPT.md)** - Detailed prompts to paste into Claude conversations
+The fastest way to create new documents is via the GitHub Issues workflow:
+
+1. **Open an issue** using the "New Equipment Documentation" template — fill in equipment name, manufacturer, location, hazards, PPE, and the equipment slug (e.g., `fume-hood`)
+2. **A lab member with write access** reviews the issue and comments `/generate-docs`
+3. **GitHub Actions** calls the Claude AI API automatically and opens a **draft PR** containing both the RA and SWP
+
+The PR links back to the issue and includes a review checklist. Once the documents have been reviewed and all placeholder values verified against manufacturer specs, change `status: Draft` to `status: Approved` in the front matter and merge.
+
+**One-time setup required:** Add `ANTHROPIC_API_KEY` to the repository's GitHub Actions secrets (Settings → Secrets and variables → Actions → New repository secret). Contact the repository owner if you need access.
+
+**Important:** All AI-generated content must be reviewed by a qualified person. Never approve documents without verifying technical specifications against manufacturer documentation.
+
+### Manually Using Claude AI to Fill Templates
+
+You can also use Claude interactively. See:
 - **[SYSTEM_PROMPTS.md](SYSTEM_PROMPTS.md)** - System prompts for Claude Projects or API integration
 
 These prompts guide Claude to:
@@ -125,8 +138,6 @@ These prompts guide Claude to:
 - Review documents for completeness and compliance
 - Use Australian standards and terminology
 - Follow the SAIL template format exactly
-
-**Important:** Always review AI-generated content with subject matter experts and verify all technical specifications against manufacturer documentation.
 
 ### Template Structure
 

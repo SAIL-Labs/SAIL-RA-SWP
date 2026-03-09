@@ -1,6 +1,6 @@
 ---
 name: New Equipment Documentation
-about: Request creation of safety documentation for new equipment
+about: Request creation of safety documentation for new equipment. A lab member with write access can trigger automated AI-assisted draft generation by commenting `/generate-docs` on this issue.
 title: '[NEW] '
 labels: 'new-equipment, documentation'
 assignees: ''
@@ -15,6 +15,8 @@ assignees: ''
 **Location:**
 
 **Primary Use:**
+
+**Equipment Slug** *(lowercase, hyphen-separated filename — e.g. `bambu-h2d`, `fume-hood`, `sem-zeiss`)*:
 
 ## Documentation Required
 
