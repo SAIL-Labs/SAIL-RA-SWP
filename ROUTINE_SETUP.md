@@ -71,9 +71,11 @@ You are the SAIL Laboratory safety-documentation drafter. A new issue has just b
 Find the issue that triggered this run. Try in order:
 
 1. Read the GitHub event payload from the environment if one is exposed (e.g. `$GITHUB_EVENT_PATH`, `$ISSUE_NUMBER`).
-2. Otherwise, run `gh issue list --state open --label new-equipment --sort created --limit 5 --json number,title,body,labels,author,url,createdAt` and pick the most recently created issue whose `createdAt` is within the last ten minutes.
+2. Otherwise, run `gh issue list --state open --label new-equipment --json number,title,body,labels,author,url,updatedAt` and pick the issue with the most recent `updatedAt` within the last fifteen minutes. (Matching on *updated*, not *created*, means an old issue that was just reopened, relabelled or bumped with a comment is found — this is how old issues are retriggered via close-and-reopen or *Run now*.)
 
-Record the issue number, title, body, labels, author login, and URL.
+If no issue matches, exit silently with a transcript line saying so. Record the issue number, title, body, labels, author login, and URL.
+
+Before generating anything, check `documents/` and open PRs for an existing document or draft for this issue's slug (`gh pr list --state open --search "<slug>"`). If a draft PR for this issue already exists, exit silently — do not create a duplicate.
 
 # Step 2: Label sanity check
 
@@ -225,7 +227,7 @@ You are the SAIL Laboratory safety-documentation reviser. A document-review issu
 
 # Step 1: Identify the triggering issue
 
-Find the issue that triggered this run (event payload if exposed, otherwise `gh issue list --state open --label review --sort created --limit 5 --json number,title,body,labels,author,url,createdAt` and pick the most recent within the last ten minutes). Record number, title, body, author, URL.
+Find the issue that triggered this run (event payload if exposed, otherwise `gh issue list --state open --label review --json number,title,body,labels,author,url,updatedAt` and pick the issue with the most recent `updatedAt` within the last fifteen minutes — matching on *updated* means old issues retriggered via close-and-reopen or *Run now* are found). If none matches, exit silently. If an open draft PR for this issue already exists, exit silently. Record number, title, body, author, URL.
 
 # Step 2: Label sanity check
 
@@ -334,6 +336,7 @@ review issue (label: review) ──▶ Routine 2 ──▶ draft update PR (vers
 - **Identity**: commits and the PR are authored by the routine owner's GitHub account, not `github-actions[bot]`. The PR description still attributes the content to Claude.
 - **Daily run cap**: routines have a per-account daily cap and draw down your subscription usage. If the lab opens a flurry of test issues, the routine may stop firing for the day. See <https://claude.ai/settings/usage>.
 - **Issue edits do not refire the routine**. The trigger is `issue.opened` only — editing an issue body after creation does not retrigger. The fallback path is: close and reopen the issue (which counts as a new opened event), or manually click *Run now* on the routine's detail page in claude.ai.
+- **Retriggering old issues** (filed before the routine existed): ensure the issue carries the trigger label (`new-equipment` or `review`), then close and reopen it — or just click *Run now* within ~15 minutes of touching the issue (reopen, relabel, or comment). The prompts match on the issue's `updatedAt`, so any recent touch puts it in the lookup window. The duplicate check means re-running against an issue that already has a draft PR is a safe no-op.
 - **No webhook from `issue.labeled`**. Adding the `new-equipment` label *after* an issue is opened does not retrigger. The label must be present at the moment the issue is opened for the trigger filter to match. The issue template applies it automatically, so this only matters if someone uses a different template or hand-strips the label.
 ## Old workflow (decommissioned)
 
