@@ -11,8 +11,8 @@ meta:
   status: Draft
   version: "1.0"
   version_issue_date: "July 2026"
-  description: "Risk assessment and safe work procedure for the Fyla Iceblink supercontinuum fibre laser used as a filtered light source in a photonic lantern wavefront sensing setup, covering Class 4 pulsed laser radiation, invisible near-infrared emission, fibre-handling, fire and electrical hazards."
-  key_hazards: "Class 4 pulsed supercontinuum laser radiation, invisible near-infrared emission, fibre-coupled beam hazards, fire risk, electrical hazards"
+  description: "Risk assessment and safe work procedure for the Fyla Iceblink V3 supercontinuum fibre laser (450-2300 nm, greater than or equal to 3 W average power, Class 4) used as a filtered light source in a photonic lantern wavefront sensing setup, covering pulsed laser radiation across a predominantly invisible near-/short-wave infrared spectrum, fibre-handling, fire and electrical hazards."
+  key_hazards: "Class 4 pulsed supercontinuum laser radiation (450-2300 nm, greater than or equal to 3 W average power, predominantly invisible near-/short-wave infrared), fibre-coupled beam hazards, fire risk, electrical hazards"
   includes: "Mandatory pre-operation safety checks, interlock and enclosure verification, PPE requirements, emergency procedures, training and competency requirements"
   faculty_school: "School of Physics (SAIL Labs)"
   prepared_by: "Chris Betters"
@@ -43,25 +43,27 @@ ra:
     - "AS/NZS IEC 60825.1:2014 - Safety of laser products, Part 1: Equipment classification and requirements"
     - "AS/NZS IEC 60825.14 - Safety of laser products - A user's guide"
     - "AS/NZS 3000:2018 - Electrical installations (Wiring Rules)"
-    - "Fyla Iceblink Supercontinuum Fibre Laser User Manual (Iceblink-v3.rev04.pdf)"
+    - "Fyla Iceblink V3 Supercontinuum Fibre Laser Datasheet, Rev. 04 (Fyla Lasers)"
     - "University of Sydney WHS Laser Safety Policy and Procedures"
   risks:
     - task: "Free-beam laser operation during alignment and optical setup"
-      hazards: "Class 4 pulsed supercontinuum laser radiation when the beam is not filtered or enclosed [VERIFY: exact wavelength range and average/peak output power from manufacturer specification]"
+      hazards: "Class 4 pulsed supercontinuum laser radiation when the beam is not filtered or enclosed. Spectral range 450-2300 nm; average power greater than or equal to 3 W total; 80 +/- 2 MHz pulse repetition rate; pulse duration less than or equal to 10 ps at 1060 nm (less than or equal to 250 ps estimated across the full spectrum, manufacturer estimated value); collimated free-space output with beam diameter at 1 m of distance ranging from less than or equal to 2 mm (470 nm) to less than or equal to 5.5 mm (1150 nm)"
       harm: |-
         - Severe eye injury including retinal burns and permanent vision loss
         - Skin burns from direct or specularly reflected beam
         - Injury from unintentional beam reflections off optical components
       controls: |-
-        - Safety interlock fitted for the free-beam configuration
+        - Safety interlock connector fitted for the free-beam configuration (manufacturer-designated Safety Connections: Interlock / Key)
+        - Front-panel key-operated enable switch
+        - Front-panel Emitting/Ready status indicator lights
         - Laser safety eyewear rated for the emission wavelength range, worn during free-beam work
         - Access to room 121c restricted during free-beam operation
       current_rating: "High"
       additional_controls: |-
         - Mandatory laser operator certification before free-beam access is granted
-        - Confirm interlock function before each free-beam session
+        - Confirm interlock and key-switch function before each free-beam session
         - Enclose the beam path wherever alignment does not require free-beam access
-        - [VERIFY: laser safety eyewear optical density (OD) rating required at the emission wavelength(s), confirmed against manufacturer output specification]
+        - Laser safety officer to calculate the required eyewear optical density (OD) across the full 450-2300 nm emission band using AS/NZS IEC 60825.1, based on the confirmed 80 MHz / <=10 ps (1060 nm) pulse parameters and >=3 W average power, before free-beam eyewear is issued
       residual_rating: "Low"
     - task: "Routine filtered, enclosed wavefront sensing operation"
       hazards: "Residual scattered or leaked supercontinuum radiation if the enclosure or filtering is compromised"
@@ -84,27 +86,28 @@ ra:
         - Skin burns
         - Fire ignition of nearby materials
       controls: |-
-        - Interlock circuit prevents free-beam emission when open
-        - Absolute prohibition on defeating or bypassing the interlock
+        - Interlock circuit and front-panel key-operated enable switch prevent emission when open/removed
+        - Absolute prohibition on defeating or bypassing the interlock or key switch
       current_rating: "Very High"
       additional_controls: |-
-        - ABSOLUTE PROHIBITION on defeating, bypassing, or overriding the interlock
+        - ABSOLUTE PROHIBITION on defeating, bypassing, or overriding the interlock or key switch
+        - Key removed and retained by an authorised user when the laser is not in active use
         - Immediate lock-out and tag-out if interlock or enclosure damage is found
         - Annual verification of interlock function by a qualified laser safety advisor
         - Residual rating of Low applies only while the prohibition is maintained - this scenario must not occur
       residual_rating: "Low"
-    - task: "Invisible near-infrared component of the supercontinuum output"
-      hazards: "Potential invisible beam component not perceivable by the unaided eye [VERIFY: confirm from manufacturer specification whether the emission spectrum extends into the near-infrared beyond approximately 700 nm]"
+    - task: "Invisible near-/short-wave infrared component of the supercontinuum output"
+      hazards: "Confirmed per manufacturer datasheet: emission spans 450-2300 nm; only the 450-850 nm visible portion is allocated a minimum of 150 mW average power, meaning the majority of the greater than or equal to 3 W total average power lies in the invisible 850-2300 nm near-/short-wave infrared band. The manufacturer's own product warning states: 'CAUTION - VISIBLE AND INVISIBLE LASER RADIATION - AVOID EYE AND SKIN EXPOSURE TO DIRECT OR SCATTERED RADIATION'"
       harm: |-
-        - Unnoticed direct or reflected exposure to invisible NIR radiation
-        - Delayed recognition of an unsafe beam condition
+        - Unnoticed direct or reflected exposure to invisible NIR/SWIR radiation
+        - Delayed recognition of an unsafe beam condition, since most of the output power cannot be seen
       controls: |-
         - Beam confined to the enclosure/fibre during routine operation
-        - Laser safety eyewear selected to attenuate across the full emission range, not only the visible portion
-      current_rating: "Medium"
+        - Laser safety eyewear selected to attenuate across the full 450-2300 nm emission range, not only the visible portion
+      current_rating: "High"
       additional_controls: |-
-        - Use of a laser viewing card or NIR-sensitive card to verify the beam path before free-beam work
-        - Training to specifically cover the invisible NIR hazard of supercontinuum sources
+        - Use of a laser viewing card or NIR/SWIR-sensitive card to verify the beam path before free-beam work
+        - Training to specifically cover the invisible NIR/SWIR hazard of this supercontinuum source, emphasising that visible light is not a reliable indicator of beam presence or power
       residual_rating: "Low"
     - task: "Fibre handling, cleaving and connectorisation of the photonic lantern testbed"
       hazards: "Laser emission from an unterminated or damaged fibre end while the source is live"
@@ -112,27 +115,30 @@ ra:
         - Eye injury from unexpected point-source emission at a fibre tip
         - Skin puncture from fibre shards during cleaving
       controls: |-
-        - Standard practice of de-energising or shuttering the laser source before fibre connector work
+        - Standard practice of powering down or disabling emission (via key switch/interlock) before fibre connector work
       current_rating: "Medium"
       additional_controls: |-
-        - Written procedure requiring the laser source is off or shuttered before any fibre is connected or disconnected
+        - Written procedure requiring the laser source is off or emission is disabled before any fibre is connected or disconnected
         - Disposal of fibre offcuts in a dedicated sharps-safe container
         - Fibre-handling component added to operator training
       residual_rating: "Low"
     - task: "Electrical operation of the laser source and internal pump diodes"
-      hazards: "Electrical hazards from the 240V mains-powered laser source and internal high-current pump laser diodes"
+      hazards: "Electrical hazards from the 110-220V, 50/60 Hz mains-powered laser source, internal high-current pump laser diodes, and internal thermoelectric cooler"
       harm: |-
         - Electric shock
         - Electrocution
         - Internal component damage or fire from a fault condition
+        - Overheating if cooling air vents are obstructed (unit uses thermoelectric cooling plus air cooling)
       controls: |-
         - Manufacturer-supplied enclosure and earthed chassis
         - Internal wiring inaccessible during normal operation
+        - Rear-panel ventilation grille for air cooling
       current_rating: "Medium"
       additional_controls: |-
         - Regular electrical test and tag
         - No user access to internal components; service by a qualified technician only
         - Inspect power leads before each use
+        - Maintain clear airflow around the rear ventilation grille; do not obstruct
       residual_rating: "Low"
     - task: "Fire risk from a high peak power beam incident on absorptive materials"
       hazards: "Ignition of paper, tape, cabling, or other combustible material in the beam path"
@@ -160,7 +166,7 @@ ra:
       additional_controls: |-
         - Remove reflective jewellery and watches before free-beam alignment work
         - Use of alignment aids (IR viewer/beam profiler) rather than direct eye viewing
-        - Reduce laser power to the minimum necessary during alignment where the source supports it [VERIFY: whether output power is adjustable/attenuable at the source]
+        - [VERIFY: whether output power is adjustable via the manual or USB software control interface (Control: Manual / Software via USB per datasheet) — confirm with manufacturer operating manual and use reduced power for alignment where supported]
       residual_rating: "Low"
     - task: "Unauthorised or untrained use of the laser"
       hazards: "Operation by personnel without laser operator certification"
@@ -192,8 +198,8 @@ ra:
       responsible: "Safety Officer"
       date: "Prior to use"
       riskware_ref: "N/A"
-    - control: "Verify laser safety eyewear OD rating matches the confirmed emission wavelength range"
-      resources: "Manufacturer specification sheet, laser safety advisor"
+    - control: "Laser safety officer to calculate required eyewear OD across the full 450-2300 nm emission band (80 MHz, <=10 ps pulses, >=3 W average power) per AS/NZS IEC 60825.1, and procure eyewear accordingly"
+      resources: "Laser safety advisor, AS/NZS IEC 60825.1"
       responsible: "Laboratory Manager"
       date: "Prior to use"
       riskware_ref: "N/A"
@@ -207,7 +213,7 @@ ra:
       responsible: "Technician"
       date: "Prior to use"
       riskware_ref: "N/A"
-    - control: "Develop a written fibre-handling procedure (laser off or shuttered before connector work)"
+    - control: "Develop a written fibre-handling procedure (laser off or emission disabled before connector work)"
       resources: "Time (1 hour)"
       responsible: "Supervisor"
       date: "Prior to use"
@@ -222,8 +228,8 @@ ra:
       responsible: "Laboratory Manager"
       date: "Prior to use"
       riskware_ref: "N/A"
-    - control: "Confirm and document the full emission wavelength range and output power from manufacturer specification"
-      resources: "Manufacturer documentation review"
+    - control: "Obtain the full Fyla Iceblink V3 operating manual (beyond the datasheet) to confirm detailed interlock wiring, key-switch operation, and emergency power-down procedure"
+      resources: "Manufacturer documentation request"
       responsible: "Supervisor"
       date: "Prior to use"
       riskware_ref: "N/A"
@@ -237,8 +243,8 @@ ra:
       - If any safety system fails, immediately stop use and lock out the equipment
     - |-
       EMERGENCY SHUTDOWN:
-      - Close the laser shutter or press the emergency stop, whichever is fitted [VERIFY: exact emergency stop/shutter location and operation per manufacturer manual]
-      - If the shutter/stop fails or is inaccessible, isolate power at the wall outlet
+      - Open the safety interlock circuit or turn the front-panel key switch to OFF/remove the key to immediately disable laser emission (the datasheet documents Interlock/Key as the equipment's Safety Connections; no separate emergency-stop button is listed - [VERIFY: confirm exact key-switch/interlock behaviour and any additional emergency-stop control against the full manufacturer operating manual])
+      - If the interlock/key switch fails or is inaccessible, isolate power at the wall outlet
       - Do not resume operation until the issue is resolved and the equipment is inspected
     - |-
       FIRE EMERGENCY:
@@ -263,28 +269,28 @@ ra:
 
 swp:
   hazards:
-    - hazard: "Class 4 pulsed supercontinuum laser radiation (free beam) [VERIFY: exact wavelength range and power]"
+    - hazard: "Class 4 pulsed supercontinuum laser radiation, free beam (450-2300 nm, >=3 W average power, 80 MHz, <=10 ps pulses at 1060 nm)"
       controls: |-
-        - Interlock fitted for the free-beam configuration
-        - Laser safety eyewear rated for the emission wavelength range
+        - Interlock and key switch fitted for the free-beam configuration
+        - Laser safety eyewear rated for the full 450-2300 nm emission range
         - Laser operator certification mandatory
-    - hazard: "Invisible near-infrared emission component"
+    - hazard: "Invisible near-/short-wave infrared emission component (850-2300 nm, majority of the >=3 W average power)"
       controls: |-
         - Eyewear selected to attenuate across the full emission range
         - Beam path confined to the enclosure/fibre during routine operation
-    - hazard: "Operating with the interlock or enclosure defeated"
+    - hazard: "Operating with the interlock, key switch, or enclosure defeated"
       controls: |-
-        - Absolute prohibition on defeating the interlock
+        - Absolute prohibition on defeating the interlock or key switch
         - Immediate lock-out and tag-out if damage is found
     - hazard: "Fibre handling and connectorisation"
       controls: |-
-        - De-energise or shutter the laser before connecting/disconnecting fibres
+        - De-energise the laser before connecting/disconnecting fibres
         - Sharps-safe disposal of fibre offcuts
     - hazard: "Fire from beam incident on combustible material"
       controls: |-
         - Keep combustible material clear of the beam path
         - Fire extinguisher accessible; beam dumps fitted on unused ports
-    - hazard: "Electrical hazards (240V mains, internal pump diodes)"
+    - hazard: "Electrical hazards (110-220V mains, internal pump diodes, thermoelectric cooler)"
       controls: |-
         - Earthed enclosure; no user access to internal components
         - Regular electrical test and tag
@@ -295,7 +301,7 @@ swp:
   resources:
     - |-
       PERSONAL PROTECTIVE EQUIPMENT (PPE):
-      - Laser safety eyewear rated for the emission wavelength range [VERIFY: required OD rating once wavelength range is confirmed]
+      - Laser safety eyewear rated for the full 450-2300 nm emission range [VERIFY: exact OD rating - to be calculated by the laser safety officer per AS/NZS IEC 60825.1 from the confirmed 80 MHz, <=10 ps, >=3 W parameters]
       - Closed-toe shoes
       - No reflective jewellery or watches during free-beam alignment work
     - |-
@@ -326,15 +332,15 @@ swp:
       - Check interlock connector and wiring for visible damage
       - If ANY damage is found: DO NOT USE - lock out and report to supervisor
     - |-
-      Test the interlock (CRITICAL, free-beam configuration only):
+      Test the interlock and key switch (CRITICAL, free-beam configuration only):
       - Power on the laser in its test/standby mode
-      - Open the enclosure or break the interlock circuit as per the manufacturer procedure [VERIFY: exact interlock test procedure from the manufacturer manual]
-      - Confirm emission stops immediately
-      - If the interlock fails: DO NOT USE - lock out and report immediately
+      - Open the enclosure or break the interlock circuit; confirm emission stops immediately [VERIFY: exact step-by-step interlock/key-switch test procedure from the full manufacturer operating manual - not detailed in the datasheet]
+      - Confirm the front-panel Emitting/Ready indicator lights reflect the correct state
+      - If the interlock or key switch fails: DO NOT USE - lock out and report immediately
     - |-
       Check laser safety eyewear:
       - Inspect eyewear for cracks or damage
-      - Confirm the eyewear OD rating matches the confirmed emission wavelength range
+      - Confirm the eyewear OD rating matches the confirmed 450-2300 nm emission range
     - |-
       Check beam dumps and fibre terminations:
       - Confirm beam dumps/terminators are fitted on all unused output ports
@@ -354,7 +360,7 @@ swp:
     - "Check the control interface for any error or fault indications"
     - "Confirm the laser is in the intended output mode (filtered/enclosed or free-beam) before proceeding"
     - "FIBRE CONNECTION (PHOTONIC LANTERN TESTBED):"
-    - "Confirm the laser source is off or shuttered before connecting or disconnecting any fibre"
+    - "Confirm the laser source is off or emission is disabled (key switch removed/interlock open) before connecting or disconnecting any fibre"
     - "Clean and inspect fibre connectors before mating"
     - "Connect the fibre to the photonic lantern input and confirm a secure, low-loss connection"
     - "OPERATION:"
@@ -394,8 +400,8 @@ swp:
       - Any unsafe condition
     - |-
       EMERGENCY SHUTDOWN PROCEDURE:
-      1. Close the laser shutter or press the emergency stop immediately [VERIFY: exact control location and operation per manufacturer manual]
-      2. If the shutter/stop fails or is inaccessible: isolate power at the wall outlet
+      1. Open the safety interlock circuit or turn the front-panel key switch to OFF/remove the key immediately to disable laser emission [VERIFY: confirm this is the correct immediate-disable action, and whether any additional emergency-stop control exists, against the full manufacturer operating manual - the datasheet lists only Interlock/Key under Safety Connections]
+      2. If the interlock/key switch fails or is inaccessible: isolate power at the wall outlet
       3. Assess the situation: if fire - follow fire emergency procedures; if injury - call for first aid assistance; if equipment damage - do not restart, report to supervisor
     - |-
       Do NOT restart the equipment until:
