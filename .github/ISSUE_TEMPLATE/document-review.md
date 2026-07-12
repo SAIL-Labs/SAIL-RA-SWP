@@ -1,18 +1,20 @@
 ---
 name: Document Review
-about: Schedule or request review of existing safety documentation
+about: Schedule or request review of existing safety documentation. Updates are made in the document's YAML source file (documents/<slug>.yaml) — a draft PR with the proposed changes can be generated automatically.
 title: '[REVIEW] '
 labels: 'review, documentation'
 assignees: ''
 ---
 
+<!--
+Reviews are applied to the document's single source file, documents/<slug>.yaml —
+the web pages, Word documents and PDFs all regenerate from it. Keep the bold field
+labels exactly as they are; they are parsed programmatically.
+-->
+
 ## Document to Review
 
-**Document Type:**
-- [ ] Risk Assessment
-- [ ] Safe Work Procedure
-
-**Equipment/Process:**
+**Equipment/Process Slug** *(the documents/<slug>.yaml filename — e.g. `bambu-h2d`)*:
 
 **Document Reference:** (e.g., SAIL-RA-BAMBU-H2D-001)
 
@@ -61,3 +63,8 @@ assignees: ''
 
 ## Additional Notes
 
+<!--
+After the changes are merged, remember: meta.version bumped, meta.version_issue_date
+and meta.next_review_date updated, and the REVIEW table on the printed RA completed
+by hand at the physical review.
+-->

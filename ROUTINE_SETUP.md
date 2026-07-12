@@ -1,6 +1,6 @@
 # Routine Setup: AI Draft Document Generation
 
-This document explains how to set up the Claude Code **routine** that replaces the old `.github/workflows/generate-documents.yml` workflow. The routine fires when a new issue is opened on this repository and, if the issue uses the **New Equipment Documentation** template (label `new-equipment`), generates a draft Risk Assessment and Safe Work Procedure and opens a draft PR.
+This document explains how to set up the Claude Code **routines** that automate the document lifecycle (the old `generate-documents.yml` Actions workflow and its direct Anthropic-API script have been removed — routines are the only automation path). The primary routine fires when a new issue is opened on this repository and, if the issue uses the **New Equipment Documentation** template (label `new-equipment`), generates the draft `documents/<slug>.yaml` and opens a draft PR.
 
 Routines run on Anthropic-managed cloud infrastructure (no `ANTHROPIC_API_KEY` secret in this repo, no GitHub Action) and belong to an individual claude.ai account. Anything the routine commits or comments appears as the routine owner's GitHub identity.
 
@@ -57,7 +57,7 @@ The routine clones this repository on every run, so it picks up the latest versi
 
 3. **Test with a throwaway issue**. Open a test issue using the *New Equipment Documentation* template, fill in dummy values, and wait for the routine to fire. Check the run transcript at <https://claude.ai/code/routines> -> the routine's detail page -> *Runs*. A green status means the session exited cleanly; **open the run** to confirm the routine took the expected branch (silent-exit, comment-and-exit, or draft-PR).
 
-4. **Decommission the old workflow** once the routine is verified working. Delete `.github/workflows/generate-documents.yml` and `.github/scripts/generate_documents.py`, and remove the `ANTHROPIC_API_KEY` secret from repository settings.
+4. **Remove the `ANTHROPIC_API_KEY` secret** from *Settings → Secrets and variables → Actions* if it is still present — the old direct-API workflow that used it has been deleted from the repo, so the secret is dead weight.
 
 ## Routine prompt
 
@@ -94,10 +94,12 @@ The issue should follow `.github/ISSUE_TEMPLATE/new-equipment-documentation.md`.
 | no  | `**Safety Systems/Interlocks:**` |
 | no  | `**Required PPE:**` |
 | no  | `**Special Training Requirements:**` |
+| no  | `**Prepared By**` (defaults to the issue author) |
+| no  | `**Responsible Supervisors**` (defaults to "Chris Betters, Sergio Leon-Saval") |
 
 A field is "present" if there is non-empty text after the colon and before the next `**` or `##` marker. Bullet list values count — flatten `- item` lines into a comma-separated string.
 
-Also parse the **Documentation Required** checkbox group. At least one of `Risk Assessment`, `Safe Work Procedure`, or `Both` must be checked (`[x]`). Default to generating both if `Both` is checked or if both individual boxes are checked.
+An RA and SWP are always generated together as one YAML file — there is no per-document-type selection any more.
 
 If **any** required field is missing or empty, or if no documentation type is selected, post a single comment on the issue and exit. Use this template, listing only the issues you actually found:
 
@@ -206,20 +208,133 @@ Then end the session.
 - If something goes wrong mid-run (e.g. push rejected, gh CLI failure), leave a comment on the issue describing what failed instead of silently exiting, so a human can pick it up.
 ````
 
+## Additional routines
+
+Two further routines complete the document lifecycle. Create each the same way as the main routine (claude.ai/code/routines → New routine, GitHub App already installed). They are independent — set up any subset.
+
+### Routine 2: Document review drafter (reacts to review issues)
+
+- **Name**: `Draft document update from Review Issue`
+- **Repository**: `SAIL-Labs/SAIL-RA-SWP`
+- **Trigger**: **Custom** → Event: `Issue opened`, Filter: `Labels` `is one of` `review`
+- **Permissions**: default (pushes to `claude/` branches only)
+- **Prompt** (paste verbatim):
+
+````markdown
+You are the SAIL Laboratory safety-documentation reviser. A document-review issue has just been opened on SAIL-Labs/SAIL-RA-SWP. Your job is to draft the requested update to the document's YAML source and open a draft PR — a qualified human makes the final call.
+
+# Step 1: Identify the triggering issue
+
+Find the issue that triggered this run (event payload if exposed, otherwise `gh issue list --state open --label review --sort created --limit 5 --json number,title,body,labels,author,url,createdAt` and pick the most recent within the last ten minutes). Record number, title, body, author, URL.
+
+# Step 2: Label sanity check
+
+If the labels do not include `review`, exit silently with a transcript line explaining why.
+
+# Step 3: Locate the document
+
+Parse the issue body (bold-labelled fields, value runs until the next `**` or `##`):
+
+- `**Equipment/Process Slug**` (required) → documents/<slug>.yaml must exist. If the field is missing, try to resolve the slug from `**Document Reference:**` by matching the ABBREV against meta.abbrev across documents/*.yaml.
+- `**Summary of Required Updates:**` and `**Affected Sections:**` — the substance of the change.
+- The `## Reason for Review` checked boxes and any `## Incident/Near-Miss Details`.
+
+If you cannot resolve the document, or the Summary of Required Updates is empty AND the reason is not "Annual scheduled review", comment on the issue listing what is missing and exit.
+
+# Step 4: Draft the update
+
+Edit ONLY documents/<slug>.yaml:
+
+- Apply the requested changes to the relevant ra:/swp: fields. Preserve everything else verbatim — this is a safety document; never silently drop content.
+- For an incident-driven review, ensure the incident's hazard scenario is represented in ra.risks (add or strengthen a row) and in the SWP hazards/controls where relevant.
+- For an annual review with no substantive changes requested, update the dates only and say so in the PR.
+- Bump meta.version (minor bump, e.g. "1.0" → "1.1"; content overhauls → "2.0"), set meta.version_issue_date to the current month and year, set meta.next_review_date one year out.
+- Set meta.status to Draft (an updated document must be re-approved).
+- Plain-text strings only (no markdown); Australian English; risk ratings only Low / Medium / High / Very High. If you need a fact you don't have (a spec, a threshold), leave a `[VERIFY: ...]` placeholder rather than inventing it.
+
+Validate before committing:
+
+```bash
+pip install -r docgen/requirements.txt
+python docgen/render.py documents/<slug>.yaml --check
+```
+
+Fix and re-run until exit 0. Never commit a file that fails --check.
+
+# Step 5: Branch, commit, PR, comment
+
+```bash
+git checkout -b claude/review-issue-<N>
+git add documents/<slug>.yaml
+git commit -m "Update <slug> RA/SWP per review issue #<N> (v<new version>)"
+git push -u origin claude/review-issue-<N>
+```
+
+Open a DRAFT PR (`gh pr create --draft --base main`) titled `Review update: <name> (v<new version>)`. The body must: link `Closes #<N>`; summarise every change you made as a bullet list (old → new where sensible); list any `[VERIFY: ...]` placeholders; state that meta.status was reset to Draft and re-approval is required; note that the rendered documents are available in the docgen workflow artifact for this branch. Then comment on the issue with the PR link and a one-line summary.
+
+# Constraints
+
+- Edit only documents/<slug>.yaml. Never touch _risk_assessments/, _safe_work_procedures/ (generated), templates, or workflows.
+- Never push to main or non-claude/ branches. Never close issues directly.
+- Never delete or weaken an existing control unless the issue explicitly asks for it — and if it does, flag it prominently in the PR body ("⚠️ control removed at requester's instruction").
+- If anything fails mid-run, comment on the issue describing the failure instead of exiting silently.
+````
+
+### Routine 3: Review-due watchdog (scheduled)
+
+- **Name**: `RA/SWP review-due watchdog`
+- **Repository**: `SAIL-Labs/SAIL-RA-SWP`
+- **Trigger**: **Schedule** → monthly (e.g. 09:00 first Monday of the month)
+- **Prompt** (paste verbatim):
+
+````markdown
+You are the SAIL Laboratory document-review watchdog for SAIL-Labs/SAIL-RA-SWP. Documents must be reviewed annually; your job is to open review issues for any document whose review date is near or past. You never edit documents yourself.
+
+# Step 1: Collect review dates
+
+For every documents/*.yaml except files starting with `_`, read meta.slug, meta.name, meta.status, meta.version, and meta.next_review_date. Dates may be "January 2027", "2027-01-15", or similar — parse leniently; treat a month-year as the first of that month. If a date is unparseable, treat the document as DUE and say so in the issue.
+
+# Step 2: Decide which documents need an issue
+
+A document needs a review issue if next_review_date is within 60 days from today, or already past. For each such document, check for an existing open issue with the `review` label whose title or body contains the slug — if one exists, skip it (no duplicates).
+
+# Step 3: Open the issues
+
+For each document needing review, open one issue using the Document Review template conventions:
+
+- Title: `[REVIEW] <name> — review due <next_review_date>`
+- Labels: `review, documentation`
+- Body: follow .github/ISSUE_TEMPLATE/document-review.md, pre-filling **Equipment/Process Slug**, **Document Reference** (derive SAIL-RA-<ABBREV>-<NNN> from meta), **Current Version**, **Last Review Date** (meta.version_issue_date), and ticking "Annual scheduled review". In Additional Notes state whether the document is overdue or approaching its date, and mention that opening this issue with the `review` label triggers the automatic draft-update routine.
+
+# Step 4: Summary
+
+End the session with a transcript line: how many documents scanned, how many due, how many issues opened, how many skipped as duplicates. If nothing is due, exit without creating anything.
+
+# Constraints
+
+- Read-only with respect to the repository files: you create issues, never branches, commits or PRs.
+- Never open more than one issue per document per run.
+- If documents/ cannot be read or contains no YAML files, comment nothing — just end with an explanatory transcript line.
+````
+
+### How the three routines interlock
+
+```
+new-equipment issue ──▶ Routine 1 ──▶ draft PR (documents/<slug>.yaml) ──▶ human review & merge
+                                                                              │
+monthly schedule ──▶ Routine 3 ──▶ opens review issue when meta.next_review_date approaches
+                                                        │
+review issue (label: review) ──▶ Routine 2 ──▶ draft update PR (version bump, status → Draft)
+                                                        │
+                                              human review, re-approval, merge
+```
+
 ## Things to watch
 
 - **Identity**: commits and the PR are authored by the routine owner's GitHub account, not `github-actions[bot]`. The PR description still attributes the content to Claude.
 - **Daily run cap**: routines have a per-account daily cap and draw down your subscription usage. If the lab opens a flurry of test issues, the routine may stop firing for the day. See <https://claude.ai/settings/usage>.
 - **Issue edits do not refire the routine**. The trigger is `issue.opened` only — editing an issue body after creation does not retrigger. The fallback path is: close and reopen the issue (which counts as a new opened event), or manually click *Run now* on the routine's detail page in claude.ai.
 - **No webhook from `issue.labeled`**. Adding the `new-equipment` label *after* an issue is opened does not retrigger. The label must be present at the moment the issue is opened for the trigger filter to match. The issue template applies it automatically, so this only matters if someone uses a different template or hand-strips the label.
-- **The `New Equipment Documentation` issue template still references `/generate-docs`**. Update its `about:` line and body wording to reflect that documents are now generated automatically on issue creation rather than on a slash command. (Do this in the same PR that decommissions `generate-documents.yml`.)
+## Old workflow (decommissioned)
 
-## Decommissioning the old workflow
-
-When the routine has run successfully on at least one real (not test) issue:
-
-1. Delete `.github/workflows/generate-documents.yml`.
-2. Delete `.github/scripts/generate_documents.py`.
-3. Remove `ANTHROPIC_API_KEY` from *Settings -> Secrets and variables -> Actions*.
-4. Update `.github/ISSUE_TEMPLATE/new-equipment-documentation.md` to drop the `/generate-docs` mention and replace it with a sentence explaining that drafts are generated automatically on submission.
-5. Update `README.md` and `CLAUDE.md` to remove references to the old workflow and point at this file.
+The previous direct-API path — `.github/workflows/generate-documents.yml` + `.github/scripts/generate_documents.py`, triggered by `/generate-docs` comments — has been **deleted from the repository**. Routines are the only automation path. The one manual leftover: remove the `ANTHROPIC_API_KEY` secret from *Settings → Secrets and variables → Actions* if it still exists.

@@ -40,8 +40,7 @@ SAIL-RA-SWP/
 ├── ROUTINE_SETUP.md                   # Claude Code routine setup (issue → draft PR)
 └── .github/workflows/
     ├── jekyll.yml                     # deploy: generate + build + PDF + publish
-    ├── docgen.yml                     # PR check: validate + render all documents
-    └── generate-documents.yml         # /generate-docs issue command → draft PR
+    └── docgen.yml                     # PR check: validate + render all documents
 ```
 
 ## 🚀 Viewing the Site
@@ -61,8 +60,8 @@ Run locally (regenerates pages from YAML, then serves):
 
 ### 🤖 Via GitHub issue (recommended)
 
-1. Open an issue with the **New Equipment Documentation** template.
-2. A repo admin comments `/generate-docs` (or the Claude Code routine fires on issue creation — see `ROUTINE_SETUP.md`).
+1. Open an issue with the **New Equipment Documentation** template (label `new-equipment` is applied automatically).
+2. The Claude Code **routine** fires on issue creation and drafts the document — see `ROUTINE_SETUP.md` for setup and for the companion review routines.
 3. A draft PR appears containing `documents/<slug>.yaml`. The docgen CI check renders the actual web pages, Word docs and PDFs as a PR artifact for review.
 4. A qualified person reviews, fixes placeholders, verifies specs against manufacturer documentation, flips `meta.status` to `Approved`, and merges.
 

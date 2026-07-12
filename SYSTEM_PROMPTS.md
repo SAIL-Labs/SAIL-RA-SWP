@@ -1,8 +1,8 @@
 # System Prompts for Safety Documentation Generation
 
-These system prompts are used by the issue-driven document workflow (`.github/scripts/generate_documents.py`) and can also be used in Claude Projects. Since the YAML-first migration, a **single combined prompt** generates one `documents/<slug>.yaml` file that drives the web pages, Word documents and PDFs for an RA/SWP pair.
+These system prompts are used by the Claude Code **routines** (see `ROUTINE_SETUP.md`) and can also be used in Claude Projects. A **single combined prompt** generates one `documents/<slug>.yaml` file that drives the web pages, Word documents and PDFs for an RA/SWP pair.
 
-> ⚠️ The section heading below and its ```xml fence are load-bearing: `generate_documents.py` extracts the prompt with a regex keyed on them. Do not rename the section or change the fence language without updating the script.
+> ⚠️ The section heading below and its ```xml fence are load-bearing: the routine prompts locate this block by searching for the exact heading. Do not rename the section or change the fence language without updating `ROUTINE_SETUP.md`.
 
 ---
 
@@ -299,7 +299,7 @@ When the user asks you to review a safety document, apply these criteria systema
 
 ### In the issue workflow (automated)
 
-`.github/scripts/generate_documents.py` extracts the **Combined RA/SWP YAML Generator** prompt from this file, calls the Claude API once with the parsed issue fields, writes `documents/<slug>.yaml`, and validates it with `docgen/render.py --check` before opening a draft PR.
+The **Claude Code routine** (see `ROUTINE_SETUP.md`) fires when a `new-equipment` issue is opened, extracts the **Combined RA/SWP YAML Generator** prompt from this file, generates `documents/<slug>.yaml` from the parsed issue fields, validates it with `docgen/render.py --check`, and opens a draft PR.
 
 ### For Claude Projects / conversations
 
