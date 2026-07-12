@@ -15,6 +15,8 @@ header_pages:
   - index.md
 
 # Collections
+# NOTE: _risk_assessments/ and _safe_work_procedures/ are GENERATED from
+# documents/*.yaml by docgen/render.py — never edit the .md files by hand.
 collections:
   risk_assessments:
     output: true
@@ -22,19 +24,19 @@ collections:
   safe_work_procedures:
     output: true
     permalink: /safe-work-procedures/:name/
-  templates:
-    output: false  # Templates are reference only, not published pages
 
 # Exclude from processing
 exclude:
   - README.md
+  - CLAUDE.md
   - DOCUMENTATION.md
-  - QUICKSTART.md
   - SYSTEM_PROMPTS.md
+  - ROUTINE_SETUP.md
   - Gemfile
   - Gemfile.lock
   - package.json
   - package-lock.json
   - node_modules/
-  - generate-pdfs-server.sh
   - serve.sh
+  - documents/
+  - docgen/

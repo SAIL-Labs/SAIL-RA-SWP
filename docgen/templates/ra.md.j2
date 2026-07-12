@@ -1,0 +1,111 @@
+Use this form to assist you to complete risk assessments for hazardous activities and processes. Any serious or ongoing hazards should be reported via RiskWare to ensure that appropriate corrective actions are tracked and completed.
+
+<div class="metadata-table" markdown="1">
+
+**Faculty/School:** | {{ meta.faculty_school }}
+**Initial Issue Date:** | {{ meta.issue_date }}
+**Next Review Date:** | {{ meta.next_review_date }}
+**Risk Assessment Reference Number:** | {{ meta.ra_reference }}
+**Risk Assessment Name:** | {{ meta.title }}
+**Prepared by:** | {{ meta.prepared_by }}
+**Responsible supervisor/s:** | {{ meta.supervisors | join(", ") }}
+
+</div>
+
+<div class="activity-persons-table" markdown="1">
+
+| **Identify the activity and the location** | **Identify who may be at risk**<br><small>This might include fellow workers, students, visitors, contractors, patients, research participants and the public.</small> |
+|---|---|
+| **Activity or process:**<br><br>{{ ra.activity | cell }} | **Persons at risk:**<br><br>{{ ra.persons_at_risk | bullets }} |
+| **Location:**<br><br>{{ ra.location | cell }} | **Risk assessment team** (who was consulted?)**:**<br><br>{{ ra.team | bullets }} |
+
+</div>
+
+<div class="legislation-box" markdown="1">
+
+**List of Legislation, Code of Practice, Australian Standards, Guidance Materials used to determine control measures**
+
+{% for ref in ra.references %}
+- {{ ref }}
+{% endfor %}
+
+</div>
+
+<div class="methodology-box" markdown="1">
+
+**Risk Assessment Methodology**
+
+Assessing the risk is a brainstorming exercise, which is most effectively carried out in a team environment with the people required to complete the activity or process. Most activities or processes are broken down into a variety of separate tasks. For each task, consider the hazards, the potential harm or negative outcomes and the conditions required for those negative outcomes to occur.
+
+Whenever assessing the health and safety risks associated with a task, always consider the following primary risk factors:
+
+- The **physical activities** required to complete the task e.g. repetitive movement, high force, physical exertion, awkward posture
+- The **work environment** e.g. lighting, layout, traffic flow, ventilation, access to support (isolation)
+- The **nature of the hazard itself** e.g. working with chemicals, microorganisms, radiation, use of plant and equipment, sharps, working with potentially aggressive clients, patients or research participants
+- The **people involved**, e.g. level of training, supervision, experience, health, age, physical capacity.
+
+The information gathered from the **risk assessment** process must be used to develop a **Safe Work Procedure (SWP)** or **clinical protocol** for the activity.
+
+</div>
+
+## Hazard Assessment Table
+
+<div class="hazard-table-wrapper" markdown="1">
+| Task or scenario | Hazard/s | Associated harm, e.g. what could go wrong? | Existing Risk Controls | Current risk rating | Any additional controls required? | Residual risk rating |
+|---|---|---|---|---|---|---|
+{% for r in ra.risks %}
+| {{ r.task | cell }} | {{ r.hazards | cell }} | {{ r.harm | cell }} | {{ r.controls | cell }} | **{{ r.current_rating }}** | {{ r.additional_controls | cell }} | **{{ r.residual_rating }}** |
+{% endfor %}
+
+</div>
+
+## Implementation of Additional Risk Controls
+
+| Additional controls needed | Resources required | Responsible person | Date of implementation | RiskWare Reference |
+|---|---|---|---|---|
+| Write the Safe Work Procedure (SWP) or clinical protocol for the relevant activity | Time (approx 1 hour) | Supervisor | {{ ra.implementation_date }} | N/A |
+| Education and training for workers to complete process in accordance with SWP | Time – supervisor and workers | Supervisor | {{ ra.implementation_date }} | N/A |
+{% for c in ra.additional_controls %}
+| {{ c.control | cell }} | {{ c.resources | cell }} | {{ c.responsible | cell }} | {{ c.date | cell }} | {{ c.riskware_ref | cell }} |
+{% endfor %}
+
+## List emergency controls
+<small>These might include how to deal with fires, spills, emergency shutdown of equipment, exposure to hazardous materials and adverse reactions or the deteriorating condition of patients/research participants in our care.</small>
+
+<div class="emergency-box" markdown="1">
+
+{% for e in ra.emergency_controls %}
+- {{ e | br }}
+{% endfor %}
+
+</div>
+
+<div class="page-break"></div>
+
+## REVIEW
+
+<div class="review-table" markdown="1">
+
+| | 1 year | 2 years | 3 years |
+|---|---|---|---|
+| **Scheduled review date** | | | |
+| **Are control measures in place (YES/NO)** | | | |
+| **Are controls eliminating or minimising the risk (YES/NO)** | | | |
+| **Are there any new problems with the risk (YES/NO)** | | | |
+| **Reviewed by:** | | | |
+| **Actual Review date:** | | | |
+
+</div>
+
+## Risk Matrix
+
+![Risk Assessment Matrix]({% raw %}{{ '/assets/images/RA-Matrix.png' | relative_url }}{% endraw %})
+
+The risk matrix defines:
+- **Likelihood levels:** Rare, Unlikely, Possible, Likely, Almost Certain
+- **Consequence levels:** Insignificant, Minor, Moderate, Major, Severe
+- **Risk ratings:** Low, Medium, High, Very High
+
+---
+
+*End of Risk Assessment*

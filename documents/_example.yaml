@@ -1,0 +1,85 @@
+# SAIL-RA-SWP — single data file driving one Risk Assessment + Safe Work Procedure pair.
+#
+# One file in documents/ = one RA + SWP pair. The filename must match meta.slug
+# (this file starts with "_" so the generator skips it — it's the schema reference).
+#
+# Render:  python docgen/render.py --all            -> web pages + Word docs
+#          python docgen/render.py --all --pdf      -> also PDFs (needs LibreOffice)
+#
+# Multiline strings (use YAML block scalars |) become real line breaks in Word
+# and <br> on the web. Prefix lines with "- " for dash lists inside table cells.
+
+meta:                          # shared header block — written once, used by both docs
+  slug: example-femto-laser    # must match this filename; lowercase-dashes only
+  # abbrev: FEMTO              # optional; default = slug uppercased
+  number: 1                    # -> SAIL-RA-EXAMPLE-FEMTO-LASER-001 / SAIL-SWP-...-001
+  name: "Femtosecond laser"    # equipment/activity name shown on the index cards
+  title: "Operation of the femtosecond laser writing system"
+  status: Draft                # Draft | Approved — Approved ONLY after expert review
+  version: "1.0"
+  version_issue_date: "2026-07-12"
+  description: "Example risk assessment and safe work procedure for femtosecond laser operation."  # index card blurb
+  # key_hazards: "..."         # optional RA card line; default = derived from ra.risks
+  # includes: "..."            # optional SWP card line
+  faculty_school: "Faculty of Science — School of Physics (SAIL Labs)"
+  prepared_by: "Jane Doe"
+  supervisors:
+    - "A. Supervisor"
+  issue_date: "2026-07-12"
+  next_review_date: "2027-07-12"
+
+ra:
+  activity: |-
+    - Operation of the femtosecond laser writing system
+    - Beam alignment and daily checks
+  location: "Room 123, Physics Building A28"
+  persons_at_risk: ["Laboratory staff", "Research students", "Visitors"]
+  team: ["Jane Doe", "A. Supervisor"]
+  references:                  # legislation / codes / standards / guidance
+    - "Work Health and Safety Act 2011 (NSW)"
+    - "AS/NZS IEC 60825.14 Safety of laser products"
+  risks:                       # -> one hazard-table row each
+    - task: "Beam alignment"
+      hazards: "Class 4 laser radiation"
+      harm: |-
+        - Eye injury from direct or reflected beam
+        - Skin burns
+      controls: |-
+        - Interlocked enclosure
+        - Laser safety eyewear
+        - Trained users only
+      current_rating: "Medium"          # Low | Medium | High | Very High
+      additional_controls: "Add beam dump audit to monthly checklist"
+      residual_rating: "Low"
+  implementation_date: "2026-07-12"     # date for the two standard rows (write SWP, training)
+  additional_controls:         # extra implementation rows beyond the two standard ones
+    - control: "Install additional beam dump"
+      resources: "Beam dump, 0.5 h"
+      responsible: "Supervisor"
+      date: "2026-08-01"
+      riskware_ref: "N/A"
+  emergency_controls:          # bullet list
+    - "In case of exposure, seek first aid and report via RiskWare"
+    - "Emergency stop button shuts down laser power"
+
+swp:
+  hazards:                     # -> one SWP table row each; each row cites the RA reference
+    - hazard: "Class 4 laser radiation"
+      controls: "Interlocked enclosure; eyewear; trained users only"
+  resources:                   # PPE + chemicals + equipment
+    - "Laser safety eyewear (OD 7 @ 800 nm)"
+  steps:                       # numbered step-by-step instructions
+    - "Complete pre-start checklist"
+    - "Enable interlocks and don eyewear"
+  emergency_shutdown:
+    - "Press emergency stop on the laser controller"
+  emergency_procedures:        # fires / spills / exposure
+    - "In case of exposure, seek first aid and report via RiskWare"
+  cleanup_waste:
+    - "Return optics to storage; log hours in the laser logbook"
+  references:                  # codes of practice etc.
+    - "AS/NZS IEC 60825.14 Safety of laser products"
+  competency:                  # qualifications / licences / training
+    - "Laser safety training (USyd) completed"
+  assessors:                   # staff approved to assess competence (rendered join ", ")
+    - "A. Supervisor"

@@ -1,0 +1,1324 @@
+# SAIL-RA-SWP combined data file: 3SAE Combiner Manufacturing System (CMS).
+# Converted from the legacy hand-written _risk_assessments/3sae-cms.md and
+# _safe_work_procedures/3sae-cms.md. Render with: python docgen/render.py --all
+
+meta:
+  slug: 3sae-cms
+  abbrev: CMS
+  number: 1
+  name: "3SAE Combiner Manufacturing System (CMS)"
+  title: "Operation of 3SAE Combiner Manufacturing System (CMS) for Fibre Optic Glass Processing"
+  status: Draft
+  version: "1.0"
+  version_issue_date: "January 2026"
+  description: "Risk assessment and safe work procedure for the 3SAE CMS fibre optic processing system utilising thermally stabilised plasma technology (>3000°C). Covers extreme thermal hazards, high-pressure gas systems, electrical hazards, optical radiation, and sharp materials."
+  key_hazards: "High-temperature plasma (>3000°C), compressed air (90 psi), electrical hazards, optical radiation, sharp glass fibres, vacuum system"
+  includes: "Pre-operation safety checks, plasma system operation, fibre cleaving procedures, emergency shutdown, mandatory training requirements"
+  faculty_school: "Faculty of Science — School of Physics (SAIL Labs)"
+  prepared_by: "Chris Betters"
+  supervisors:
+    - "Chris Betters"
+    - "Sergio Leon-Saval"
+  issue_date: "January 2026"
+  next_review_date: "January 2027"
+
+ra:
+  activity: |-
+    3SAE Combiner Manufacturing System (CMS) - Fibre Optic Glass Processing System. Purpose/use:
+    - Fusion splicing of optical fibres (125μm to 2mm diameter)
+    - Fibre optic tapering for combiners and mode-field adapters
+    - Precision cleaving of optical fibres and components up to 500μm diameter
+    - Production of multi-kilowatt class optical components
+    - Manufacturing of photonic crystal fibre assemblies
+    - Research and development of custom fibre optic assemblies
+  location: "218G SAIL Nexus Lab"
+  persons_at_risk:
+    - "Laboratory staff operating the CMS"
+    - "Research students and postgraduate researchers"
+    - "Technical support personnel"
+    - "Maintenance technicians"
+    - "Visitors to the laboratory (when equipment is operational)"
+  team:
+    - "Laboratory manager"
+    - "Safety officer"
+    - "Equipment users and operators"
+    - "Manufacturer documentation review"
+    - "Technical specifications analysis"
+  references:
+    - "AS/NZS 60825.1:2014 - Safety of laser products"
+    - "AS/NZS 3000:2018 - Electrical installations (Wiring Rules)"
+    - "AS/NZS 4804:2001 - Occupational health and safety management systems"
+    - "AS 1940:2017 - The storage and handling of flammable and combustible liquids"
+    - "AS 2243 Series - Safety in laboratories"
+    - "Work Health and Safety Act 2011"
+    - "Work Health and Safety Regulation 2017"
+    - "AS 4343:2014 - Pressure equipment - Hazard levels"
+    - "AS 1210:2010 - Pressure vessels"
+    - "Manufacturer's documentation (3SAE Technologies Inc.)"
+    - "CMS Product Information Sheet and User Manual (https://3sae.com/wp-content/uploads/2024/01/CMS.pdf)"
+    - "University WHS policies and procedures"
+  risks:
+    - task: "High-temperature plasma operation (Ring of Fire technology)"
+      hazards: "Thermally Stabilised Plasma operating at temperatures from 300°C to >3000°C for fusion splicing, tapering, and glass processing operations."
+      harm: |-
+        - Severe thermal burns from contact with plasma, heated components, or processed fibres
+        - Eye injury from intense visible and infrared radiation from plasma
+        - Fire ignition if flammable materials are present near plasma zone
+        - Heat stress from prolonged operation in proximity to heat source
+        - Thermal damage to skin from radiant heat exposure
+        - Secondary burns from heated electrode assemblies and processing chambers
+        - Ignition of combustible materials (paper, solvents, packaging materials)
+      controls: |-
+        - Enclosed processing chamber with controlled access during operation
+        - Integrated cooling system for Ring of Fire electrodes and electrical components
+        - Automatic shut-off systems and emergency stop functionality
+        - Two orthogonal camera systems allowing remote viewing of process
+        - Manufacturer-designed thermal barriers and shielding
+        - Clear operational protocols specifying minimum safe distances
+        - Warning labels on equipment indicating hot surfaces
+        - Plasma operates within enclosed chamber, not exposed to operator
+        - Load cell feedback system for process monitoring without physical contact
+      current_rating: "Medium"
+      additional_controls: |-
+        - Mandatory completion of manufacturer-provided training before operation
+        - Supervised operation for all users until competency demonstrated
+        - Annual thermal safety audit of equipment and enclosure integrity
+        - Prohibition of leaving system unattended during plasma operation
+        - Automatic plasma shut-off if chamber is opened during operation (interlock verification)
+        - NEVER disable safety interlocks or protective systems
+        - NEVER attempt to touch or inspect components during or immediately after plasma operation
+      residual_rating: "Low"
+    - task: "Compressed air system operation"
+      hazards: "High-pressure compressed air system operating at 6.2 bar (90 psi) with flow rate of 126 L/min (~4.5 cfm)."
+      harm: |-
+        - Projectile hazards from disconnected or failed air lines
+        - Air embolism if compressed air contacts broken skin or body orifices
+        - Eye injury from airborne particles propelled by compressed air
+        - Hearing damage from sudden pressure releases or air leaks
+        - Equipment damage from over-pressurisation
+        - Rapid decompression injuries if partial vacuum system fails catastrophically
+        - Whiplash injuries from flailing disconnected air hoses
+      controls: |-
+        - Manufacturer-specified pressure regulator and relief valves
+        - Industrial-grade compressed air fittings and hoses
+        - Pressure gauges for monitoring system pressure
+        - Air filtration system to remove particulates and moisture
+        - Specified air quality requirements in manufacturer documentation
+        - Equipment designed to operate within specified pressure range
+        - Built-in pressure monitoring systems
+      current_rating: "Medium"
+      additional_controls: |-
+        - Monthly visual inspection of all air lines, fittings, and connections for wear or damage
+        - Pressure testing of air supply system annually by qualified technician
+        - All air line connections must use proper industrial quick-disconnect fittings
+        - Air line routing must prevent trip hazards and protect from damage
+        - "High Pressure Air" warning labels at connection points
+        - Procedure for safe depressurisation before maintenance
+        - Training on safe compressed air practices including prohibition of using air for cleaning clothing or skin
+        - Eye protection mandatory when working with compressed air systems
+        - Annual testing of pressure relief valves
+        - Secondary pressure regulator if facility air supply exceeds equipment requirements
+      residual_rating: "Low"
+    - task: "Electrical hazards"
+      hazards: "Dual 24V 200W power supplies and electrical components within the system including electrode power systems, vision systems, and control electronics."
+      harm: |-
+        - Electric shock from contact with live electrical components
+        - Electrical burns from short circuits or component failure
+        - Fire from electrical faults or overheating
+        - Equipment damage from power surges or incorrect supply
+        - Secondary injuries from startle response to electric shock
+        - Arc flash during maintenance if residual charge present
+      controls: |-
+        - Manufacturer-designed electrical safety systems
+        - 24V operation reduces shock severity compared to mains voltage
+        - Enclosed electrical components within equipment housing
+        - Proper earthing and electrical isolation as per design
+        - Circuit protection and fusing built into system
+        - Electrical interconnection cables provided by manufacturer
+        - CE/relevant certification compliance for electrical safety
+      current_rating: "Medium"
+      additional_controls: |-
+        - Annual electrical safety inspection by qualified electrician
+        - Residual current device (RCD) protection on mains supply to equipment
+        - "Electrical Hazard" warning labels on access panels
+        - Lockout/tagout procedures for any maintenance requiring access to electrical components
+        - Only qualified electrical personnel authorised to access internal electrical systems
+        - Immediate shutdown and reporting of any unusual electrical behaviour (sparking, burning smell, tripped breakers)
+        - Dedicated power circuit for CMS to prevent overloading
+        - Emergency shutdown procedure prominently displayed
+        - Testing of earth continuity during annual inspection
+        - Regular inspection of equipment for signs of electrical overheating or damage
+        - Documented procedure for safe de-energisation before any internal access
+      residual_rating: "Low"
+    - task: "Optical radiation and vision system hazards"
+      hazards: "Intense visible and infrared radiation from plasma, bright illumination from vision system, and direct viewing of molten glass during processing."
+      harm: |-
+        - Eye strain and fatigue from prolonged viewing of bright processes
+        - Potential retinal damage from intense plasma radiation
+        - Flash blindness from sudden bright emissions
+        - Long-term eye damage from repeated exposure to intense light
+        - Headaches and discomfort from monitor viewing for extended periods
+        - Temporary vision impairment affecting ability to perform other tasks safely
+      controls: |-
+        - Indirect viewing via camera systems rather than direct observation
+        - Two orthogonal 5MP cameras with telecentric lenses provide remote viewing
+        - "Hot Imaging" provides live viewing with appropriate exposure compensation
+        - Automatic exposure control prevents over or under-exposure of vision system
+        - 23-inch (or 40-inch with upgrade) monitor for viewing at safe distance
+        - Processing occurs within chamber, not in direct line of sight
+        - Vision system designed to handle brightness of plasma without damage
+      current_rating: "Medium"
+      additional_controls: |-
+        - Mandatory pre-operation verification that vision system is functioning correctly
+        - Prohibition of direct viewing of plasma or molten glass
+        - Monitor positioned to minimise screen glare and at appropriate height for ergonomic viewing
+        - Regular breaks during extended operation sessions (minimum 5-minute break every hour)
+        - Adjustment of monitor brightness to comfortable level for ambient lighting conditions
+        - Room lighting sufficient to prevent excessive monitor brightness contrast
+        - Safety glasses with appropriate plasma viewing filters available if direct inspection required (maintenance only)
+        - Annual vision system calibration and safety assessment
+        - Documented procedure for what to do if vision system fails during operation (emergency stop)
+        - Alternative viewing method available if primary system fails
+        - Immediate reporting of any vision system malfunctions
+        - Eye examinations recommended for frequent users as part of health surveillance
+      residual_rating: "Low"
+    - task: "Sharp objects and glass fibre handling"
+      hazards: "Handling of optical fibres, cleaved glass ends, diamond-tipped ultrasonic cleaving blade, broken or scrap fibres, and sharp glass edges."
+      harm: |-
+        - Puncture wounds and lacerations from sharp glass fibre ends
+        - Glass fibre fragments embedded in skin (difficult to see and remove)
+        - Eye injuries from glass splinters or fragments
+        - Cuts from diamond cleaving blade during blade changes or maintenance
+        - Infection from contaminated glass penetrating skin
+        - Injuries from broken glass components during handling or disposal
+      controls: |-
+        - Integrated cleaver with blade enclosed during operation
+        - Precision handling systems reduce direct hand contact with fibres
+        - Fibre holders and fixtures position fibres securely
+        - Automatic alignment reduces need for manual fibre manipulation
+        - Manufacturer-designed fibre handling accessories (holders for different diameters)
+        - Controlled cleaving process reduces random glass shard generation
+        - Ultrasonic cleaver with controlled operation parameters
+      current_rating: "Medium"
+      additional_controls: |-
+        - Safety glasses mandatory at all times when handling optical fibres
+        - Close-fitting safety glasses to prevent entry of glass fragments
+        - Designated sharps disposal containers positioned within easy reach of work area
+        - Nitrile gloves recommended for handling fibres (provides some cut protection while maintaining dexterity)
+        - No hand contact with freshly cleaved fibre ends
+        - Tweezers or fibre handling tools must be used for positioning small components
+        - Work surface with contrasting colour to improve visibility of glass fragments
+        - Immediate cleanup of any broken fibres or glass debris using sticky tape or damp cloth (not hands)
+        - Regular inspection and replacement of diamond cleaving blade per manufacturer schedule
+        - Lockout procedure when accessing cleaver blade for replacement
+        - Training on safe fibre handling techniques and first aid for glass injuries
+        - First aid kit with splinter removal tools available
+        - Regular workspace cleaning to remove accumulated glass debris
+        - Warning signs indicating sharp materials hazard
+        - Magnification available for inspection of fibre handling areas for fragments
+        - Documented procedure for safe disposal of scrap fibres and glass waste
+      residual_rating: "Low"
+    - task: "Vacuum system operation"
+      hazards: "Partial vacuum operation capability for adiabatic tapering and specialised processing modes."
+      harm: |-
+        - Implosion hazard if vacuum chamber fails structurally
+        - Rapid inrush of air if seal fails during vacuum operation
+        - Crush injuries to fingers or hands if caught in vacuum seal mechanisms
+        - Inhalation of particles if vacuum system draws in contaminated air upon seal breach
+        - Secondary injuries from sudden pressure equalisation (noise, flying components)
+      controls: |-
+        - Manufacturer-designed vacuum chamber with appropriate pressure rating
+        - Controlled evacuation and venting procedures built into system
+        - Pressure monitoring and control systems
+        - Emergency pressure relief mechanisms
+        - Chamber designed to withstand operating vacuum levels
+        - Interlocked systems prevent chamber opening under vacuum
+      current_rating: "Medium"
+      additional_controls: |-
+        - Pre-operation inspection of vacuum chamber seals and O-rings
+        - Maintenance schedule for vacuum pump and sealing systems
+        - Immediate shutdown if unusual sounds or pressure readings detected
+        - Hands and fingers clear of all sealing surfaces before vacuum initiation
+        - Prohibition of opening chamber until fully vented to atmospheric pressure
+        - Pressure gauge verification before each vacuum operation
+        - Annual pressure testing of vacuum chamber by competent person
+        - Documented procedure for emergency venting
+        - Training on vacuum system operation and emergency procedures
+        - Vacuum pump exhaust directed away from operator breathing zone
+        - Regular inspection of chamber viewing windows for cracks or damage
+        - Replacement schedule for seals and gaskets
+      residual_rating: "Low"
+    - task: "Chemical hazards from electrodes and processing"
+      hazards: "Electrode materials, potential contamination from electrode wear, cleaning chemicals for electrode maintenance, and any chemicals used in fibre preparation or cleaning."
+      harm: |-
+        - Skin irritation or allergic reactions from electrode materials or metal dust
+        - Inhalation of particulates from electrode wear or cleaning
+        - Eye irritation from cleaning chemicals
+        - Chemical burns from improper use of cleaning agents
+        - Long-term health effects from repeated exposure to metal particulates
+        - Fire or explosion from incompatible chemical mixing
+      controls: |-
+        - Embedded electrode cooling system minimises oxidation and contamination
+        - Thermally Stabilised Plasma operation reduces electrode wear compared to conventional systems
+        - Manufacturer documentation specifies electrode materials and handling
+        - Enclosed processing area limits airborne particulate spread
+        - Electrode cleaning performed outside of operating chamber
+        - Spare electrode sets provided with system
+      current_rating: "Low"
+      additional_controls: |-
+        - Safety Data Sheets (SDS) available for all chemicals used with equipment
+        - Nitrile gloves worn when handling electrodes or performing cleaning
+        - Electrode cleaning performed in well-ventilated area or fume hood
+        - Eye protection during electrode handling and cleaning
+        - Designated electrode cleaning area with appropriate spill containment
+        - Electrode disposal via appropriate waste stream (not general waste)
+        - Training on safe handling of electrode materials
+        - Respiratory protection assessment if electrode material particulates are generated
+        - Prohibition of eating, drinking, or applying cosmetics in areas where electrode handling occurs
+        - Hand washing required after electrode handling
+        - Regular housekeeping to prevent accumulation of electrode material dust
+        - Documented procedure for spill response for any cleaning chemicals
+        - Chemical inventory maintained and reviewed annually
+      residual_rating: "Low"
+    - task: "Ergonomic and musculoskeletal hazards"
+      hazards: "Prolonged seated work at computer monitor, repetitive precise movements, sustained awkward postures during fibre alignment and loading, and extended periods of concentration."
+      harm: |-
+        - Eye strain and visual fatigue from monitor work and precision tasks
+        - Neck and shoulder pain from sustained postures
+        - Back pain from prolonged sitting
+        - Wrist and hand strain from repetitive precision movements
+        - Mental fatigue from sustained concentration on critical tasks
+        - Headaches from prolonged near-focus work
+      controls: |-
+        - Adjustable workstation with standard CMS package (upgrade includes ergonomic cart)
+        - Monitor viewing at appropriate distance via camera systems (no need for extreme close-up work)
+        - Precision automated alignment reduces manual manipulation requirements
+        - Orthogonal camera views reduce need for awkward viewing angles
+      current_rating: "Low"
+      additional_controls: |-
+        - Ergonomic workstation assessment and setup for each regular user
+        - Adjustable chair with lumbar support provided
+        - Monitor positioned at eye level and appropriate distance (50-70cm)
+        - Regular micro-breaks during precision work (30 seconds every 10-15 minutes)
+        - Task rotation where possible to vary physical demands
+        - Maximum continuous operation time without breaks: 1 hour
+        - Training on proper posture and ergonomic setup
+        - Workstation setup checklist completed before extended sessions
+        - Adequate task lighting to reduce eye strain without creating monitor glare
+        - Consider upgrade to workstation cart package (CMS-01-0150) for improved ergonomics
+        - Stretching exercises guidance for operators
+        - Reporting procedure for any musculoskeletal discomfort
+        - Periodic ergonomic reviews for frequent users
+      residual_rating: "Low"
+    - task: "Training and competency requirements"
+      hazards: "Operation of complex, high-hazard equipment by inadequately trained or supervised personnel."
+      harm: |-
+        - All hazards listed above are significantly increased if operators lack proper training
+        - Equipment damage from incorrect operation
+        - Injury to self or others from not understanding emergency procedures
+        - Production of unsafe or poor-quality components
+        - Inability to recognise and respond to abnormal operating conditions
+      controls: |-
+        - Detailed operator's manual provided with equipment
+        - Multi-day on-site installation and operational training available (TRN-01-0012)
+        - Complex system requiring demonstrated competency
+        - PC with all necessary software and documentation included
+      current_rating: "High"
+      additional_controls: |-
+        NOTE: current rating applies to untrained users; residual rating applies to trained and authorised users.
+        - Mandatory completion of manufacturer training before independent operation
+        - Competency assessment must be completed and documented before authorisation
+        - Authorised users list maintained and displayed near equipment
+        - Graduated training program: observation, then supervised operation, then independent operation
+        - Minimum supervision requirements for new users (defined in SWP)
+        - Theory assessment covering safety-critical knowledge
+        - Practical assessment demonstrating safe operation and emergency response
+        - Refresher training annually or after 6 months of non-use
+        - Retraining required after any safety incident or procedure changes
+        - Documented training records for all operators
+        - Induction briefing for any visitors or observers covering hazards and emergency procedures
+        - Prohibition of operation outside authorised users list
+        - Clear signage indicating training requirement
+        - Training must include all hazard categories and emergency procedures
+      residual_rating: "Low"
+    - task: "Software and control system hazards"
+      hazards: "Software malfunctions, incorrect programming of tapering or splicing processes, control system failures, and human-computer interface errors."
+      harm: |-
+        - Uncontrolled equipment operation from software errors
+        - Component damage from incorrect process parameters
+        - Safety system bypass from software faults
+        - Operator confusion from unclear interface leading to errors
+        - Inability to execute emergency stop if software freezes
+        - Loss of critical safety data or process monitoring
+        - Repetitive strain from poorly designed user interface
+      controls: |-
+        - LabVIEW-based GUI designed for simplified operation
+        - Table-based tapering software provides process control with preview capability
+        - Automatic process capture and documentation
+        - Multiple software interfaces available (including MATLAB, Excel for custom programs)
+        - PC with all necessary software pre-installed and configured
+        - Manufacturer software updates and support
+      current_rating: "Medium"
+      additional_controls: |-
+        - Training must include software operation and common error messages
+        - Emergency stop remains functional regardless of software state (hardware-based)
+        - Software version control and change management procedures
+        - Validation of custom programs before use on actual components
+        - Test runs with dummy components before processing valuable materials
+        - Regular software backups and system restore points
+        - Procedure for software failure during operation (safe shutdown process)
+        - Documentation of all custom programs with safety parameter limits
+        - User access controls to prevent unauthorised software changes
+        - Annual software functionality testing including emergency stop interface
+        - Prohibition of using software from untrusted sources
+        - Documented process for reporting software issues
+        - Redundant control (physical emergency stop) independent of software
+      residual_rating: "Low"
+    - task: "General laboratory safety and housekeeping"
+      hazards: "Cluttered work area, spills, trip hazards from cables and air lines, inadequate lighting, poor ventilation, and general laboratory hazards."
+      harm: |-
+        - Trips and falls causing injury
+        - Inability to access emergency equipment or exits
+        - Increased risk of contamination or cross-contamination
+        - Fire hazards from combustible materials near heat sources
+        - Electrical hazards from cable damage
+        - Delayed emergency response due to obstructed access
+      controls: |-
+        - Defined equipment footprint (71cm W x 56cm D x 43cm H)
+        - Specified weight (~75 kg) allows for stable positioning
+        - Necessary cables and connections provided by manufacturer
+        - Equipment designed for laboratory bench installation
+      current_rating: "Low"
+      additional_controls: |-
+        - Defined equipment location with adequate clearance on all sides (minimum 1 metre)
+        - Cable management system to prevent trip hazards
+        - Regular housekeeping schedule (daily cleanup, weekly deep clean)
+        - Clear access to emergency stop, fire extinguisher, and exits at all times
+        - Adequate bench space for component staging and handling
+        - Non-slip matting if floor surface is smooth
+        - Adequate lighting for precision work (minimum 500 lux at work surface)
+        - Ventilation adequate for heat dissipation and any fumes
+        - Storage system for electrodes, fibre holders, and accessories
+        - Spill kit appropriate for any chemicals used
+        - Clear labelling of all gas lines, electrical connections, and controls
+        - Daily pre-operation area inspection checklist
+        - Immediate cleanup of any spills or broken components
+        - Fire extinguisher (suitable for electrical fires) within 10 metres
+        - Monthly safety inspection of work area and equipment surrounds
+        - Prohibition of food and drink in equipment operation area
+      residual_rating: "Low"
+  implementation_date: "Prior to equipment use"
+  additional_controls:
+    - control: "Manufacturer training completion"
+      resources: "Training course booking, travel costs if off-site"
+      responsible: "Laboratory Manager"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+    - control: "Competency assessment program"
+      resources: "Assessment tools, time for practical evaluation"
+      responsible: "Supervisor/Trainer"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+    - control: "Authorised users list creation and display"
+      resources: "Signage, documentation system"
+      responsible: "Laboratory Manager"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+    - control: "RCD installation on power supply"
+      resources: "Qualified electrician, RCD unit"
+      responsible: "Facilities/Safety Officer"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+    - control: "Annual electrical safety inspection schedule"
+      resources: "Qualified electrician, budget allocation"
+      responsible: "Laboratory Manager"
+      date: "Within 12 months of installation"
+      riskware_ref: "N/A"
+    - control: "Thermal inspection camera procurement"
+      resources: "Budget for camera purchase"
+      responsible: "Laboratory Manager"
+      date: "Prior to first use"
+      riskware_ref: "N/A"
+    - control: "Sharps disposal containers"
+      resources: "Appropriate containers, waste contract"
+      responsible: "Laboratory Manager"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+    - control: "SDS collection for all chemicals"
+      resources: "Contact manufacturers, file system"
+      responsible: "Laboratory Staff"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+    - control: "Ergonomic workstation setup"
+      resources: "Adjustable chair, assessment tool"
+      responsible: "OH&S Coordinator"
+      date: "Prior to regular use"
+      riskware_ref: "N/A"
+    - control: "Emergency shutdown procedure signage"
+      resources: "Sign design and printing"
+      responsible: "Safety Officer"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+    - control: "Exclusion zone markings"
+      resources: "Floor tape, warning signs"
+      responsible: "Laboratory Staff"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+    - control: "First aid kit with splinter removal tools"
+      resources: "First aid supplies"
+      responsible: "First Aid Officer"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+    - control: "Vacuum system inspection procedure"
+      resources: "Procedure documentation"
+      responsible: "Laboratory Manager"
+      date: "Prior to vacuum operation"
+      riskware_ref: "N/A"
+    - control: "Compressed air line inspection schedule"
+      resources: "Inspection checklist"
+      responsible: "Laboratory Manager"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+    - control: "Software validation and backup procedures"
+      resources: "IT support, documentation"
+      responsible: "IT/Laboratory Manager"
+      date: "Prior to equipment use"
+      riskware_ref: "N/A"
+  emergency_controls:
+    - |-
+      CRITICAL SAFETY PROHIBITIONS (apply at all times):
+      - NEVER disable safety interlocks or protective systems
+      - NEVER operate without appropriate thermal and eye protection
+      - NEVER leave the system unattended during operation
+      - NEVER attempt to touch or inspect components during or immediately after plasma operation
+    - |-
+      EMERGENCY SHUTDOWN:
+      1. Press EMERGENCY STOP button (location to be identified on equipment and documented in SWP)
+      2. Close compressed air supply using emergency shut-off valve
+      3. If emergency stop fails: switch off power at mains isolator
+      4. Do NOT attempt to restart until: the emergency condition has been fully resolved; the equipment has been inspected by a competent person; the supervisor has authorised restart; and any necessary repairs have been completed.
+      Do not restart if: equipment damage is visible; unusual sounds, smells, or visual signs were present during the emergency; the cause of the emergency is not fully understood; or any safety system appears compromised.
+    - |-
+      FIRE EMERGENCY:
+      1. Activate emergency stop to shut down all systems
+      2. Close compressed air supply immediately
+      3. If fire is small and contained: use appropriate fire extinguisher (CO2 or dry powder for electrical fires); ensure you have a clear escape route; do not fight the fire if it threatens your safety
+      4. If fire is spreading or involves stored compressed gases: evacuate area immediately; activate building fire alarm; call 000 (Emergency Services); evacuate to assembly point
+      5. After fire is extinguished: do not re-enter area until declared safe by emergency services; equipment must be inspected before any restart attempt; complete incident report
+    - |-
+      THERMAL BURN INJURY:
+      1. Immediately cool affected area under running cold water for at least 20 minutes
+      2. Remove jewellery or constricting items before swelling occurs
+      3. Do NOT apply ice, ointments, or home remedies
+      4. Cover burn with sterile non-stick dressing after cooling
+      5. Seek immediate medical attention for: burns larger than a 20-cent coin; burns to face, hands, feet, genitals, or major joints; full thickness burns (white, waxy, or charred appearance); any burn causing severe pain or blistering
+      6. For chemical burns: flush with copious water and seek immediate medical attention
+      7. Complete incident report and inform supervisor
+    - |-
+      ELECTRIC SHOCK:
+      1. Do NOT touch the person if they are still in contact with the electrical source
+      2. Switch off power at mains or remove person using non-conductive material (dry wood, plastic)
+      3. Call 000 immediately if person is unconscious or not breathing
+      4. If trained in CPR, commence if required
+      5. If conscious but shocked: have person lie down and stay still
+      6. Treat any burns as per thermal burn procedure
+      7. Seek medical attention for all electric shock incidents
+      8. Equipment must be tagged out and inspected before any restart
+      9. Complete incident report
+    - |-
+      GLASS INJURY (CUTS OR EMBEDDED FRAGMENTS):
+      1. Do NOT attempt to remove embedded glass - seek medical attention
+      2. For minor cuts: clean wound gently with clean water; apply sterile dressing; seek medical attention if bleeding does not stop
+      3. For eye injuries: do NOT rub eye; do NOT attempt to remove any object from eye; cover eye with sterile dressing without pressure; seek immediate medical attention
+      4. For deep cuts or significant bleeding: apply direct pressure with clean cloth; elevate injured area if possible; call 000 if bleeding is severe
+      5. All glass injuries must be reported to supervisor
+      6. Complete incident report
+    - |-
+      COMPRESSED AIR SYSTEM FAILURE:
+      1. Activate emergency stop
+      2. Close compressed air supply at emergency shut-off valve
+      3. Evacuate area if loud hissing or visible air leaks present
+      4. Do NOT approach failed air lines or fittings
+      5. If injury from air blast: move to safe area; seek immediate medical attention for suspected air embolism (chest pain, difficulty breathing, confusion); treat any projectile injuries
+      6. Lock out and tag equipment
+      7. Contact maintenance for pressure system inspection
+      8. Complete incident report
+    - |-
+      VACUUM SYSTEM FAILURE:
+      1. Activate emergency stop
+      2. Vent vacuum chamber using controlled venting procedure (if safe to do so)
+      3. If catastrophic failure (implosion or explosion): evacuate area immediately; call emergency services if injuries present; do not re-enter until area declared safe
+      4. If rapid inrush of air: check for injuries from flying debris or noise trauma; seek medical attention as required
+      5. Lock out and tag equipment
+      6. Complete incident report
+      7. Equipment must be inspected by qualified technician before any restart
+    - |-
+      SOFTWARE/CONTROL SYSTEM FAILURE:
+      1. Attempt emergency stop via software interface
+      2. If software unresponsive: use physical emergency stop button
+      3. If both fail: switch off power at mains
+      4. Record error messages or system state if safe to do so
+      5. Do NOT attempt to restart until IT/technical support has assessed
+      6. Lock out and tag equipment
+      7. Complete incident report
+      8. Contact manufacturer technical support for software issues
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency Services: 000
+      - University Security (after hours): 9351 3333
+      - Supervisor: Sergio Leon-Saval
+      - Safety Officer: Chris Betters
+      - First Aid Officers: Christopher Hoffmann (Rm 227)
+
+swp:
+  hazards:
+    - hazard: "High-temperature plasma operation (300°C to >3000°C)"
+      controls: |-
+        - Plasma enclosed in processing chamber; safety interlocks verified functional before operation
+        - Minimum 500mm exclusion zone during plasma operation
+        - All flammable materials removed from 1-metre radius
+        - Minimum 15-minute cooling period before accessing processing chamber
+        - Never leave the system unattended during operation
+        - Heat-resistant gloves available for handling components after processing
+    - hazard: "Compressed air system at high pressure (6.2 bar / 90 psi)"
+      controls: |-
+        - Pre-operation inspection of air lines, fittings and pressure gauge before every session
+        - Emergency air shut-off valve tested before each session
+        - Never use compressed air to clean clothing or skin, or direct it at any person
+        - Eye protection mandatory when working with compressed air systems
+        - Regular equipment inspections and maintenance
+    - hazard: "Electrical systems (dual 24V 200W power supplies)"
+      controls: |-
+        - RCD protection on mains supply, tested before use
+        - Electrical components enclosed within equipment housing
+        - Lockout/tagout for any maintenance requiring access to electrical components
+        - Only qualified electrical personnel authorised to access internal electrical systems
+        - Immediate shutdown and reporting of any unusual electrical behaviour
+    - hazard: "Optical radiation from plasma and intense lighting"
+      controls: |-
+        - Indirect viewing via camera systems only; direct viewing of plasma or molten glass is prohibited
+        - Vision system verified functional before every operation
+        - Emergency stop if vision system fails during operation
+        - Regular breaks during extended operation sessions
+    - hazard: "Sharp glass fibres, cleaved ends, and diamond cleaving blade"
+      controls: |-
+        - Close-fitting safety glasses mandatory at all times
+        - Use tweezers or fibre handling tools; no hand contact with freshly cleaved fibre ends
+        - Sharps disposal container within arm's reach of work area
+        - Lockout equipment before accessing cleaver blade for replacement
+        - Clean up glass debris with sticky tape or damp cloth, never by hand
+    - hazard: "Vacuum system operation during partial vacuum processes"
+      controls: |-
+        - Pre-operation inspection of vacuum chamber seals and O-rings
+        - Interlocks prevent chamber opening under vacuum; never open until fully vented to atmospheric pressure
+        - Hands and fingers clear of all sealing surfaces before vacuum initiation
+        - Immediately abort and vent if unusual sounds or pressure readings detected
+    - hazard: "Chemical hazards from electrode materials and cleaning agents"
+      controls: |-
+        - SDS available for all chemicals used with equipment
+        - Nitrile gloves mandatory when handling electrodes or cleaning chemicals
+        - Electrode cleaning performed in well-ventilated area with eye protection
+        - Hand washing required after handling electrodes or chemicals
+    - hazard: "Ergonomic strain from precision work and prolonged operation"
+      controls: |-
+        - Ergonomic workstation setup; monitor at eye level and 50-70cm distance
+        - Regular micro-breaks during precision work
+        - Maximum continuous operation time without a break: 1 hour
+    - hazard: "Equipment complexity requiring high level of competency"
+      controls: |-
+        - Mandatory manufacturer training and documented competency assessment before operation
+        - Authorised users list maintained and enforced
+        - Never operate alone as an inexperienced user; graduated supervision requirements apply
+        - Annual refresher training
+    - hazard: "Software and control system operation"
+      controls: |-
+        - Hardware emergency stop independent of software, tested before each session
+        - Custom programs validated on scrap fibre before use on valuable components
+        - Safe shutdown procedure for software failure
+        - User access controls to prevent unauthorised software changes
+  resources:
+    - |-
+      PERSONAL PROTECTIVE EQUIPMENT (PPE):
+      - Safety glasses (mandatory at all times): close-fitting design to prevent glass fragment entry; must be worn whenever handling optical fibres or operating equipment
+      - Heat-resistant gloves: must be available and used when handling any components after plasma processing (not for use during active operation near plasma)
+      - Nitrile gloves (recommended): for handling optical fibres (provides cut protection and dexterity); mandatory when handling electrodes or cleaning chemicals
+      - Laboratory coat or protective clothing: to protect against glass fragments and potential chemical splashes
+      - Closed-toe shoes (mandatory): no open-toed footwear permitted in laboratory
+    - |-
+      EQUIPMENT AND MATERIALS:
+      - 3SAE Combiner Manufacturing System (CMS-01-0100)
+      - PC with CMS control software, monitor (23" or 40" depending on configuration)
+      - Optical fibres for processing (125μm to 2mm diameter as required)
+      - Appropriate fibre holders for diameter being processed (250μm, 400μm, 700μm, 1000μm, 1500μm, 2000μm, 2500μm)
+      - End cap holders if performing end cap splicing
+      - Electrode cleaning kit (cleaning discs provided with system)
+      - Spare electrode sets
+      - Cleaning materials for fibre preparation (isopropanol, lint-free wipes)
+      - Thermal inspection camera (for verifying cool-down before handling)
+    - |-
+      SAFETY EQUIPMENT (must be present in laboratory):
+      - Fire extinguisher suitable for electrical fires (CO2 or dry powder type) within 10 metres of equipment; location: [specify]
+      - First aid kit including splinter removal tools; location: [specify]
+      - Emergency eyewash station; location: [specify]
+      - Sharps disposal container for glass waste; location: within arm's reach of work area
+      - Emergency stop button (integrated into CMS system)
+      - Compressed air emergency shut-off valve; location: [specify]
+      - Mains power isolator for CMS; location: [specify]
+      - Emergency contact numbers displayed prominently
+      - Equipment operation logbook
+      - Incident report forms
+    - |-
+      ENVIRONMENTAL REQUIREMENTS:
+      - Compressed air supply: 6.2 bar (90 psi), 126 L/min (4.5 cfm) minimum
+      - Electrical supply: dual 24V 200W power sources (mains supply with RCD protection)
+      - Adequate bench space: minimum 1 metre clearance on all sides of equipment
+      - Adequate lighting: minimum 500 lux at work surface
+      - Adequate ventilation: for heat dissipation and any electrode fumes
+      - Stable work surface: capable of supporting 75 kg equipment weight
+      - Ambient temperature control: equipment operates best in controlled environment
+  steps:
+    - |-
+      CRITICAL SAFETY REQUIREMENTS - BEFORE OPERATING THIS EQUIPMENT:
+      - You MUST have completed manufacturer training and been assessed as competent
+      - You MUST be listed on the authorised users list
+      - You MUST complete ALL pre-operation safety checks before every session
+      - You MUST maintain a 500mm exclusion zone during plasma operation
+      - You MUST NEVER disable safety interlocks or protective systems
+      - You MUST NEVER leave the system unattended during operation
+      - You MUST NEVER touch components during or immediately after plasma operation
+      - You MUST NEVER operate if any safety system appears faulty
+    - |-
+      STOP - verify your authorisation:
+      - Have you completed 3SAE CMS manufacturer training? YES/NO
+      - Have you passed the competency assessment? YES/NO
+      - Are you listed on the authorised users list? YES/NO
+      - If you answered NO to any of these: DO NOT OPERATE - contact supervisor
+    - |-
+      Supervision requirements for new users:
+      - First 10 operations: direct supervision by experienced user required
+      - Next 20 operations: experienced user must be present in laboratory
+      - After 30 successful operations: may operate independently if competency maintained
+    - "SECTION 1 - PRE-OPERATION SAFETY CHECKS (MANDATORY - DO NOT SKIP): complete these checks EVERY TIME before operation. If ANY check fails, DO NOT USE - lock out and report to supervisor immediately."
+    - |-
+      Sign in to equipment logbook:
+      - Record your name, date, time, and type of operation planned
+      - Review previous entries for any reported issues
+      - Check that no maintenance or repair is scheduled
+    - |-
+      Visual inspection of equipment exterior:
+      - Check for any visible damage to equipment housing or enclosures
+      - Verify no cables or hoses are damaged, frayed, or kinked
+      - Check that all cable connections are secure
+      - Ensure no liquid spills or contamination on or near equipment
+      - Verify work area is clean and free of clutter
+      - If ANY damage found: DO NOT USE - lock out and report to supervisor
+    - |-
+      Check exclusion zone and clearances:
+      - Verify 500mm exclusion zone around equipment is clear
+      - Remove any flammable materials from 1-metre radius
+      - Ensure no obstructions to emergency stop button or exit routes
+      - Confirm adequate lighting for operation
+      - Check that fire extinguisher is accessible
+    - |-
+      Compressed air system checks:
+      - Verify compressed air supply is connected and secure
+      - Check pressure gauge reads approximately 6.2 bar (90 psi)
+      - Listen for any unusual hissing or air leaks
+      - Inspect visible air lines for damage or kinks
+      - Test emergency air shut-off valve (close and reopen to verify function)
+      - If pressure is incorrect or leaks detected: DO NOT USE - contact facilities/supervisor
+    - |-
+      Electrical system checks:
+      - Verify mains power is connected and RCD is functional (test RCD button)
+      - Check that no electrical cables show damage or exposed conductors
+      - Verify all equipment indicators show normal status
+      - Ensure emergency power isolation switch is accessible and functional
+      - If any electrical issues detected: DO NOT USE - contact supervisor/electrician
+    - |-
+      Emergency stop button test (CRITICAL):
+      - Press emergency stop button to verify it functions
+      - System should immediately cease all operations
+      - Reset emergency stop and verify system can restart normally
+      - If emergency stop does not function correctly: DO NOT USE - lock out and report immediately
+    - |-
+      Safety interlock verification:
+      - Verify that opening chamber door during operation triggers automatic shutdown (test with system in safe idle state)
+      - Check that all safety interlocks appear intact and functional
+      - If any interlock appears bypassed or faulty: DO NOT USE - report immediately
+    - |-
+      Software and control system check:
+      - Power on PC and CMS control system
+      - Verify software loads without errors
+      - Check that both camera views display correctly
+      - Verify all system status indicators show "ready" or normal state
+      - If software errors or camera failures: DO NOT USE - contact IT/supervisor
+    - |-
+      Vision system verification:
+      - Check both orthogonal camera views are clear and focused
+      - Verify telecentric lenses are clean (clean gently with lens tissue if needed)
+      - Test that monitor displays both camera feeds clearly
+      - Adjust monitor brightness/contrast if needed for viewing comfort
+      - If vision system not functioning: DO NOT USE - operation requires visual monitoring
+    - |-
+      Check sharps disposal and first aid readiness:
+      - Verify sharps disposal container is available and not full
+      - Confirm first aid kit location and check it contains splinter removal tools
+      - Note location of emergency eyewash station
+      - If safety equipment not available: obtain before proceeding
+    - |-
+      Personal protective equipment (PPE) verification:
+      - Put on safety glasses (close-fitting type)
+      - Confirm laboratory coat/protective clothing is worn
+      - Verify closed-toe shoes are being worn
+      - Have nitrile gloves and heat-resistant gloves readily available
+      - Never proceed without appropriate PPE
+    - |-
+      Final pre-operation check:
+      - All pre-operation checks completed satisfactorily? YES/NO
+      - Any safety concerns or unusual observations? Record in logbook
+      - If any concerns: consult with supervisor before proceeding
+      - If all checks passed: proceed to operation
+    - "SECTION 2 - EQUIPMENT STARTUP AND INITIALISATION:"
+    - |-
+      Power-up sequence:
+      - Ensure PC and CMS software are running
+      - Verify compressed air supply is open and at correct pressure
+      - Allow system to complete initialisation sequence (typically 2-3 minutes)
+      - Watch for any error messages during startup
+      - Verify all system diagnostics show normal operation
+    - |-
+      Electrode inspection and installation (if required):
+      - Put on nitrile gloves before handling electrodes
+      - Open electrode chamber following software prompts or manual procedures
+      - Visually inspect electrodes for wear, damage, or excessive contamination
+      - If electrodes appear worn (consult manufacturer guidelines for wear limits): replace with spare set
+      - Ensure electrodes are correctly positioned and secured
+      - Close electrode chamber and verify secure closure
+      - Remove nitrile gloves after electrode handling (do not contaminate other surfaces)
+    - |-
+      Cooling system verification:
+      - Verify embedded electrode cooling system is functioning (check for coolant flow indicators if present)
+      - Listen for coolant pump operation (should be quiet and steady)
+      - Check for any coolant leaks around electrode assembly
+      - If cooling system not functioning: DO NOT proceed - contact supervisor/manufacturer
+    - |-
+      Calibration and alignment check (if required by procedure):
+      - Some processes may require alignment calibration
+      - Follow software prompts for automatic alignment procedures
+      - Verify pitch and yaw alignment systems are functioning correctly
+      - If manual alignment needed: use provided alignment fixtures and follow manufacturer procedures
+    - "SECTION 3 - FIBRE PREPARATION AND LOADING:"
+    - |-
+      Select appropriate fibre holders:
+      - Choose fibre holders matching the diameter of fibres to be processed (250μm holders for standard single-mode fibres; 400μm, 700μm, 1000μm, 1500μm, 2000μm, 2500μm for larger diameter fibres)
+      - Install fibre holders in both left and right positioning stages
+      - Ensure holders are clean and properly seated
+    - |-
+      Prepare optical fibres:
+      - Ensure safety glasses are on before handling fibres
+      - Strip fibre coating if required using appropriate stripping tool (not while in CMS)
+      - Clean fibre ends with isopropanol and lint-free wipes
+      - If cleaving externally before loading: use proper cleaving technique to achieve clean end face
+      - Handle fibres only by coated sections when possible
+      - Use tweezers or fibre handling tools - avoid direct hand contact with glass sections
+    - |-
+      Load fibres into holders:
+      - Carefully position fibre in left holder first
+      - Secure fibre gently (avoid over-tightening which can damage fibre)
+      - Load second fibre into right holder (for splicing operations)
+      - For tapering operations: load single fibre as per procedure
+      - Verify fibres are properly seated and secured
+      - Check alignment visually through camera system
+    - |-
+      Position fibres using software control:
+      - Use X-Y-Z positioning controls to align fibres
+      - Bring fibre ends into view of both camera systems
+      - For fusion splicing: align fibre cores using automatic or manual alignment
+      - Achieve alignment resolution of <50nm in X and Y axes
+      - Verify alignment on both orthogonal camera views before proceeding
+      - Never attempt to adjust fibre position manually while system is powered
+    - "SECTION 4 - OPERATION - FUSION SPLICING (for tapering or cleaving, see sections 5 and 6):"
+    - |-
+      Configure splice parameters:
+      - Select appropriate splice program from software library, OR create custom splice program specifying: arc power settings (based on fibre type and diameter), arc duration, pre-splice cleaning arc (if required), overlap distance, push distance during splice
+      - Save custom programs for repeatability
+      - Test new programs on scrap fibres before using on valuable components
+    - |-
+      Pre-splice arc cleaning (if required):
+      - Some fibre types benefit from pre-splice cleaning arc
+      - Software will prompt for this step if programmed
+      - Verify fibres remain aligned during cleaning arc
+      - Visual inspection via camera for any debris or contamination
+    - |-
+      Final pre-splice verification - STOP - safety verification before plasma activation:
+      - Hands clear of equipment? YES
+      - Exclusion zone clear? YES
+      - Fibre alignment correct? YES
+      - Splice parameters confirmed? YES
+      - Emergency stop accessible? YES
+      - If any NO answers: correct before proceeding
+    - |-
+      Initiate fusion splice:
+      - Click "Start Splice" or equivalent command in software
+      - PLASMA WILL NOW ACTIVATE - stand clear
+      - Monitor splice progress on both camera views
+      - Watch for: smooth approach of fibre ends, uniform heating and melting of glass, proper fusion at interface, absence of bubbles or voids
+      - Do NOT reach towards equipment during plasma operation
+    - |-
+      Post-splice monitoring:
+      - Software will automatically control plasma power and timing, fibre positioning and overlap, push force during fusion, and cool-down period
+      - Process typically completes in 10-60 seconds depending on fibre size
+      - Wait for "Splice Complete" confirmation before proceeding
+    - |-
+      Splice quality assessment:
+      - System automatically captures before/during/after images
+      - Visually inspect splice on monitor for: smooth, symmetrical splice junction; proper alignment (minimal core offset); absence of bubbles, voids, or cracks; appropriate splice geometry
+      - Use scanning function to measure splice diameter profile if needed
+      - Record splice quality in logbook (accept/reject decision)
+    - |-
+      Cool-down period (MANDATORY):
+      - DO NOT touch fibres or components for minimum 15 minutes after splice
+      - Software may display temperature information
+      - Use thermal inspection camera to verify components have cooled if immediate handling required
+      - Heat-resistant gloves do not provide complete protection immediately after >3000°C plasma
+      - Plan work to allow proper cooling time between splices
+    - |-
+      Remove spliced component:
+      - After confirmed cool-down, carefully release fibre from holders
+      - Use fibre handling tools (tweezers) to grip coated sections only
+      - Transfer to appropriate storage or testing fixture
+      - Dispose of any cleaved scrap fibres in sharps container immediately
+    - |-
+      If splice is rejected:
+      - Cleave out the failed splice section
+      - Prepare new fibre ends
+      - Repeat alignment and splicing process
+      - Document failure mode in logbook for quality tracking
+    - "SECTION 5 - OPERATION - FIBRE TAPERING (uses plasma to elongate fibre while reducing diameter; available modes: bidirectional, single-direction, or custom table-based tapering):"
+    - |-
+      Select tapering mode and parameters:
+      - Bidirectional tapering: for symmetric tapers up to 150mm length
+      - Single-direction tapering: for asymmetric tapers up to 90mm length
+      - Table-based tapering: for custom taper profiles using syntax-based programming
+      - Define critical parameters: taper ratio (input diameter / output diameter), taper length, pulling speed profile, arc power profile, hot zone width (can be expanded in partial vacuum mode)
+    - |-
+      Load fibre for tapering:
+      - Secure fibre in both left and right holders with adequate length for taper
+      - Ensure sufficient fibre extends beyond holders to achieve desired taper length
+      - Position initial heat zone at correct starting location
+      - Verify load cell feedback system is functional (shows fibre tension)
+    - |-
+      Partial vacuum mode (if required) - for adiabatic tapers or wide heat zone processing:
+      - Verify vacuum chamber seals and O-rings are in good condition
+      - Close chamber and verify seal integrity
+      - Initiate vacuum pump following software procedure
+      - Monitor pressure gauge during evacuation; target pressure: [specify based on process requirements]
+      - Never open chamber while under vacuum
+      - Vacuum mode expands plasma heat zone up to 10x along fibre axis
+      - If unusual sounds or pressure readings: immediately abort and vent to atmosphere
+    - |-
+      Configure taper program:
+      - Use simplified LabVIEW GUI for standard tapers, OR create custom program using table-based tapering interface, OR import program from MATLAB/Excel if custom algorithm developed
+      - Software allows 20 adjustments per second for fibre platform positions (left and right), heat zone location, and arc power settings
+      - Validate program with simulation or test run before using on valuable fibre
+    - |-
+      Initiate tapering process - STOP - final safety check:
+      - Fibre secured properly? YES
+      - Taper parameters confirmed? YES
+      - If using vacuum: chamber sealed and pressure correct? YES
+      - Exclusion zone clear? YES
+      - Click "Start Taper" command
+      - PLASMA WILL ACTIVATE - stand clear of equipment
+    - |-
+      Monitor tapering process:
+      - Watch "Hot Imaging" live view of molten glass during tapering
+      - Monitor load cell feedback showing fibre tension
+      - Verify smooth, controlled pulling motion
+      - Watch for taper formation via camera views
+      - Typical taper time: several minutes depending on length and profile
+      - Do NOT interfere with process once started
+      - If any abnormal behaviour observed: use emergency stop immediately
+    - |-
+      Post-taper procedures:
+      - Process completes automatically when programmed taper profile achieved
+      - Software captures images and process data
+      - Cooling period MANDATORY: minimum 15 minutes before handling
+      - If in vacuum mode: software will prompt for controlled venting; allow chamber to return to atmospheric pressure; verify pressure equalised before opening chamber
+      - Use thermal camera to verify taper has cooled sufficiently
+    - |-
+      Taper quality verification:
+      - Use scanning function to measure taper diameter profile
+      - Compare measured profile to target specification
+      - Visual inspection for: smooth taper transition, absence of modulations or stress concentrations, symmetry (for bidirectional tapers), proper taper length
+      - Record taper quality data in logbook
+      - If taper meets specifications: proceed to removal
+      - If taper is defective: document failure mode and repeat process
+    - |-
+      Remove tapered fibre:
+      - After confirmed cool-down and quality verification, carefully release fibre from holders using fibre handling tools
+      - Support taper along entire length to prevent breakage
+      - Transfer to appropriate storage or next processing step
+      - Clean work area and dispose of scrap in sharps container
+    - "SECTION 6 - OPERATION - PRECISION CLEAVING (in situ ultrasonic diamond-tipped cleaving for production of end caps, tapers, and accurate length components):"
+    - |-
+      Prepare fibre for cleaving:
+      - Load fibre to be cleaved in appropriate holder
+      - Position fibre so desired cleave location is in field of view
+      - Use real-time scanning to identify exact cleave position
+      - Achieve cleave location precision of ±12.5μm using reference marks
+    - |-
+      Configure cleaving parameters:
+      - Diamond-tipped blade with piezo-based frequency and amplitude control
+      - Set ultrasonic frequency and amplitude based on fibre diameter: larger fibres (up to 500μm) may require higher amplitude; smaller fibres need lower amplitude to prevent shattering
+      - Position semi-automated backstop for blade travel limit
+      - Verify blade is sharp and undamaged (inspect through camera if possible)
+    - |-
+      Execute cleave - STOP - safety check before cleaving:
+      - Safety glasses on? YES
+      - Hands clear of cleaving zone? YES
+      - Fibre properly positioned? YES
+      - Initiate cleave command in software
+      - Ultrasonic blade will advance to fibre, vibrate, and create cleave (typically completes in <1 second)
+      - Do NOT manually interfere with cleave process
+    - |-
+      Cleave quality assessment:
+      - High-resolution camera inspection of cleaved end face
+      - Good cleave characteristics: flat, perpendicular end face; minimal chipping or fracture; clean separation
+      - If cleave is poor quality: adjust cleave parameters (frequency, amplitude, blade position); may need to cleave back further and repeat
+      - Software captures images for documentation
+    - |-
+      Post-cleave handling:
+      - Cleaved fibre end is VERY SHARP - use extreme care when removing cleaved component
+      - Use tweezers or fibre handling tools only
+      - Place cleaved scrap immediately in sharps container
+      - Never allow cleaved fibres to fall on floor or work surface
+    - |-
+      Cleaving blade maintenance:
+      - Diamond blade requires periodic replacement based on usage
+      - Signs blade needs replacement: poor cleave quality despite parameter adjustments, visible damage to blade tip, inconsistent cleave results
+      - Blade replacement procedure: LOCK OUT EQUIPMENT before accessing blade; use nitrile gloves when handling blade; follow manufacturer procedure for safe blade removal and installation; dispose of used blade in sharps container (extremely sharp); test new blade on scrap fibre before critical cleaves
+    - "SECTION 7 - EQUIPMENT SHUTDOWN AND POST-OPERATION PROCEDURES:"
+    - |-
+      Prepare for shutdown:
+      - Complete any in-progress operations
+      - Remove all fibres from holders
+      - Collect all cleaved scrap and dispose in sharps container
+      - Remove any fibre holders or fixtures that are not permanent
+    - |-
+      Software shutdown sequence:
+      - Save any custom programs or process data
+      - Backup critical data if required
+      - Close processing software following proper exit procedure
+      - Do NOT force-quit software - may cause data loss or system errors
+    - |-
+      Plasma system shutdown:
+      - System will automatically cool down electrodes using embedded cooling
+      - Allow cooling cycle to complete (typically 5-10 minutes)
+      - Do NOT power off during cooling cycle
+      - System will indicate when safe to power down
+    - |-
+      Vacuum system shutdown (if used):
+      - Ensure chamber is fully vented to atmosphere
+      - Verify pressure gauge shows atmospheric pressure
+      - Safe to power off vacuum pump
+      - Leave chamber slightly open to prevent seal damage during storage
+    - |-
+      Compressed air shutdown:
+      - Close compressed air supply valve (optional - can be left on if equipment used regularly)
+      - If closing air supply: allow system to depressurise naturally; verify pressure gauge drops to zero
+      - Do NOT disconnect pressurised lines
+    - |-
+      Power down sequence:
+      - Shut down PC in normal manner
+      - Switch off CMS main power
+      - Verify all indicator lights are off
+      - Do NOT disconnect power cables while system is energised
+    - |-
+      Post-operation inspection:
+      - Visual check for any damage or issues that developed during session
+      - Note any unusual behaviour in equipment logbook
+      - Check work area for any dropped fibres or glass debris
+      - Verify all sharps have been disposed of properly
+    - |-
+      Work area cleanup:
+      - Clean all work surfaces using damp cloth (captures glass fragments)
+      - Do NOT use compressed air to clean - will disperse glass particles
+      - Dispose of cleaning materials in general waste (not sharps unless glass embedded)
+      - Return all tools and accessories to designated storage
+      - Ensure fire extinguisher and emergency equipment are accessible
+      - Leave work area clean and ready for next user
+    - |-
+      Sign out from equipment logbook:
+      - Record end time, operations completed, component count, any issues
+      - Note any maintenance needs or concerns
+      - If any problems occurred: complete incident report if safety-related; tag equipment if not safe to use; inform supervisor immediately of serious issues
+    - |-
+      PPE removal and hand washing:
+      - Remove and dispose of nitrile gloves if worn
+      - Remove safety glasses and store properly
+      - Remove laboratory coat
+      - Wash hands thoroughly after handling fibres, electrodes, or chemicals
+      - Inspect hands for any glass fragments (use magnification if needed)
+  emergency_shutdown:
+    - |-
+      USE EMERGENCY STOP IN ANY OF THESE SITUATIONS:
+      - Plasma operation appears abnormal (unusual colour, shape, sound, or behaviour)
+      - Smoke, fire, or burning smell detected
+      - Electrical sparking, arcing, or unusual sounds
+      - Compressed air leak or sudden pressure loss
+      - Vacuum chamber failure or unusual sounds from vacuum system
+      - Fibre breakage during processing causing unsafe condition
+      - Software crash or unresponsive controls
+      - Personal injury occurring
+      - Equipment damage visible or suspected
+      - Any situation where continued operation is unsafe
+    - |-
+      EMERGENCY SHUTDOWN PROCEDURE:
+      1. IMMEDIATELY PRESS EMERGENCY STOP BUTTON (large red button on equipment front panel). Pressing will immediately shut down plasma generation, all motion systems, and processing functions. NOTE: the emergency stop does NOT remove electrical power - use the main isolator for electrical emergencies.
+      2. If emergency stop button fails or is inaccessible: turn off main power at mains isolator switch; close compressed air supply at emergency shut-off valve; evacuate area if situation is worsening.
+      3. Assess the situation: fire - follow fire emergency procedures; electrical issue - do not approach equipment, call electrician; compressed air failure - evacuate and call facilities/supervisor; personal injury - provide first aid and call emergency services if serious; equipment malfunction - assess damage and determine if area is safe.
+      4. DO NOT attempt to restart equipment until: the emergency condition has been completely resolved; equipment has been thoroughly inspected by competent person or supervisor; root cause of emergency has been identified and corrected; supervisor has authorised restart in writing; any necessary repairs have been completed and tested; all safety systems verified functional.
+      5. Complete incident documentation: fill out incident report form immediately while details are fresh (date, time, personnel present, exact circumstances, actions taken; attach photos if equipment damage occurred); submit to supervisor and safety officer; complete RiskWare report if required by university policy. Equipment may need to be locked out pending investigation.
+      6. Lock out and tag equipment if not safe to use. Tag must state date, reason for lockout, who locked out, and contact details. Only supervisor or authorised maintenance can remove lockout.
+    - |-
+      RESETTING EMERGENCY STOP (only after emergency fully resolved and authorisation obtained):
+      1. Verify that emergency condition has been completely addressed
+      2. Obtain supervisor approval to reset (document in logbook)
+      3. Rotate emergency stop button clockwise to release (or follow equipment-specific reset procedure)
+      4. System will require re-initialisation
+      5. Perform complete pre-operation safety checks before resuming any work
+      6. Test emergency stop button again to verify it functions correctly
+      7. Proceed with caution and monitor equipment closely for any recurring issues
+  emergency_procedures:
+    - |-
+      FIRE EMERGENCY:
+      1. ACTIVATE EMERGENCY STOP to shut down all CMS systems
+      2. CLOSE COMPRESSED AIR SUPPLY immediately at emergency shut-off valve
+      3. If fire is SMALL (smaller than a wastebasket) and CONTAINED: use appropriate fire extinguisher (CO2 or dry powder for electrical fires - DO NOT use water on electrical equipment); aim at base of fire, sweep side to side; ensure you have clear escape route behind you; if fire does not extinguish immediately or grows: evacuate
+      4. If fire is LARGE, SPREADING, or involves compressed gas: evacuate area immediately; close door behind you (do not lock); activate building fire alarm (break glass at alarm point); call 000 (Emergency Services) from safe location and provide location, type of fire, any hazardous materials involved; evacuate to designated assembly point; do not re-enter for any reason
+      5. If clothing is on fire: STOP, DROP, and ROLL to smother flames; use fire blanket or safety shower if available; once flames out, cool burned area with water; seek immediate medical attention
+      6. After fire is extinguished: do not re-enter area until declared safe by emergency services or supervisor; equipment must be thoroughly inspected before any restart attempt; complete incident report with detailed description of fire cause and damage; review fire safety procedures and identify any improvements needed
+    - |-
+      THERMAL BURN INJURY:
+      1. Immediately move away from heat source
+      2. Cool affected area under running cold water for at least 20 minutes (cool tap water, not ice; start cooling as quickly as possible; continue cooling even if pain subsides; remove jewellery or constricting items before swelling occurs)
+      3. Do NOT: apply ice directly to burn; apply butter, oil, ointments, or "home remedies"; break any blisters that form; touch burn with dirty hands or materials
+      4. After cooling, cover burn with sterile non-stick dressing from first aid kit (clean plastic wrap as alternative); do NOT use fluffy materials (cotton wool) that may stick
+      5. Seek immediate medical attention for: burns larger than a 20-cent coin (5cm diameter); burns to face, hands, feet, genitals, or major joints; burns that appear deep (white, waxy, charred, or painless); burns causing severe pain or extensive blistering; burns from electrical source; burns from chemical contact; any uncertainty about burn severity. Call 000 for severe burns.
+      6. For minor burns (small, superficial, not on sensitive areas): continue cooling for 20 minutes; apply sterile dressing; may use over-the-counter pain relief if needed; monitor for signs of infection (increased pain, redness, swelling, pus); seek medical review if any concerns
+      7. Complete incident documentation: record details in equipment logbook; fill out incident report form; notify supervisor immediately; complete RiskWare report; investigate how burn occurred to prevent recurrence
+    - |-
+      ELECTRIC SHOCK:
+      1. DO NOT touch the person if they are still in contact with electrical source - you may also be shocked
+      2. Break the circuit: switch off power at mains isolator, or use non-conductive material (dry wood, plastic) to move person away from source - only if safe to do so
+      3. Call 000 immediately if person is unconscious or not breathing, showing signs of serious shock (pale, clammy, rapid pulse), or burned from electrical contact
+      4. If person is unconscious: check for breathing; if trained in CPR and person not breathing, commence CPR; continue until emergency services arrive or person recovers
+      5. If person is conscious but shocked: have them lie down and remain still; keep warm with blanket if available; treat any burns (see thermal burn procedure); seek medical attention even if person feels "fine" - electrical shock can cause internal injuries
+      6. LOCK OUT AND TAG EQUIPMENT: equipment that delivered shock must be locked out immediately; attach tag stating "Electrical hazard - Do not use"; only qualified electrician can inspect and clear equipment for use
+      7. Complete incident documentation: document exact circumstances of shock; identify electrical fault that caused shock; ensure equipment is repaired before any future use; review electrical safety procedures
+    - |-
+      GLASS INJURY (CUTS OR EMBEDDED FRAGMENTS):
+      1. For minor cuts: rinse wound gently with clean water; apply pressure with clean cloth if bleeding; once bleeding stopped, apply sterile adhesive dressing; monitor for signs of infection
+      2. For EMBEDDED glass fragments: DO NOT attempt to remove large or deep embedded glass; cover area with sterile dressing; seek medical attention for professional removal; DO NOT apply pressure over embedded glass
+      3. For deep cuts or severe bleeding: apply direct pressure with clean cloth; elevate injured area above heart level if possible; do NOT remove cloth if blood soaks through - add more layers on top; call 000 if bleeding is severe or does not stop within 5-10 minutes; keep person calm and lying down; monitor for signs of shock (pale, clammy, weak pulse)
+      4. For EYE injuries involving glass: DO NOT rub eye; DO NOT attempt to remove any object from eye; DO NOT apply pressure to eye; cover eye gently with sterile dressing (no pressure); seek IMMEDIATE medical attention at emergency department; call 000 if object embedded in eye or severe pain; cover both eyes to prevent movement (injured eye will track with healthy eye)
+      5. After treatment: all glass injuries, even minor, must be reported to supervisor; complete incident report; investigate how glass injury occurred; review handling procedures to prevent recurrence; ensure sharps disposal procedures are being followed
+      6. First aid supplies for glass injuries: sterile dressings in various sizes; adhesive bandages; splinter removal tweezers (for tiny superficial fragments only); eye wash and eye pads; clean water for rinsing wounds
+    - |-
+      COMPRESSED AIR SYSTEM FAILURE / AIR BLAST:
+      1. ACTIVATE EMERGENCY STOP
+      2. CLOSE COMPRESSED AIR SUPPLY at emergency shut-off valve
+      3. EVACUATE AREA if loud hissing, visible high-pressure air leaks, or flying debris
+      4. DO NOT approach failed air lines or fittings - high-pressure air can cause serious injury
+      5. If injury from air blast: move to safe area away from air stream; seek IMMEDIATE medical attention for suspected air embolism (signs: chest pain, difficulty breathing, confusion, loss of consciousness) - call 000, air embolism is life-threatening; do NOT allow casualty to move excessively - may worsen embolism; treat any projectile injuries (embedded objects, cuts, bruises)
+      6. Never use compressed air to clean clothing or body, direct at another person, or blow dust or debris (creates airborne hazards)
+      7. After system failure: LOCK OUT AND TAG equipment; contact facilities/maintenance for pressure system inspection; only qualified technician can repair and re-certify compressed air system; complete incident report documenting failure mode
+    - |-
+      VACUUM SYSTEM FAILURE:
+      1. ACTIVATE EMERGENCY STOP
+      2. If catastrophic failure (implosion, explosion, or violent air inrush): evacuate area immediately; call 000 if injuries present; do not re-enter until area declared safe by supervisor or emergency services
+      3. If controlled venting or slow leak: allow system to vent to atmosphere naturally; monitor pressure gauge; once at atmospheric pressure, open chamber slowly; inspect for damage before any further use
+      4. Injuries from vacuum failure: flying glass or debris - treat as cuts/embedded fragments (see glass injury procedure); noise trauma - seek medical review if hearing affected; crush injuries - seek immediate medical attention
+      5. After vacuum system failure: LOCK OUT AND TAG equipment; only qualified technician can inspect vacuum chamber and seals; pressure testing may be required before return to service; document failure mode in incident report
+    - |-
+      CHEMICAL EXPOSURE (ELECTRODE MATERIALS OR CLEANING CHEMICALS):
+      1. Skin contact: immediately remove contaminated clothing; rinse affected area with copious running water for at least 15 minutes; do NOT use neutralising agents unless specifically directed by SDS; if irritation persists, seek medical attention; bring SDS with you to medical facility
+      2. Eye contact: immediately flush eye with water or eyewash for at least 15 minutes; hold eyelids open to ensure thorough rinsing; remove contact lenses if present and easy to remove; seek immediate medical attention after flushing; bring SDS to medical facility
+      3. Inhalation: move to fresh air immediately; loosen tight clothing; if breathing difficulty, seek immediate medical attention; call 000 if severe respiratory distress; bring SDS to medical facility
+      4. Ingestion (unlikely but possible): do NOT induce vomiting unless directed by Poisons Information; rinse mouth with water; call Poisons Information Centre 13 11 26 and follow their advice; seek medical attention; bring chemical container or SDS
+      5. After chemical exposure: complete incident report; review SDS and handling procedures; identify how exposure occurred and implement prevention
+    - |-
+      SOFTWARE / CONTROL SYSTEM FAILURE:
+      1. Attempt emergency stop via software interface (if responsive)
+      2. If software unresponsive: press physical emergency stop button; if both fail, turn off power at mains isolator
+      3. Record any error messages or system state: take photo of screen if possible and safe; note exact sequence of events leading to failure; do NOT attempt to troubleshoot during active emergency
+      4. After system is stopped: DO NOT attempt to restart; LOCK OUT AND TAG equipment; contact IT support or manufacturer technical support; only qualified technician can diagnose and repair software/control issues
+      5. Data preservation: if safe to do so, attempt to save any critical process data before complete shutdown; system logs may help diagnose software failure
+      6. Complete incident report documenting software failure and any equipment impact
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency Services (Police, Fire, Ambulance): 000 - call for fires, serious injuries, life-threatening situations
+      - Poisons Information Centre: 13 11 26 - 24/7 advice for chemical exposures and ingestions
+      - University Security (after hours): [Insert number] - for emergencies outside business hours; can contact emergency services and key personnel
+      - Supervisor: [Name and number] - first point of contact for equipment issues; can authorise equipment restart after emergencies
+      - Safety Officer: [Name and number] - for incident reporting and safety advice; for hazard assessments and risk management
+      - First Aid Officers: [Names and contact details / Notice board location] - trained in emergency first aid
+      - Facilities Management: [Insert number] - for electrical, plumbing, HVAC emergencies; for compressed air system issues
+      - IT Support: [Insert number] - for software and computer system issues; can assist with data recovery
+      - 3SAE Technical Support: +1 615-778-8812, info@3sae.com - manufacturer support for equipment issues (available during US business hours; may have time zone delay)
+  cleanup_waste:
+    - |-
+      AFTER EACH USE - PROCESSING CHAMBER AND FIBRE HOLDERS:
+      - Remove all fibre remnants from holders using tweezers
+      - Inspect holders for glass debris or contamination
+      - Wipe holders with lint-free cloth if needed
+      - Do NOT use solvents on fibre holders unless specified by manufacturer
+      - Return holders to designated storage
+    - |-
+      ELECTRODE CLEANING (periodic - follow manufacturer schedule):
+      - Performed when electrodes show visible contamination, or per manufacturer interval
+      - Safety requirements: equipment must be powered off and cool; wear nitrile gloves; perform in well-ventilated area
+      - Procedure: remove electrode assembly following manufacturer instructions; use provided electrode cleaning discs; clean electrode surfaces gently to remove oxidation or deposits; inspect for wear (replace if worn beyond manufacturer limits); reinstall electrodes ensuring proper positioning
+      - Disposal: used cleaning discs in general waste; worn electrodes in sharps container or per manufacturer instructions
+    - |-
+      CAMERA LENSES AND OPTICS:
+      - Inspect telecentric lenses for dust or contamination
+      - Clean ONLY with proper lens tissue and lens cleaner
+      - Never use paper towel, cloth, or harsh chemicals (will scratch lenses)
+      - Clean gently in circular motion from centre outward
+      - If optics are heavily contaminated: contact supervisor (may need professional cleaning)
+    - |-
+      WORK AREA AND BENCHTOP:
+      - Remove all materials, tools, and personal items
+      - Wipe down work surface with damp cloth to capture glass fragments
+      - Do NOT use compressed air to clean benchtop - disperses glass particles into air and onto equipment
+      - Check for dropped fibres on floor or adjacent surfaces
+      - Leave work area clean and organised for next user
+    - |-
+      GLASS WASTE (FIBRE SCRAPS, CLEAVED ENDS, BROKEN COMPONENTS):
+      - All glass waste goes in sharps container - NEVER in general waste (includes cleaved fibre ends, failed splices or tapers, broken fibres, any glass fragments)
+      - Sharps container must be a puncture-proof rigid container, clearly labelled "Glass Sharps", positioned within easy reach of work area, and never filled beyond 3/4 full
+      - When full: contact waste management for sharps container replacement
+    - |-
+      ELECTRODE WASTE:
+      - Worn electrodes: sharps container or follow manufacturer disposal instructions
+      - May contain metal materials requiring specific disposal; contact waste management if uncertain
+    - |-
+      CHEMICAL WASTE (CLEANING AGENTS, ISOPROPANOL, ETC.):
+      - Small quantities of isopropanol used for fibre cleaning can evaporate or be disposed via solvent waste
+      - Larger quantities or other chemicals: use university chemical waste system
+      - Never pour chemicals down sink unless specifically approved
+      - Label all waste containers clearly; consult SDS for disposal requirements
+    - |-
+      GENERAL WASTE AND RECYCLING:
+      - General waste: non-contaminated packaging materials; paper towels (that haven't contacted glass); disposable gloves (if not contaminated with chemicals); general laboratory waste
+      - Recycling: fibre spools and packaging may be recyclable; check with waste management for specific requirements; remove all labels and contamination before recycling
+    - |-
+      PERIODIC MAINTENANCE CLEANING:
+      - Weekly: thorough wipe-down of equipment exterior; vacuum or damp-wipe floor area around equipment; check that all waste containers have adequate capacity; inspect work area organisation and storage
+      - Monthly: detailed cleaning of all accessible surfaces; inspection of air filters (if present) and cleaning if needed; check cable routing and organisation; review housekeeping procedures with all users
+      - Annually (or per manufacturer schedule): professional equipment cleaning and maintenance; inspection and cleaning of internal components by qualified technician; replacement of any worn or deteriorated parts; calibration and alignment verification
+    - |-
+      MAINTENANCE LOG:
+      - Document all cleaning and maintenance activities in equipment logbook
+      - Record date, type of cleaning/maintenance, person performing, any issues noted
+      - Track electrode replacement and usage hours
+      - Schedule and track periodic maintenance tasks
+  references:
+    - "AS/NZS 60825.1:2014 - Safety of laser products"
+    - "AS/NZS 3000:2018 - Electrical installations (Wiring Rules)"
+    - "AS 2243 Series - Safety in laboratories"
+    - "AS 4343:2014 - Pressure equipment - Hazard levels"
+    - "Work Health and Safety Act 2011"
+    - "Work Health and Safety Regulation 2017"
+    - "3SAE CMS Product Information Sheet (https://3sae.com/wp-content/uploads/2024/01/CMS.pdf)"
+    - "3SAE CMS Operator's Manual and User Documentation"
+    - "3SAE Combiner Manufacturing System technical specifications"
+    - "Manufacturer training materials (3SAE Technologies Inc.)"
+    - "Risk Assessment SAIL-RA-CMS-001"
+    - "University WHS policies and procedures"
+    - "Material Safety Data Sheets for all chemicals used with equipment"
+    - "Code of Practice: Managing electrical risks in the workplace"
+  competency:
+    - "MANDATORY TRAINING (must be completed and documented before authorisation; records maintained by supervisor):"
+    - |-
+      1. Manufacturer training course - 3SAE CMS multi-day on-site installation and operational training (TRN-01-0012):
+      - Key learning outcomes: equipment overview and capabilities; safety systems and emergency procedures; control software operation (LabVIEW GUI); fusion splicing techniques and parameters; fibre tapering methods (bidirectional, single-direction, table-based); precision cleaving operation; electrode maintenance and replacement; troubleshooting and diagnostics; best practices for different fibre types and diameters
+      - This training is ESSENTIAL - no substitutes; typically 2-3 days depending on applications; certificate of completion must be obtained
+    - |-
+      2. Laboratory safety induction:
+      - General laboratory safety requirements; emergency procedures and assembly points; location and use of safety equipment (fire extinguishers, eyewash, first aid); chemical safety and SDS interpretation; incident reporting procedures; personal protective equipment requirements
+    - |-
+      3. Fibre optic handling and safety:
+      - Optical fibre types and characteristics; safe handling techniques for glass fibres; hazards of glass fragments and cleaved ends; proper use of fibre handling tools; sharps disposal procedures; first aid for glass injuries; eye protection requirements
+    - |-
+      4. Electrical safety awareness:
+      - Basic electrical hazards; lockout/tagout procedures; RCD function and testing; emergency power isolation; when to contact qualified electrician
+      - Do NOT attempt electrical repairs without qualifications
+    - |-
+      5. High-temperature process safety:
+      - Thermal hazards from plasma operation; safe distances and exclusion zones; cooling time requirements; recognition of hot surfaces; thermal burn first aid; heat-resistant glove use and limitations
+    - |-
+      6. Compressed air and vacuum systems safety:
+      - Hazards of high-pressure systems; safe connection and disconnection procedures; pressure monitoring and relief; vacuum chamber operation; emergency shutdown procedures; compressed air safety (never direct at body)
+    - |-
+      THEORY ASSESSMENT (written test or oral examination):
+      - Safety-critical knowledge (must achieve 100%): emergency stop procedure and location; emergency shutdown for different emergency types; thermal burn first aid procedures; glass injury prevention and first aid; electrical safety and when to evacuate; compressed air system hazards; when operation must stop (red flags); PPE requirements for different tasks
+      - Equipment knowledge (minimum 80% pass mark): CMS capabilities and specifications; fusion splicing principles and parameters; tapering methods and applications; cleaving operation and quality assessment; software interface and control functions; electrode function and maintenance; cooling system purpose; vision system operation
+      - Procedure knowledge (minimum 80% pass mark): pre-operation safety checks; fibre preparation and loading; splice parameter selection; taper program configuration; cleave positioning and execution; shutdown procedures; cleaning and waste disposal; documentation requirements
+      - Failed assessment: review training materials, additional instruction, retest
+    - |-
+      PRACTICAL ASSESSMENT (supervised demonstration of competency):
+      - Pre-operation procedures: complete all safety checks correctly; identify and test emergency stop; verify safety equipment presence; set up work area appropriately; don proper PPE
+      - Basic operation: power up system correctly; inspect and install electrodes; load fibres into holders safely; achieve proper fibre alignment; execute a simple fusion splice; assess splice quality; properly shut down system
+      - Advanced operation (as applicable to user's role): configure and execute taper program; perform precision cleave; use scanning functions; operate vacuum system (if required); create custom splice/taper parameters
+      - Emergency response: demonstrate emergency stop activation; describe appropriate response to different emergency scenarios; locate and identify use of emergency equipment; demonstrate understanding of when to evacuate vs respond
+      - Housekeeping: proper cleanup procedures; correct waste disposal; appropriate documentation in logbook
+      - Assessor must observe ALL practical elements. Any safety-critical errors result in immediate FAIL - retraining and reassessment required. Minor non-safety errors: corrective instruction provided, reassessment of that element only. All elements must be demonstrated competently before authorisation granted.
+    - |-
+      REFRESHER TRAINING:
+      - Annual refresher required for all authorised users, covering safety procedure updates, any equipment modifications or new capabilities, review of common errors or incidents, new techniques or best practices, and changes to Australian Standards or regulations
+    - |-
+      RETRAINING REQUIRED WHEN:
+      - Any safety incident involving this equipment (immediate retraining); safety procedures are updated or changed; equipment is significantly modified or upgraded; unsafe practices are observed (remedial training); extended period of non-use (>6 months requires supervised refresher); new applications or techniques are implemented; user requests refresher training
+    - |-
+      SUPERVISION REQUIREMENTS (based on experience level):
+      - Novice users (0-10 operations): direct supervision required at all times; supervisor must be experienced CMS user, present in same room and actively observing; each operation reviewed with supervisor before and after
+      - Intermediate users (11-30 operations): experienced user must be present in laboratory; supervisor available for consultation; can perform routine operations independently with oversight; new or complex operations require direct supervision
+      - Experienced users (31+ operations, demonstrated consistent competency): may operate independently; should consult with colleagues for unusual situations; responsible for mentoring and supervising novice users; maintain competency through regular use (minimum monthly)
+    - |-
+      MEDICAL MONITORING:
+      - Not routinely required for CMS operation; eye examinations recommended for frequent users (discuss with OH&S); any health concerns affecting ability to operate safely must be reported to supervisor; vision requirements: must be able to view monitor clearly and distinguish alignment on camera views
+    - |-
+      RECORD KEEPING:
+      - Training records: manufacturer training certificate (keep copy); laboratory safety induction completion; all supplementary training courses; refresher training attendance; maintained by supervisor, copies in personnel files
+      - Competency assessments: theory assessment results; practical assessment checklist (signed by assessor); date competency achieved; any remedial training and reassessment; maintained by supervisor
+      - Authorised users list: current list of all authorised users with date authorised and authorisation level; displayed prominently near equipment; updated when users added or removed; reviewed annually, remove inactive users
+      - Individual operation logs: each user's operation count tracked in logbook to determine supervision requirements and identify when refresher training may be beneficial
+      - Incident and near-miss records: any safety incidents involving specific users may trigger retraining requirements; pattern analysis for systemic issues; maintained by safety officer
+    - |-
+      COMPETENCY RENEWAL:
+      - Annual competency review by supervisor considering frequency of equipment use, any incidents or near-misses, refresher training completion, observed work practices, and changes in procedures or equipment
+      - Supervisor may require reassessment if concerns identified
+      - Users who have not operated equipment in >12 months: full reassessment required
+    - |-
+      ASSESSOR REQUIREMENTS - to be authorised as an assessor, staff must:
+      - Have completed 3SAE manufacturer training course; have minimum 100 successful operations on CMS (extensive experience); demonstrate expert-level knowledge of all CMS functions and safety systems; have no significant safety incidents on record; understand adult learning principles and assessment techniques; be approved by laboratory manager AND safety officer; maintain current competency through regular equipment use
+    - |-
+      ASSESSMENT PROCESS:
+      1. Trainee completes all mandatory training modules and reviews this SWP and the associated Risk Assessment thoroughly
+      2. Assessor conducts theory assessment (safety-critical questions must achieve 100%; general knowledge minimum 80%; if failed: review materials, additional instruction, retest)
+      3. Assessor supervises practical demonstration using the practical assessment checklist (any safety-critical errors result in immediate fail; corrective instruction provided for minor errors)
+      4. Assessor verifies competency in all required areas, confirms trainee understands limitations and when to seek help, and verifies trainee can respond appropriately to emergencies
+      5. If competent: assessor signs trainee off on sign-off sheet; date of authorisation recorded; supervision requirements specified based on experience level; trainee added to authorised users list
+      6. If not yet competent: specific deficiencies identified and communicated; additional training and supervised practice required; reassessment scheduled once trainee ready (may be partial reassessment of only deficient areas)
+      7. Once signed off: name added to authorised users list displayed near equipment; laboratory manager notified
+    - |-
+      AUTHORISED USERS LIST MAINTENANCE:
+      - Maintained by laboratory manager; displayed prominently near CMS equipment
+      - Updated when new users are authorised, users move to different supervision levels, users become inactive, or users require retraining (temporarily suspend if safety issue)
+      - Reviewed annually as part of SWP review
+      - Records name, date authorised, authorisation level (Novice / Intermediate / Experienced), supervision required, authorised by, and notes
+  assessors:
+    - "[Name 1]"
+    - "[Name 2]"

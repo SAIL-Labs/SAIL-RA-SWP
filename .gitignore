@@ -6,3 +6,14 @@ _site/
 .bundle/
 vendor/
 Gemfile.lock
+
+# Generated document artefacts — the source of truth is documents/*.yaml
+# Regenerate with: python docgen/render.py --all
+_risk_assessments/
+_safe_work_procedures/
+pdfs/
+docgen/out/
+docgen/.venv/
+__pycache__/
+.DS_Store
+docx/

@@ -1,5 +1,13 @@
 name: Deploy Jekyll site to Pages
 
+# The RA/SWP pages, Word documents and PDFs are ALL generated from the YAML
+# source files in documents/ by docgen/render.py:
+#   1. render web markdown into the (gitignored) collection dirs
+#   2. jekyll build
+#   3. render the official USyd Word .docx forms
+#   4. convert the .docx to PDF with headless LibreOffice
+#   5. publish docx + pdfs inside the Pages artifact (download buttons link there)
+
 on:
   push:
     branches: ["main"]
@@ -27,15 +35,18 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: true
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: docgen/requirements.txt
 
-      - name: Install Playwright
-        run: |
-          npm install playwright
-          npx playwright install chromium
+      - name: Install docgen dependencies
+        run: pip install -r docgen/requirements.txt
+
+      - name: Generate web pages from documents/*.yaml
+        run: python docgen/render.py --all --web
 
       - name: Setup Pages
         id: pages
@@ -47,76 +58,21 @@ jobs:
           JEKYLL_ENV: production
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
-      - name: Generate PDFs
-        env:
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      - name: Install LibreOffice
         run: |
-          # Create PDF output directories inside _site
-          mkdir -p _site/pdfs/risk-assessments
-          mkdir -p _site/pdfs/safe-work-procedures
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libreoffice-writer
 
-          # Serve _site under the baseurl path so CSS/image links resolve
-          mkdir -p "_serve${BASE_PATH}"
-          cp -r _site/* "_serve${BASE_PATH}/"
-          python3 -m http.server 4000 --directory _serve &
-          SERVER_PID=$!
-          sleep 2
+      - name: Generate Word documents and PDFs
+        run: python docgen/render.py --all --pdf
 
-          # Create PDF generation script
-          cat > generate-pdf.js << 'SCRIPT'
-          const { chromium } = require('playwright');
-          const path = require('path');
-
-          async function generatePDF(url, outputPath) {
-            const browser = await chromium.launch();
-            const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
-            await page.goto(url, { waitUntil: 'networkidle' });
-            await page.pdf({
-              path: outputPath,
-              format: 'A4',
-              margin: { top: '10mm', right: '10mm', bottom: '10mm', left: '10mm' },
-              printBackground: true,
-              preferCSSPageSize: false
-            });
-            await browser.close();
-            console.log('Generated: ' + outputPath);
-          }
-
-          const url = process.argv[2];
-          const outputPath = process.argv[3];
-          if (!url || !outputPath) { process.exit(1); }
-          generatePDF(url, path.resolve(outputPath)).catch(err => { console.error(err); process.exit(1); });
-          SCRIPT
-
-          # Generate Risk Assessment PDFs
-          for file in _risk_assessments/*.md; do
-            if [ -f "$file" ]; then
-              name=$(basename "$file" .md)
-              url="http://localhost:4000${BASE_PATH}/risk-assessments/${name}/"
-              output="_site/pdfs/risk-assessments/SAIL-RA-${name}.pdf"
-              echo "Generating PDF: $name"
-              node generate-pdf.js "$url" "$output"
-            fi
-          done
-
-          # Generate Safe Work Procedure PDFs
-          for file in _safe_work_procedures/*.md; do
-            if [ -f "$file" ]; then
-              name=$(basename "$file" .md)
-              url="http://localhost:4000${BASE_PATH}/safe-work-procedures/${name}/"
-              output="_site/pdfs/safe-work-procedures/SAIL-SWP-${name}.pdf"
-              echo "Generating PDF: $name"
-              node generate-pdf.js "$url" "$output"
-            fi
-          done
-
-          # Cleanup
-          kill $SERVER_PID 2>/dev/null || true
-          rm -f generate-pdf.js
-
-          # Verify
-          echo "Generated PDFs:"
-          find _site -name "*.pdf" -exec ls -lh {} \;
+      - name: Publish docx and PDFs into the site
+        run: |
+          mkdir -p _site/docx _site/pdfs
+          cp -r docgen/out/docx/. _site/docx/
+          cp -r docgen/out/pdfs/. _site/pdfs/
+          echo "Published document downloads:"
+          find _site/docx _site/pdfs -type f | sort
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
