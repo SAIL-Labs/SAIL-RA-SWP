@@ -65,9 +65,15 @@
           <a href="{{ '/pdfs/risk-assessments/SAIL-RA-' | append: page.slug | append: '.pdf' | relative_url }}" class="pdf-download-btn" download>
             📄 Download PDF
           </a>
+          <a href="{{ '/docx/risk-assessments/SAIL-RA-' | append: page.slug | append: '.docx' | relative_url }}" class="pdf-download-btn" download>
+            📝 Download Word
+          </a>
           {% elsif page.doc_type == "Safe Work Procedure" %}
           <a href="{{ '/pdfs/safe-work-procedures/SAIL-SWP-' | append: page.slug | append: '.pdf' | relative_url }}" class="pdf-download-btn" download>
             📄 Download PDF
+          </a>
+          <a href="{{ '/docx/safe-work-procedures/SAIL-SWP-' | append: page.slug | append: '.docx' | relative_url }}" class="pdf-download-btn" download>
+            📝 Download Word
           </a>
           {% endif %}
         </div>

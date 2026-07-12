@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
-Generate draft Risk Assessment and Safe Work Procedure markdown files
-from a GitHub issue body, using the Claude API with system prompts
-sourced from SYSTEM_PROMPTS.md.
+Generate a draft combined RA/SWP YAML data file from a GitHub issue body,
+using the Claude API with the system prompt sourced from SYSTEM_PROMPTS.md.
+
+Since the YAML-first migration, ONE file drives everything: the web pages,
+Word documents and PDFs are all rendered from documents/{slug}.yaml by
+docgen/render.py. This script writes that file and validates it renders.
 
 Required environment variables:
   ANTHROPIC_API_KEY  - Anthropic API key
@@ -11,18 +14,18 @@ Required environment variables:
   ISSUE_BODY         - GitHub issue body (markdown)
 
 Writes files:
-  _risk_assessments/{slug}.md
-  _safe_work_procedures/{slug}.md
+  documents/{slug}.yaml
 
 Also writes to /tmp for downstream workflow steps:
   /tmp/doc_slug.txt  - equipment slug
   /tmp/doc_name.txt  - equipment name
 """
 
+import glob
 import os
 import re
+import subprocess
 import sys
-import glob
 
 import anthropic
 
@@ -73,19 +76,12 @@ def sanitize_slug(raw: str) -> str:
     return slug.strip("-")[:80]                 # Trim leading/trailing dashes, limit length
 
 
-def slug_to_abbrev(slug: str) -> str:
-    """Convert a slug like 'bambu-h2d' to an abbreviation like 'BAMBU-H2D'."""
-    return slug.upper()
-
-
-def get_next_ref_number(slug: str, collection_dir: str) -> str:
-    """Return the next available sequential reference number (001, 002, etc.)."""
-    target = os.path.join(collection_dir, f"{slug}.md")
-    if not os.path.exists(target):
-        return "001"
+def get_next_number(slug: str) -> int:
+    """Return the next available sequential document number for this slug."""
+    if not os.path.exists(f"documents/{slug}.yaml"):
+        return 1
     # File already exists — count variants to determine next number
-    existing = glob.glob(os.path.join(collection_dir, f"{slug}*.md"))
-    return str(len(existing) + 1).zfill(3)
+    return len(glob.glob(f"documents/{slug}*.yaml")) + 1
 
 
 # ---------------------------------------------------------------------------
@@ -108,20 +104,26 @@ def extract_system_prompt(content: str, section_title: str) -> str:
 def call_claude(client: anthropic.Anthropic, system_prompt: str, user_message: str) -> str:
     """Call the Claude API and return the generated document text."""
     response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=16000,
+        model="claude-sonnet-5",
+        max_tokens=32000,
         system=system_prompt,
         messages=[{"role": "user", "content": user_message}],
     )
     return response.content[0].text
 
 
-def strip_preamble(text: str) -> str:
-    """Strip any conversational preamble before the YAML front matter."""
-    idx = text.find("---")
-    if idx == -1:
-        return text
-    return text[idx:]
+def strip_to_yaml(text: str) -> str:
+    """Strip any conversational preamble or code fences around the YAML body."""
+    text = text.strip()
+    # Remove a wrapping ```yaml ... ``` / ``` ... ``` fence if present
+    fence = re.match(r"^```[a-zA-Z]*\n(.*?)\n?```\s*$", text, re.DOTALL)
+    if fence:
+        text = fence.group(1).strip()
+    # Drop anything before the meta: top-level key
+    idx = text.find("meta:")
+    if idx > 0:
+        text = text[idx:]
+    return text + ("\n" if not text.endswith("\n") else "")
 
 
 # ---------------------------------------------------------------------------
@@ -158,22 +160,15 @@ def main() -> None:
         print("Make sure the issue uses the new-equipment-documentation template.", file=sys.stderr)
         sys.exit(1)
 
-    # ---- Derive slug and reference numbers --------------------------------
+    # ---- Derive slug and document number ----------------------------------
     slug   = sanitize_slug(raw_slug) if raw_slug else sanitize_slug(equipment_name)
-    abbrev = slug_to_abbrev(slug)
-
-    ra_num  = get_next_ref_number(slug, "_risk_assessments")
-    swp_num = get_next_ref_number(slug, "_safe_work_procedures")
-
-    ra_reference  = f"SAIL-RA-{abbrev}-{ra_num}"
-    swp_reference = f"SAIL-SWP-{abbrev}-{swp_num}"
+    number = get_next_number(slug)
 
     print(f"Equipment : {equipment_name}")
     print(f"Slug      : {slug}")
-    print(f"RA ref    : {ra_reference}")
-    print(f"SWP ref   : {swp_reference}")
+    print(f"Number    : {number:03d}")
 
-    # ---- Load system prompts from SYSTEM_PROMPTS.md ----------------------
+    # ---- Load system prompt from SYSTEM_PROMPTS.md ------------------------
     prompts_file = "SYSTEM_PROMPTS.md"
     if not os.path.exists(prompts_file):
         print(f"ERROR: {prompts_file} not found. Run from repository root.", file=sys.stderr)
@@ -182,8 +177,8 @@ def main() -> None:
     with open(prompts_file, "r") as f:
         prompts_content = f.read()
 
-    ra_system_prompt  = extract_system_prompt(prompts_content, "System Prompt: Risk Assessment Generator")
-    swp_system_prompt = extract_system_prompt(prompts_content, "System Prompt: Safe Work Procedure Generator")
+    system_prompt = extract_system_prompt(
+        prompts_content, "Combined RA/SWP YAML Generator")
 
     # ---- Build equipment context string ----------------------------------
     fields = {
@@ -195,7 +190,8 @@ def main() -> None:
         "Safety Systems/Interlocks":  safety_systems,
         "Required PPE":               required_ppe,
         "Special Training":           training,
-        "File Slug":                  slug,
+        "Slug (use as meta.slug)":    slug,
+        "Number (use as meta.number)": str(number),
         "GitHub Issue":               f"#{issue_number}",
     }
     equipment_context = "\n".join(
@@ -204,53 +200,43 @@ def main() -> None:
 
     client = anthropic.Anthropic(api_key=api_key)
 
-    # ---- Generate Risk Assessment ----------------------------------------
-    print("\nGenerating Risk Assessment (this may take a minute)...")
-    ra_user_message = f"""Generate a complete Risk Assessment markdown file for the following equipment.
+    # ---- Generate the combined YAML ---------------------------------------
+    print("\nGenerating combined RA/SWP YAML (this may take a minute)...")
+    user_message = f"""Generate the combined RA/SWP YAML data file for the following equipment.
 
 {equipment_context}
 
 CRITICAL REQUIREMENTS:
-- Return ONLY the complete markdown file content
-- Start immediately with `---` (YAML front matter) — no preamble or explanation
-- Use the exact reference number: {ra_reference}
-- Set permalink to: /risk-assessments/{slug}/
-- Status must be: Draft
-- Include at least 8 hazard scenarios in the hazard assessment table
+- Return ONLY the YAML document — no preamble, no markdown fences
+- meta.slug must be exactly: {slug}
+- meta.number must be exactly: {number}
+- meta.status must be: Draft
+- Include at least 8 entries in ra.risks
+- Include at least 7 pre-operation safety check steps in swp.steps
 """
-    ra_content = strip_preamble(call_claude(client, ra_system_prompt, ra_user_message))
+    yaml_content = strip_to_yaml(call_claude(client, system_prompt, user_message))
 
-    # ---- Generate Safe Work Procedure ------------------------------------
-    print("Generating Safe Work Procedure (this may take a minute)...")
-    swp_user_message = f"""Generate a complete Safe Work Procedure markdown file for the following equipment.
+    # ---- Write output file -------------------------------------------------
+    os.makedirs("documents", exist_ok=True)
+    doc_path = f"documents/{slug}.yaml"
+    header = (f"# Generated from GitHub issue #{issue_number} — DRAFT, requires expert review.\n"
+              f"# This file is the single source of truth: web pages, Word documents and PDFs\n"
+              f"# are all rendered from it by docgen/render.py.\n")
+    with open(doc_path, "w") as f:
+        f.write(header + yaml_content)
+    print(f"Written: {doc_path}")
 
-{equipment_context}
-
-CRITICAL REQUIREMENTS:
-- Return ONLY the complete markdown file content
-- Start immediately with `---` (YAML front matter) — no preamble or explanation
-- Use the exact reference number: {swp_reference}
-- Set permalink to: /safe-work-procedures/{slug}/
-- Status must be: Draft
-- Reference the associated Risk Assessment: {ra_reference}
-- Include at least 7 mandatory pre-operation safety checks
-"""
-    swp_content = strip_preamble(call_claude(client, swp_system_prompt, swp_user_message))
-
-    # ---- Write output files ----------------------------------------------
-    os.makedirs("_risk_assessments", exist_ok=True)
-    os.makedirs("_safe_work_procedures", exist_ok=True)
-
-    ra_path  = f"_risk_assessments/{slug}.md"
-    swp_path = f"_safe_work_procedures/{slug}.md"
-
-    with open(ra_path, "w") as f:
-        f.write(ra_content)
-    print(f"Written: {ra_path}")
-
-    with open(swp_path, "w") as f:
-        f.write(swp_content)
-    print(f"Written: {swp_path}")
+    # ---- Validate: the file must render cleanly ----------------------------
+    print("\nValidating with docgen/render.py --check ...")
+    result = subprocess.run(
+        [sys.executable, "docgen/render.py", doc_path, "--check"],
+        capture_output=True, text=True,
+    )
+    print(result.stdout)
+    if result.returncode != 0:
+        print(result.stderr, file=sys.stderr)
+        print("ERROR: generated YAML failed validation — not opening a PR.", file=sys.stderr)
+        sys.exit(1)
 
     # ---- Write metadata for downstream workflow steps --------------------
     with open("/tmp/doc_slug.txt", "w") as f:
@@ -258,7 +244,7 @@ CRITICAL REQUIREMENTS:
     with open("/tmp/doc_name.txt", "w") as f:
         f.write(equipment_name)
 
-    print("\nDone. Draft documents ready for review.")
+    print("\nDone. Draft document data ready for review.")
 
 
 if __name__ == "__main__":

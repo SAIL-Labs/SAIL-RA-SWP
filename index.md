@@ -58,9 +58,9 @@ title: Home
 </div>
 
 <div class="info-box">
-<h3>📄 Create a New Risk Assessment</h3>
-<p>Use our comprehensive <strong><a href="{{ '/templates/risk-assessment-template/' | relative_url }}">Risk Assessment Template</a></strong> to create safety assessments for new equipment or processes.</p>
-<p>The template includes all required sections: hazard identification, risk ratings, control measures, emergency procedures, and review schedules.</p>
+<h3>📄 Create a New Risk Assessment + Safe Work Procedure</h3>
+<p>Each RA/SWP pair is generated from a single YAML file in <code>documents/</code> — the web pages, Word documents, and PDFs are all rendered from it automatically.</p>
+<p>Start by copying <strong><a href="https://github.com/SAIL-Labs/SAIL-RA-SWP/blob/main/documents/_example.yaml">documents/_example.yaml</a></strong>, or open a <strong><a href="https://github.com/SAIL-Labs/SAIL-RA-SWP/issues/new/choose">New Equipment issue</a></strong> to have a draft generated for you.</p>
 </div>
 
 ---
@@ -99,12 +99,6 @@ title: Home
 
 </div>
 
-<div class="info-box">
-<h3>📄 Create a New Safe Work Procedure</h3>
-<p>Use our comprehensive <strong><a href="{{ '/templates/safe-work-procedure-template/' | relative_url }}">Safe Work Procedure Template</a></strong> to create detailed operating instructions for new equipment or processes.</p>
-<p>The template provides a complete structure for documenting safety checks, step-by-step procedures, emergency protocols, and competency requirements.</p>
-</div>
-
 ---
 
 ## Additional Resources
@@ -112,15 +106,15 @@ title: Home
 <div class="feature-grid">
 
 <div class="feature-box">
-  <h4>📋 Document Templates</h4>
-  <p>Access templates for creating new Risk Assessments and Safe Work Procedures with comprehensive guidance.</p>
-  <a href="{{ '/templates/' | relative_url }}">Browse Templates →</a>
+  <h4>📋 Document Source Files</h4>
+  <p>Every RA/SWP pair is defined by one YAML file — the single source of truth for the web, Word and PDF versions.</p>
+  <a href="https://github.com/SAIL-Labs/SAIL-RA-SWP/tree/main/documents">Browse document sources →</a>
 </div>
 
 <div class="feature-box">
-  <h4>🔧 Template Usage Guide</h4>
-  <p>Learn how to use our templates effectively, including best practices and document control procedures.</p>
-  <a href="{{ '/templates/' | relative_url }}">View Guide →</a>
+  <h4>🔧 Authoring Guide</h4>
+  <p>How to create and update documents, the YAML schema, and document control procedures.</p>
+  <a href="https://github.com/SAIL-Labs/SAIL-RA-SWP/blob/main/docgen/README.md">View Guide →</a>
 </div>
 
 </div>

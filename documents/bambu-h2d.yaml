@@ -1,0 +1,885 @@
+# Combined RA + SWP data for the Bambu Lab H2D Laser Edition.
+# Converted from the original hand-written markdown pair (RA v1.1, SWP v1.0).
+# Render: python docgen/render.py documents/bambu-h2d.yaml
+
+meta:
+  slug: bambu-h2d
+  abbrev: BAMBU-H2D
+  number: 1
+  name: "Bambu Lab H2D Laser Edition"
+  title: "Operation of Bambu Lab H2D Laser Edition with 10W Class 4 Laser Module"
+  status: Draft
+  version: "1.1"
+  version_issue_date: "January 2026"
+  description: "Risk assessment and safe work procedure for the Bambu Lab H2D 3D printer with 10W Class 4 laser module, covering laser radiation, thermal, electrical, mechanical, fire, and airborne emission hazards (UFPs and VOCs) from FDM printing and laser operations."
+  key_hazards: "Class 4 laser radiation, fire risk, thermal burns, ultrafine particle emissions, volatile organic compounds, toxic fumes"
+  includes: "Mandatory safety checks, emergency procedures, cleanup protocols, training requirements"
+  faculty_school: "School of Physics"
+  prepared_by: "Chris Betters"
+  supervisors:
+    - "Chris Betters"
+    - "Sergio Leon-Saval"
+  issue_date: "January 2026"
+  next_review_date: "January 2027"
+
+ra:
+  activity: |-
+    - 3D printing (FDM, dual nozzle, up to 350°C)
+    - Laser engraving and cutting (Class 4, 455nm, 10W)
+    - Material processing (wood, acrylic, leather, etc.)
+    - Handling of printed parts and waste material
+  location: "Maker space / Fabrication laboratory"
+  persons_at_risk:
+    - "Laboratory staff"
+    - "Research students"
+    - "Technicians"
+    - "Visitors to laboratory"
+    - "Occupants of adjacent areas (airborne emissions)"
+  team:
+    - "Laboratory manager"
+    - "Safety officer"
+    - "Equipment users"
+    - "Laser safety advisor"
+  references:
+    - "Work Health and Safety Act 2011"
+    - "Work Health and Safety Regulation 2017"
+    - "AS/NZS IEC 60825.1:2014 - Safety of laser products"
+    - "AS 2211.13-1999 - Safety of industrial laser equipment"
+    - "AS/NZS 3000:2018 - Electrical installations (Wiring Rules)"
+    - "AS 1940-2017 - Storage and handling of flammable and combustible liquids"
+    - "AS 1668.2-2012 - The use of ventilation and airconditioning in buildings, Part 2: Mechanical ventilation in buildings"
+    - "Safe Work Australia, Workplace Exposure Standards for Airborne Contaminants (2024)"
+    - "Bambu Lab H2D Laser Safety Document and User Manual"
+    - "University WHS policies and procedures for Class 4 lasers"
+    - "US EPA, \"EPA Researchers Continue to Study the Emissions of 3D Printers\" (2025)"
+    - "\"Exposure hazards of particles and VOCs emitted from material extrusion 3D printing\" (2023), Environment International"
+    - "\"A global evaluation of exposure to pollutants in 3D printing\" (2025), Journal of Hazardous Materials Advances"
+  risks:
+    - task: "Laser engraving and cutting operations"
+      hazards: "Class 4 laser radiation (455nm, 10W blue laser). Operates as Class 1 ONLY when all safety systems intact"
+      harm: |-
+        - Eye damage
+        - Permanent blindness
+        - Severe skin burns
+        - Retinal injury
+        - Fire ignition
+      controls: |-
+        - Laser safety windows
+        - Door interlocks (front, top)
+        - Safety window interlocks
+        - Emergency stop button
+        - Auto-stop when opened
+      current_rating: "High"
+      additional_controls: |-
+        - Mandatory laser safety training
+        - NEVER defeat interlocks
+        - NEVER operate with doors/covers open
+        - Regular interlock testing
+        - Class 4 warning signage
+        - Tag out if damaged
+      residual_rating: "Low"
+    - task: "Operating with defeated or damaged safety systems"
+      hazards: "Direct exposure to Class 4 laser"
+      harm: |-
+        - Severe eye injury
+        - Permanent blindness
+        - Severe burns
+        - Fire hazard
+      controls: |-
+        - Prohibition policy
+        - Equipment design prevents easy bypass
+      current_rating: "Very High"
+      additional_controls: |-
+        - ABSOLUTE PROHIBITION
+        - Disciplinary action
+        - Lock out if damaged
+        - Annual verification by qualified technician
+        - Residual rating of Low applies only while the absolute prohibition is maintained - this scenario must not occur
+      residual_rating: "Low"
+    - task: "Laser processing of materials"
+      hazards: "Fire and ignition of materials"
+      harm: |-
+        - Burns
+        - Fire
+        - Smoke inhalation
+        - Property damage
+      controls: |-
+        - 5 flame sensors
+        - AI fire detection
+        - Flame-retardant chamber
+        - Emergency stop
+        - Audible alarm
+      current_rating: "Medium"
+      additional_controls: |-
+        - NEVER leave unattended
+        - Fire extinguisher nearby (CO₂/dry powder)
+        - Clear flammable materials
+        - Emergency procedures
+        - Regular fire sensor testing
+      residual_rating: "Low"
+    - task: "High-temperature operation"
+      hazards: "Thermal burns (350°C nozzle, 65°C chamber)"
+      harm: |-
+        - Severe burns to hands, arms
+        - Skin damage from contact with nozzle, heat bed, or chamber walls
+      controls: |-
+        - Warning labels
+        - Limited access during operation
+        - Cool-down period
+      current_rating: "Medium"
+      additional_controls: |-
+        - Heat-resistant gloves available
+        - Cool-down procedures
+        - Training on hot surfaces
+      residual_rating: "Low"
+    - task: "3D printing with any filament type (PLA, PETG, ABS, ASA, nylon, etc.)"
+      hazards: "Ultrafine particle (UFP) emissions. All FDM filaments emit particles smaller than 100 nm at rates of approximately 10⁸ to 10¹² particles/min. Published research has detected trace metals (Cr, As, Pb, Cd, Co) in particulate fraction"
+      harm: |-
+        - Deep lung penetration of respirable UFPs
+        - Respiratory inflammation and reduced lung function
+        - Increased asthma risk
+        - Chronic respiratory disease with repeated exposure
+        - US EPA characterises exposure profile as comparable to traffic-related air pollution
+      controls: |-
+        - Fully enclosed build chamber contains emissions during printing
+        - Internal activated carbon filter (recirculates chamber air; active by default for ABS, ASA, PC, PA; bypasses for PLA, PETG)
+        - Bambu Lab Smoke Purifier connected to exhaust: G4 pre-filter, F8 filter, activated carbon (1200 mg/g adsorption capacity), HEPA H13 (captures 99% of particles ≥0.3 µm)
+        - Fresh air supply to printer room
+      current_rating: "Medium"
+      additional_controls: |-
+        - Complete mechanical extraction upgrade for printer room to provide adequate air changes per hour
+        - Keep enclosure closed during printing and allow cooling before opening to prevent burst release of accumulated particles
+        - Enable internal carbon filter for ALL filament types, not just high-temperature materials
+        - Avoid extended occupancy of printer room during long prints until extraction upgrade complete
+        - Regular cleaning of printer internals (fans, chamber surfaces) to remove deposited particulate
+        - Consider VOC/PM2.5 monitor to verify extraction effectiveness
+      residual_rating: "Low"
+    - task: "3D printing with lower-emission filaments (PLA, PETG)"
+      hazards: "Volatile organic compound (VOC) emissions. PLA emits lactide and methyl methacrylate. PETG emits ethylbenzene (IARC Group 2B - possibly carcinogenic)"
+      harm: |-
+        - Eye, nose and throat irritation
+        - Headaches, coughing, nausea
+        - Potential carcinogenic risk from ethylbenzene (PETG) with chronic exposure
+        - Total VOC concentrations may exceed indoor air quality guidelines in poorly ventilated settings
+      controls: |-
+        - Fully enclosed build chamber
+        - Bambu Lab Smoke Purifier with activated carbon stage addresses VOCs in exhaust path
+        - Fresh air supply to printer room
+      current_rating: "Medium"
+      additional_controls: |-
+        - Preferential use of PLA and PETG where material properties allow
+        - Ensure Smoke Purifier is connected and operating for every print
+        - Complete room extraction upgrade
+        - Replace activated carbon filters per manufacturer schedule (adsorption capacity degrades over time)
+        - Monitor for symptoms of irritation during printing
+      residual_rating: "Low"
+    - task: "3D printing with higher-emission filaments (ABS, ASA, nylon, PC, composites)"
+      hazards: "Elevated VOC emissions. ABS/ASA emit styrene (IARC Group 2B), formaldehyde (IARC Group 1 - carcinogenic), and acetaldehyde at 3-4x the rate of PLA. Nylon emits caprolactam (respiratory irritant). High-temperature composites (PC, PPS) produce significantly increased emissions at elevated extrusion temperatures"
+      harm: |-
+        - Respiratory damage and chronic lung disease
+        - Carcinogenic risk from styrene and formaldehyde exposure
+        - Eye, nose and throat irritation
+        - Headaches, nausea, dizziness
+        - Sensitisation and allergic reactions
+        - Potential for exceeding workplace exposure standards in poorly ventilated rooms
+      controls: |-
+        - Fully enclosed build chamber
+        - Internal activated carbon filter active by default for these filament types
+        - Bambu Lab Smoke Purifier with activated carbon and HEPA H13 in exhaust path
+        - Fresh air supply to printer room
+      current_rating: "High"
+      additional_controls: |-
+        - Use ABS/ASA/nylon/PC ONLY when specifically required by application; default to PLA or PETG
+        - Room extraction system MUST be operational before printing with these materials
+        - NEVER open enclosure during printing with high-emission filaments
+        - Supervisor pre-approval required for ABS, ASA, PC, PPS, and composite filaments
+        - Consult SDS for specific filament before use
+        - Limit concurrent prints with high-emission materials
+        - Avoid extended occupancy of printer room during and immediately after printing
+        - Clean printer internals after ABS printing (deposits sticky residue on fans and internal surfaces)
+        - Respiratory protection (P2/N95 minimum) if extraction is inadequate or under maintenance
+      residual_rating: "Low"
+    - task: "Laser cutting and engraving materials"
+      hazards: "Fumes, smoke and particulates from thermal decomposition of materials by laser"
+      harm: |-
+        - Respiratory irritation and damage
+        - Eye irritation
+        - Toxic gas exposure (varies by material)
+        - Long-term lung damage
+      controls: |-
+        - Exhaust system fitted
+        - Air filtration via Smoke Purifier
+        - Enclosed chamber
+      current_rating: "Medium"
+      additional_controls: |-
+        - LEV connected and verified operational before laser use
+        - Consult material SDS before laser processing
+        - Use only approved materials (see prohibited list)
+        - Respiratory protection available if required
+        - Regular filter maintenance
+      residual_rating: "Low"
+    - task: "Processing prohibited or unknown materials (laser or 3D printing)"
+      hazards: "Toxic fumes from incompatible materials. PVC releases hydrochloric acid gas. Polycarbonate produces bisphenol A. Unknown materials may produce unpredictable toxic decomposition products"
+      harm: |-
+        - Severe respiratory damage
+        - Chemical poisoning
+        - Hydrochloric acid burns to airways (PVC)
+        - Endocrine disruption (polycarbonate)
+      controls: |-
+        - Material compatibility guidance from manufacturer
+        - Ventilation system
+      current_rating: "High"
+      additional_controls: |-
+        - PROHIBITED materials list enforced: PVC, vinyl, polycarbonate (laser), chlorinated plastics, materials of unknown composition
+        - Pre-approval process for any new material not on approved list
+        - Consult SDS before use of any unfamiliar material
+        - Enhanced ventilation for all material processing
+        - Prohibited list displayed at equipment
+      residual_rating: "Low"
+    - task: "General operation"
+      hazards: "Electrical hazards (240V mains)"
+      harm: |-
+        - Electric shock
+        - Electrocution
+        - Burns
+      controls: |-
+        - RCD protection
+        - Earthed equipment
+        - Enclosed components
+      current_rating: "Medium"
+      additional_controls: |-
+        - Regular testing (test & tag)
+        - No wet conditions
+        - Qualified electrician for repairs
+        - Inspect power cords
+      residual_rating: "Low"
+    - task: "Material loading and operation"
+      hazards: "Moving mechanical parts (XY gantry, print head, toolhead change mechanism)"
+      harm: |-
+        - Crushing injuries to fingers, hands
+        - Entanglement
+      controls: |-
+        - Enclosed design
+        - Door interlocks
+        - Emergency stop accessible
+      current_rating: "Low"
+      additional_controls: |-
+        - Keep hands clear during operation
+        - Training on safe loading procedure
+        - Wait for all motion to stop before opening doors
+        - Residual risk assessed at the lowest end of the Low band
+      residual_rating: "Low"
+    - task: "Alarm systems"
+      hazards: "Acoustic hazards from fire detection alarm and error alerts"
+      harm: |-
+        - Hearing discomfort
+        - Startle response
+      controls: |-
+        - Audible alarm fitted
+      current_rating: "Low"
+      additional_controls: |-
+        - Appropriate alarm volume setting
+        - Training on alarm meaning and response
+        - Hearing protection available if prolonged exposure during fault condition
+        - Residual risk assessed at the lowest end of the Low band
+      residual_rating: "Low"
+    - task: "Unattended operation (3D printing)"
+      hazards: "Extended unattended prints with potential for fire, equipment failure, or emission accumulation"
+      harm: |-
+        - Fire with delayed response
+        - Equipment damage
+        - UFP/VOC accumulation in occupied room
+        - Delayed emergency response
+      controls: |-
+        - Camera monitoring capability
+        - 5 flame sensors and AI fire detection
+        - Enclosed chamber
+        - Smoke Purifier filtration
+      current_rating: "High"
+      additional_controls: |-
+        - PROHIBITION of unattended laser operations (laser must have operator present at all times)
+        - 3D print operations: remote camera monitoring acceptable if flame detection and auto-stop verified functional
+        - Sign-in/sign-out procedures
+        - Ensure extraction and filtration running for duration of print
+        - Room should not be continuously occupied during long unattended prints unless extraction verified adequate
+      residual_rating: "Low"
+  implementation_date: "Prior to use"
+  additional_controls:
+    - control: "Develop Class 4 laser safety protocol and emergency procedures"
+      resources: "Time (2 hours), laser safety advisor"
+      responsible: "Safety Officer"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Annual safety interlock testing and verification by qualified technician"
+      resources: "Qualified laser safety technician, test equipment"
+      responsible: "Laboratory Manager"
+      date: "Annually"
+      riskware_ref: "TBD"
+    - control: "Install prominent Class 4 laser warning signage"
+      resources: "Warning signs compliant with AS/NZS IEC 60825.1"
+      responsible: "Technician"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Develop prohibited materials list and material approval process (laser and 3D printing)"
+      resources: "Time (1 hour), manufacturer documentation, SDS review"
+      responsible: "Safety Officer"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Mandatory operator training programme (Class 4 laser hazards, safety systems, 3D printing emissions awareness, fire safety, emergency procedures)"
+      resources: "Time, training materials, laser safety expert"
+      responsible: "Laboratory Manager"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Complete mechanical extraction upgrade for printer room"
+      resources: "Ducting, extraction fan, installation, commissioning"
+      responsible: "Facilities / Laboratory Manager"
+      date: "Prior to use of high-emission filaments"
+      riskware_ref: "TBD"
+    - control: "Procurement of emergency equipment (CO₂ fire extinguisher, first aid kit, heat-resistant gloves)"
+      resources: "Equipment costs (approx $300)"
+      responsible: "Laboratory Manager"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Establish regular inspection schedule (safety interlocks, fire sensors, electrical testing, filter condition)"
+      resources: "Time, monthly inspections"
+      responsible: "Technician"
+      date: "Ongoing"
+      riskware_ref: "TBD"
+    - control: "Develop sign-in/sign-out log and supervision procedures"
+      resources: "Log book or electronic system"
+      responsible: "Laboratory Manager"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Electrical safety testing (test and tag)"
+      resources: "Qualified electrician"
+      responsible: "Facilities"
+      date: "Prior to use, then annually"
+      riskware_ref: "TBD"
+    - control: "Smoke Purifier and internal filter maintenance schedule (activated carbon and HEPA replacement)"
+      resources: "Replacement filters, labour"
+      responsible: "Technician"
+      date: "Per manufacturer schedule (check quarterly)"
+      riskware_ref: "N/A"
+    - control: "Develop filament selection and approval policy (default to PLA/PETG; supervisor approval for ABS/ASA/nylon/PC)"
+      resources: "Time (1 hour), manufacturer data"
+      responsible: "Supervisor"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Procure VOC/PM2.5 monitor for printer room"
+      resources: "Air quality monitor (approx $200-500)"
+      responsible: "Laboratory Manager"
+      date: "After extraction upgrade"
+      riskware_ref: "N/A"
+    - control: "Laser safety eye examination programme (baseline and periodic)"
+      resources: "Occupational health service"
+      responsible: "Laboratory Manager"
+      date: "Prior to use, then as required"
+      riskware_ref: "TBD"
+    - control: "Develop 3D printing emissions awareness training module"
+      resources: "Time (2 hours), published research references"
+      responsible: "Safety Officer"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Display prohibited materials list and filament risk profile at equipment"
+      resources: "Printed signage"
+      responsible: "Technician"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+  emergency_controls:
+    - |-
+      CRITICAL - CLASS 4 LASER SAFETY:
+      - The laser module is CLASS 4 when safety systems are defeated or removed
+      - NEVER operate with any door, cover, or safety window open or removed
+      - NEVER defeat, bypass, or disable any safety interlock
+      - System operates as Class 1 ONLY when all safety systems are intact and functioning
+      - If any safety system fails, immediately stop use and lock out equipment
+    - |-
+      EMERGENCY SHUTDOWN:
+      - Press red emergency stop button on equipment
+      - If button fails, isolate power at wall outlet
+      - Do not resume operation until issue resolved and equipment inspected
+    - |-
+      FIRE EMERGENCY:
+      - Press emergency stop button immediately
+      - Equipment has 5 flame sensors and AI fire detection with automatic alarm
+      - Do not open chamber door (introduces oxygen, may worsen fire)
+      - Use CO₂ or dry powder fire extinguisher through access points if safe to do so
+      - If fire cannot be controlled immediately: evacuate area, activate building fire alarm, call emergency services (000), notify building warden
+    - |-
+      EQUIPMENT MALFUNCTION OR SAFETY SYSTEM FAILURE:
+      - Press emergency stop button immediately
+      - Isolate power at wall outlet if safe to do so
+      - Do NOT attempt to operate with damaged safety interlocks, windows, or door sensors
+      - Lock out and tag equipment as defective immediately
+      - Report to supervisor and safety officer
+      - Arrange qualified laser safety technician inspection
+      - Equipment must NOT be used until all safety systems verified functional
+    - |-
+      SUSPECTED EXPOSURE TO LASER RADIATION (CLASS 4 EXPOSURE):
+      - Press emergency stop immediately
+      - If eye exposure suspected: seek IMMEDIATE medical attention at emergency department; do not rub eyes; close eyes or look away from bright light; note time, duration, and circumstances of exposure
+      - Report incident immediately to supervisor and safety officer
+      - Complete incident report and RiskWare notification
+      - Equipment must be locked out and inspected before any further use
+      - Never look directly at laser emission point or reflected beams
+    - |-
+      EXCESSIVE FUMES, SMOKE, OR RESPIRATORY IRRITATION (3D PRINTING OR LASER OPERATIONS):
+      - Press emergency stop button immediately to halt the print or laser operation
+      - If experiencing respiratory irritation, headache, nausea, or eye irritation: leave the room immediately and move to fresh air
+      - If fumes are overwhelming or visible smoke is present: evacuate the area
+      - Do NOT open the printer enclosure while fumes are present (allows burst release of accumulated emissions)
+      - Once room is clear of personnel: increase ventilation (open doors and windows if safe to do so); allow Smoke Purifier and extraction system to clear remaining airborne contaminants; do not re-enter until air has cleared (minimum 15 minutes with ventilation running)
+      - Investigate cause before resuming: verify Smoke Purifier is connected and operational; check extraction system is functioning; check filter condition (may be saturated); verify correct filament type was used (check for prohibited materials); review print temperature settings (excessive temperature increases all emissions)
+      - If symptoms persist after leaving the room, seek medical attention
+      - Report incident to supervisor
+      - Complete incident report if medical attention sought or if caused by equipment malfunction
+    - |-
+      BURNS FROM HOT SURFACES:
+      - Remove from heat source immediately
+      - Cool affected area with running cool water for 20 minutes
+      - Remove jewellery or tight clothing near burn (unless stuck to skin)
+      - Cover with clean, non-fluffy material (cling film ideal)
+      - Seek medical attention for serious burns (larger than a 5 cm diameter area, on face/hands/joints)
+      - Complete first aid documentation and incident report
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency services: 000
+      - University Security (after hours): [insert number]
+      - Supervisor: Chris Betters [insert number]
+      - Safety Officer: [insert name and number]
+      - First Aiders: [listed on notice board]
+
+swp:
+  hazards:
+    - hazard: "Class 4 laser radiation (455nm, 10W)"
+      controls: |-
+        - Laser safety windows and interlocks
+        - NEVER operate with safety systems defeated
+        - Mandatory training and competency assessment
+    - hazard: "Fire and ignition"
+      controls: |-
+        - Fire detection and emergency stop
+        - NEVER leave unattended during laser operations
+        - CO₂ or dry powder fire extinguisher within 5 metres
+    - hazard: "Thermal burns (350°C nozzle, 65°C chamber)"
+      controls: |-
+        - Heat-resistant gloves for hot surfaces
+        - Cool-down period before handling components
+    - hazard: "Inhalation of fumes and particulates"
+      controls: |-
+        - Local exhaust ventilation
+        - Enclosed build chamber and Smoke Purifier filtration
+    - hazard: "Electrical hazards (240V)"
+      controls: |-
+        - RCD protection and earthed equipment
+        - Regular test and tag; no wet conditions
+    - hazard: "Moving mechanical parts"
+      controls: |-
+        - Enclosed design with door interlocks
+        - Emergency stop accessible; keep hands clear during operation
+    - hazard: "Toxic fumes from certain materials"
+      controls: |-
+        - Material approval process; prohibited materials list enforced
+        - Local exhaust ventilation
+  resources:
+    - |-
+      PERSONAL PROTECTIVE EQUIPMENT (PPE):
+      - Heat-resistant gloves (for handling hot components after printing)
+      - Safety glasses (general workshop protection, NOT for laser - the laser safety windows provide laser protection)
+      - Respiratory protection (if required based on material SDS and ventilation assessment)
+      - Closed-toe shoes
+      - Long trousers (no shorts)
+      - Tie back long hair
+    - |-
+      EQUIPMENT AND MATERIALS:
+      - Bambu Lab H2D with 10W laser module (fully functional with all safety systems verified)
+      - Approved materials only (wood, leather, acrylic, etc. - see approved materials list)
+      - Material Safety Data Sheets (SDS) for all materials to be processed
+      - Bambu Studio or Bambu Suite software (latest version)
+      - Computer with network connection
+      - Clean, lint-free cloths for maintenance
+      - Isopropyl alcohol (IPA) for cleaning
+    - |-
+      SAFETY EQUIPMENT (MUST BE PRESENT IN LABORATORY):
+      - CO₂ or dry powder fire extinguisher (within 5 metres)
+      - First aid kit
+      - Emergency eyewash station (accessible)
+      - Emergency contact numbers displayed
+      - Sign-in/sign-out log book
+    - |-
+      VENTILATION:
+      - Local exhaust ventilation (LEV) connected and operating
+      - Air purifier (recommended for prolonged use)
+      - Exhaust ducting to outside or through appropriate filtration
+  steps:
+    - |-
+      BEFORE STARTING - CRITICAL SAFETY REQUIREMENTS:
+      - You must have completed Class 4 laser safety training and been assessed as competent
+      - You must be listed on the authorised users list for this equipment
+      - You must never leave the equipment unattended during laser operations
+      - You must never defeat or bypass any safety system
+    - "PRE-OPERATION SAFETY CHECKS (MANDATORY - DO NOT SKIP):"
+    - "Sign in to the equipment log book (record name, date, time, operation type)"
+    - |-
+      Visual inspection of laser safety windows:
+      - Check front laser safety window (green-tinted) for cracks, chips, or damage
+      - Check all side panels and top cover for damage
+      - If ANY damage found: DO NOT USE - lock out and report to supervisor
+    - |-
+      Test door interlocks (CRITICAL):
+      - Power on the equipment
+      - Navigate to settings menu and initiate a test print or laser operation
+      - Slowly open the front door - laser/print head MUST stop immediately
+      - Close door and repeat test with top glass cover
+      - If interlocks fail: DO NOT USE - lock out and report immediately
+    - |-
+      Emergency stop test:
+      - Press the red emergency stop button
+      - Verify all motion stops and alarm sounds
+      - Reset emergency stop by twisting clockwise
+    - |-
+      Verify local exhaust ventilation (LEV):
+      - Check exhaust ducting is connected
+      - Turn on LEV/air purifier
+      - Verify airflow (use tissue test if needed)
+    - |-
+      Check fire extinguisher:
+      - CO₂ or dry powder extinguisher present within 5 metres
+      - Check pressure gauge in green zone
+      - Check clear access path to extinguisher
+    - |-
+      Clear work area:
+      - Remove all flammable materials from vicinity (papers, solvents, etc.)
+      - Ensure clear egress path for emergency evacuation
+      - Remove clutter around equipment
+    - "MATERIAL PREPARATION AND APPROVAL:"
+    - |-
+      Check material is approved:
+      - Consult approved materials list
+      - PROHIBITED: PVC, polycarbonate, materials containing chlorine or halogens
+      - If material not on approved list: seek approval from supervisor before use
+    - |-
+      Review material Safety Data Sheet (SDS):
+      - Check for hazardous decomposition products
+      - Note any special ventilation or PPE requirements
+      - Confirm fire hazards and extinguishing methods
+    - |-
+      Prepare material:
+      - Ensure material is clean and dry
+      - Check material dimensions fit within build volume (350 × 320 × 325 mm for 3D printing, 310 × 270 mm for laser engraving with 10W module)
+      - For laser operations: ensure material is flat and securely positioned
+    - "EQUIPMENT STARTUP:"
+    - "Power on the Bambu H2D (if not already on from safety checks)"
+    - "Allow equipment to complete startup sequence and homing"
+    - "Check touchscreen display for any error messages"
+    - "Verify network connection (if remote monitoring to be used)"
+    - "Start LEV/air purifier system"
+    - "PREPARE JOB FILE:"
+    - "Open Bambu Studio or Bambu Suite software on computer"
+    - "Import or create your design file"
+    - |-
+      For 3D printing:
+      - Select material type and printer settings
+      - Configure support structures if needed
+      - Slice the model and preview toolpaths
+      - Check estimated print time and material usage
+    - |-
+      For laser engraving/cutting:
+      - Use BirdsEye camera to align material on bed
+      - Set laser power and speed for material type (consult manufacturer guidelines)
+      - Configure air assist settings
+      - Preview laser path
+      - Verify material will not extend outside safe area
+    - "Send job file to printer via network or USB"
+    - "LOAD MATERIAL:"
+    - "Open front door (equipment should be idle, not during operation)"
+    - |-
+      For 3D printing:
+      - Clean build plate with IPA if needed
+      - Install appropriate build plate (textured PEI, smooth PEI, etc.)
+      - Load filament spools into AMS (if using multi-material)
+      - Verify filament type matches job requirements
+    - |-
+      For laser operations:
+      - Remove build plate if necessary
+      - Position material on bed using alignment guides
+      - Use BirdsEye camera to verify material position
+      - Ensure material is flat and won't curl during processing
+      - Verify material is within safe operating area
+    - "Close front door securely - ensure door clicks closed"
+    - "START OPERATION:"
+    - |-
+      Final check before starting:
+      - All doors and covers closed and secured
+      - LEV/air purifier running
+      - Emergency stop not engaged
+      - Fire extinguisher accessible
+      - Clear path to emergency exit
+    - "Select job from touchscreen or send from computer"
+    - "Confirm job parameters on screen"
+    - "Press start button"
+    - |-
+      Monitor first few minutes closely:
+      - Watch for proper adhesion (3D printing) or correct laser focus (laser operations)
+      - Listen for unusual sounds
+      - Watch for excessive smoke or fumes
+      - Verify material not moving or curling
+    - |-
+      During laser operations - MANDATORY ATTENDANCE:
+      - You MUST remain within visual line of sight OR monitor via camera continuously
+      - Never leave the room during laser cutting/engraving
+      - Watch for signs of fire (flames, excessive smoke, burning smell)
+      - Keep emergency stop and fire extinguisher within reach
+      - If you must leave for any reason: STOP the laser operation first
+    - |-
+      During 3D printing operations:
+      - Check periodically for print failures
+      - Can be left unattended if print-only mode (no laser)
+      - Camera monitoring recommended for long prints
+    - "COMPLETION AND SHUTDOWN:"
+    - "Wait for equipment to signal job complete"
+    - |-
+      Allow hot components to cool:
+      - Nozzle: can reach 350°C - wait minimum 10 minutes
+      - Chamber: can reach 65°C - wait 5 minutes
+      - Build plate: wait until below 40°C (touchscreen displays temperature)
+    - "Open front door carefully (watch for residual heat)"
+    - |-
+      Remove completed work:
+      - Wear heat-resistant gloves if components still warm
+      - For 3D prints: allow to cool on plate before removal
+      - For laser work: carefully remove material (may have sharp edges)
+      - Place in designated area for cooling/collection
+    - "Clean work area (see Clean Up and Waste Disposal Requirements section)"
+    - "Turn off LEV/air purifier (after ensuring adequate ventilation time)"
+    - "If last user of the day: power down equipment via touchscreen menu"
+    - "Sign out in equipment log book (record time, any issues)"
+  emergency_shutdown:
+    - |-
+      EMERGENCY STOP - USE IN ANY OF THESE SITUATIONS:
+      - Fire or smoke detected
+      - Any safety system failure
+      - Equipment malfunction
+      - Abnormal sounds, smells, or operation
+      - Laser radiation suspected (door opened during operation)
+      - Material movement or dislodgement
+      - Any unsafe condition
+    - |-
+      EMERGENCY SHUTDOWN PROCEDURE:
+      1. PRESS RED EMERGENCY STOP BUTTON IMMEDIATELY: button located on front right of equipment; push firmly - button will lock in depressed position; audible alarm will sound; all motion will stop immediately
+      2. If emergency stop fails or is inaccessible: turn off power at wall outlet; pull plug if necessary
+      3. Assess the situation: if fire - follow fire emergency procedures; if injury - call for first aid assistance; if equipment damage - do not restart, report to supervisor; if safety system failure - lock out and tag equipment
+    - |-
+      Do NOT restart equipment until:
+      - Emergency has been fully resolved
+      - Equipment has been inspected
+      - Supervisor has given approval
+      - Any necessary repairs completed
+      - All safety systems verified functional
+    - |-
+      Complete incident report:
+      - Record time, date, and circumstances
+      - Note what emergency required shutdown
+      - Report to supervisor immediately
+      - Complete RiskWare report if required
+    - |-
+      RESETTING EMERGENCY STOP (ONLY AFTER EMERGENCY RESOLVED):
+      1. Ensure all emergency conditions resolved
+      2. Twist emergency stop button clockwise to release - button will pop up and alarm will stop
+      3. Equipment will not automatically restart - manual restart required
+      4. Perform full pre-operation safety checks before resuming work
+  emergency_procedures:
+    - |-
+      FIRE EMERGENCY:
+      - PRESS EMERGENCY STOP BUTTON
+      - DO NOT OPEN CHAMBER DOOR (introduces oxygen, may worsen fire)
+      - If fire is small and contained inside chamber: fire detection system will sound alarm; use CO₂ or dry powder fire extinguisher through any access points; direct extinguisher at base of flames; use short bursts; if fire does not extinguish immediately, proceed to evacuation
+      - If fire cannot be controlled or spreads: evacuate area immediately; close door behind you (do not lock); activate building fire alarm; call 000 (Emergency Services); notify building warden; assemble at designated assembly point; do not re-enter building until cleared by emergency services
+      - After fire is extinguished: allow equipment to cool completely; do not restart - lock out and tag equipment; report incident to supervisor immediately; complete incident report and RiskWare entry; equipment must be inspected before further use
+    - |-
+      SUSPECTED LASER RADIATION EXPOSURE:
+      - PRESS EMERGENCY STOP IMMEDIATELY
+      - If eye exposure suspected: do not rub eyes; close eyes or look away from bright light; seek IMMEDIATE medical attention at Emergency Department; call 000 if severe symptoms (vision loss, severe pain); Class 4 laser exposure can cause permanent blindness
+      - If skin exposure (burns): move away from laser source; cool affected area with running cool water for 20 minutes; cover with clean, non-fluffy material; seek medical attention if severe
+      - Document incident: record time, duration, and circumstances of exposure; note which safety system(s) failed; report immediately to supervisor and safety officer; complete incident report and RiskWare entry
+      - Equipment must be locked out and tagged immediately, inspected by a qualified laser safety technician, and all safety systems verified before any further use
+    - |-
+      THERMAL BURNS (HOT SURFACES):
+      - Remove from heat source immediately
+      - Cool affected area with running cool water for 20 minutes
+      - Remove jewellery or tight clothing near burn (unless stuck to skin)
+      - Cover burn with clean, non-fluffy material (cling film is ideal)
+      - Seek medical attention if: burn larger than 5 cm across; burn on face, hands, feet, joints, or genitals; full thickness burn (white or charred skin); blistering; or if unsure of severity
+      - Complete first aid documentation and incident report
+    - |-
+      EXCESSIVE FUMES OR SMOKE:
+      - PRESS EMERGENCY STOP
+      - If fumes are overwhelming: evacuate area immediately; do not inhale deeply; get to fresh air
+      - When safe to do so: increase ventilation (open doors/windows); continue running LEV/air purifier
+      - If anyone experiences symptoms (difficulty breathing, dizziness, nausea): call 000 for medical assistance; keep person in fresh air; provide material SDS to medical personnel
+      - Investigation required: check LEV system connection and function; check material type (may be prohibited); review material SDS for decomposition products; report to supervisor; do not resume until issue resolved
+    - |-
+      EQUIPMENT MALFUNCTION:
+      - Press emergency stop
+      - Isolate power if safe to do so
+      - Do NOT attempt repairs yourself
+      - Lock out and tag equipment
+      - Report to supervisor
+      - Complete incident report
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency Services: 000
+      - University Security (after hours): [Insert number]
+      - Supervisor: Chris Betters [Insert number]
+      - Safety Officer: [Insert name and number]
+      - First Aid: [Location and contact details]
+      - Nearest Emergency Department: [Insert details]
+  cleanup_waste:
+    - |-
+      AFTER EACH USE - BUILD CHAMBER AND SURFACES:
+      - Allow all components to cool to room temperature before cleaning
+      - Remove any loose debris, dust, or residue from build chamber
+      - Use lint-free cloth with isopropyl alcohol (IPA) to clean: build plate; laser safety windows (interior and exterior - ensure no residue that could affect laser protection); front door window; any smoke/dust deposits on internal surfaces
+      - Do NOT use water or harsh chemicals on electronic components
+    - |-
+      AFTER EACH USE - LASER OPTICS AND AIR ASSIST (AFTER LASER OPERATIONS):
+      - Check laser lens for smoke residue or debris
+      - Clean if necessary using approved lens cleaning materials only
+      - Check air assist nozzle for blockages
+      - Clear any debris from air assist system
+    - |-
+      EXHAUST SYSTEM AND FILTERS:
+      - Check exhaust system for blockages weekly
+      - Inspect air filter condition
+      - Replace filters according to schedule (quarterly or when visibly saturated)
+      - Clean or replace according to manufacturer guidelines
+      - Document filter changes in maintenance log
+    - |-
+      WORK AREA:
+      - Remove all materials, tools, and personal items
+      - Dispose of waste properly (see waste disposal below)
+      - Wipe down surrounding benches
+      - Return fire extinguisher to proper location if moved
+      - Leave area clean and tidy for next user
+    - |-
+      WASTE DISPOSAL - 3D PRINTING WASTE:
+      - Failed prints, support material: general waste, or recycling if material is recyclable (check material type)
+      - Filament offcuts: store for potential reuse or dispose in general waste
+      - Empty filament spools: recycling (plastic recycling bin)
+    - |-
+      WASTE DISPOSAL - LASER PROCESSING WASTE:
+      - Wood/paper offcuts: general waste or composting if uncontaminated
+      - Acrylic offcuts: general waste (not recyclable if laser-cut due to residue)
+      - Leather offcuts: general waste
+      - Metal sheet offcuts: metal recycling
+      - Any waste contaminated with hazardous materials: consult SDS and dispose as hazardous waste if required
+    - |-
+      WASTE DISPOSAL - CLEANING MATERIALS:
+      - IPA-contaminated cloths: allow to dry in well-ventilated area, then general waste
+      - Used filters: sealed bag, then general waste (or hazardous waste if heavily contaminated)
+    - |-
+      WASTE DISPOSAL - HAZARDOUS WASTE:
+      - Any material that produced toxic fumes during processing
+      - Contaminated cleaning materials
+      - Dispose via university hazardous waste system
+      - Label clearly and contact waste management
+    - |-
+      MONTHLY DEEP CLEANING:
+      - Clean linear guides and lubricate with appropriate lubricant
+      - Clean lead screws and apply grease
+      - Vacuum chamber exhaust fan and vents
+      - Clean part cooling fan and air ducts
+      - Inspect all moving parts for wear
+      - Document in maintenance log
+  references:
+    - "AS/NZS IEC 60825.1:2014 - Safety of laser products"
+    - "AS 2211.13-1999 - Safety of industrial laser equipment"
+    - "Work Health and Safety Act 2011"
+    - "Work Health and Safety Regulation 2017"
+    - "AS/NZS 3000:2018 - Electrical installations (Wiring Rules)"
+    - "AS 1940-2017 - Storage and handling of flammable and combustible liquids"
+    - "Bambu Lab H2D User Manual (latest version)"
+    - "Bambu Lab H2D Laser Safety Document (wiki.bambulab.com/en/h2/laser-safety-document)"
+    - "Bambu Lab H2D Technical Specifications"
+    - "Risk Assessment SAIL-RA-BAMBU-H2D-001"
+    - "University of Sydney WHS Laser Safety Policy and Procedures"
+    - "University of Sydney WHS Fire Safety Procedures"
+    - "Material Safety Data Sheets (SDS) for approved materials"
+  competency:
+    - |-
+      MANDATORY TRAINING 1 - CLASS 4 LASER SAFETY TRAINING (must be completed before authorisation):
+      - Understanding of laser classifications
+      - Class 4 laser hazards (eye damage, burns, fire)
+      - How safety systems work (interlocks, windows)
+      - Consequences of defeating safety systems
+      - Emergency procedures for laser exposure
+      - Legal responsibilities
+    - |-
+      MANDATORY TRAINING 2 - EQUIPMENT-SPECIFIC TRAINING:
+      - Bambu H2D operation (3D printing and laser functions)
+      - Safety system verification procedures
+      - Pre-operation checks
+      - Software operation (Bambu Studio/Suite)
+      - Material preparation and loading
+      - Emergency stop and shutdown procedures
+    - |-
+      MANDATORY TRAINING 3 - FIRE SAFETY TRAINING:
+      - Fire extinguisher operation (CO₂ and dry powder types)
+      - Fire emergency procedures
+      - Building evacuation procedures
+    - |-
+      MANDATORY TRAINING 4 - HAZARDOUS MATERIALS AWARENESS:
+      - Reading and interpreting SDS
+      - Prohibited materials (PVC, polycarbonate, etc.)
+      - Fume hazards and controls
+      - Material approval process
+    - |-
+      MANDATORY TRAINING 5 - FIRST AID (BASIC):
+      - Thermal burns treatment
+      - When to seek medical attention
+      - Location of first aid equipment
+    - |-
+      COMPETENCY ASSESSMENT - THEORY:
+      - Written test or oral examination covering: Class 4 laser hazards and safety systems; pre-operation safety checks; emergency procedures; prohibited materials; equipment limitations
+      - Must achieve 100% on safety-critical questions
+      - Minimum 80% overall pass mark
+    - |-
+      COMPETENCY ASSESSMENT - PRACTICAL:
+      - Supervised practical demonstration of: complete pre-operation safety checks (including interlock testing); material preparation and approval process; equipment startup procedure; loading material safely; starting and monitoring a job (3D print or laser operation); emergency stop activation and reset; safe shutdown and cleanup
+      - Assessor must observe and verify competency in all areas
+      - Any safety-critical errors require retraining and reassessment
+    - |-
+      ONGOING REQUIREMENTS:
+      - Annual refresher training on laser safety
+      - Retraining required after any safety incident involving this equipment, when safety procedures are updated, if unsafe practices are observed, or after an extended period of non-use (more than 12 months)
+      - Baseline eye examination recommended before authorisation
+      - Periodic eye examinations if frequent laser user (consult occupational health)
+    - |-
+      ASSESSOR REQUIREMENTS (to be authorised as an assessor, staff must):
+      - Have completed Class 4 laser safety training
+      - Be competent and experienced in operation of the Bambu H2D
+      - Understand all safety systems and their verification
+      - Be familiar with emergency procedures
+      - Have authority to authorise equipment use
+      - Be approved by laboratory manager or safety officer
+    - |-
+      ASSESSMENT PROCESS:
+      - Trainee completes all mandatory training modules
+      - Assessor conducts theory assessment (written or oral)
+      - Assessor supervises practical demonstration and verifies competency in all required areas
+      - If competent: assessor signs trainee off on sign-off sheet and trainee is added to authorised users list
+      - If not yet competent: additional training and practice required, then reassessment
+    - |-
+      AUTHORISED USERS LIST:
+      - Maintained by laboratory manager and displayed near equipment
+      - Updated when new users authorised; reviewed annually
+      - Users removed if required retraining not completed
+    - |-
+      RECORD KEEPING:
+      - Training records maintained by supervisor
+      - Competency assessment documented on sign-off sheet
+      - Training refresher dates tracked
+  assessors:
+    - "Chris Betters (Supervisor)"
+    - "Sergio Leon-Saval (Supervisor)"
+    - "[Additional authorised assessors to be added]"

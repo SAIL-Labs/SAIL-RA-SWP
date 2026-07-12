@@ -1,0 +1,1924 @@
+# General Optical/Laser Lab Safety — combined RA + SWP data file.
+# Converted from the legacy _risk_assessments/general-lab-safety.md and
+# _safe_work_procedures/general-lab-safety.md pair.
+
+meta:
+  slug: general-lab-safety
+  abbrev: GENERAL
+  number: 1
+  name: "General Optical/Laser Lab Safety"
+  title: "General Optical and Laser Laboratory Safety - All SAIL Lab Areas"
+  status: Draft
+  version: "1.0"
+  version_issue_date: "February 2026"
+  description: "Foundational risk assessment and safe work procedures covering general safety requirements for all SAIL laboratory areas including optical hazards, lab access, conduct, room-specific hazards, daily procedures, and emergency protocols"
+  key_hazards: "Optical hazards, laser exposure, slips/trips/falls, manual handling, room-specific hazards (CO2, sharps), general lab conduct"
+  includes: "Access requirements, induction content, daily procedures, emergency protocols, visitor management, incident reporting"
+  faculty_school: "School of Physics"
+  prepared_by: "Chris Betters"
+  supervisors:
+    - "Chris Betters"
+    - "Sergio Leon-Saval"
+    - "Barnaby Norris"
+    - "Julia Bryant"
+  issue_date: "February 2026"
+  next_review_date: "February 2027"
+
+ra:
+  activity: |-
+    - General work in optical and laser laboratories
+    - Optical alignment and experimentation
+    - Equipment setup and operation
+    - Laboratory access and conduct
+    - Movement around laboratory spaces
+    - Use of optical benches and equipment
+    - General laboratory housekeeping
+
+    SCOPE: This is a foundational risk assessment covering general laboratory safety across all SAIL laboratory areas. Equipment-specific and activity-specific hazards are covered by separate RAs/SWPs (individual equipment RAs/SWPs, Fibre Optics Handling, Chemical Handling, Electrical Safety). All laboratory users must comply with BOTH this general RA and any applicable specialist RAs/SWPs for their specific activities.
+  location: |-
+    SAIL Laboratory Areas:
+    - Room 116B (temperature-controlled room)
+    - Room 116C (3D printing room)
+    - Room 121A (breakout/meeting room)
+    - Rooms 121B-C (standard optical labs)
+    - Room 121D (fibre fabrication lab)
+    - Room 120 (standard optical lab)
+    - Rooms 218G-H-I (fibre fabrication and optical labs)
+
+    School of Physics, University of Sydney
+  persons_at_risk:
+    - "Academic staff and researchers"
+    - "PhD and Masters students"
+    - "Undergraduate students (supervised)"
+    - "Visiting researchers"
+    - "Contractors performing maintenance"
+    - "Laboratory visitors"
+    - "Cleaning staff"
+  team:
+    - "Chris Betters (Laboratory Supervisor)"
+    - "Sergio Leon-Saval (Laboratory Supervisor)"
+    - "Laboratory technical staff"
+    - "Laboratory users and researchers"
+    - "School of Physics Safety Officer"
+    - "Facilities maintenance personnel"
+  references:
+    - "Work Health and Safety Act 2011"
+    - "Work Health and Safety Regulation 2017"
+    - "AS/NZS 2243.1:2005 Safety in laboratories - Planning and operational aspects"
+    - "AS/NZS 2243.2:2006 Safety in laboratories - Chemical aspects"
+    - "AS/NZS 2243.10:2004 Safety in laboratories - Storage of chemicals"
+    - "AS/NZS IEC 60825.1:2014 Safety of laser products - Equipment classification and requirements"
+    - "AS/NZS 4801:2001 Occupational health and safety management systems"
+    - "AS/NZS 1337.1:2010 Eye and face protection - Eye protectors for occupational applications"
+    - "University of Sydney WHS policies and procedures"
+    - "University of Sydney Laboratory Safety Manual"
+    - "School of Physics Local Safety Procedures"
+    - "Manufacturer documentation for installed equipment and safety systems"
+    - "Building management and emergency procedures"
+  risks:
+    - task: |-
+        LABORATORY ACCESS AND GENERAL CONDUCT:
+        Unauthorised or inadequately trained personnel accessing laboratory areas
+      hazards: "Unauthorised access, inadequate training"
+      harm: |-
+        - Exposure to hazards without understanding risks
+        - Incorrect operation of equipment
+        - Inability to respond to emergencies
+        - Injury to self or others
+        - Damage to equipment
+      controls: |-
+        - Swipe card access control
+        - Access only granted after completing SAIL Lab General Local Induction
+        - Authorised entry signage on doors listing risks and PPE requirements
+        - Supervisor approval required for access
+      current_rating: "Medium"
+      additional_controls: |-
+        - Mandatory SAIL Lab General Local Induction before access granted
+        - Maintain authorised users list
+        - Regular review of access permissions
+        - Visitors must be signed in and supervised
+        - Induction records maintained
+        - Annual refresher training for infrequent users
+      residual_rating: "Low"
+    - task: |-
+        LABORATORY ACCESS AND GENERAL CONDUCT:
+        Unsupervised undergraduate students
+      hazards: "Inadequate supervision, inexperience"
+      harm: |-
+        - Exposure to hazards beyond competency level
+        - Incorrect equipment operation
+        - Inability to recognise dangerous situations
+        - Delayed response to emergencies
+      controls: |-
+        - University policy requiring supervision
+        - Laboratory supervisor oversight
+        - Sign-in procedures
+      current_rating: "High"
+      additional_controls: |-
+        - MANDATORY: Undergraduates must be supervised at all times
+        - Supervisor must be physically present in laboratory
+        - Supervisor responsible for ensuring safe practices
+        - Sign-in/sign-out log maintained
+        - Clear supervision protocols documented
+        - Supervisors must be trained and competent
+      residual_rating: "Low"
+    - task: |-
+        LABORATORY ACCESS AND GENERAL CONDUCT:
+        Poor housekeeping and laboratory conduct
+      hazards: "Cluttered workspace, equipment left running unattended, food/drink in lab"
+      harm: |-
+        - Slips, trips, and falls
+        - Fire hazards from clutter
+        - Contamination of experiments
+        - Chemical spills
+        - Equipment damage
+        - Cross-contamination
+      controls: |-
+        - Laboratory rules and guidelines
+        - Regular cleaning schedules
+        - Designated eating areas outside labs
+      current_rating: "Medium"
+      additional_controls: |-
+        - No food or drink in laboratories
+        - Clear desk policy - return equipment to storage
+        - Cable management and trip hazard awareness
+        - Regular housekeeping inspections
+        - Waste disposal procedures followed
+        - Equipment not left running unattended unless specifically approved
+        - Spills cleaned immediately
+      residual_rating: "Low"
+    - task: |-
+        OPTICAL HAZARDS:
+        Exposure to bright light sources (alignment lasers, LEDs, lamps, broadband sources)
+      hazards: "Optical radiation, bright visible light"
+      harm: |-
+        - Temporary flash blindness
+        - Eye strain and fatigue
+        - Retinal damage from extended exposure
+        - Dazzle affecting ability to see hazards
+        - Headaches and discomfort
+      controls: |-
+        - Warning labels on equipment
+        - Controlled access to powered equipment
+        - General laboratory lighting
+      current_rating: "Medium"
+      additional_controls: |-
+        - Never look directly into beam or light source
+        - Use beam blocks and shutters when not actively aligning
+        - Use viewing cards or cameras for beam visualisation
+        - Appropriate safety glasses/goggles when required
+        - Limit exposure duration during alignment
+        - Work at lowest intensity possible
+        - Turn off sources when not in use
+      residual_rating: "Low"
+    - task: |-
+        OPTICAL HAZARDS:
+        Specular reflections from optical surfaces (mirrors, lenses, beam splitters, polished metal)
+      hazards: "Unexpected reflected beams, multiple reflection paths"
+      harm: |-
+        - Eye injury from reflected beams
+        - Exposure to beams from unexpected directions
+        - Difficulty tracking all beam paths
+        - Reflections at eye level
+      controls: |-
+        - Optical benches at comfortable working height
+        - Standard laboratory practices
+        - User training in optical safety
+      current_rating: "Medium"
+      additional_controls: |-
+        - Remove reflective items (watches, jewellery, lanyards) before optical work
+        - Be aware of all potential reflection surfaces
+        - Use anodised or black optical mounts to minimise stray reflections
+        - Position yourself to avoid reflected beam paths
+        - Use beam dumps for unwanted beams
+        - Never wear reflective clothing near active optical setups
+        - Mark beam paths clearly
+        - Work at sitting height when possible to keep beams below eye level
+      residual_rating: "Low"
+    - task: |-
+        OPTICAL HAZARDS:
+        Stray or scattered light in darkened laboratory environments
+      hazards: "Reduced visibility, dark-adapted eyes more sensitive"
+      harm: |-
+        - Trips and falls in darkness
+        - Collisions with equipment
+        - Increased sensitivity to stray light exposure
+        - Inability to see hazards
+        - Difficulty reading safety labels
+      controls: |-
+        - Emergency lighting systems
+        - Ambient light available when needed
+      current_rating: "Medium"
+      additional_controls: |-
+        - Maintain adequate lighting for safe movement
+        - Use red lighting for dark-adapted work (less disruptive)
+        - Allow time for eyes to adjust when entering/leaving dark areas
+        - Use torches/headlamps when needed
+        - Keep walkways clear and well-defined
+        - Ensure emergency exits remain visible
+        - Never work alone in darkened laboratories
+      residual_rating: "Low"
+    - task: |-
+        LASER HAZARDS (GENERAL - equipment-specific lasers have dedicated RAs):
+        Exposure to laser radiation from alignment lasers and laser systems
+      hazards: "Direct beam exposure, specular reflections"
+      harm: |-
+        - Retinal damage or burns (Class 3B, 4)
+        - Permanent vision loss
+        - Skin burns (Class 4)
+        - Fire ignition (Class 4)
+        - Temporary flash blindness (Class 2, 3R)
+      controls: |-
+        - Equipment-specific laser RAs and SWPs
+        - Laser warning signage on doors
+        - Some laboratories have interlock systems
+        - Classification labels on laser equipment
+      current_rating: "High"
+      additional_controls: |-
+        - MANDATORY: Laser Operator Certificate required for all personnel working with or near lasers
+        - Comply with equipment-specific laser RA/SWP
+        - Appropriate laser safety eyewear for wavelength and class
+        - Never look into beam or at specular reflections
+        - Use lowest power necessary during alignment
+        - Beam path at or below sitting height where possible
+        - Laser safety eyewear worn during operation of Class 3B/4 lasers
+        - Respect laser interlock systems - never bypass
+        - Room signage indicates laser in use
+        - Curtains or barriers to prevent exposure to adjacent areas
+      residual_rating: "Low"
+    - task: |-
+        LASER HAZARDS (GENERAL - equipment-specific lasers have dedicated RAs):
+        Laser interlocks bypassed or defeated
+      hazards: "Exposure to laser radiation without safety systems active"
+      harm: |-
+        - Unexpected laser exposure during room entry
+        - Exposure to Class 3B/4 radiation
+        - Multiple personnel exposed
+        - Severe eye or skin injury
+      controls: |-
+        - Interlock systems on some laboratory doors
+        - Warning signage
+        - Laboratory procedures prohibiting bypass
+      current_rating: "Very High"
+      additional_controls: |-
+        - NEVER bypass or defeat laser interlocks
+        - Interlocks must be functional before laser operation
+        - Report faulty interlocks immediately
+        - Do not operate lasers if interlocks not working
+        - Disciplinary action for intentional bypass
+        - Regular testing of interlock systems
+        - Alternative controls if interlock maintenance required (laser lockout)
+      residual_rating: "Low"
+    - task: |-
+        ROOM-SPECIFIC HAZARDS:
+        Working in Room 116B (temperature-controlled with CO2 risk)
+      hazards: "Elevated carbon dioxide levels, oxygen displacement"
+      harm: |-
+        - Asphyxiation
+        - Headaches and dizziness
+        - Confusion and impaired judgment
+        - Loss of consciousness
+        - Hypercapnia (CO2 poisoning)
+        - Death in extreme cases
+      controls: |-
+        - CO2 sensor and monitoring system installed
+        - Automatic fresh air introduction when elevated CO2 detected
+        - Alarm system for high CO2 levels
+        - Temperature control via air recirculation system
+      current_rating: "High"
+      additional_controls: |-
+        - NEVER work in Room 116B with door closed
+        - Door must remain open during occupancy
+        - If door must be closed (temperature control), personnel must leave room
+        - Monitor CO2 alarm system - evacuate if alarm sounds
+        - Limit time in room when door closed (access only to check equipment)
+        - Buddy system recommended for work in 116B
+        - Understand symptoms of CO2 exposure
+        - Report any alarm activations or sensor faults immediately
+        - Regular sensor calibration and maintenance
+        - Warning signage on door regarding CO2 risk and door policy
+      residual_rating: "Low"
+    - task: |-
+        ROOM-SPECIFIC HAZARDS:
+        Work in fibre fabrication labs (121D, 218G)
+      hazards: "Sharps hazards from cleaved fibre ends"
+      harm: |-
+        - Puncture wounds to hands, fingers, eyes
+        - Fibre fragments embedded in skin
+        - Infection from contaminated sharps
+        - Eye injury from fibre fragments
+      controls: |-
+        - Dedicated fibre fabrication areas
+        - Portable eyewash stations in fibre labs
+        - Fibre disposal containers
+      current_rating: "Medium"
+      additional_controls: |-
+        - Follow Fibre Optics Handling RA/SWP (dedicated document)
+        - Appropriate sharps containers for fibre waste
+        - Never handle fibre ends carelessly
+        - Dispose of cleaved fibres immediately
+        - Safety glasses mandatory during fibre cleaving
+        - Inspect hands and work area for fibre fragments
+        - First aid procedures for fibre injuries
+        - Portable eyewash readily accessible
+      residual_rating: "Low"
+    - task: |-
+        ROOM-SPECIFIC HAZARDS:
+        Work in 3D printing room (116C)
+      hazards: "Specific to 3D printers (fumes, thermal, mechanical)"
+      harm: "See individual equipment RAs"
+      controls: |-
+        - Bambu Lab H2D RA/SWP (SAIL-RA-BAMBU-H2D-001)
+        - Form 3 printer RAs/SWPs
+        - Dedicated 3D printing room with ventilation
+      current_rating: "Medium"
+      additional_controls: |-
+        - NOTE: Current risk rating varies by printer - refer to individual equipment RAs
+        - Follow equipment-specific RA/SWP for each printer
+        - Room ventilation adequate for printing operations
+        - Equipment-specific training required
+      residual_rating: "Low"
+    - task: |-
+        MECHANICAL HAZARDS:
+        Manual handling of heavy optics, equipment, optical tables
+      hazards: "Heavy items, awkward shapes, precision equipment"
+      harm: |-
+        - Back strain and musculoskeletal injuries
+        - Crushed fingers or toes
+        - Dropped equipment causing damage
+        - Foot injuries from falling objects
+        - Hernias from improper lifting
+      controls: |-
+        - Mechanical lifting aids available
+        - Trolleys and carts in some areas
+        - Standard laboratory furniture height
+      current_rating: "Medium"
+      additional_controls: |-
+        - Use mechanical aids (trolleys, hoists) for heavy items (>15 kg)
+        - Two-person lift for awkward or heavy items
+        - Proper lifting technique (bend knees, straight back, load close to body)
+        - Closed-toe shoes mandatory in all laboratories
+        - Plan lift route before moving items
+        - Ask for assistance when needed
+        - Steel-toe boots recommended for moving heavy optical tables or equipment
+        - Clear pathway before moving heavy items
+        - Use appropriate PPE (gloves for grip, not for heavy lifting)
+      residual_rating: "Low"
+    - task: |-
+        MECHANICAL HAZARDS:
+        Moving parts on optical stages, translation mounts, rotation mounts
+      hazards: "Motorised stages, manual adjustment screws, rotating components"
+      harm: |-
+        - Pinch points crushing fingers
+        - Entanglement with rotating parts
+        - Impact injuries from unexpected motion
+        - Equipment damage from collisions
+      controls: |-
+        - Emergency stops on motorised equipment
+        - Guards on some equipment
+        - Standard operating procedures
+      current_rating: "Low"
+      additional_controls: |-
+        - Keep hands clear of moving parts during operation
+        - Emergency stop accessible and known
+        - Be aware of motorised stage motion before activation
+        - Remove loose clothing, jewellery, lanyards before working near moving parts
+        - Tie back long hair
+        - Equipment-specific training for motorised systems
+        - Stop motion before adjusting or clearing obstacles
+        - Appropriate speed settings for manual operation
+      residual_rating: "Low"
+    - task: |-
+        MECHANICAL HAZARDS:
+        Sharp edges on optical mounts, equipment housings, metal components
+      hazards: "Machined metal parts, mounting hardware, corners"
+      harm: |-
+        - Cuts and lacerations to hands
+        - Torn gloves or clothing
+        - Bleeding
+        - Infection if not treated
+      controls: |-
+        - Standard laboratory equipment design
+        - First aid kit available on level
+      current_rating: "Low"
+      additional_controls: |-
+        - Handle optical components and mounts carefully
+        - Inspect equipment for sharp edges or burrs
+        - Wear appropriate gloves when handling rough metal parts (not during optical alignment)
+        - Deburr sharp edges where possible
+        - First aid available for minor cuts
+        - Wash cuts immediately and apply dressing
+      residual_rating: "Low"
+    - task: |-
+        SLIPS, TRIPS, AND FALLS:
+        Trailing cables, equipment on floor, cluttered walkways
+      hazards: "Power cables, fibre optic cables, equipment placement"
+      harm: |-
+        - Trips and falls causing injury
+        - Sprains and fractures
+        - Head injuries from falling onto equipment
+        - Pulled muscles
+        - Equipment damage from falls
+      controls: |-
+        - Generally organised laboratory spaces
+        - Optical benches and tables for equipment storage
+      current_rating: "Medium"
+      additional_controls: |-
+        - Cable management: secure cables along walls or overhead
+        - Use cable protectors where cables cross walkways
+        - Keep walkways and exits clear at all times
+        - Store equipment on benches, not on floor
+        - Return unused equipment to storage areas
+        - Report trip hazards immediately
+        - Good housekeeping practices
+        - Adequate lighting in all work areas
+        - Mark permanent cable routes with tape or warning signs
+      residual_rating: "Low"
+    - task: |-
+        SLIPS, TRIPS, AND FALLS:
+        Spills of liquids (water, solvents, optical fluids)
+      hazards: "Wet floors, slippery surfaces"
+      harm: |-
+        - Slips and falls
+        - Impact injuries
+        - Chemical exposure from spill contact
+        - Spread of contamination
+      controls: |-
+        - Spill response procedures
+        - Cleaning materials available
+        - Chemical Handling RA/SWP
+      current_rating: "Medium"
+      additional_controls: |-
+        - Clean up spills immediately
+        - Use "wet floor" warning signs if needed
+        - Appropriate spill cleanup materials for chemical spills
+        - Follow Chemical Handling RA/SWP for chemical spills
+        - Report large or hazardous spills to supervisor
+        - Wear appropriate PPE during cleanup
+        - Dispose of contaminated materials correctly
+        - Dry floor thoroughly after water spills
+      residual_rating: "Low"
+    - task: |-
+        ELECTRICAL HAZARDS (GENERAL - specific equipment has dedicated RAs):
+        Contact with 240V mains electricity from equipment, power supplies, extension cords
+      hazards: "Exposed conductors, damaged cords, wet conditions"
+      harm: |-
+        - Electric shock
+        - Electrocution
+        - Burns from arc flash
+        - Cardiac arrest
+        - Secondary injuries from falls
+      controls: |-
+        - RCD protection on building circuits
+        - Earthed equipment and power points
+        - Electrical safety standards compliance
+        - Test and tag program
+      current_rating: "Medium"
+      additional_controls: |-
+        - Visual inspection of cords and equipment before use
+        - Report damaged cords or equipment immediately
+        - Never use electrical equipment in wet conditions
+        - Do not overload power points or extension cords
+        - Qualified electrician for all repairs
+        - Follow Electrical Safety RA/SWP for specific procedures
+        - Equipment test and tag current
+        - Switch off and unplug equipment before internal access (if qualified)
+        - Emergency switch-off locations known
+      residual_rating: "Low"
+    - task: |-
+        CHEMICAL HAZARDS (GENERAL - specific chemicals have dedicated procedures):
+        Use of solvents, adhesives, cleaning agents (isopropanol, acetone, optical adhesives)
+      hazards: "Chemical exposure, vapour inhalation, skin contact"
+      harm: |-
+        - Skin irritation and dermatitis
+        - Eye irritation or damage
+        - Inhalation of vapours causing respiratory irritation
+        - Fire hazard from flammable solvents
+        - Allergic reactions
+      controls: |-
+        - Chemical handling procedures
+        - SDS available
+        - General laboratory ventilation
+        - Designated chemical storage areas
+      current_rating: "Medium"
+      additional_controls: |-
+        - Follow Chemical Handling RA/SWP (dedicated document)
+        - Consult SDS before use
+        - Appropriate PPE (gloves, safety glasses, lab coat)
+        - Use in well-ventilated areas or fume cupboard
+        - Store chemicals correctly (flammables cabinet, segregation)
+        - Minimise quantities in use
+        - Label all containers clearly
+        - No naked flames near flammable solvents
+        - Spill kit available and users trained
+        - Wash hands after chemical handling
+        - Portable eyewash in fibre labs
+      residual_rating: "Low"
+    - task: |-
+        ENVIRONMENTAL AND ERGONOMIC HAZARDS:
+        Prolonged sitting or standing during optical alignment
+      hazards: "Static postures, repetitive fine movements"
+      harm: |-
+        - Musculoskeletal discomfort
+        - Back and neck pain
+        - Eye strain
+        - Fatigue and reduced concentration
+        - Repetitive strain injuries
+      controls: |-
+        - Adjustable chairs available
+        - Workbenches at appropriate height
+        - General laboratory ergonomics
+      current_rating: "Low"
+      additional_controls: |-
+        - Take regular breaks during long alignment sessions
+        - Alternate between sitting and standing
+        - Adjust chair and bench height for comfort
+        - Stretch and move periodically
+        - Rest eyes by looking at distant objects
+        - Report persistent discomfort to supervisor
+        - Ergonomic assessment available if needed
+      residual_rating: "Low"
+    - task: |-
+        ENVIRONMENTAL AND ERGONOMIC HAZARDS:
+        Inadequate lighting for detailed optical work
+      hazards: "Poor illumination, glare, shadows"
+      harm: |-
+        - Eye strain and headaches
+        - Reduced accuracy in alignment
+        - Increased error rate
+        - Difficulty seeing hazards
+        - Fatigue
+      controls: |-
+        - Building lighting systems
+        - Task lighting available in some areas
+      current_rating: "Low"
+      additional_controls: |-
+        - Use task lighting for detailed work
+        - Adjust lighting to suit task (bright for assembly, dim for beam visualisation)
+        - Report faulty lighting immediately
+        - Position work to avoid glare and shadows
+        - Take eye rest breaks during prolonged detailed work
+      residual_rating: "Low"
+    - task: |-
+        ENVIRONMENTAL AND ERGONOMIC HAZARDS:
+        Working alone in laboratory areas
+      hazards: "Isolation, delayed emergency response"
+      harm: |-
+        - Delayed discovery if injured
+        - Delayed emergency response
+        - No assistance available
+        - Psychological stress
+      controls: |-
+        - Building security and access controls
+        - Emergency call points
+        - After-hours security patrols
+      current_rating: "Medium"
+      additional_controls: |-
+        - Buddy system encouraged, especially for higher-risk work
+        - Inform supervisor or colleague when working after hours
+        - Mobile phone accessible for emergency calls
+        - Know location of emergency call points
+        - Avoid high-risk activities when alone (e.g., working at height, Class 4 lasers)
+        - Regular check-in procedures for extended solo work
+        - Never work alone if feeling unwell
+      residual_rating: "Low"
+    - task: |-
+        FIRE HAZARDS:
+        Fire from electrical faults, flammable chemicals, laser ignition
+      hazards: "Electrical equipment, solvents, laser sources"
+      harm: |-
+        - Burns and smoke inhalation
+        - Building damage
+        - Entrapment if exits blocked
+        - Toxic fumes from burning materials
+        - Loss of research equipment
+      controls: |-
+        - Fire detection systems
+        - Fire extinguishers in various areas
+        - Emergency exits marked
+        - Building evacuation procedures
+      current_rating: "Medium"
+      additional_controls: |-
+        - Know location of nearest fire extinguisher and type
+        - Know emergency exit routes and assembly points
+        - Do not block exits or extinguishers
+        - Turn off equipment when not in use
+        - Store flammable chemicals correctly (quantities limited, flammables cabinet)
+        - Regular fire drills and training
+        - Report fire hazards immediately
+        - If fire: evacuate, activate alarm, call 000
+        - Only fight small fires if safe to do so
+        - Follow building fire warden instructions
+      residual_rating: "Low"
+  implementation_date: "February 2026"
+  additional_controls:
+    - control: "Develop and deliver SAIL Lab General Local Induction"
+      resources: "Time (4-6 hours for development), training materials, presentation facilities"
+      responsible: "Chris Betters / Sergio Leon-Saval"
+      date: "Prior to granting laboratory access to new users"
+      riskware_ref: "N/A"
+    - control: "Implement and maintain authorised users list for swipe card access"
+      resources: "Access control system, database maintenance"
+      responsible: "Laboratory Manager / Supervisors"
+      date: "Ongoing - updated as personnel join/leave"
+      riskware_ref: "N/A"
+    - control: "Establish sign-in/sign-out log for undergraduate supervision tracking"
+      resources: "Log book or electronic system"
+      responsible: "Laboratory Supervisor"
+      date: "Prior to undergraduate access"
+      riskware_ref: "N/A"
+    - control: "Update and maintain door signage for all laboratory areas (hazards, PPE, authorised entry)"
+      resources: "Signage materials, laminating, mounting hardware"
+      responsible: "Facilities / Laboratory Manager"
+      date: "Prior to use - update as hazards change"
+      riskware_ref: "N/A"
+    - control: "Ensure Laser Operator Certificate training available and records maintained"
+      resources: "External training provider or internal certified trainer, training records system"
+      responsible: "Chris Betters / Sergio Leon-Saval"
+      date: "Prior to any laser work"
+      riskware_ref: "N/A"
+    - control: "Install/verify CO2 sensor and alarm system in Room 116B, establish monitoring and calibration schedule"
+      resources: "CO2 sensor, alarm system, calibration equipment, qualified technician"
+      responsible: "Facilities / Building Manager"
+      date: "Already installed - verify operational quarterly"
+      riskware_ref: "TBD"
+    - control: "Procure and install portable eyewash stations for fibre fabrication labs (121D, 218G)"
+      resources: "Portable eyewash units, mounting brackets, regular water replacement"
+      responsible: "Laboratory Manager"
+      date: "Already installed - monthly inspection required"
+      riskware_ref: "N/A"
+    - control: "Establish equipment test and tag schedule for electrical safety"
+      resources: "Qualified testing technician, testing equipment, record keeping"
+      responsible: "Facilities / Laboratory Technician"
+      date: "Ongoing - annual testing cycle"
+      riskware_ref: "TBD"
+    - control: "Procure cable management solutions (cable protectors, overhead routing, wall clips)"
+      resources: "Cable management hardware, installation time"
+      responsible: "Laboratory Technician / Users"
+      date: "Ongoing - as new equipment installed"
+      riskware_ref: "N/A"
+    - control: "Develop and implement Chemical Handling RA/SWP"
+      resources: "Time (4 hours), chemical inventory, SDS collection"
+      responsible: "Laboratory Manager / Safety Officer"
+      date: "Within 3 months"
+      riskware_ref: "N/A"
+    - control: "Develop and implement Electrical Safety RA/SWP"
+      resources: "Time (4 hours), electrical equipment inventory"
+      responsible: "Laboratory Manager / Safety Officer"
+      date: "Within 3 months"
+      riskware_ref: "N/A"
+    - control: "Develop and implement Fibre Optics Handling RA/SWP"
+      resources: "Time (4 hours), sharps procedures, equipment inventory"
+      responsible: "Laboratory Manager / Fibre specialists"
+      date: "Within 3 months"
+      riskware_ref: "N/A"
+    - control: "Install additional task lighting in laboratories where needed"
+      resources: "Task lamps, LED lighting, installation"
+      responsible: "Facilities / Laboratory Manager"
+      date: "As required - user request"
+      riskware_ref: "TBD"
+    - control: "Establish buddy system protocols and lone worker check-in procedures"
+      resources: "Communication protocols, sign-in system"
+      responsible: "Laboratory Supervisors"
+      date: "Within 1 month"
+      riskware_ref: "N/A"
+    - control: "Regular housekeeping inspections and feedback to users"
+      resources: "Time for monthly inspections, checklist"
+      responsible: "Laboratory Supervisor / Safety Officer"
+      date: "Monthly from implementation"
+      riskware_ref: "N/A"
+    - control: "Annual refresher training for infrequent laboratory users"
+      resources: "Training materials, scheduling"
+      responsible: "Chris Betters / Sergio Leon-Saval"
+      date: "Annually for users accessing <4 times per year"
+      riskware_ref: "N/A"
+    - control: "Verify fire extinguisher locations, types, and inspection currency"
+      resources: "Fire safety audit, extinguisher servicing"
+      responsible: "Facilities / Fire Warden"
+      date: "Quarterly inspection"
+      riskware_ref: "TBD"
+    - control: "First aid kit inspection and restocking schedule"
+      resources: "First aid supplies, inspection checklist"
+      responsible: "Laboratory First Aider / Safety Officer"
+      date: "Monthly inspection"
+      riskware_ref: "N/A"
+  emergency_controls:
+    - |-
+      CRITICAL - GENERAL LABORATORY SAFETY:
+      - NEVER work in Room 116B with the door closed - CO2 asphyxiation risk
+      - NEVER bypass or defeat laser safety interlocks - severe eye injury risk
+      - NEVER allow unsupervised undergraduate students - mandatory supervision at all times
+      - NEVER look directly into any beam or bright light source - eye damage risk
+      - NEVER work alone when conducting high-risk activities (Class 4 lasers, working at height, handling hazardous chemicals)
+      - All laboratory work must comply with both this general RA and applicable equipment-specific RAs/SWPs
+      - If any safety system fails or unsafe condition arises, stop work immediately and report to supervisor
+    - |-
+      EMERGENCY EVACUATION - BUILDING FIRE ALARM:
+      Immediately upon hearing fire alarm:
+      - Stop all work immediately
+      - Leave equipment as is (unless you caused fire and can safely shut down)
+      - Do NOT collect belongings or shut down computers
+      - Close doors behind you (do not lock)
+      - Proceed to nearest emergency exit
+      Evacuation route:
+      - Use marked emergency exits (never use lifts)
+      - Follow exit signs to assembly point
+      - Assist others if needed but do not put yourself at risk
+      - If route blocked, use alternative exit
+      Assembly point:
+      - Proceed to designated assembly point (as marked in building)
+      - Report to fire warden
+      - Account for all persons under your supervision
+      - Do NOT re-enter building until cleared by emergency services or fire warden
+      If you discover a fire:
+      - Activate nearest fire alarm (break glass)
+      - Call 000 (Emergency Services)
+      - Evacuate area
+      - Only fight small fires if safe to do so and you are trained
+    - |-
+      FIRE EMERGENCY (SMALL, CONTAINED FIRE):
+      Assess the situation:
+      - Is fire small and contained (e.g., waste bin, small electrical fire)?
+      - Is appropriate extinguisher available and accessible?
+      - Are you trained in fire extinguisher use?
+      - Is there a clear escape route?
+      If safe to fight fire:
+      - Alert others in area
+      - Locate appropriate fire extinguisher: Dry powder (ABE) - general purpose, most fires; CO2 - electrical fires, will not damage electronics; Water - paper, wood (NEVER use on electrical or chemical fires)
+      - Check pressure gauge is in green zone
+      - Pull pin, aim at base of flames, squeeze handle, sweep side to side
+      - Use short bursts
+      - If fire does not extinguish immediately: EVACUATE
+      If fire spreads or intensifies:
+      - Evacuate immediately
+      - Close doors behind you (do not lock)
+      - Activate building fire alarm
+      - Call 000
+      - Proceed to assembly point
+    - |-
+      ROOM 116B CO2 EMERGENCY:
+      If CO2 alarm sounds in Room 116B:
+      - Evacuate room immediately
+      - Close door behind you
+      - Do NOT re-enter to retrieve items
+      - Notify supervisor and building manager immediately
+      - Restrict access to room until alarm clears
+      If person shows symptoms of CO2 exposure (headache, dizziness, confusion, rapid breathing, loss of consciousness):
+      - Remove person from room immediately if safe to do so
+      - If person unconscious: call 000 immediately, begin first aid if trained
+      - Move to fresh air area
+      - Loosen tight clothing
+      - Keep person calm and still
+      - Monitor breathing and consciousness
+      - Seek medical attention for moderate to severe symptoms
+      - Report incident to supervisor
+      After alarm clears:
+      - Do NOT enter until CO2 levels confirmed normal
+      - Supervisor or building manager must verify system operational
+      - Investigate cause of alarm (door closed, sensor malfunction, ventilation failure)
+      - Report incident via RiskWare
+    - |-
+      CHEMICAL SPILL:
+      Assess the spill:
+      - What chemical? (check label or SDS)
+      - How much spilled? Is it spreading?
+      - Any injured persons? Any fire or vapour hazard?
+      Small spill (< 500 mL, non-hazardous):
+      - Alert others in area
+      - Ventilate area if safe to do so
+      - Don appropriate PPE (gloves, safety glasses, lab coat)
+      - Use spill kit to absorb and contain
+      - Dispose of contaminated materials as hazardous waste
+      - Clean area thoroughly
+      - Report to supervisor
+      Large spill or hazardous chemical:
+      - Evacuate area immediately
+      - Close doors to contain vapours (do not lock)
+      - Alert supervisor immediately
+      - Call University Security: [Insert number]
+      - Provide SDS if available
+      - Do NOT attempt cleanup unless trained and equipped
+      - Restrict access to area
+      - Follow supervisor instructions
+      Chemical contact with skin or eyes: see Chemical Exposure procedures
+    - |-
+      CHEMICAL EXPOSURE - EYE CONTACT:
+      - Immediately flush eyes with water for 15-20 minutes
+      - Use portable eyewash station (fibre labs) or emergency eyewash
+      - Hold eyelids open during flushing
+      - Remove contact lenses if possible
+      - Continue flushing while someone calls 000 or arranges transport to hospital
+      - Bring SDS to medical facility
+    - |-
+      CHEMICAL EXPOSURE - SKIN CONTACT:
+      - Remove contaminated clothing immediately
+      - Flush affected area with water for 15-20 minutes
+      - Use safety shower for large area contamination
+      - Do NOT apply creams or ointments
+      - Seek medical attention for large areas, persistent pain, or corrosive chemicals
+      - Report to supervisor and complete incident report
+    - |-
+      CHEMICAL EXPOSURE - INHALATION:
+      - Move person to fresh air immediately
+      - Loosen tight clothing
+      - Keep person calm and still
+      - If breathing difficulty: call 000 immediately
+      - If person stops breathing and you are trained: begin CPR
+      - Provide SDS to emergency services
+      - Seek medical attention for significant exposure
+    - |-
+      CHEMICAL EXPOSURE - INGESTION:
+      - Call 000 or Poisons Information Centre: 13 11 26 immediately
+      - Do NOT induce vomiting unless directed by medical professional
+      - Rinse mouth with water (do not swallow)
+      - Provide SDS to emergency services
+      - Keep person calm and monitor until help arrives
+    - |-
+      ELECTRICAL SHOCK:
+      If person in contact with electrical source:
+      - DO NOT TOUCH the person - you may be shocked
+      - Turn off power at source if safe to do so (switch, circuit breaker)
+      - If cannot turn off: use non-conductive object (dry wood, plastic) to separate person from source
+      - Call 000 immediately
+      Once person separated from electricity:
+      - Check responsiveness and breathing
+      - If unconscious but breathing: place in recovery position
+      - If not breathing and you are trained: begin CPR immediately
+      - Continue CPR until help arrives or person recovers
+      - Treat any burns
+      - Keep person still and warm
+      - Monitor until emergency services arrive
+      For minor shock (tingling, no loss of consciousness):
+      - Sit person down and keep calm
+      - Monitor for delayed symptoms
+      - Seek medical evaluation (electrical injury can have delayed effects)
+      - Report incident to supervisor
+      Equipment isolation:
+      - Tag equipment as defective
+      - Lock out equipment to prevent further use
+      - Report to supervisor and facilities immediately
+      - Do NOT use equipment until inspected and repaired by qualified electrician
+    - |-
+      BURNS (THERMAL):
+      For thermal burns from hot surfaces or equipment:
+      - Remove from heat source immediately
+      - Cool affected area with running cool (not ice-cold) water for 20 minutes
+      - Remove jewellery or tight clothing near burn (unless stuck to skin)
+      - Cover burn with clean, non-fluffy material (cling film ideal)
+      - Do NOT apply creams, ointments, ice, or butter
+      - Do NOT burst blisters
+      Seek immediate medical attention if:
+      - Burn larger than 20p coin (5 cm diameter or more)
+      - Burn on face, hands, feet, joints, or genitals
+      - Full thickness burn (white or charred skin)
+      - Blistering over large area
+      - Victim is child or elderly
+      - Chemical or electrical burn
+      - Unsure of severity
+      For minor burns:
+      - Continue cooling for 20 minutes
+      - Cover with sterile dressing
+      - Take over-the-counter pain relief if needed
+      - Monitor for signs of infection (increased pain, redness, swelling, pus)
+      - Complete first aid documentation and incident report
+    - |-
+      LASER EYE EXPOSURE (SUSPECTED):
+      If suspected laser eye exposure:
+      - Stop laser operation immediately
+      - Move person away from laser area
+      - Do NOT rub eyes
+      - Record details: laser wavelength, class, estimated exposure duration, beam power
+      - Seek immediate medical attention (even if no immediate pain - retinal damage may not be immediately apparent)
+      - Call supervisor immediately
+      - For Class 3B or 4 lasers: go to hospital emergency department
+      - Provide laser safety information to medical staff
+      Even if no immediate symptoms:
+      - Arrange ophthalmological examination within 24 hours
+      - Document incident in detail
+      - Complete RiskWare incident report
+      - Notify Laser Safety Officer (if appointed)
+      - Review incident and implement corrective actions
+    - |-
+      INJURY REQUIRING FIRST AID:
+      For any injury requiring first aid:
+      - Assess the situation and ensure area is safe
+      - Call for first aider or trained personnel
+      - First aid kit located on level near parents room (outside laboratories)
+      - For serious injuries: call 000 immediately
+      - Provide comfort and reassurance to injured person
+      - Do NOT move injured person unless necessary for safety
+      After first aid treatment:
+      - Complete first aid documentation
+      - Report to supervisor immediately
+      - Complete incident report via RiskWare
+      - For any injury requiring medical treatment: accompany person to hospital or arrange transport
+      - Notify next of kin if serious injury
+    - |-
+      EQUIPMENT MALFUNCTION OR FAILURE:
+      If equipment malfunctions or safety system fails:
+      - Stop operation immediately
+      - Press emergency stop if available
+      - Isolate power if safe to do so
+      - Do NOT attempt to fix or restart
+      - Tag equipment as defective (lockout/tagout)
+      - Restrict access to equipment
+      - Report to supervisor immediately
+      - Complete incident report if safety-related
+      - Arrange qualified technician inspection
+      - Equipment must NOT be used until all safety systems verified functional and supervisor approves
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency Services (Fire, Ambulance, Police): 000
+      - Poisons Information Centre: 13 11 26
+      - University Security (after hours/weekends): [Insert number]
+      - Chris Betters (Supervisor): [Insert number]
+      - Sergio Leon-Saval (Supervisor): [Insert number]
+      - School of Physics Safety Officer: [Insert number]
+      - Building Fire Warden: [Insert name and number]
+      - First Aid Officers: [Insert names and contact details]
+      - Campus Security Emergency: [Insert number]
+    - |-
+      EMERGENCY EQUIPMENT LOCATIONS:
+      - First aid kit: same level as laboratories, near parents room (outside laboratory areas)
+      - Portable eyewash stations: Rooms 121D and 218G (fibre fabrication labs)
+      - Fire extinguishers: various locations throughout laboratory areas - know the location nearest to your work area
+
+swp:
+  hazards:
+    - hazard: "Unauthorised access, inadequate training or supervision (including undergraduate students)"
+      controls: |-
+        - MANDATORY: SAIL Lab General Local Induction before swipe card access granted
+        - Swipe card access control system; supervisor approval and authorised users list
+        - MANDATORY: Undergraduates must be supervised at all times (supervisor physically present)
+        - Authorised entry signage on laboratory doors (hazards and required PPE listed)
+        - Visitors signed in and supervised at all times
+        - Incident reporting via RiskWare system
+    - hazard: "Optical radiation from bright light sources (alignment lasers, LEDs, lamps, broadband sources)"
+      controls: |-
+        - Never look directly into any beam or bright light source
+        - Use beam blocks and shutters when not actively aligning
+        - Use viewing cards or cameras for beam visualisation
+        - Appropriate safety glasses/goggles as indicated by door signage
+        - Work at lowest intensity possible; turn off sources when not in use
+    - hazard: "Laser radiation (Class 1, 2, 3R, 3B, 4 - equipment-specific RAs apply)"
+      controls: |-
+        - MANDATORY: Laser Operator Certificate required for all work with or near lasers (uploaded to Faculty "My Inductions Dashboard")
+        - Equipment-specific laser Risk Assessments and Safe Work Procedures must be followed
+        - Laser interlock systems on applicable laboratory doors - NEVER bypass or defeat
+        - Laser safety eyewear appropriate for wavelength and class (Class 3B/4 operation)
+        - Beam paths at or below sitting height where possible; block beams when not aligning
+    - hazard: "Specular reflections from optical surfaces (mirrors, lenses, beam splitters)"
+      controls: |-
+        - Remove reflective items (watches, jewellery, lanyards) before optical work
+        - Use anodised or black optical mounts to minimise stray reflections
+        - Use beam dumps for unwanted beams
+        - Position to avoid reflected beam paths; keep beams below eye level
+    - hazard: "Elevated carbon dioxide levels in Room 116B (temperature-controlled room)"
+      controls: |-
+        - NEVER work in Room 116B with door closed (CO2 asphyxiation risk)
+        - CO2 sensor and alarm system with automatic fresh air introduction
+        - Evacuate immediately if CO2 alarm sounds
+        - Warning signage on door regarding CO2 risk and door policy
+    - hazard: "Sharps hazards from cleaved fibre optic ends (Rooms 121D, 218G)"
+      controls: |-
+        - Follow Fibre Optics Handling RA/SWP (specialist document)
+        - Dispose of cleaved fibre offcuts immediately in sharps containers
+        - Safety glasses worn during fibre cleaving
+        - Portable eyewash stations in fibre fabrication labs (121D, 218G)
+    - hazard: "Electrical hazards (240V mains, high voltage equipment)"
+      controls: |-
+        - Visual inspection of equipment, cords and plugs before use
+        - Equipment test and tag current
+        - Never use electrical equipment in wet conditions
+        - Follow Electrical Safety RA/SWP; qualified electrician for all repairs
+    - hazard: "Chemical hazards (solvents, adhesives, cleaning agents)"
+      controls: |-
+        - Follow Chemical Handling RA/SWP; consult SDS before use
+        - Appropriate PPE (chemical-resistant gloves, safety glasses, lab coat)
+        - Use fume cupboard or well-ventilated areas; no naked flames near flammable solvents
+        - Spill kits available; flammables stored in flammables cabinet
+    - hazard: "Mechanical hazards (heavy optics, moving stages, sharp edges)"
+      controls: |-
+        - Keep hands clear of moving parts; emergency stops on motorised equipment
+        - Remove loose clothing, jewellery and lanyards near moving parts; tie back long hair
+        - Handle sharp-edged mounts and metal components carefully
+    - hazard: "Slips, trips, and falls (cables, equipment, spills)"
+      controls: |-
+        - Cable management (along walls, overhead, or cable protectors across walkways)
+        - Keep walkways and exits clear; store equipment on benches, not on floor
+        - Clean up spills immediately; good housekeeping practices
+    - hazard: "Manual handling of heavy equipment and optics"
+      controls: |-
+        - Use mechanical aids (trolleys, hoists) for items over 15 kg or awkward loads
+        - Two-person lift for heavy or awkward items; proper lifting technique
+        - Closed-toe shoes mandatory; steel-toe boots recommended for heavy equipment moves
+    - hazard: "Fire hazards (electrical faults, flammable chemicals, laser ignition)"
+      controls: |-
+        - Fire extinguishers in laboratory areas (know nearest location and type)
+        - Emergency exits marked; do not block exits or extinguishers
+        - Flammable chemicals stored correctly; building evacuation procedures
+        - If fire: evacuate, activate alarm, call 000
+    - hazard: "Working alone or in isolation"
+      controls: |-
+        - Buddy system encouraged, especially for after-hours or higher-risk work
+        - Inform supervisor or colleague when working alone; mobile phone accessible
+        - Never conduct high-risk activities alone (e.g., Class 4 lasers, working at height)
+    - hazard: "Inadequate lighting or environmental conditions"
+      controls: |-
+        - Maintain adequate lighting for safe movement; task lighting for detailed work
+        - Red lighting for dark-adapted work; never work alone in darkened laboratories
+        - Take regular breaks; adjust chair and bench height for comfort
+  resources:
+    - |-
+      PPE - GENERAL LABORATORY WORK (MINIMUM):
+      - Safety glasses or goggles (as indicated by door signage)
+      - Closed-toe shoes (mandatory in all laboratories)
+      - Long trousers (no shorts or skirts above knee)
+      - Laboratory coat (recommended, mandatory when indicated)
+    - |-
+      PPE - TASK-SPECIFIC (WHEN REQUIRED):
+      - Laser safety eyewear (specific wavelength and optical density for laser class)
+      - Chemical-resistant gloves (nitrile, latex, or as specified by SDS)
+      - Heat-resistant gloves (for handling hot components)
+      - Cut-resistant gloves (for handling sharp metal components - not during optical alignment)
+      - Face shield (for chemical handling or high-risk laser work)
+    - |-
+      PROHIBITED ITEMS:
+      - Reflective jewellery (watches, rings, bracelets) near active optical setups
+      - Loose or flowing clothing near moving equipment
+      - Open-toe shoes, sandals, thongs
+      - Shorts or skirts above knee length
+    - |-
+      EQUIPMENT AND MATERIALS AVAILABLE IN LABORATORIES:
+      - Optical benches and breadboards
+      - Mounting hardware and adjustment tools
+      - Alignment tools (beam viewing cards, IR viewers, cameras)
+      - Translation and rotation stages
+      - Optical components (mirrors, lenses, beam splitters, filters)
+      - Light sources and laser systems (equipment-specific RAs apply)
+      - Measurement and diagnostic equipment
+      - Computer workstations for equipment control
+    - |-
+      REQUIRED FOR SAFE OPERATION:
+      - Equipment-specific manuals and documentation
+      - Safety Data Sheets (SDS) for chemicals in use
+      - Equipment-specific RA/SWP documents
+      - Sign-in logs and supervision records
+      - Incident report forms (RiskWare access)
+    - |-
+      SAFETY EQUIPMENT - FIRE SAFETY (must be present and accessible):
+      - Fire extinguishers in various laboratory areas: dry powder (ABE) for general fires; CO2 for electrical fires - know location nearest to your work area
+      - Emergency exit routes clearly marked
+      - Fire alarm pull points accessible
+    - |-
+      SAFETY EQUIPMENT - FIRST AID AND EMERGENCY RESPONSE:
+      - First aid kit on same level (near parents room, outside laboratories)
+      - Portable eyewash stations in Rooms 121D and 218G (fibre fabrication labs)
+      - Emergency eyewash stations (building facilities)
+      - Emergency contact numbers displayed
+      - Building evacuation assembly points marked
+    - |-
+      SAFETY EQUIPMENT - ROOM-SPECIFIC SYSTEMS:
+      - CO2 sensor and alarm in Room 116B
+      - Laser interlocks on applicable laboratory doors
+      - Emergency stops on motorised equipment
+      - Spill kits for chemical emergencies
+    - |-
+      VENTILATION/ENVIRONMENTAL CONTROLS:
+      - Building HVAC system provides general ventilation
+      - Room 116B: temperature control via air recirculation with CO2 monitoring
+      - Local exhaust ventilation or fume cupboards for chemical work (as specified in Chemical Handling RA/SWP)
+      - 3D printer room (116C) has dedicated ventilation
+      - Some laboratories may have additional air purification or filtration
+  steps:
+    - "BEFORE STARTING - CRITICAL ACCESS REQUIREMENTS (you MUST meet these requirements before accessing SAIL laboratories):"
+    - |-
+      Complete SAIL Lab General Local Induction:
+      - Delivered by authorised assessor (see Staff Approved to Assess Competence)
+      - Covers all hazards and controls in this SWP
+      - Includes emergency procedures and location familiarisation
+      - Sign-off required on competency sheet
+    - |-
+      Swipe card access granted ONLY after:
+      - Induction completed and signed off
+      - Supervisor approval obtained
+      - Access added to authorised users list
+      - Your name appears on door signage (if applicable)
+    - |-
+      Additional requirements for laser work:
+      - Laser Operator Certificate completed
+      - Certificate uploaded to Faculty "My Inductions Dashboard"
+      - Equipment-specific laser RA/SWP reviewed and signed off
+    - |-
+      Undergraduate students MUST:
+      - Complete all above requirements PLUS
+      - Have designated supervisor assigned
+      - Never work unsupervised - supervisor must be physically present in laboratory
+      - Sign in/out with supervisor for each session
+    - |-
+      Equipment-specific requirements:
+      - Read and understand equipment-specific RA/SWP before use
+      - Complete equipment-specific training and competency assessment
+      - Be listed on authorised users list for that equipment
+    - "PRE-ACCESS CHECKS (EVERY TIME YOU ENTER A LABORATORY):"
+    - |-
+      Check door signage before entering:
+      - Read hazards listed on authorised entry sign
+      - Note required PPE for the laboratory area
+      - Check for laser warning signs or active laser indicators
+      - If laser interlock system present, check status before opening door
+    - |-
+      If laser interlock is active (laser in use inside):
+      - Do NOT open door without permission from person operating laser
+      - Knock or call to alert people inside
+      - Wait for laser to be shut down or made safe before entering
+      - Never bypass or defeat interlocks
+    - |-
+      Don appropriate PPE before entering:
+      - Safety glasses (as required by door signage)
+      - Closed-toe shoes (verify before entering)
+      - Laboratory coat if required
+      - Any additional PPE indicated on door signage
+    - |-
+      Enter laboratory and perform visual sweep:
+      - Look for any obvious hazards (spills, damaged equipment, trip hazards)
+      - Check for unusual smells (chemical leaks, burning, smoke)
+      - Listen for unusual sounds (alarms, equipment malfunctions)
+      - If anything unusual: report to supervisor before proceeding
+    - |-
+      Room 116B specific checks (CRITICAL):
+      - Check CO2 alarm is functional (green status light)
+      - NEVER close door if you are working in the room
+      - If door must be closed for temperature control: evacuate room
+      - Only access briefly to check equipment if door closed
+      - If alarm sounds: evacuate immediately
+    - |-
+      For undergraduate students:
+      - Locate your supervisor and sign in for the session
+      - Supervisor must acknowledge your presence
+      - Supervisor must remain in laboratory throughout your session
+      - Never commence work until supervisor present
+    - "SETTING UP YOUR WORKSPACE:"
+    - |-
+      Select appropriate work area:
+      - Choose optical bench or workspace suitable for your task
+      - Ensure adequate space for equipment and safe working
+      - Check area is clean and clear of obstructions
+      - Verify adequate lighting for your task
+    - |-
+      Inspect work area:
+      - Check optical bench surface is clean and undamaged
+      - Verify mounting holes and slots are not blocked
+      - Check for any existing equipment or experiments
+      - If area occupied: coordinate with other users or select different area
+    - |-
+      Gather required equipment and materials:
+      - Collect only what you need for current task
+      - Check equipment condition before use
+      - Report any damaged equipment immediately
+      - Keep work area organised and uncluttered
+    - |-
+      Set up power and utilities:
+      - Visually inspect power cords and plugs before connecting
+      - Check for damage, exposed wires, or loose connections
+      - If damaged: DO NOT USE - tag as defective and report
+      - Do not overload power points
+      - Use power strips/boards with overload protection
+      - Route cables to avoid trip hazards (along walls, under benches, or use cable protectors)
+    - |-
+      Prepare for optical/laser work:
+      - Remove reflective items (watches, jewellery, lanyards, ID badges)
+      - Ensure hair is tied back if working near moving equipment
+      - Remove or secure loose clothing
+      - Position yourself comfortably (adjust chair height, bench access)
+    - |-
+      Chemical handling preparation (if applicable):
+      - Consult Chemical Handling RA/SWP
+      - Review Safety Data Sheets (SDS) for chemicals in use
+      - Verify adequate ventilation or access to fume cupboard
+      - Gather appropriate PPE (chemical-resistant gloves, face shield if needed)
+      - Prepare spill kit location (know where it is)
+    - "SAFE WORKING PRACTICES - GENERAL CONDUCT:"
+    - |-
+      Maintain awareness:
+      - Be conscious of others working nearby
+      - Alert others before activating equipment that may affect them (bright lights, movement)
+      - Respect active experiments and equipment in use
+      - Ask before touching or adjusting others' equipment
+    - |-
+      Housekeeping throughout work:
+      - Keep work area tidy and organised
+      - Return tools and equipment to storage when finished
+      - Clean up spills immediately
+      - Dispose of waste properly (see Clean Up section)
+      - Do not block walkways, exits, or emergency equipment
+    - |-
+      Food and drink prohibition:
+      - No food or drink in any laboratory area
+      - No storage of food in laboratory refrigerators
+      - Use designated eating areas (e.g., Room 121A breakout room)
+      - Wash hands before eating after laboratory work
+    - |-
+      Mobile phone and electronic device use:
+      - Keep phone on silent or vibrate to avoid disturbing others
+      - Minimise phone use during laboratory work (stay focused)
+      - No photography of others without permission
+      - Some areas may prohibit phones near sensitive equipment
+    - "SAFE WORKING PRACTICES - OPTICAL WORK SAFETY:"
+    - |-
+      Before activating any light source or laser:
+      - Ensure area is clear of unnecessary personnel
+      - Check beam path will not expose others
+      - Alert others in area that you are activating a light source
+      - Use lowest intensity possible for alignment
+      - Have beam blocks or shutters ready
+    - |-
+      During optical alignment:
+      - Never look directly into any beam or bright source
+      - Use beam viewing cards, cameras, or power meters to visualise beams
+      - Position work at or below sitting height where possible
+      - Be aware of all potential specular reflection surfaces
+      - Use beam dumps for unwanted beams
+      - Work systematically to track all beam paths
+    - |-
+      Laser-specific safety (in addition to equipment-specific RA/SWP):
+      - Verify laser safety eyewear is appropriate for wavelength and class
+      - Wear laser safety eyewear as specified by equipment RA/SWP
+      - Never bypass laser interlocks
+      - Never point laser at persons or reflective surfaces
+      - Use lowest power setting possible for alignment
+      - Block beam when not actively aligning
+      - Respect laser warning signs and restricted areas
+      - If laser interlock trips: investigate cause before resetting
+    - |-
+      Managing specular reflections:
+      - Remove watches, jewellery, and reflective accessories before optical work
+      - Position mirrors and optical components carefully
+      - Use anodised or black optical mounts to minimise stray reflections
+      - Cover or remove unnecessary reflective surfaces from work area
+      - Be conscious of beam path at eye level
+      - Use protective barriers or curtains if reflections unavoidable
+    - |-
+      Working in low-light conditions:
+      - Maintain adequate lighting for safe movement
+      - Use red lighting for dark-adapted work (less disruptive to night vision)
+      - Use torch or headlamp to navigate if needed
+      - Allow time for eyes to adjust when entering/leaving dark areas
+      - Never work alone in darkened laboratories
+      - Ensure emergency exits remain visible
+    - "SAFE WORKING PRACTICES - ELECTRICAL SAFETY:"
+    - |-
+      Before using electrical equipment:
+      - Visual inspection of equipment, cords, and plugs
+      - Check for damage, fraying, exposed wires
+      - Verify equipment is test and tagged (current date sticker)
+      - If damaged or out of test date: DO NOT USE - tag as defective
+    - |-
+      During electrical work:
+      - Follow Electrical Safety RA/SWP for specific procedures
+      - Never work on live circuits unless qualified and authorised
+      - Turn off and unplug equipment before opening enclosures
+      - Never use electrical equipment in wet conditions
+      - Do not defeat interlocks or safety switches
+      - Use RCD-protected circuits for high-risk equipment
+      - Know location of emergency power shut-off
+    - |-
+      High voltage equipment (if applicable):
+      - Additional training and authorisation required
+      - Follow equipment-specific RA/SWP
+      - Warning signs must be displayed
+      - Restricted access to qualified personnel only
+    - "SAFE WORKING PRACTICES - CHEMICAL SAFETY:"
+    - |-
+      Before using chemicals:
+      - Follow Chemical Handling RA/SWP
+      - Review Safety Data Sheets (SDS)
+      - Verify adequate ventilation
+      - Gather appropriate PPE
+    - |-
+      During chemical work:
+      - Use minimum quantities necessary
+      - Label all containers clearly (contents, date, name)
+      - Never store in unmarked containers
+      - Use fume cupboard for volatile or hazardous chemicals
+      - Wear chemical-resistant gloves and safety glasses
+      - Avoid skin contact - wash hands after handling
+      - No naked flames near flammable solvents
+      - Clean up spills immediately
+    - |-
+      Chemical storage:
+      - Return chemicals to designated storage areas
+      - Segregate incompatible chemicals
+      - Store flammables in flammables cabinet
+      - Keep containers closed when not in use
+      - No storage on floor or blocking exits
+    - "SAFE WORKING PRACTICES - FIBRE OPTICS WORK (ROOMS 121D, 218G):"
+    - |-
+      Sharps hazard from cleaved fibres:
+      - Follow Fibre Optics Handling RA/SWP
+      - Wear safety glasses during cleaving
+      - Dispose of fibre offcuts immediately in sharps container
+      - Never leave cleaved fibres on bench
+      - Inspect hands and work area for fibre fragments
+      - Portable eyewash readily accessible
+    - "SAFE WORKING PRACTICES - MANUAL HANDLING:"
+    - |-
+      Before lifting or moving heavy items:
+      - Assess load (weight, size, balance, grip points)
+      - If over 15 kg or awkward: use mechanical aid (trolley, hoist) or get assistance
+      - Plan route before lifting
+      - Clear pathway of obstacles
+    - |-
+      Proper lifting technique:
+      - Stand close to load
+      - Bend knees, keep back straight
+      - Grip firmly with whole hand
+      - Lift smoothly using legs, not back
+      - Keep load close to body
+      - Do not twist - move feet to turn
+      - Lower load carefully using same technique
+    - |-
+      Two-person lifts:
+      - Communicate clearly ("ready, lift on three...")
+      - One person coordinates
+      - Lift and move in unison
+      - Both persons must be comfortable with the lift
+    - |-
+      Moving heavy optical tables or large equipment:
+      - Steel-toe boots recommended
+      - Minimum two persons
+      - Use lifting equipment (jacks, trolleys)
+      - Secure load before moving
+      - Clear pathway completely
+      - Move slowly and carefully
+      - Watch for pinch points
+    - "SAFE WORKING PRACTICES - WORKING ALONE:"
+    - |-
+      If you must work alone (avoid for high-risk tasks):
+      - Inform supervisor or colleague of your plans
+      - Provide expected duration and location
+      - Keep mobile phone accessible
+      - Check in periodically (text/call when leaving)
+      - Do NOT conduct high-risk activities alone: Class 4 laser operation; working at height; handling large quantities of hazardous chemicals; entering confined spaces; any work with significant injury risk
+    - |-
+      Buddy system encouraged:
+      - Work with colleague when possible
+      - Especially for after-hours or high-risk work
+      - Mutual monitoring and assistance
+      - Faster emergency response if needed
+    - "SAFE WORKING PRACTICES - ATTENDANCE AND SUPERVISION:"
+    - |-
+      Equipment left running unattended:
+      - Generally prohibited unless equipment RA/SWP specifically allows it
+      - If equipment can be left unattended: door signage or warning sign must indicate equipment running; emergency contact information displayed; regular check-ins scheduled; automatic shutdown or safety systems functional
+      - Never leave Class 3B or 4 lasers running unattended
+    - |-
+      Undergraduate supervision:
+      - Supervisor must be physically present in laboratory at all times
+      - Supervisor responsible for student safety and conduct
+      - Student must sign in/out with supervisor for each session
+      - Supervisor verifies safe practices and provides guidance
+    - "COMPLETING WORK AND LEAVING THE LABORATORY:"
+    - |-
+      Shutdown equipment:
+      - Follow equipment-specific shutdown procedures
+      - Turn off light sources and lasers
+      - Power down electronics in proper sequence
+      - Allow equipment to cool if necessary
+      - Close protective covers or shutters
+    - |-
+      Secure optical setups:
+      - If leaving setup overnight or longer: block all beams with shutters or beam blocks; label experiment with name, date, contact; note any hazards on label; cover sensitive components if needed (dust protection)
+      - Do NOT leave Class 3B or 4 lasers unattended and powered
+    - |-
+      Return equipment and tools to storage:
+      - Clean tools before returning
+      - Check items back into inventory if required
+      - Report any damaged or missing items
+      - Leave communal areas tidy for next user
+    - |-
+      Clean work area:
+      - Wipe down bench surface
+      - Remove all personal items
+      - Dispose of waste properly
+      - Check floor area for dropped items or spills
+      - Leave area as you found it (or better)
+    - |-
+      Chemical cleanup:
+      - Return chemicals to designated storage
+      - Ensure containers properly sealed and labelled
+      - Dispose of chemical waste properly (hazardous waste system)
+      - Remove contaminated PPE and dispose/clean appropriately
+      - Wash hands thoroughly
+    - |-
+      Final checks before leaving:
+      - Visual sweep of work area
+      - All equipment powered off (unless specifically approved to run)
+      - No trip hazards left in walkways
+      - Lights appropriate for room status (on/off as per lab practice)
+      - Emergency equipment accessible (not blocked)
+    - |-
+      Sign out:
+      - If using sign-in/sign-out log: record departure time
+      - Undergraduate students: sign out with supervisor
+      - Note any issues or equipment defects in log
+    - |-
+      Exit laboratory:
+      - Remove PPE (safety glasses can remain if worn in corridor)
+      - Close door securely (do not prop open unless normal practice)
+      - Wash hands before eating or leaving building
+    - |-
+      If last person leaving laboratory:
+      - Ensure all equipment powered off (except approved equipment)
+      - Check all lights appropriate for unoccupied state
+      - Verify door will lock when closed (swipe card access)
+      - Room 116B: verify door closed and CO2 system active
+      - Notify security if working very late (after hours sign-out)
+    - "VISITOR MANAGEMENT:"
+    - |-
+      If you are hosting a visitor:
+      - Visitor must be signed in (visitor log or your supervision)
+      - You are responsible for visitor safety
+      - Brief visitor on hazards and safety rules
+      - Provide appropriate PPE (safety glasses, closed-toe shoes required)
+      - Visitor must remain with you at all times (supervised)
+      - Visitor must not operate equipment unless specifically trained and authorised
+      - Explain emergency procedures and exit routes
+    - |-
+      If you encounter an unknown visitor:
+      - Politely ask if they need assistance
+      - If unescorted: direct them to sign in or find their host
+      - If suspicious or unwilling to identify: contact security or supervisor
+      - Do not leave laboratory unattended with unknown visitors
+  emergency_shutdown:
+    - |-
+      GENERAL EMERGENCY - STOP ALL WORK AND INITIATE EMERGENCY PROCEDURES IF:
+      - Fire alarm sounds
+      - Fire or smoke detected
+      - Equipment malfunction or unusual sounds/smells
+      - Safety system failure (interlock, emergency stop, alarm)
+      - CO2 alarm sounds in Room 116B
+      - Any injury occurs
+      - Chemical spill beyond immediate cleanup capability
+      - Electrical shock or arc flash
+      - Any unsafe condition you cannot immediately correct
+    - |-
+      BUILDING FIRE ALARM (EVACUATION):
+      Upon hearing fire alarm:
+      - STOP all work immediately
+      - Do NOT shut down equipment (leave as is unless you caused fire)
+      - Do NOT collect belongings
+      - Assist anyone needing help (but do not endanger yourself)
+      Exit building:
+      - Use nearest emergency exit (never use lifts)
+      - Follow exit signs
+      - Close doors behind you (do not lock)
+      - If smoke present: stay low, test doors for heat before opening
+      If exit route blocked:
+      - Use alternative exit
+      - If trapped: close door, seal gaps with cloth, signal for help from window
+      Proceed to assembly point:
+      - Go directly to designated assembly point (as marked in building)
+      - Report to fire warden
+      - Account for all persons under your supervision (undergraduates, visitors)
+      - Provide information to fire warden if you have knowledge of fire location
+      Do NOT re-enter building:
+      - Wait for all-clear from emergency services or fire warden
+      - Do not go back for belongings
+      - Remain at assembly point until accounted for
+    - |-
+      EQUIPMENT EMERGENCY SHUTDOWN:
+      If equipment malfunctions or operates abnormally:
+      - Press emergency stop button if available
+      - Turn off power switch/circuit breaker if safe to do so
+      - Unplug equipment if necessary and safe
+      - Do NOT attempt to fix or troubleshoot while powered
+      Secure the area:
+      - Move people away from immediate hazard
+      - Block access to equipment if needed
+      - Post warning sign if leaving area unattended
+      Report and document:
+      - Report to supervisor immediately
+      - Tag equipment as defective (lockout/tagout)
+      - Complete incident report if safety-related
+      - Do NOT use equipment until inspected and cleared by supervisor
+    - |-
+      ROOM 116B CO2 ALARM:
+      If CO2 alarm sounds:
+      - Evacuate room immediately
+      - Do NOT delay to shut down equipment
+      - Close door behind you
+      - Restrict access to room
+      Alert supervisor:
+      - Contact Chris Betters, Sergio Leon-Saval, Barnaby Norris, or Julia Bryant immediately
+      - Notify building manager
+      - Await confirmation that CO2 levels normal before re-entry
+      If someone shows CO2 exposure symptoms (headache, dizziness, confusion, rapid breathing):
+      - Remove person from room to fresh air immediately
+      - If unconscious: call 000 immediately
+      - Monitor breathing and consciousness
+      - Keep person calm and still
+      - Seek medical attention for moderate/severe symptoms
+      After alarm clears:
+      - Supervisor or building manager must verify system operational
+      - Investigate cause (door closed, sensor malfunction, ventilation failure)
+      - Complete RiskWare incident report
+  emergency_procedures:
+    - |-
+      FIRE EMERGENCY - SMALL, CONTAINED FIRE (waste bin, small electrical):
+      Alert others and assess:
+      - Shout "Fire!" to alert others in area
+      - Assess: can it be safely extinguished? Is appropriate extinguisher available? Do you have clear escape route?
+      If safe to fight fire:
+      - Send someone to activate fire alarm and call 000
+      - Locate appropriate fire extinguisher: dry powder (ABE) - general purpose, most fires; CO2 - electrical fires, electronics; water - paper/wood only (NEVER on electrical or chemical fires)
+      - Check pressure gauge in green zone
+      - PASS method: Pull pin, Aim at base of flames (not flames themselves), Squeeze handle, Sweep side to side
+      If fire does NOT extinguish immediately:
+      - EVACUATE - do not continue fighting
+      - Close door behind you (do not lock)
+      - Activate fire alarm if not already done
+      - Proceed to assembly point
+    - |-
+      FIRE EMERGENCY - LARGE OR SPREADING FIRE:
+      - Evacuate immediately
+      - Close doors (do not lock)
+      - Activate fire alarm (break glass at pull point)
+      - Call 000 (Emergency Services)
+      - Notify fire warden
+      - Proceed to assembly point
+      - Do not re-enter building
+    - |-
+      CHEMICAL SPILL - SMALL (<500 mL, NON-HAZARDOUS):
+      - Alert others in area
+      - Ventilate if safe (open doors/windows, turn on extraction)
+      - Don appropriate PPE (gloves, safety glasses, lab coat)
+      - Use spill kit to absorb and contain: surround spill with absorbent material; work from outside toward centre; pick up saturated absorbent carefully
+      - Place contaminated materials in chemical waste bag
+      - Clean area with appropriate cleaning agent
+      - Dispose of waste via hazardous waste system
+      - Report spill to supervisor
+    - |-
+      CHEMICAL SPILL - LARGE OR HAZARDOUS CHEMICAL:
+      - Evacuate area immediately
+      - Alert supervisor: Chris Betters, Sergio Leon-Saval, Barnaby Norris, or Julia Bryant
+      - Call University Security: [Insert number]
+      - Close doors to contain vapours (do not lock)
+      - Restrict access - post warning signs
+      - Provide SDS to emergency responders
+      - Do NOT attempt cleanup unless trained and equipped
+      - Complete RiskWare incident report
+    - |-
+      CHEMICAL EXPOSURE - EYE CONTACT:
+      - Immediately flush eyes with water for 15-20 minutes
+      - Use portable eyewash (fibre labs) or emergency eyewash station
+      - Hold eyelids open during flushing - ensure water flows over entire eye surface
+      - Remove contact lenses if possible during flushing
+      - Continue flushing while someone calls for medical assistance
+      - Seek medical attention (emergency department for corrosive chemicals)
+      - Bring SDS to medical facility
+    - |-
+      CHEMICAL EXPOSURE - SKIN CONTACT:
+      - Remove contaminated clothing immediately (cut off if necessary)
+      - Flush affected area with water for 15-20 minutes
+      - Use safety shower for large area contamination
+      - Do NOT apply creams, ointments, or neutralising agents
+      - Seek medical attention for: large contaminated area; persistent pain or redness; corrosive or highly toxic chemicals; any burns or blistering
+      - Bring SDS to medical facility
+    - |-
+      CHEMICAL EXPOSURE - INHALATION:
+      - Move person to fresh air immediately
+      - Loosen tight clothing
+      - Keep person calm, still, and warm
+      - If breathing difficulty: call 000 immediately
+      - If breathing stops and you are trained: begin CPR
+      - Provide SDS to emergency services
+      - Seek medical attention for significant exposure
+    - |-
+      CHEMICAL EXPOSURE - INGESTION:
+      - Call 000 or Poisons Information Centre: 13 11 26 immediately
+      - Do NOT induce vomiting unless directed by medical professional
+      - Rinse mouth with water (do not swallow)
+      - Do NOT give anything to drink unless directed
+      - Keep person calm and monitor
+      - Provide SDS to emergency services
+    - |-
+      ELECTRICAL SHOCK:
+      Person in contact with electrical source:
+      - DO NOT TOUCH the person - you may be shocked
+      - Turn off power at source if safe to do so (switch off equipment, pull plug if accessible, shut off circuit breaker)
+      - If cannot turn off: use non-conductive object (dry wood, plastic) to separate person from source
+      - Call 000 immediately
+      After person separated from electricity:
+      - Check responsiveness and breathing
+      - If unconscious but breathing: place in recovery position, monitor
+      - If not breathing and you are trained: begin CPR immediately
+      - Continue CPR until help arrives or person recovers
+      - Treat any burns (cool with water, cover with clean dressing)
+      - Keep person still and warm
+      - All electrical shocks require medical evaluation (delayed effects possible)
+      Equipment isolation:
+      - Tag equipment as defective; lockout equipment to prevent use
+      - Report to supervisor and facilities immediately; complete incident report
+      - Do NOT use until inspected by qualified electrician
+    - |-
+      THERMAL BURNS:
+      - Remove from heat source immediately
+      - Cool affected area with running cool (not ice-cold) water for 20 minutes
+      - Remove jewellery or tight clothing near burn (unless stuck to skin)
+      - Do NOT burst blisters or apply creams/ointments
+      - Cover burn with clean, non-fluffy material (cling film ideal)
+      - Seek immediate medical attention if: burn larger than 20p coin (5 cm or more); burn on face, hands, feet, joints, or genitals; full thickness burn (white or charred skin); extensive blistering; victim is child or elderly; chemical or electrical burn; unsure of severity
+    - |-
+      LASER EYE EXPOSURE (SUSPECTED):
+      - Stop laser operation immediately
+      - Move person away from laser area
+      - Do NOT rub eyes
+      - Record details: laser wavelength, class, power; estimated exposure duration; beam characteristics (direct, reflection, diffuse)
+      - Seek immediate medical attention (even if no pain - retinal damage may not be immediately apparent)
+      - For Class 3B or 4 lasers: go to hospital emergency department immediately
+      - For Class 2 or 3R: arrange ophthalmological examination within 24 hours
+      - Provide laser safety information to medical staff
+      - Call supervisor immediately
+      - Complete RiskWare incident report
+      - Do NOT resume laser operation until incident reviewed
+    - |-
+      INJURY REQUIRING FIRST AID:
+      - Assess situation - ensure area safe
+      - Call for first aider or trained personnel
+      - First aid kit location: same level as laboratories, near parents room (outside laboratory areas)
+      - For serious injuries: call 000 immediately
+      - Provide comfort and reassurance
+      - Do NOT move injured person unless necessary for safety
+      After first aid treatment:
+      - Complete first aid documentation
+      - Report to supervisor immediately
+      - Complete RiskWare incident report
+      - Accompany to hospital or arrange transport if medical treatment required
+      - Notify next of kin if serious injury
+    - |-
+      EQUIPMENT MALFUNCTION:
+      - Press emergency stop (if available)
+      - Isolate power if safe to do so
+      - Move people away from hazard
+      - Do NOT attempt repairs
+      - Tag equipment as defective (lockout/tagout)
+      - Restrict access
+      - Report to supervisor immediately
+      - Complete incident report if safety-related
+      - Equipment NOT used until inspected and cleared
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency Services (Fire, Ambulance, Police): 000
+      - Poisons Information Centre: 13 11 26
+      - University Security (after hours/weekends): [Insert number]
+      - Chris Betters (Supervisor): [Insert number]
+      - Sergio Leon-Saval (Supervisor): [Insert number]
+      - Barnaby Norris (Supervisor): [Insert number]
+      - Julia Bryant (Supervisor): [Insert number]
+      - School of Physics Safety Officer: [Insert number]
+      - Building Fire Warden: [Insert name and number]
+      - First Aid Officers: [Insert names and contact details]
+  cleanup_waste:
+    - |-
+      DAILY HOUSEKEEPING - WORK AREA:
+      - Wipe down optical bench or work surface
+      - Return all tools and equipment to storage
+      - Coil cables neatly (no trip hazards)
+      - Remove personal items
+      - Check floor for dropped components or debris
+      - Leave area tidy for next user
+    - |-
+      DAILY HOUSEKEEPING - LABORATORY GENERAL:
+      - Keep walkways and exits clear
+      - Return emergency equipment to proper location if moved
+      - Do not block fire extinguishers or emergency equipment
+      - Report any housekeeping issues to supervisor
+    - |-
+      WASTE DISPOSAL - GENERAL WASTE:
+      - Paper, packaging, non-contaminated materials
+      - Use general waste bins
+      - Recyclable materials in recycling bins (check local procedures)
+    - |-
+      WASTE DISPOSAL - OPTICAL WASTE:
+      - Broken optical components; damaged lenses, mirrors, filters
+      - Package safely (prevent cuts from sharp edges)
+      - Dispose in general waste unless chemically contaminated
+    - |-
+      WASTE DISPOSAL - FIBRE OPTIC WASTE (ROOMS 121D, 218G):
+      - Cleaved fibre ends are sharps
+      - Dispose immediately in designated sharps containers
+      - Never leave on bench or in general waste
+      - Follow Fibre Optics Handling RA/SWP
+    - |-
+      WASTE DISPOSAL - CHEMICAL WASTE:
+      - Contaminated wipes, gloves, absorbent materials; used solvents and cleaning agents; expired or unwanted chemicals
+      - Follow Chemical Handling RA/SWP
+      - Use university hazardous waste system
+      - Label clearly: contents, date, your name
+      - Store in designated chemical waste area until collection
+      - Never pour down sink unless specifically approved
+    - |-
+      WASTE DISPOSAL - ELECTRICAL/ELECTRONIC WASTE:
+      - Broken equipment, components, circuit boards, batteries
+      - Do NOT dispose in general waste
+      - Contact facilities for e-waste collection
+      - Some components may contain hazardous materials
+    - |-
+      WASTE DISPOSAL - METAL AND HARDWARE:
+      - Screws, fasteners, small metal parts can be disposed in general waste if non-contaminated
+      - Reusable items should be cleaned and returned to stock
+    - |-
+      SPILL CLEANUP:
+      - Water or non-hazardous liquids: clean immediately with absorbent material or mop; dry floor thoroughly; use "wet floor" sign if needed
+      - Chemical spills: follow procedures in Emergency section; use spill kit for small spills; dispose of contaminated materials as hazardous waste
+    - |-
+      LABORATORY CLEANLINESS STANDARDS - ACCEPTABLE:
+      - Active experiments clearly labelled and contained
+      - Cables managed (along walls, under benches, or protected)
+      - Equipment on benches or proper storage (not floor)
+      - Work surfaces generally clean
+      - Exits and emergency equipment accessible
+    - |-
+      LABORATORY CLEANLINESS STANDARDS - UNACCEPTABLE (REPORT TO SUPERVISOR):
+      - Blocked exits or emergency equipment
+      - Trip hazards (cables across walkways)
+      - Food or drink in laboratory
+      - Unlabelled chemicals or experiments
+      - Spills left uncleaned
+      - Equipment on floor creating hazards
+      - Damaged equipment not tagged
+  references:
+    - "Work Health and Safety Act 2011"
+    - "Work Health and Safety Regulation 2017"
+    - "AS/NZS 2243.1:2005 Safety in laboratories - Planning and operational aspects"
+    - "AS/NZS 2243.2:2006 Safety in laboratories - Chemical aspects"
+    - "AS/NZS IEC 60825.1:2014 Safety of laser products - Equipment classification and requirements"
+    - "Risk Assessment SAIL-RA-GENERAL-001 (General Optical/Laser Lab Safety)"
+    - "Fibre Optics Handling RA/SWP (reference when developed)"
+    - "Chemical Handling RA/SWP (reference when developed)"
+    - "Electrical Safety RA/SWP (reference when developed)"
+    - "University of Sydney WHS policies and procedures"
+    - "University of Sydney Laboratory Safety Manual"
+    - "School of Physics Local Safety Procedures"
+    - "Building emergency and evacuation procedures"
+    - "Equipment manufacturer manuals and safety documentation"
+  competency:
+    - |-
+      MANDATORY TRAINING 1 - SAIL LAB GENERAL LOCAL INDUCTION (must be completed before laboratory access):
+      Duration approximately 1.5-2 hours (presentation + laboratory tour). Assessment method: attendance and participation in full induction session; demonstration of understanding through Q&A during session; practical demonstration (locate emergency equipment, identify door signage); no formal written test required; assessor must be satisfied trainee understands all safety-critical information.
+    - |-
+      INDUCTION CONTENT - HAZARD AWARENESS:
+      - Optical hazards (bright sources, specular reflections)
+      - Laser hazards (general awareness - equipment-specific training separate)
+      - Room-specific hazards (Room 116B CO2, fibre lab sharps)
+      - Electrical hazards (240V equipment, visual inspections)
+      - Chemical hazards (general awareness - specific training for chemical work)
+      - Mechanical hazards (manual handling, moving parts)
+      - Slips, trips, falls (cable management, housekeeping)
+      - Fire hazards
+    - |-
+      INDUCTION CONTENT - LABORATORY ACCESS AND CONDUCT:
+      - Swipe card access system
+      - Door signage (hazards, PPE requirements, authorised entry)
+      - Undergraduate supervision requirements
+      - Sign-in/sign-out procedures
+      - Visitor management
+      - Working alone policies
+      - Housekeeping standards
+      - No food/drink policy
+    - |-
+      INDUCTION CONTENT - EMERGENCY PROCEDURES:
+      - Building evacuation (fire alarm response)
+      - Fire emergency (fighting small fires, when to evacuate)
+      - Room 116B CO2 alarm response
+      - Chemical spill response
+      - First aid and injury response
+      - Emergency contact numbers
+      - Location of emergency equipment (extinguishers, first aid, eyewash)
+      - Assembly points
+    - |-
+      INDUCTION CONTENT - SAFE WORK PRACTICES:
+      - Pre-access checks (door signage, PPE)
+      - Setting up workspace safely
+      - Optical work safety (avoiding direct beam exposure, managing reflections)
+      - Cable management and trip hazard prevention
+      - Manual handling techniques
+      - Chemical handling basics (SDS, PPE, ventilation)
+      - Equipment inspection (cords, test tags)
+      - Leaving laboratory safely
+    - |-
+      INDUCTION CONTENT - LABORATORY TOUR:
+      - Walk through of laboratory areas (116B, 116C, 121A-D, 120, 218G-H-I)
+      - Location of emergency equipment: fire extinguishers (types and locations); first aid kit (near parents room); portable eyewash stations (Rooms 121D, 218G); emergency exits and assembly points; emergency contact information displays
+      - Room-specific features: Room 116B CO2 sensor and alarm; laser interlock systems; 3D printer room ventilation
+      - Location of reference materials (RAs, SWPs, SDS)
+    - |-
+      INDUCTION CONTENT - DOCUMENTATION AND REPORTING:
+      - Incident reporting via RiskWare
+      - Equipment defect reporting
+      - When to report to supervisor
+      - Maintaining training records
+    - |-
+      MANDATORY TRAINING 2 - LASER OPERATOR CERTIFICATE (for laser work):
+      Required for: all personnel working with lasers; all personnel working in areas where lasers are operated; anyone who may be exposed to laser radiation.
+      Content: laser safety principles and regulations; laser classification system; biological effects of laser radiation; laser safety controls (engineering, administrative, PPE); laser safety eyewear selection and use; emergency procedures for laser exposure.
+      Provider: external certified laser safety training provider, OR internal certified laser safety instructor (if available).
+      Documentation: certificate must be uploaded to Faculty "My Inductions Dashboard"; copy provided to supervisor; valid indefinitely (unless changed by university policy).
+      NOTE: Laser Operator Certificate is GENERAL laser safety awareness. Equipment-specific laser systems require ADDITIONAL training via equipment-specific RA/SWP.
+    - |-
+      MANDATORY TRAINING 3 - EQUIPMENT-SPECIFIC TRAINING (before using any equipment):
+      - Read equipment-specific RA/SWP thoroughly
+      - Complete equipment-specific training (hands-on demonstration)
+      - Competency assessment by authorised assessor
+      - Sign-off on equipment-specific competency sheet
+      - Name added to authorised users list for that equipment
+      Examples: Bambu Lab H2D Laser Edition (SAIL-RA-BAMBU-H2D-001, SAIL-SWP-BAMBU-H2D-001); CMS Combiner Manufacturing System (SAIL-RA-CMS-001, SAIL-SWP-CMS-001); Form 3 printers; specific laser systems (Class 3B, Class 4); high voltage equipment; other specialised equipment
+    - |-
+      MANDATORY TRAINING 4 - SPECIALIST ACTIVITY TRAINING (as applicable):
+      - Fibre Optics Handling: required for fibre cleaving, splicing, handling; follow Fibre Optics Handling RA/SWP; training on sharps safety, disposal, eyewash use
+      - Chemical Handling: required for use of solvents, adhesives, hazardous chemicals; follow Chemical Handling RA/SWP; training on SDS interpretation, PPE selection, spill response
+      - Electrical Work: required for electrical repairs, modifications, high voltage work; follow Electrical Safety RA/SWP; may require formal electrical qualifications for some work
+    - |-
+      COMPETENCY ASSESSMENT - THEORY COMPONENT (Q&A session or discussion covering):
+      - Identification of hazards in SAIL laboratories
+      - Understanding of door signage and PPE requirements
+      - Emergency procedures (evacuation, fire, CO2 alarm)
+      - Room 116B door closure prohibition
+      - Undergraduate supervision requirements
+      - When to report incidents or defects
+      - Location of emergency equipment
+    - |-
+      COMPETENCY ASSESSMENT - PRACTICAL COMPONENT (trainee demonstrates):
+      - Ability to read and interpret door signage
+      - Location of fire extinguisher nearest to work area (and type)
+      - Location of first aid kit
+      - Location of emergency exits and assembly points
+      - Location of portable eyewash (if working in fibre labs)
+      - Understanding of Room 116B CO2 hazard (if applicable)
+      - Appropriate PPE for laboratory entry
+    - |-
+      COMPETENCY ASSESSMENT - PASS CRITERIA:
+      - Trainee demonstrates clear understanding of all safety-critical topics
+      - Trainee can locate all emergency equipment
+      - Trainee understands when and how to respond to emergencies
+      - Trainee understands room-specific hazards relevant to their work
+      - Assessor is satisfied trainee can work safely in SAIL laboratories
+      If not yet competent: additional discussion and clarification; re-walk laboratory tour; reassess understanding; if significant gaps, schedule additional training session. Do NOT grant access until competent.
+    - |-
+      ONGOING REQUIREMENTS - REFRESHER TRAINING:
+      - Every 3 years for all laboratory users
+      - Can be abbreviated refresher (1 hour) if no significant changes
+      - Full re-induction if major changes to laboratories or procedures
+      - Earlier refresher if: incident involving the person; unsafe practices observed; procedures significantly updated; extended absence from laboratories (>2 years)
+    - |-
+      ONGOING REQUIREMENTS - OTHER:
+      - Equipment-specific refreshers: as specified in equipment-specific RA/SWP (typically annually or when procedures updated)
+      - Laser Operator Certificate: valid indefinitely (current university policy); re-certification required if policy changes
+      - Continuous improvement: participate in safety meetings and discussions; report hazards and near-misses; contribute to procedure improvements; stay informed of safety updates
+    - |-
+      RECORD KEEPING (training records maintained by supervisors):
+      - Date of SAIL Lab General Local Induction; assessor name and signature
+      - Laser Operator Certificate (copy or confirmation of upload to Faculty system)
+      - Equipment-specific training dates and sign-offs
+      - Refresher training dates
+      - Authorised users lists (by equipment)
+      Records retention: minimum 7 years (WHS regulation requirement); active personnel records updated regularly; training database or spreadsheet maintained; access to records for audits and compliance checks
+    - |-
+      AUTHORISED ASSESSOR REQUIREMENTS (to be authorised as an induction assessor, staff must):
+      - Have completed SAIL Lab General Local Induction themselves
+      - Be thoroughly familiar with all SAIL laboratory areas and hazards
+      - Understand emergency procedures and equipment locations
+      - Have authority to grant laboratory access
+      - Be competent in identifying unsafe practices
+      - Be approved by laboratory management or School of Physics Safety Officer
+      Additional authorised assessors may be added with approval from the listed supervisors.
+    - |-
+      ASSESSMENT PROCESS (FOR ASSESSORS):
+      1. Schedule induction session (allow 1.5-2 hours; ensure laboratory areas accessible for tour)
+      2. Deliver induction content: present all required topics; conduct laboratory tour; demonstrate emergency equipment locations; discuss room-specific hazards relevant to trainee's work; allow time for questions
+      3. Assess competency: Q&A on safety-critical topics; practical demonstration (locate emergency equipment); verify understanding; identify gaps requiring additional training
+      4. If competent: sign trainee off on sign-off sheet; add trainee to authorised users list; arrange swipe card access activation; provide trainee with copy of SAIL-RA-GENERAL-001 and SAIL-SWP-GENERAL-001; inform trainee of additional requirements (Laser Operator Certificate, equipment-specific training)
+      5. If not yet competent: provide additional training and clarification; schedule reassessment; do NOT grant access until competent
+      6. Record keeping: maintain training record (name, date, assessor, outcome); update authorised users list; file signed competency sheet; track refresher training due dates
+    - |-
+      AUTHORISED USERS LIST MAINTENANCE:
+      - Maintained by laboratory supervisors
+      - Updated when new users inducted and when users leave (access removed)
+      - Reviewed annually to ensure current
+      - Available for reference (who has access to which areas)
+    - |-
+      DOCUMENT REVIEW SCHEDULE (this SWP must be reviewed):
+      - Every 3 years (by February 2029)
+      - After any serious incident in SAIL laboratories
+      - When laboratory layouts or room uses change
+      - When new hazards are identified
+      - When procedures change significantly
+      - When Australian Standards or university policies are updated
+      - When specialist RAs/SWPs are developed (Fibre, Chemical, Electrical)
+      Review process: supervisors review document for accuracy and completeness; consult laboratory users for feedback; update to reflect current practices and hazards; retrain all users if major changes implemented; issue new version and update sign-off sheets
+  assessors:
+    - "Chris Betters (Laboratory Supervisor)"
+    - "Sergio Leon-Saval (Laboratory Supervisor)"
+    - "Barnaby Norris (Laboratory Supervisor)"
+    - "Julia Bryant (Laboratory Supervisor)"

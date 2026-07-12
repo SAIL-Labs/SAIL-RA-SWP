@@ -1,0 +1,59 @@
+name: Validate and render RA/SWP documents
+
+# PR/branch safety net for the document pipeline: validates every YAML in
+# documents/ and renders web pages, Word documents and PDFs exactly as the
+# deploy workflow will. A failed render (missing key, bad rating, broken
+# template tag) fails the check. Rendered files are uploaded as an artifact
+# so reviewers can inspect the actual documents a PR produces.
+
+on:
+  push:
+    branches-ignore: ["main"]
+    paths:
+      - "documents/**"
+      - "docgen/**"
+      - ".github/workflows/docgen.yml"
+  pull_request:
+    paths:
+      - "documents/**"
+      - "docgen/**"
+      - ".github/workflows/docgen.yml"
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: docgen/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r docgen/requirements.txt
+
+      - name: Validate all documents (including the example)
+        run: python docgen/render.py --all documents/_example.yaml --check
+
+      - name: Install LibreOffice
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libreoffice-writer
+
+      - name: Render web pages, Word documents and PDFs
+        run: python docgen/render.py --all --web --pdf
+
+      - name: Upload rendered documents
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-documents
+          path: |
+            docgen/out/docx/**
+            docgen/out/pdfs/**
+            _risk_assessments/**
+            _safe_work_procedures/**
+          if-no-files-found: error

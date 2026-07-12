@@ -1,0 +1,95 @@
+Use this form to document Safe Work Procedures for hazardous activities and processes. The information in your Safe Work Procedure (SWP) should be supported by a risk assessment.
+
+<div class="metadata-table" markdown="1">
+
+**Faculty/School:** | {{ meta.faculty_school }}
+**Initial Issue Date:** | {{ meta.issue_date }}
+**Next Review Date:** | {{ meta.next_review_date }}
+**SWP Reference Number:** | {{ meta.swp_reference }}
+**Version:** | {{ meta.version }}
+**Version Issue Date:** | {{ meta.version_issue_date }}
+**SWP Title:** | {{ meta.title }}
+**Prepared by:** | {{ meta.prepared_by }}
+**Responsible supervisor/s:** | {{ meta.supervisors | join(", ") }}
+
+</div>
+
+## List the Hazards and Risk Controls as per Risk Assessment
+
+<div class="hazard-table-wrapper" markdown="1">
+| Associated risk assessment reference | Hazards | Risk controls |
+|---|---|---|
+{% for h in swp.hazards %}
+| {{ meta.ra_reference }} | {{ h.hazard | cell }} | {{ h.controls | cell }} |
+{% endfor %}
+
+</div>
+
+## List Resources Required
+<small>Including personal protective clothing, chemicals and equipment needed.</small>
+
+{% for r in swp.resources %}
+- {{ r | br }}
+{% endfor %}
+
+## Step by Step Instructions for Undertaking the Task
+
+{% for s in swp.steps %}
+{{ loop.index }}. {{ s | br }}
+{% endfor %}
+
+## Emergency Shutdown Procedures
+
+{% for e in swp.emergency_shutdown %}
+- {{ e | br }}
+{% endfor %}
+
+## Emergency Procedures for Fires, Spills or Exposure to Hazardous Substances
+
+{% for e in swp.emergency_procedures %}
+- {{ e | br }}
+{% endfor %}
+
+## Clean Up and Waste Disposal Requirements
+
+{% for c in swp.cleanup_waste %}
+- {{ c | br }}
+{% endfor %}
+
+## References Used in the Development of This SWP
+<small>E.g. codes of practice.</small>
+
+{% for ref in swp.references %}
+- {{ ref }}
+{% endfor %}
+
+## Competency Required
+<small>Qualifications, certificates, licensing, training — e.g. course or instruction.</small>
+
+{% for c in swp.competency %}
+- {{ c | br }}
+{% endfor %}
+
+## Staff Approved to Assess Competence for This SWP
+
+{{ swp.assessors | join(", ") }}
+
+## SWP Sign Off Sheet
+
+**SWP name and version:** {{ meta.title }} (Version {{ meta.version }})
+
+In signing this section the assessor agrees that the following persons are competent in following this SWP.
+
+*Competency sign-off is recorded on the printed copy of this SWP (use the Word/PDF download) or in the laboratory training register.*
+
+| Name | Signature | Date Competent | Name of Assessor/Authoriser | Assessor/Authoriser Signature |
+|------|-----------|----------------|------------------------------|-------------------------------|
+|      |           |                |                              |                               |
+|      |           |                |                              |                               |
+|      |           |                |                              |                               |
+|      |           |                |                              |                               |
+|      |           |                |                              |                               |
+
+---
+
+*End of Safe Work Procedure*

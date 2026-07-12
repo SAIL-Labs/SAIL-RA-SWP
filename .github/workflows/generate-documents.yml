@@ -51,7 +51,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install Python dependencies
-        run: pip install anthropic
+        run: pip install anthropic -r docgen/requirements.txt
 
       # Add a 👍 reaction to the trigger comment so the requester gets
       # immediate feedback that the command was recognised.
@@ -65,7 +65,7 @@ jobs:
             "repos/${REPO}/issues/comments/${COMMENT_ID}/reactions" \
             -X POST -f content='+1'
 
-      - name: Generate RA and SWP documents
+      - name: Generate combined RA/SWP YAML
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
@@ -85,8 +85,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git checkout -b "$BRANCH"
-          git add "_risk_assessments/${SLUG}.md" "_safe_work_procedures/${SLUG}.md"
-          git commit -m "Add draft RA and SWP for ${EQUIP} (issue #${ISSUE_NUM})"
+          git add "documents/${SLUG}.yaml"
+          git commit -m "Add draft RA/SWP data for ${EQUIP} (issue #${ISSUE_NUM})"
           git push origin "$BRANCH"
 
       - name: Create draft PR and notify issue
@@ -101,7 +101,11 @@ jobs:
           # Write PR body to a temp file to avoid YAML indentation issues
           # with multi-line strings containing unindented content.
           cat > /tmp/pr_body.md << PREOF
-          Auto-generated draft Risk Assessment and Safe Work Procedure for **${EQUIP}**.
+          Auto-generated draft RA/SWP data file for **${EQUIP}** (\`documents/${SLUG}.yaml\`).
+
+          The web pages, Word documents and PDFs are all rendered from this one file —
+          check the **rendered-documents artifact** on the docgen workflow run for this
+          branch to review the actual output documents.
 
           Closes #${ISSUE_NUM}
 
@@ -109,13 +113,13 @@ jobs:
 
           ## Review checklist
 
-          - [ ] Risk Assessment reviewed for completeness and accuracy
-          - [ ] Safe Work Procedure reviewed for completeness and accuracy
+          - [ ] Risk Assessment content reviewed for completeness and accuracy
+          - [ ] Safe Work Procedure content reviewed for completeness and accuracy
           - [ ] All technical specifications verified against manufacturer documentation
-          - [ ] Hazard table has sufficient scenarios (5–10 minimum)
+          - [ ] Hazard table has sufficient scenarios (8+ minimum)
           - [ ] Emergency procedures are accurate and location-specific
-          - [ ] All placeholder values replaced with real information
-          - [ ] Status updated from \`Draft\` to \`Approved\` in front matter when ready
+          - [ ] All \[VERIFY: ...\] and \[Insert ...\] placeholders replaced with real information
+          - [ ] \`meta.status\` updated from \`Draft\` to \`Approved\` when ready
           PREOF
 
           PR_URL=$(gh pr create \
