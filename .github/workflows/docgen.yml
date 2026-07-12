@@ -20,6 +20,10 @@ on:
       - ".github/workflows/docgen.yml"
   workflow_dispatch:
 
+# The job only reads the repo and uploads a build artifact — no write access needed.
+permissions:
+  contents: read
+
 jobs:
   render:
     runs-on: ubuntu-latest
