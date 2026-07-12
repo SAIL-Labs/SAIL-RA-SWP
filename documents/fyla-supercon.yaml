@@ -1,0 +1,520 @@
+# Combined RA + SWP data for the Fyla Iceblink Supercontinuum Fibre Laser.
+# Generated from issue #7 (photonic lantern wavefront sensing setup, room 121c).
+# Render: python docgen/render.py documents/fyla-supercon.yaml
+
+meta:
+  slug: fyla-supercon
+  abbrev: FYLA-SC
+  number: 1
+  name: "Fyla Iceblink Supercontinuum Fibre Laser"
+  title: "Operation of the Fyla Iceblink Supercontinuum Fibre Laser in the Photonic Lantern Wavefront Sensing Setup"
+  status: Draft
+  version: "1.0"
+  version_issue_date: "July 2026"
+  description: "Risk assessment and safe work procedure for the Fyla Iceblink supercontinuum fibre laser used as a filtered light source in a photonic lantern wavefront sensing setup, covering Class 4 pulsed laser radiation, invisible near-infrared emission, fibre-handling, fire and electrical hazards."
+  key_hazards: "Class 4 pulsed supercontinuum laser radiation, invisible near-infrared emission, fibre-coupled beam hazards, fire risk, electrical hazards"
+  includes: "Mandatory pre-operation safety checks, interlock and enclosure verification, PPE requirements, emergency procedures, training and competency requirements"
+  faculty_school: "School of Physics (SAIL Labs)"
+  prepared_by: "Chris Betters"
+  supervisors:
+    - "Chris Betters"
+    - "Sergio Leon-Saval"
+  issue_date: "July 2026"
+  next_review_date: "July 2027"
+
+ra:
+  activity: |-
+    - Operation of the Fyla Iceblink supercontinuum fibre laser as a light source for photonic lantern wavefront sensing
+    - Free-beam alignment and optical setup adjustments
+    - Fibre handling and connectorisation associated with the photonic lantern testbed
+    - Routine filtered, enclosed operation for wavefront sensing measurements
+  location: "Room 121c"
+  persons_at_risk:
+    - "Laboratory staff (1-3 permanent users)"
+    - "Research students"
+    - "Visitors to laboratory (escorted only)"
+  team:
+    - "Equipment users"
+    - "Laser safety advisor"
+    - "Supervisor"
+  references:
+    - "Work Health and Safety Act 2011 (NSW)"
+    - "Work Health and Safety Regulation 2017 (NSW)"
+    - "AS/NZS IEC 60825.1:2014 - Safety of laser products, Part 1: Equipment classification and requirements"
+    - "AS/NZS IEC 60825.14 - Safety of laser products - A user's guide"
+    - "AS/NZS 3000:2018 - Electrical installations (Wiring Rules)"
+    - "Fyla Iceblink Supercontinuum Fibre Laser User Manual (Iceblink-v3.rev04.pdf)"
+    - "University of Sydney WHS Laser Safety Policy and Procedures"
+  risks:
+    - task: "Free-beam laser operation during alignment and optical setup"
+      hazards: "Class 4 pulsed supercontinuum laser radiation when the beam is not filtered or enclosed [VERIFY: exact wavelength range and average/peak output power from manufacturer specification]"
+      harm: |-
+        - Severe eye injury including retinal burns and permanent vision loss
+        - Skin burns from direct or specularly reflected beam
+        - Injury from unintentional beam reflections off optical components
+      controls: |-
+        - Safety interlock fitted for the free-beam configuration
+        - Laser safety eyewear rated for the emission wavelength range, worn during free-beam work
+        - Access to room 121c restricted during free-beam operation
+      current_rating: "High"
+      additional_controls: |-
+        - Mandatory laser operator certification before free-beam access is granted
+        - Confirm interlock function before each free-beam session
+        - Enclose the beam path wherever alignment does not require free-beam access
+        - [VERIFY: laser safety eyewear optical density (OD) rating required at the emission wavelength(s), confirmed against manufacturer output specification]
+      residual_rating: "Low"
+    - task: "Routine filtered, enclosed wavefront sensing operation"
+      hazards: "Residual scattered or leaked supercontinuum radiation if the enclosure or filtering is compromised"
+      harm: |-
+        - Low-level eye exposure from stray light
+        - Undetected beam leakage due to unnoticed enclosure damage
+      controls: |-
+        - Optical setup enclosed and filtered by design, negating the interlock requirement per engineering assessment
+        - Enclosure integrity relied upon as the primary engineering control in this mode
+      current_rating: "Medium"
+      additional_controls: |-
+        - Periodic visual inspection of enclosure and filter integrity before each session
+        - Beam block/dump fitted at unused fibre or beam ports
+        - Warning signage at room entry when the laser is powered
+      residual_rating: "Low"
+    - task: "Operating with the interlock or enclosure defeated or damaged"
+      hazards: "Direct or scattered exposure to Class 4 pulsed laser radiation"
+      harm: |-
+        - Severe or permanent eye injury
+        - Skin burns
+        - Fire ignition of nearby materials
+      controls: |-
+        - Interlock circuit prevents free-beam emission when open
+        - Absolute prohibition on defeating or bypassing the interlock
+      current_rating: "Very High"
+      additional_controls: |-
+        - ABSOLUTE PROHIBITION on defeating, bypassing, or overriding the interlock
+        - Immediate lock-out and tag-out if interlock or enclosure damage is found
+        - Annual verification of interlock function by a qualified laser safety advisor
+        - Residual rating of Low applies only while the prohibition is maintained - this scenario must not occur
+      residual_rating: "Low"
+    - task: "Invisible near-infrared component of the supercontinuum output"
+      hazards: "Potential invisible beam component not perceivable by the unaided eye [VERIFY: confirm from manufacturer specification whether the emission spectrum extends into the near-infrared beyond approximately 700 nm]"
+      harm: |-
+        - Unnoticed direct or reflected exposure to invisible NIR radiation
+        - Delayed recognition of an unsafe beam condition
+      controls: |-
+        - Beam confined to the enclosure/fibre during routine operation
+        - Laser safety eyewear selected to attenuate across the full emission range, not only the visible portion
+      current_rating: "Medium"
+      additional_controls: |-
+        - Use of a laser viewing card or NIR-sensitive card to verify the beam path before free-beam work
+        - Training to specifically cover the invisible NIR hazard of supercontinuum sources
+      residual_rating: "Low"
+    - task: "Fibre handling, cleaving and connectorisation of the photonic lantern testbed"
+      hazards: "Laser emission from an unterminated or damaged fibre end while the source is live"
+      harm: |-
+        - Eye injury from unexpected point-source emission at a fibre tip
+        - Skin puncture from fibre shards during cleaving
+      controls: |-
+        - Standard practice of de-energising or shuttering the laser source before fibre connector work
+      current_rating: "Medium"
+      additional_controls: |-
+        - Written procedure requiring the laser source is off or shuttered before any fibre is connected or disconnected
+        - Disposal of fibre offcuts in a dedicated sharps-safe container
+        - Fibre-handling component added to operator training
+      residual_rating: "Low"
+    - task: "Electrical operation of the laser source and internal pump diodes"
+      hazards: "Electrical hazards from the 240V mains-powered laser source and internal high-current pump laser diodes"
+      harm: |-
+        - Electric shock
+        - Electrocution
+        - Internal component damage or fire from a fault condition
+      controls: |-
+        - Manufacturer-supplied enclosure and earthed chassis
+        - Internal wiring inaccessible during normal operation
+      current_rating: "Medium"
+      additional_controls: |-
+        - Regular electrical test and tag
+        - No user access to internal components; service by a qualified technician only
+        - Inspect power leads before each use
+      residual_rating: "Low"
+    - task: "Fire risk from a high peak power beam incident on absorptive materials"
+      hazards: "Ignition of paper, tape, cabling, or other combustible material in the beam path"
+      harm: |-
+        - Fire
+        - Smoke inhalation
+        - Property damage
+      controls: |-
+        - Beam confined to an enclosed, filtered path during routine operation
+        - Non-flammable optical mounts and beam dumps
+      current_rating: "Medium"
+      additional_controls: |-
+        - Keep combustible material clear of the free-beam path
+        - Fire extinguisher (CO2 or dry powder) accessible in the laboratory
+        - Beam dump/terminator fitted at all unused output ports
+      residual_rating: "Low"
+    - task: "Specular reflections during optical alignment"
+      hazards: "Uncontrolled reflections from lenses, mirrors, or fibre ferrules in the free-beam path"
+      harm: |-
+        - Unpredictable beam paths causing eye or skin exposure away from the intended beam line
+      controls: |-
+        - Laser safety eyewear worn during all free-beam alignment
+        - Beam height controlled below or above eye level where practicable
+      current_rating: "High"
+      additional_controls: |-
+        - Remove reflective jewellery and watches before free-beam alignment work
+        - Use of alignment aids (IR viewer/beam profiler) rather than direct eye viewing
+        - Reduce laser power to the minimum necessary during alignment where the source supports it [VERIFY: whether output power is adjustable/attenuable at the source]
+      residual_rating: "Low"
+    - task: "Unauthorised or untrained use of the laser"
+      hazards: "Operation by personnel without laser operator certification"
+      harm: |-
+        - Increased likelihood of interlock defeat, incorrect PPE use, or unsafe free-beam work
+      controls: |-
+        - Access to room 121c restricted to authorised personnel
+      current_rating: "High"
+      additional_controls: |-
+        - Authorised users list maintained and displayed at the equipment
+        - Laser operator certification mandatory before any independent use
+        - New users supervised until competency is signed off
+      residual_rating: "Low"
+    - task: "Extended or unattended operation during wavefront sensing measurements"
+      hazards: "Enclosed, filtered laser left running for extended unattended periods"
+      harm: |-
+        - Delayed detection of an equipment fault, fire, or enclosure breach
+      controls: |-
+        - Enclosure and filtering intended to permit unattended filtered operation
+      current_rating: "Low"
+      additional_controls: |-
+        - Periodic visual or remote check-ins during long unattended runs
+        - Laser powered down at the end of each working day unless a specific case for continuous operation is documented and approved
+      residual_rating: "Low"
+  implementation_date: "Prior to use"
+  additional_controls:
+    - control: "Laser operator certification training programme for all users"
+      resources: "Time, laser safety training provider"
+      responsible: "Safety Officer"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Verify laser safety eyewear OD rating matches the confirmed emission wavelength range"
+      resources: "Manufacturer specification sheet, laser safety advisor"
+      responsible: "Laboratory Manager"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Annual interlock and enclosure verification by a qualified laser safety advisor"
+      resources: "Qualified laser safety technician/advisor"
+      responsible: "Laboratory Manager"
+      date: "Annually"
+      riskware_ref: "TBD"
+    - control: "Install Class 4 laser warning signage at the room 121c entry"
+      resources: "Warning signage compliant with AS/NZS IEC 60825.1"
+      responsible: "Technician"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Develop a written fibre-handling procedure (laser off or shuttered before connector work)"
+      resources: "Time (1 hour)"
+      responsible: "Supervisor"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Maintain an authorised users list for the Fyla Iceblink laser"
+      resources: "Time"
+      responsible: "Laboratory Manager"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Confirm a fire extinguisher (CO2 or dry powder) is available in room 121c"
+      resources: "Approx $150 if not already present"
+      responsible: "Laboratory Manager"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+    - control: "Confirm and document the full emission wavelength range and output power from manufacturer specification"
+      resources: "Manufacturer documentation review"
+      responsible: "Supervisor"
+      date: "Prior to use"
+      riskware_ref: "N/A"
+  emergency_controls:
+    - |-
+      CRITICAL - CLASS 4 LASER SAFETY:
+      - The laser is Class 4 when the beam is not filtered or enclosed
+      - NEVER operate free-beam with the interlock defeated or bypassed
+      - NEVER defeat, bypass, or disable the safety interlock
+      - The routine filtered/enclosed configuration is only safe while the enclosure and filtering remain intact
+      - If any safety system fails, immediately stop use and lock out the equipment
+    - |-
+      EMERGENCY SHUTDOWN:
+      - Close the laser shutter or press the emergency stop, whichever is fitted [VERIFY: exact emergency stop/shutter location and operation per manufacturer manual]
+      - If the shutter/stop fails or is inaccessible, isolate power at the wall outlet
+      - Do not resume operation until the issue is resolved and the equipment is inspected
+    - |-
+      FIRE EMERGENCY:
+      - Press emergency stop / isolate power immediately
+      - Use a CO2 or dry powder fire extinguisher if safe to do so
+      - If fire cannot be controlled immediately: evacuate the area, activate the building fire alarm, call 000, notify the building warden
+    - |-
+      SUSPECTED EXPOSURE TO LASER RADIATION (CLASS 4 EXPOSURE):
+      - Press emergency stop / isolate power immediately
+      - If eye exposure is suspected: seek IMMEDIATE medical attention at an emergency department; do not rub eyes; note time, duration, and circumstances of exposure
+      - Report the incident immediately to the supervisor and safety officer
+      - Complete an incident report and RiskWare notification
+      - Equipment must be locked out and inspected before any further use
+      - Never look directly at the laser emission point or reflected beams
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency services: 000
+      - University Security (after hours): [Insert number]
+      - Supervisor: Chris Betters [Insert number]
+      - Safety Officer: [Insert name and number]
+      - First Aiders: [Listed on notice board]
+
+swp:
+  hazards:
+    - hazard: "Class 4 pulsed supercontinuum laser radiation (free beam) [VERIFY: exact wavelength range and power]"
+      controls: |-
+        - Interlock fitted for the free-beam configuration
+        - Laser safety eyewear rated for the emission wavelength range
+        - Laser operator certification mandatory
+    - hazard: "Invisible near-infrared emission component"
+      controls: |-
+        - Eyewear selected to attenuate across the full emission range
+        - Beam path confined to the enclosure/fibre during routine operation
+    - hazard: "Operating with the interlock or enclosure defeated"
+      controls: |-
+        - Absolute prohibition on defeating the interlock
+        - Immediate lock-out and tag-out if damage is found
+    - hazard: "Fibre handling and connectorisation"
+      controls: |-
+        - De-energise or shutter the laser before connecting/disconnecting fibres
+        - Sharps-safe disposal of fibre offcuts
+    - hazard: "Fire from beam incident on combustible material"
+      controls: |-
+        - Keep combustible material clear of the beam path
+        - Fire extinguisher accessible; beam dumps fitted on unused ports
+    - hazard: "Electrical hazards (240V mains, internal pump diodes)"
+      controls: |-
+        - Earthed enclosure; no user access to internal components
+        - Regular electrical test and tag
+    - hazard: "Specular reflections during alignment"
+      controls: |-
+        - Laser safety eyewear worn during all free-beam work
+        - Remove reflective jewellery; use alignment aids rather than direct eye viewing
+  resources:
+    - |-
+      PERSONAL PROTECTIVE EQUIPMENT (PPE):
+      - Laser safety eyewear rated for the emission wavelength range [VERIFY: required OD rating once wavelength range is confirmed]
+      - Closed-toe shoes
+      - No reflective jewellery or watches during free-beam alignment work
+    - |-
+      EQUIPMENT AND MATERIALS:
+      - Fyla Iceblink supercontinuum fibre laser (fully functional with all safety systems verified)
+      - Photonic lantern wavefront sensing optical setup and enclosure
+      - Beam dumps/terminators for unused output ports
+      - Fibre cleaver and connectorisation kit
+      - Laser viewing card or NIR-sensitive card
+    - |-
+      SAFETY EQUIPMENT (MUST BE PRESENT IN LABORATORY):
+      - CO2 or dry powder fire extinguisher
+      - First aid kit
+      - Class 4 laser warning signage at room entry
+      - Sign-in/sign-out log book
+  steps:
+    - |-
+      BEFORE STARTING - CRITICAL SAFETY REQUIREMENTS:
+      - You must have completed laser operator certification and been assessed as competent
+      - You must be listed on the authorised users list for this equipment
+      - You must never leave the equipment unattended during free-beam operation
+      - You must never defeat or bypass the safety interlock
+    - "PRE-OPERATION SAFETY CHECKS (MANDATORY - DO NOT SKIP):"
+    - "Sign in to the equipment log book (record name, date, time, operation type)"
+    - |-
+      Visual inspection of the enclosure and interlock:
+      - Check enclosure panels and beam-path covers for cracks, gaps, or damage
+      - Check interlock connector and wiring for visible damage
+      - If ANY damage is found: DO NOT USE - lock out and report to supervisor
+    - |-
+      Test the interlock (CRITICAL, free-beam configuration only):
+      - Power on the laser in its test/standby mode
+      - Open the enclosure or break the interlock circuit as per the manufacturer procedure [VERIFY: exact interlock test procedure from the manufacturer manual]
+      - Confirm emission stops immediately
+      - If the interlock fails: DO NOT USE - lock out and report immediately
+    - |-
+      Check laser safety eyewear:
+      - Inspect eyewear for cracks or damage
+      - Confirm the eyewear OD rating matches the confirmed emission wavelength range
+    - |-
+      Check beam dumps and fibre terminations:
+      - Confirm beam dumps/terminators are fitted on all unused output ports
+      - Confirm no unterminated fibre ends are exposed while the source is live
+    - |-
+      Check fire extinguisher:
+      - CO2 or dry powder extinguisher present in the laboratory
+      - Check pressure gauge in the green zone
+      - Check clear access path to the extinguisher
+    - |-
+      Clear the work area:
+      - Remove combustible materials from the free-beam path
+      - Remove reflective jewellery and watches before free-beam alignment work
+      - Ensure a clear egress path for emergency evacuation
+    - "EQUIPMENT STARTUP:"
+    - "Power on the Fyla Iceblink laser and allow it to complete its startup/warm-up sequence"
+    - "Check the control interface for any error or fault indications"
+    - "Confirm the laser is in the intended output mode (filtered/enclosed or free-beam) before proceeding"
+    - "FIBRE CONNECTION (PHOTONIC LANTERN TESTBED):"
+    - "Confirm the laser source is off or shuttered before connecting or disconnecting any fibre"
+    - "Clean and inspect fibre connectors before mating"
+    - "Connect the fibre to the photonic lantern input and confirm a secure, low-loss connection"
+    - "OPERATION:"
+    - |-
+      Final check before enabling emission:
+      - Enclosure closed and secured (filtered/enclosed mode) OR interlock verified functional (free-beam mode)
+      - Laser safety eyewear worn if operating free-beam
+      - Fire extinguisher accessible
+      - Clear path to emergency exit
+    - "Enable laser emission via the control interface"
+    - |-
+      Monitor operation:
+      - Watch for unusual sounds, smells, or visible beam leakage
+      - Confirm wavefront sensing measurements are proceeding as expected
+    - |-
+      During free-beam operation - MANDATORY ATTENDANCE:
+      - You MUST remain in the room and within reach of the emergency shutdown for the duration of free-beam work
+      - Never leave the room during free-beam alignment
+    - |-
+      During routine filtered/enclosed operation:
+      - Periodic visual or remote check-ins during long unattended runs are permitted
+      - Do not leave the laser running unattended overnight unless a documented and approved case exists
+    - "COMPLETION AND SHUTDOWN:"
+    - "Disable laser emission via the control interface"
+    - "Allow the laser to complete its shutdown sequence before powering off"
+    - "If last user of the day: power down the laser fully"
+    - "Clean the work area (see Clean Up and Waste Disposal Requirements section)"
+    - "Sign out in the equipment log book (record time, any issues)"
+  emergency_shutdown:
+    - |-
+      EMERGENCY STOP - USE IN ANY OF THESE SITUATIONS:
+      - Fire or smoke detected
+      - Interlock or enclosure failure
+      - Equipment malfunction
+      - Abnormal sounds or smells
+      - Suspected laser radiation exposure
+      - Any unsafe condition
+    - |-
+      EMERGENCY SHUTDOWN PROCEDURE:
+      1. Close the laser shutter or press the emergency stop immediately [VERIFY: exact control location and operation per manufacturer manual]
+      2. If the shutter/stop fails or is inaccessible: isolate power at the wall outlet
+      3. Assess the situation: if fire - follow fire emergency procedures; if injury - call for first aid assistance; if equipment damage - do not restart, report to supervisor
+    - |-
+      Do NOT restart the equipment until:
+      - The emergency has been fully resolved
+      - Equipment has been inspected
+      - Supervisor has given approval
+      - All safety systems verified functional
+    - |-
+      Complete an incident report:
+      - Record time, date, and circumstances
+      - Note what emergency required shutdown
+      - Report to supervisor immediately
+      - Complete a RiskWare report if required
+  emergency_procedures:
+    - |-
+      FIRE EMERGENCY:
+      - ISOLATE LASER POWER IMMEDIATELY
+      - If the fire is small and contained: use a CO2 or dry powder fire extinguisher; direct the extinguisher at the base of the flames; use short bursts
+      - If the fire cannot be controlled or spreads: evacuate the area immediately; activate the building fire alarm; call 000 (Emergency Services); notify the building warden; assemble at the designated assembly point
+      - After the fire is extinguished: do not restart - lock out and tag the equipment; report the incident to the supervisor immediately; complete an incident report and RiskWare entry; equipment must be inspected before further use
+    - |-
+      SUSPECTED LASER RADIATION EXPOSURE:
+      - ISOLATE LASER POWER IMMEDIATELY
+      - If eye exposure is suspected: do not rub eyes; close eyes or look away from bright light; seek IMMEDIATE medical attention at an Emergency Department; call 000 if severe symptoms occur (vision loss, severe pain); Class 4 laser exposure can cause permanent blindness
+      - If skin exposure (burns): move away from the laser source; cool the affected area with running cool water for 20 minutes; cover with clean, non-fluffy material; seek medical attention if severe
+      - Document the incident: record time, duration, and circumstances of exposure; note which safety system(s) failed; report immediately to the supervisor and safety officer; complete an incident report and RiskWare entry
+      - Equipment must be locked out and tagged immediately, inspected by a qualified laser safety advisor, and all safety systems verified before any further use
+    - |-
+      EQUIPMENT MALFUNCTION:
+      - Isolate laser power
+      - Do NOT attempt repairs yourself
+      - Lock out and tag the equipment
+      - Report to supervisor
+      - Complete an incident report
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency Services: 000
+      - University Security (after hours): [Insert number]
+      - Supervisor: Chris Betters [Insert number]
+      - Safety Officer: [Insert name and number]
+      - First Aid: [Location and contact details]
+      - Nearest Emergency Department: [Insert details]
+  cleanup_waste:
+    - |-
+      AFTER EACH USE:
+      - Confirm the laser is powered down or in a safe standby state
+      - Clean fibre connectors before storage using approved fibre-optic cleaning materials only
+      - Return beam dumps/terminators to unused output ports
+      - Remove all materials, tools, and personal items from the bench
+    - |-
+      WASTE DISPOSAL:
+      - Fibre offcuts and cleaved fibre shards: dispose of in a dedicated sharps-safe container
+      - Fibre-optic cleaning wipes/swabs: general waste
+      - Any waste contaminated with hazardous materials: consult SDS and dispose as hazardous waste if required
+    - |-
+      WORK AREA:
+      - Wipe down surrounding benches
+      - Return fire extinguisher to its proper location if moved
+      - Leave the area clean and tidy for the next user
+  references:
+    - "AS/NZS IEC 60825.1:2014 - Safety of laser products, Part 1: Equipment classification and requirements"
+    - "AS/NZS IEC 60825.14 - Safety of laser products - A user's guide"
+    - "Work Health and Safety Act 2011 (NSW)"
+    - "Work Health and Safety Regulation 2017 (NSW)"
+    - "AS/NZS 3000:2018 - Electrical installations (Wiring Rules)"
+    - "Fyla Iceblink Supercontinuum Fibre Laser User Manual (Iceblink-v3.rev04.pdf)"
+    - "Risk Assessment SAIL-RA-FYLA-SC-001"
+    - "University of Sydney WHS Laser Safety Policy and Procedures"
+  competency:
+    - |-
+      MANDATORY TRAINING 1 - LASER OPERATOR CERTIFICATION (must be completed before authorisation):
+      - Understanding of laser classifications
+      - Class 4 laser hazards (eye damage, burns, fire)
+      - How the interlock and enclosure/filtering safety systems work
+      - Consequences of defeating safety systems
+      - Emergency procedures for laser exposure
+      - Legal responsibilities
+    - |-
+      MANDATORY TRAINING 2 - EQUIPMENT-SPECIFIC TRAINING:
+      - Fyla Iceblink laser operation and control interface
+      - Interlock and enclosure verification procedures
+      - Fibre handling, cleaving, and connectorisation safety
+      - Pre-operation checks
+      - Emergency shutdown procedures
+    - |-
+      MANDATORY TRAINING 3 - FIRE SAFETY TRAINING:
+      - Fire extinguisher operation (CO2 and dry powder types)
+      - Fire emergency procedures
+      - Building evacuation procedures
+    - |-
+      MANDATORY TRAINING 4 - FIRST AID (BASIC):
+      - Eye and skin exposure first response
+      - When to seek medical attention
+      - Location of first aid equipment
+    - |-
+      COMPETENCY ASSESSMENT - THEORY:
+      - Written test or oral examination covering: Class 4 laser hazards and safety systems; pre-operation safety checks; emergency procedures; equipment limitations
+      - Must achieve 100% on safety-critical questions
+      - Minimum 80% overall pass mark
+    - |-
+      COMPETENCY ASSESSMENT - PRACTICAL:
+      - Supervised practical demonstration of: complete pre-operation safety checks (including interlock testing); safe fibre connection/disconnection procedure; equipment startup procedure; emergency shutdown activation; safe shutdown and cleanup
+      - Assessor must observe and verify competency in all areas
+      - Any safety-critical errors require retraining and reassessment
+    - |-
+      ONGOING REQUIREMENTS:
+      - Annual refresher training on laser safety
+      - Retraining required after any safety incident involving this equipment, when safety procedures are updated, or after an extended period of non-use (more than 12 months)
+    - |-
+      ASSESSOR REQUIREMENTS (to be authorised as an assessor, staff must):
+      - Have completed laser operator certification
+      - Be competent and experienced in operation of the Fyla Iceblink laser
+      - Understand all safety systems and their verification
+      - Be familiar with emergency procedures
+      - Be approved by the laboratory manager or safety officer
+    - |-
+      AUTHORISED USERS LIST:
+      - Maintained by the laboratory manager and displayed near the equipment
+      - Updated when new users are authorised; reviewed annually
+  assessors:
+    - "Chris Betters (Supervisor)"
+    - "Sergio Leon-Saval (Supervisor)"
