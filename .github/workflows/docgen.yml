@@ -78,8 +78,10 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           BRANCH="${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"
-          PR_NUMBER=$(gh pr list --repo "$REPO" --head "$BRANCH" --state open \
-            --json number --jq '.[0].number' || true)
+          OWNER="${REPO%%/*}"
+          # REST endpoint (not `gh pr list`): reliable with the workflow's scoped token
+          PR_NUMBER=$(gh api "repos/$REPO/pulls?head=$OWNER:$BRANCH&state=open" \
+            --jq '.[0].number' || true)
           if [ -z "$PR_NUMBER" ]; then
             echo "No open PR for branch '$BRANCH' — skipping comment."
             exit 0
