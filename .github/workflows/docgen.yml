@@ -67,21 +67,30 @@ jobs:
 
       # Surface the Word/PDF downloads directly on the PR conversation so
       # reviewers don't have to dig through the Actions run. One sticky
-      # comment per PR, refreshed on every push.
+      # comment per PR, refreshed on every push. Works from both push and
+      # pull_request events (the PR is resolved from the branch) because
+      # GitHub's paths filtering on pull_request synchronize events is flaky.
       - name: Link rendered documents on the PR
-        if: github.event_name == 'pull_request' && steps.upload.outputs.artifact-url != ''
+        if: steps.upload.outputs.artifact-url != ''
         env:
           GH_TOKEN: ${{ github.token }}
           ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          REPO: ${{ github.repository }}
         run: |
+          BRANCH="${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"
+          PR_NUMBER=$(gh pr list --repo "$REPO" --head "$BRANCH" --state open \
+            --json number --jq '.[0].number' || true)
+          if [ -z "$PR_NUMBER" ]; then
+            echo "No open PR for branch '$BRANCH' — skipping comment."
+            exit 0
+          fi
+          SHORT_SHA=$(git rev-parse --short HEAD)
           cat > /tmp/comment.md << EOF
           📄 **Rendered documents for this PR** — [download the artifact](${ARTIFACT_URL}) (zip)
 
           Contains the official Word documents, PDFs, and web-page markdown for every
-          document in \`documents/\`, rendered from this PR at ${HEAD_SHA}.
+          document in \`documents/\`, rendered from this PR at ${SHORT_SHA}.
           Regenerated automatically on every push.
           EOF
-          gh pr comment "$PR_NUMBER" --repo "${{ github.repository }}" \
+          gh pr comment "$PR_NUMBER" --repo "$REPO" \
             --edit-last --create-if-none --body-file /tmp/comment.md
