@@ -1,0 +1,357 @@
+meta:
+  slug: temperature-controlled-room
+  abbrev: A28-116B
+  number: 1
+  name: "SAIL Temperature Controlled Room (116B)"
+  title: "Occupancy and Work Within the SAIL Temperature Controlled Room (Room 116B)"
+  status: Draft
+  version: "2.0"
+  version_issue_date: "2026-07-16"
+  description: "Risk assessment and safe work procedure for occupancy of and work within the SAIL temperature controlled room (Room 116B), a sealed room with recirculating air conditioning, covering carbon dioxide accumulation, working in isolation, and electric shock from flood water."
+  key_hazards: "Carbon dioxide accumulation and asphyxiation, working in isolation in a sealed room, CO2 monitor or ventilation failure, electric shock from flood water"
+  includes: "Mandatory door open rule, pre-entry checks, CO2 alarm response, flood and electric shock response, lone working notification, training requirements"
+  faculty_school: "Faculty of Science — School of Physics (SAIL Labs)"
+  prepared_by: "Chris Betters"
+  supervisors:
+    - "Sergio Leon-Saval"
+    - "Chris Betters"
+  issue_date: "2016-06-16"
+  next_review_date: "2027-07-16"
+
+ra:
+  activity: |-
+    - Entering and occupying the temperature controlled room
+    - Extended work on optical and instrument hardware within the room
+    - Brief access to check, start or stop equipment
+    - Adjustment and monitoring of experiments requiring a thermally stable environment
+    - Response to CO2, ventilation or flood alarms
+    This document supersedes RA-SWP-A28-116B (initial issue 16/06/2016, current issue 26/04/2020).
+    Research area: Sydney Astrophotonic Instrumentation Labs (SAIL).
+  location: "Room 116B, Building A28, School of Physics, University of Sydney"
+  persons_at_risk:
+    - "Laboratory staff"
+    - "Research students"
+    - "Technicians"
+    - "Visitors to the laboratory"
+    - "Facilities and maintenance personnel"
+    - "Cleaning staff"
+  team:
+    - "Sergio Leon-Saval"
+    - "Barnaby Norris"
+    - "Julia Bryant"
+    - "Chris Betters"
+  references:
+    - "Work Health and Safety Act 2011 (NSW)"
+    - "Work Health and Safety Regulation 2017 (NSW)"
+    - "Safe Work Australia, Workplace Exposure Standards for Airborne Contaminants (2024) - carbon dioxide TWA 5,000 ppm (8-hour), STEL 30,000 ppm (15-minute)"
+    - "Safe Work Australia, Confined Spaces Code of Practice (2020) - referenced as guidance only. Room 116B is a normally occupied workroom with a personnel door and is NOT a confined space under WHS Regulation 2017 Part 4.3. The code is cited only for its guidance on atmospheric monitoring and rescue planning, because the room shares the sealed, recirculating atmosphere characteristic that drives the CO2 hazard."
+    - "AS 1668.2-2012 The use of ventilation and airconditioning in buildings, Part 2: Mechanical ventilation in buildings"
+    - "AS/NZS 3000:2018 Electrical installations (Wiring Rules)"
+    - "AS/NZS 3760:2022 In-service safety inspection and testing of electrical equipment"
+    - "Safe Work Australia, Managing the Work Environment and Facilities Code of Practice (2018)"
+    - "University of Sydney WHS policies and procedures, including working alone and after-hours guidance"
+    - "SAIL General Optical and Laser Laboratory Safety risk assessment (general-lab-safety), which also covers Room 116B"
+    - "Superseded document RA-SWP-A28-116B (26/04/2020)"
+  risks:
+    - task: "Extended work in the room with the door closed"
+      hazards: "Excess carbon dioxide levels"
+      harm: |-
+        The room is sealed with recirculating air conditioning. Extended time in the room causes a slow
+        build up of exhaled CO2, leading to:
+        - Headaches and dizziness
+        - Drowsiness and impaired judgement
+        - Rapid breathing and confusion
+        - Loss of consciousness
+        - Asphyxiation in the extreme case
+      controls: |-
+        Engineering: CO2 monitor installed, triggers fresh air intake when levels increase.
+        Engineering: Red mushroom panic button installed in the room to sound an alarm.
+        Engineering: Temperature control by air recirculation.
+        Administrative: General SAIL induction and specific 116B induction.
+      current_rating: "Medium"
+      additional_controls: |-
+        - Main door MUST remain open whenever the room is occupied. This is the primary control.
+        - If the door must be closed for thermal stability, personnel MUST leave the room.
+        - Door-closed access limited to brief equipment checks only.
+        - Evacuate immediately if the CO2 alarm sounds. Do NOT investigate first.
+        - Warning signage on the door stating the door open rule and the CO2 risk.
+        - Induction to cover the symptoms of CO2 exposure.
+        - Scheduled CO2 sensor calibration and fresh air intake function test.
+      residual_rating: "Low"
+    - task: "CO2 monitor, alarm or fresh air intake fails while the room is occupied"
+      hazards: "Failure of the primary atmospheric control; undetected CO2 accumulation"
+      harm: |-
+        - No warning of rising CO2
+        - Occupant becomes drowsy or unconscious without warning
+        - Delayed detection of a hazardous atmosphere
+      controls: |-
+        Engineering: CO2 monitor with automatic fresh air introduction.
+        Engineering: Panic button independent of the CO2 system.
+        Administrative: Building maintenance of HVAC plant.
+      current_rating: "Medium"
+      additional_controls: |-
+        - The door open rule provides passive protection independent of the monitor.
+        - Periodic verification that the sensor and fresh air intake actually operate (function test, NOT a power-on check).
+        - Sensor calibration to the manufacturer schedule.
+        - Any alarm activation, fault or sensor error reported to the supervisor and building manager, and logged.
+        - The room MUST NOT be occupied for extended work while the CO2 system is known faulty or under maintenance.
+        Residual risk remains Medium rather than Low: incapacitation in a sealed room retains a Major
+        consequence even at Rare likelihood, because the failure removes the warning the occupant relies on.
+      residual_rating: "Medium"
+    - task: "Working alone in the room, particularly after hours"
+      hazards: "Isolation within a sealed room; delayed discovery if incapacitated"
+      harm: |-
+        - Delayed emergency response if the occupant collapses
+        - No assistance available
+        - Consequences of any other incident (CO2, electric shock, injury) worsened by delay
+      controls: |-
+        Engineering: Red mushroom panic button installed in the room.
+        Administrative: Notification of supervisor or appropriate person that work is occurring in the lab.
+        Administrative: Building security and access controls, after-hours security patrols.
+      current_rating: "Medium"
+      additional_controls: |-
+        - Door to remain open, maintaining line of sight and audibility to the corridor.
+        - Confirm the panic button is functional and reachable from the work position before starting.
+        - Mobile phone carried and accessible.
+        - Buddy system or agreed check-in schedule for extended or after-hours work.
+        - Do NOT work alone in the room if feeling unwell.
+        - Panic button included in scheduled function testing.
+        Residual risk remains Medium rather than Low: a lone occupant who is incapacitated retains a Major
+        consequence even at Rare likelihood, since the controls shorten the delay rather than remove it.
+      residual_rating: "Medium"
+    - task: "Door closed or latched while a person is inside"
+      hazards: "Loss of the primary CO2 control; potential entrapment"
+      harm: |-
+        - Rapid loss of the door open protection
+        - CO2 accumulation with an occupant present
+        - Occupant unable to summon help if also incapacitated
+      controls: |-
+        Engineering: Panic button installed in the room.
+        Engineering: CO2 monitor and automatic fresh air intake.
+        Engineering: Door openable from the inside.
+      current_rating: "High"
+      additional_controls: |-
+        - Signage on BOTH faces of the door: do not close while occupied.
+        - Physical door retention (hold-open device or wedge) while the room is occupied.
+        - Others MUST check the room is unoccupied before closing the door.
+        - Induction to cover the door rule explicitly.
+        - Verify the door can be opened from the inside as part of periodic checks.
+        Residual risk remains Medium rather than Low: the consequence of an occupant sealed in the room
+        stays Major even once likelihood is reduced to Rare.
+      residual_rating: "Medium"
+    - task: "Flood water on the laboratory floor"
+      hazards: "Electric shock"
+      harm: |-
+        Flood water from a failed drainage system could lead to electrical systems coming into contact
+        with water:
+        - Electric shock
+        - Electrocution
+        - Burns
+        - Slips and falls on wet flooring
+        - Damage to equipment
+      controls: |-
+        Engineering: Socket outlets protected by RCD.
+        Engineering: Socket outlets mounted above floor level.
+        Engineering: Building electrical installation to AS/NZS 3000.
+      current_rating: "Medium"
+      additional_controls: |-
+        - Flood emergency procedure including evacuation of affected areas.
+        - Do NOT enter the room if standing water is present. Isolate power at the distribution board first.
+        - Report water ingress or drainage faults immediately.
+        - Keep floor-standing equipment, leads and power boards clear of the floor where practicable.
+        - RCD testing and equipment test and tag current.
+      residual_rating: "Low"
+  implementation_date: "2026-07-16"
+  additional_controls:
+    - control: "Warning signage on both faces of the 116B door - door open rule and CO2 risk"
+      resources: "Signage production"
+      responsible: "Laboratory Manager"
+      date: "2026-08-14"
+      riskware_ref: "N/A"
+    - control: "Fit a door hold-open device or provide a door wedge for use while the room is occupied"
+      resources: "Hardware, minor installation"
+      responsible: "Facilities / Laboratory Manager"
+      date: "2026-08-14"
+      riskware_ref: "N/A"
+    - control: "Scheduled function test of the CO2 sensor, alarm and fresh air intake (function test, NOT a power-on check)"
+      resources: "Qualified technician, calibration equipment"
+      responsible: "Facilities / Building Manager"
+      date: "2026-08-14, then quarterly"
+      riskware_ref: "N/A"
+    - control: "Scheduled function test of the red mushroom panic button, and confirmation of where the alarm reports to"
+      resources: "Technician time"
+      responsible: "Facilities / Laboratory Manager"
+      date: "2026-08-14, then quarterly"
+      riskware_ref: "N/A"
+    - control: "Document the flood emergency procedure, including the power isolation point and evacuation of affected areas"
+      resources: "Time, consultation with Facilities"
+      responsible: "Laboratory Manager"
+      date: "2026-08-14"
+      riskware_ref: "N/A"
+    - control: "Add 116B CO2, door and panic button content to the SAIL induction and record completion"
+      resources: "Induction materials, time"
+      responsible: "Laboratory Manager"
+      date: "2026-08-14"
+      riskware_ref: "N/A"
+    - control: "Confirm and record RCD protection and above-floor mounting of all 116B socket outlets"
+      resources: "Qualified electrician"
+      responsible: "Facilities"
+      date: "2026-08-14, then per AS/NZS 3760"
+      riskware_ref: "N/A"
+    - control: "Establish a check-in procedure for extended or after-hours solo work in 116B"
+      resources: "Log book or electronic system"
+      responsible: "Laboratory Manager"
+      date: "2026-08-14"
+      riskware_ref: "N/A"
+    - control: "TODO: Confirm the CO2 alarm set point and that the alarm reports to an attended location after hours. This is not recorded in the source document and is load-bearing for the ratings above."
+      resources: "Facilities consultation"
+      responsible: "Building Manager"
+      date: "2026-08-14"
+      riskware_ref: "N/A"
+  emergency_controls:
+    - "CRITICAL: NEVER work in Room 116B with the door closed. The door open rule is the primary control, not a convenience."
+    - "If the door must be closed to hold temperature, personnel MUST leave the room. Door-closed entry is limited to brief equipment checks."
+    - "NEVER silence, bypass or obstruct the CO2 monitor, its fresh air intake, or the panic button. NEVER block the panic button with equipment or stored items."
+    - "If the CO2 system is faulty or under maintenance, the room MUST NOT be used for extended work."
+    - "CO2 ALARM: evacuate the room immediately. Close the door behind you once the room is unoccupied. Do NOT re-enter to retrieve items. Notify supervisor and building manager. Restrict access until the alarm clears and CO2 levels are confirmed normal."
+    - "CO2 EXPOSURE (headache, dizziness, confusion, rapid breathing, loss of consciousness): remove the person from the room if safe to do so, move to fresh air, loosen tight clothing, keep them calm and still, monitor breathing and consciousness. If unconscious, call 000 immediately and begin first aid if trained. Seek medical attention for moderate to severe symptoms."
+    - "There is NO respirator or breathing apparatus available or appropriate for CO2. A filter cartridge does NOT protect against CO2 or oxygen displacement. Evacuation is the only response. Do NOT attempt a rescue that requires you to remain in a hazardous atmosphere."
+    - "Do NOT enter a room with an active CO2 alarm alone. Secure the door fully open first and have a second person present."
+    - "FLOOD WATER: do NOT enter the room or step into standing water. Isolate power at the distribution board if it is safe and dry to reach. Evacuate the affected area and notify Facilities and the building manager."
+    - "ELECTRIC SHOCK: do NOT touch a person in contact with electricity. Isolate the supply first, then call 000. Once isolated and the person is clear, begin first aid if trained. All persons who receive an electric shock MUST seek medical attention, even if they appear uninjured."
+    - "PANIC BUTTON: sounds an alarm to summon assistance. Responders MUST NOT enter alone if a CO2 alarm is also active. Call 000 if the person is unconscious or unresponsive."
+    - "FIRE: evacuate, activate the building fire alarm, call 000, do not re-enter, follow fire warden instructions and proceed to the assembly point."
+    - "The room has no process requiring emergency shutdown. The emergency action for 116B is evacuation of the room, not shutdown of plant. Equipment inside the room is covered by its own SWP."
+    - "Report all alarm activations, faults, incidents and near misses via RiskWare."
+    - "Emergency services 000. USyd Security 9351 3333. Poisons Information Centre 13 11 26."
+    - "TODO: Insert direct contact numbers for the supervisors, the School of Physics Safety Officer, the A28 Building Manager / Facilities, the building fire warden and the first aid officers. These were not recorded in the source document."
+    - "First aid kit location: same level as the laboratories, near the parents room (outside the laboratory areas)."
+
+swp:
+  hazards:
+    - hazard: "Carbon dioxide accumulation in a sealed, recirculating air conditioned room"
+      controls: |-
+        - Main door MUST remain open whenever the room is occupied - primary control
+        - CO2 monitor triggers automatic fresh air intake before levels become unsafe
+        - Red mushroom panic button installed in the room to sound an alarm
+        - Evacuate immediately if the CO2 alarm sounds - do NOT investigate first
+        - If the door must be closed for thermal stability, leave the room
+        - General SAIL induction and specific 116B induction
+    - hazard: "Failure of the CO2 monitor, alarm or automatic fresh air intake"
+      controls: |-
+        - The door open rule protects you independently of the monitor
+        - Do NOT occupy the room for extended work with a faulty CO2 system
+        - Report any fault, sensor error or alarm activation to the supervisor and building manager
+        - Scheduled function test and calibration by Facilities
+    - hazard: "Working in isolation within a sealed room, particularly after hours"
+      controls: |-
+        - Notify your supervisor or an appropriate person that you are working in the lab
+        - Confirm the panic button is reachable from your work position before starting
+        - Carry a mobile phone
+        - Agree a check-in time for extended or after-hours work
+        - Do NOT work alone in the room if feeling unwell
+    - hazard: "Door closed or latched while a person is inside"
+      controls: |-
+        - Secure the door open with a hold-open device or wedge before starting work
+        - Check the room is unoccupied before closing the door
+        - Verify the door opens from the inside
+        - Signage on both faces of the door
+    - hazard: "Electric shock from flood water on the laboratory floor, and slips on wet flooring"
+      controls: |-
+        - Check the floor for standing water BEFORE entering
+        - Do NOT enter or step into standing water - isolate power at the distribution board first
+        - Socket outlets are RCD protected and mounted above floor level
+        - Report water ingress or drainage faults immediately
+  resources:
+    - "No PPE is required for occupancy of the room itself. The controls for this room are engineering and administrative, not PPE based."
+    - "PPE required by the SWP of any equipment operated inside the room applies as normal."
+    - "Enclosed footwear as per general laboratory rules."
+    - "NOTE: no respiratory protection is provided or appropriate for CO2. A filter cartridge does NOT protect against CO2 or oxygen displacement. Evacuation is the only response."
+    - "Mobile phone, carried, for emergency calls and check-ins."
+    - "Door wedge or hold-open device."
+    - "Access credentials for Room 116B."
+    - "Safety equipment that MUST be present and operational: CO2 monitor with automatic fresh air intake; red mushroom panic button, unobstructed and reachable from the work position; door openable from the inside; warning signage on the door."
+    - "Nearest fire extinguisher and emergency exit - location known before starting."
+    - "First aid kit: same level as the laboratories, near the parents room."
+    - "Room 116B is a sealed room with recirculating air conditioning for thermal stability. It has no continuous outside air supply while the door is closed. Fresh air is introduced automatically when the CO2 monitor detects rising levels. The OPEN DOOR is the reliable source of fresh air - the CO2 monitor is a backstop, not a licence to close the door."
+  steps:
+    - "BEFORE STARTING: NEVER work in Room 116B with the door closed. If the door must be closed to hold temperature, you MUST leave the room. NEVER silence, bypass or obstruct the CO2 monitor, fresh air intake or panic button. Evacuate immediately if the CO2 alarm sounds. Do NOT work alone if you feel unwell."
+    - "PRE-ENTRY CHECK 1 - Floor: look for standing water or signs of water ingress before entering. If water is present, do NOT enter. Go to the flood water emergency procedure."
+    - "PRE-ENTRY CHECK 2 - CO2 monitor: confirm the monitor is powered and not displaying a fault or alarm. If in alarm, do NOT enter and notify the supervisor and building manager. If faulty, blank or showing a sensor error, do NOT occupy for extended work. Report it."
+    - "PRE-ENTRY CHECK 3 - Panic button: confirm the red mushroom button is visible, unobstructed and reachable from where you will be working. If equipment blocks it, clear the access before starting."
+    - "PRE-ENTRY CHECK 4 - Door: open the main door fully. Fit the hold-open device or wedge so it cannot swing or be pushed closed. Confirm the door can be opened from the inside."
+    - "PRE-ENTRY CHECK 5 - Notify: tell your supervisor or another appropriate person that you are working in the lab and state the expected duration. For extended or after-hours work, agree a check-in time. Carry your mobile phone."
+    - "PRE-ENTRY CHECK 6 - Equipment: any instrument operated inside 116B has its own SWP. Complete its pre-operation checks as well."
+    - "BRIEF EQUIPMENT CHECK (door closed): permitted ONLY for checking, starting or stopping equipment. Confirm the CO2 monitor is not in alarm, enter, perform the check, and leave. Do NOT settle in to work. If the task extends beyond a brief check, open and secure the door, or leave. If you feel any headache, dizziness or drowsiness, leave immediately."
+    - "EXTENDED WORK (door open): confirm the door is secured open before starting. This is not optional. Carry out the work per the relevant equipment SWP."
+    - "EXTENDED WORK: monitor yourself throughout for CO2 symptoms - headache, dizziness, drowsiness, rapid breathing, difficulty concentrating. If any symptom appears, leave the room immediately, move to fresh air, and report it. Do NOT dismiss it."
+    - "EXTENDED WORK: if the CO2 alarm sounds, evacuate immediately. Do NOT allow anyone to close the door while you are inside. Meet any agreed check-in times."
+    - "THERMAL STABILITY WORK REQUIRING A CLOSED DOOR: complete all in-room work first with the door open, then LEAVE THE ROOM and close the door from outside. Verify visually that no one else is inside before closing - do NOT assume. Monitor and control the experiment remotely where possible. To return, repeat the pre-entry checks."
+    - "COMPLETION: complete or safely pause work per the equipment SWP. Check that no other person remains in the room."
+    - "COMPLETION: remove the door hold-open device and close the door. The room is now unoccupied and the door is closed for thermal stability."
+    - "COMPLETION: confirm the CO2 monitor is operating and not in fault, and that the panic button remains unobstructed."
+    - "COMPLETION: notify your supervisor or check-in contact that you have finished, if a check-in was agreed. Report any fault, alarm activation or water ingress observed during the session."
+  emergency_shutdown:
+    - "The room has no process requiring emergency shutdown. The emergency action for Room 116B is EVACUATION OF THE ROOM, not shutdown of plant."
+    - "Evacuate if: the CO2 alarm sounds; you experience headache, dizziness, drowsiness or rapid breathing; another occupant appears confused, drowsy or unresponsive; water appears on the floor; there is smoke, fire or a burning smell; the building fire alarm sounds; or the CO2 monitor fails while you are inside."
+    - "Leave the room immediately and move to fresh air in the corridor."
+    - "Press the red mushroom panic button on the way out IF a person is affected or trapped."
+    - "Close the door behind you once the room is unoccupied."
+    - "Do NOT re-enter to retrieve items."
+    - "Isolate power to room equipment at the distribution board ONLY if it is safe and dry to do so."
+    - "Notify the supervisor and building manager. Restrict access until cleared."
+    - "Call 000 if anyone is unconscious, unresponsive or has symptoms beyond mild."
+    - "RETURNING: do NOT enter until CO2 levels are confirmed normal and the supervisor or building manager has verified the system is operational. Investigate and record the cause (door left closed, sensor malfunction, ventilation failure). Report via RiskWare. Extended work MUST NOT resume until all safety systems are verified functional."
+  emergency_procedures:
+    - "CO2 ALARM: evacuate the room immediately - do NOT investigate first. Close the door behind you once the room is empty. Do NOT re-enter to retrieve items. Notify the supervisor and building manager immediately. Restrict access until the alarm clears. Do NOT enter until CO2 levels are confirmed normal and the system verified operational. Investigate the cause and report via RiskWare."
+    - "CO2 EXPOSURE (headache, dizziness, confusion, rapid breathing, loss of consciousness): remove the person from the room immediately IF safe to do so. Do NOT enter a room with an active CO2 alarm alone - secure the door fully open first. If you cannot reach them safely, call 000 and wait for emergency services."
+    - "CO2 EXPOSURE: move the person to a fresh air area. If unconscious, call 000 immediately and begin first aid if trained. Loosen tight clothing. Keep the person calm and still. Monitor breathing and consciousness. Seek medical attention for moderate to severe symptoms. Report to the supervisor and via RiskWare."
+    - "CO2 RESCUE LIMIT: there is no respirator or breathing apparatus available for CO2 in this room. Do NOT attempt a rescue that requires you to remain in a hazardous atmosphere."
+    - "FLOOD WATER / ELECTRIC SHOCK: do NOT enter the room or step into standing water. Isolate power to the room at the distribution board IF the board is safe and dry to reach. Evacuate the affected area and prevent others from entering. Notify Facilities and the building manager immediately."
+    - "ELECTRIC SHOCK: if a person is in contact with electricity, do NOT touch them. Isolate the supply first. Call 000. Once isolated and the person is clear, begin first aid if trained and commence CPR if trained and required. All persons who receive an electric shock MUST seek medical attention, even if they appear uninjured."
+    - "FLOOD AFTERMATH: equipment exposed to water MUST be tagged out and inspected by a qualified electrician before reuse. Report via RiskWare."
+    - "PANIC BUTTON ACTIVATION: the red mushroom button sounds an alarm to summon assistance. Responders MUST NOT enter the room alone if a CO2 alarm is also active. Secure the door fully open before entering. Call 000 if the person is unconscious or unresponsive. Notify the supervisor."
+    - "FIRE: evacuate the room, activate the building fire alarm, call 000, do NOT re-enter. Follow the building evacuation procedure and fire warden instructions. Proceed to the designated assembly point. Only fight a small fire if it is safe to do so and you are trained."
+    - "EQUIPMENT MALFUNCTION: cease work in the room. Do NOT continue occupancy with a failed CO2 monitor, fresh air intake or panic button. Tag the room or system as defective. Notify the supervisor and building manager. Arrange qualified technician inspection. Do NOT resume extended work until safety systems are verified functional."
+    - "EMERGENCY CONTACTS: Emergency services 000. USyd Security 9351 3333. Poisons Information Centre 13 11 26."
+    - "TODO: Insert direct contact numbers for the supervisors, the School of Physics Safety Officer, the A28 Building Manager / Facilities, the building fire warden and the first aid officers."
+    - "First aid kit location: same level as the laboratories, near the parents room (outside the laboratory areas)."
+  cleanup_waste:
+    - "Occupancy of the room generates no waste and requires no specific clean up."
+    - "After each use: remove personal items and any temporary equipment."
+    - "Keep the area around the panic button clear at all times."
+    - "Keep the door swept clear so it can be secured open."
+    - "Return the door wedge or hold-open device to its storage point."
+    - "Do NOT leave items on the floor that would obstruct evacuation or be affected by water ingress."
+    - "Waste generated by equipment operated inside the room is covered by that equipment's own SWP."
+    - "PERIODIC MAINTENANCE: CO2 sensor calibration and fresh air intake function test (NOT a power-on check) - quarterly, Facilities."
+    - "PERIODIC MAINTENANCE: panic button function test, and confirmation of where the alarm reports to - quarterly, Facilities / Laboratory Manager."
+    - "PERIODIC MAINTENANCE: verify the door opens from the inside - quarterly."
+    - "PERIODIC MAINTENANCE: confirm signage is present and legible on both faces of the door - quarterly."
+    - "PERIODIC MAINTENANCE: RCD testing and equipment test and tag per AS/NZS 3760 - Facilities."
+    - "Report drainage or water ingress faults immediately. Do NOT wait for the schedule."
+  references:
+    - "Work Health and Safety Act 2011 (NSW)"
+    - "Work Health and Safety Regulation 2017 (NSW)"
+    - "Safe Work Australia, Workplace Exposure Standards for Airborne Contaminants (2024) - carbon dioxide TWA 5,000 ppm, STEL 30,000 ppm"
+    - "Safe Work Australia, Confined Spaces Code of Practice (2020) - guidance only; Room 116B is NOT a confined space"
+    - "AS 1668.2-2012 Mechanical ventilation in buildings"
+    - "AS/NZS 3000:2018 Electrical installations (Wiring Rules)"
+    - "AS/NZS 3760:2022 In-service safety inspection and testing of electrical equipment"
+    - "University of Sydney WHS policies, including working alone and after-hours guidance"
+    - "SAIL General Optical and Laser Laboratory Safety risk assessment and safe work procedure (general-lab-safety)"
+    - "Superseded document RA-SWP-A28-116B (26/04/2020)"
+  competency:
+    - "General SAIL induction."
+    - "Specific Room 116B induction, covering: why the room is sealed and what recirculating air conditioning means for the atmosphere; the door open rule and why it is the primary control, not a convenience; what to do when thermal stability requires a closed door (leave the room)."
+    - "Specific Room 116B induction, covering: location, function and reading of the CO2 monitor; location and operation of the red mushroom panic button and where the alarm reports to; recognition of CO2 exposure symptoms in yourself and others."
+    - "Specific Room 116B induction, covering: CO2 alarm response (evacuate, do NOT investigate); flood water and electric shock response and the power isolation point; lone working notification and check-in expectations; that no respiratory protection is available or appropriate for CO2."
+    - "Equipment-specific training for any instrument operated within the room, per its own SWP."
+    - "COMPETENCY ASSESSMENT - the user MUST demonstrate, in the room: correct pre-entry checks (floor, CO2 monitor, panic button, door secured open); locating and describing operation of the panic button from the work position; correct statement of the door rule including the closed-door case."
+    - "COMPETENCY ASSESSMENT - the user MUST demonstrate: correct description of CO2 symptoms and the required response; correct CO2 alarm response; correct flood water response including not entering; correct notification and check-in procedure for solo work."
+    - "ONGOING: refresher at induction renewal, or after any incident or alarm activation in 116B. Re-brief all users if the CO2 system, panic button or door arrangement changes."
+    - "RECORD KEEPING: induction and competency sign-off recorded by the Laboratory Manager. Alarm activations, faults and incidents logged and reported via RiskWare. Function test and calibration records retained by Facilities."
+  assessors:
+    - "Sergio Leon-Saval"
+    - "Chris Betters"
+    - "Barnaby Norris"
