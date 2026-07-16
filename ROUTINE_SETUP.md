@@ -114,11 +114,11 @@ Re-open or edit the issue once these are filled in and I will retry on the next 
 
 Then exit. Do not branch, do not generate documents.
 
-# Step 4: Derive slug and document number
+# Step 4: Derive slug, building and rooms
 
 - Take the value of `**Equipment Slug**` if present. Otherwise lowercase the equipment name. Strip backticks/quotes, replace any non-`[a-z0-9-]` character with `-`, collapse repeat dashes, trim leading/trailing dashes, cap at 80 chars. Call this `SLUG`.
-- If `documents/<SLUG>.yaml` does not exist, the document number is `1`. If it exists, count files matching `documents/<SLUG>*.yaml` and use `count + 1`.
-- Reference numbers are derived automatically by the renderer from `meta.abbrev` + `meta.number` — you do not write them anywhere.
+- From the issue's location field, extract the building code (e.g. `A28`) for `meta.building` and any room numbers (e.g. `218G`) for `meta.rooms` (a list; omit the key entirely when no specific rooms apply). If the building is not stated, use `A28` (School of Physics) and flag it with `[VERIFY: building]` in the PR body.
+- Reference numbers are derived automatically by the renderer as `{RA|SWP}-{building}-SAIL-{rooms "_"-joined, omitted if none}-{slug}` — you do not write them anywhere.
 
 # Step 5: Load the schema and system prompt
 
@@ -132,7 +132,7 @@ Follow that prompt strictly: Australian English, AS/NZS standards, WHS Act 2011,
 
 Write ONE file, `documents/<SLUG>.yaml`, following the schema exactly:
 
-- `meta:` — slug (= `<SLUG>`), abbrev, number, name, title, `status: Draft`, version "1.0", description, key_hazards, includes, faculty_school, prepared_by, supervisors, issue_date, next_review_date.
+- `meta:` — slug (= `<SLUG>`), building, rooms (omit if none), name, title, `status: Draft`, version "1.0", description, key_hazards, includes, faculty_school, prepared_by, supervisors, issue_date, next_review_date.
 - `ra:` — activity, location, persons_at_risk, team, references, risks (8+), implementation_date, additional_controls, emergency_controls.
 - `swp:` — hazards, resources, steps, emergency_shutdown, emergency_procedures, cleanup_waste, references, competency, assessors.
 
@@ -235,7 +235,7 @@ If the labels do not include `review`, exit silently with a transcript line expl
 
 Parse the issue body (bold-labelled fields, value runs until the next `**` or `##`):
 
-- `**Equipment/Process Slug**` (required) → documents/<slug>.yaml must exist. If the field is missing, try to resolve the slug from `**Document Reference:**` by matching the ABBREV against meta.abbrev across documents/*.yaml.
+- `**Equipment/Process Slug**` (required) → documents/<slug>.yaml must exist. If the field is missing, try to resolve the slug from `**Document Reference:**` — the reference ends with the slug (`RA-<building>-SAIL[-<rooms>]-<slug>`), so take the trailing slug and check it against documents/*.yaml.
 - `**Summary of Required Updates:**` and `**Affected Sections:**` — the substance of the change.
 - The `## Reason for Review` checked boxes and any `## Incident/Near-Miss Details`.
 
@@ -304,7 +304,7 @@ For each document needing review, open one issue using the Document Review templ
 
 - Title: `[REVIEW] <name> — review due <next_review_date>`
 - Labels: `review, documentation`
-- Body: follow .github/ISSUE_TEMPLATE/document-review.md, pre-filling **Equipment/Process Slug**, **Document Reference** (derive SAIL-RA-<ABBREV>-<NNN> from meta), **Current Version**, **Last Review Date** (meta.version_issue_date), and ticking "Annual scheduled review". In Additional Notes state whether the document is overdue or approaching its date, and mention that opening this issue with the `review` label triggers the automatic draft-update routine.
+- Body: follow .github/ISSUE_TEMPLATE/document-review.md, pre-filling **Equipment/Process Slug**, **Document Reference** (derive RA-<building>-SAIL-<rooms "_"-joined, omitted if none>-<slug> from meta), **Current Version**, **Last Review Date** (meta.version_issue_date), and ticking "Annual scheduled review". In Additional Notes state whether the document is overdue or approaching its date, and mention that opening this issue with the `review` label triggers the automatic draft-update routine.
 
 # Step 4: Summary
 

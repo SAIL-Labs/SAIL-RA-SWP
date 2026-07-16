@@ -4,8 +4,7 @@
 
 meta:
   slug: bambu-h2d
-  abbrev: BAMBU-H2D
-  number: 1
+  building: A28
   name: "Bambu Lab H2D Laser Edition"
   title: "Operation of Bambu Lab H2D Laser Edition with 10W Class 4 Laser Module"
   status: Draft
@@ -801,7 +800,7 @@ swp:
     - "Bambu Lab H2D User Manual (latest version)"
     - "Bambu Lab H2D Laser Safety Document (wiki.bambulab.com/en/h2/laser-safety-document)"
     - "Bambu Lab H2D Technical Specifications"
-    - "Risk Assessment SAIL-RA-BAMBU-H2D-001"
+    - "Risk Assessment RA-A28-SAIL-bambu-h2d"
     - "University of Sydney WHS Laser Safety Policy and Procedures"
     - "University of Sydney WHS Fire Safety Procedures"
     - "Material Safety Data Sheets (SDS) for approved materials"

@@ -293,9 +293,9 @@ Before submitting PR, verify:
 - `equipment-name.md` (lowercase, hyphens)
 - `bambu-h2d.md` not `Bambu_H2D.md`
 
-**References:**
-- `SAIL-RA-EQUIPMENT-001` (uppercase)
-- `SAIL-SWP-BAMBU-H2D-001`
+**References** (derived by the renderer, never typed):
+- `{RA|SWP}-<building>-SAIL-<rooms>-<slug>`, rooms `_`-joined and omitted if none
+- e.g. `RA-A28-SAIL-218G-3sae-cms`, `SWP-A28-SAIL-bambu-h2d`
 
 **Permalinks:**
 - `/risk-assessments/equipment-name/`

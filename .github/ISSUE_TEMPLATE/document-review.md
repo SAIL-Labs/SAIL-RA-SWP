@@ -16,7 +16,7 @@ labels exactly as they are; they are parsed programmatically.
 
 **Equipment/Process Slug** *(the documents/<slug>.yaml filename — e.g. `bambu-h2d`)*:
 
-**Document Reference:** (e.g., SAIL-RA-BAMBU-H2D-001)
+**Document Reference:** (e.g., RA-A28-SAIL-bambu-h2d)
 
 **Current Version:**
 

@@ -57,12 +57,12 @@ ALLOWED_RATINGS = ("Low", "Medium", "High", "Very High")
 ALLOWED_STATUS = ("Draft", "Approved")
 
 META_KEYS = [
-    "slug", "number", "name", "title", "status", "version", "version_issue_date",
+    "slug", "building", "name", "title", "status", "version", "version_issue_date",
     "description", "faculty_school", "prepared_by", "supervisors",
     "issue_date", "next_review_date",
 ]
-META_OPTIONAL_KEYS = ["abbrev", "key_hazards", "includes"]
-META_LIST_KEYS = ["supervisors"]
+META_OPTIONAL_KEYS = ["rooms", "key_hazards", "includes"]
+META_LIST_KEYS = ["supervisors", "rooms"]
 
 RA_KEYS = [
     "activity", "location", "persons_at_risk", "team", "references",
@@ -146,12 +146,14 @@ def validate(data: dict, source: str = "") -> None:
         errors.append(f"meta.slug: '{slug}' must be lowercase letters, digits and dashes only")
     if source and slug and Path(source).stem != slug and not Path(source).stem.startswith("_"):
         errors.append(f"meta.slug: '{slug}' must match the YAML filename ('{Path(source).stem}')")
-    if "number" in meta:
-        try:
-            if int(meta["number"]) < 1:
-                errors.append("meta.number: must be a positive integer")
-        except (TypeError, ValueError):
-            errors.append(f"meta.number: '{meta.get('number')}' is not an integer")
+    building = str(meta.get("building", "")).strip()
+    if "building" in meta and (not building or any(c.isspace() for c in building)):
+        errors.append(f"meta.building: '{meta.get('building')}' must be a non-empty code with no spaces (e.g. A28)")
+    rooms = meta.get("rooms")
+    for i, room in enumerate(rooms if isinstance(rooms, list) else []):
+        r = str(room).strip()
+        if not r or any(c.isspace() for c in r):
+            errors.append(f"meta.rooms[{i}]: '{room}' must be a non-empty room number with no spaces (e.g. 218G)")
     if meta.get("status") not in ALLOWED_STATUS:
         errors.append(f"meta.status: '{meta.get('status')}' must be one of {', '.join(ALLOWED_STATUS)}")
 
@@ -191,7 +193,8 @@ def validate(data: dict, source: str = "") -> None:
 def derive(data: dict) -> dict:
     """Return a deep-copied context with derived fields filled in.
 
-    - meta.ra_reference / meta.swp_reference from abbrev (default slug.upper()) + number
+    - meta.ra_reference / meta.swp_reference as
+      {RA|SWP}-{building}-SAIL-{rooms "_"-joined, omitted if none}-{slug}
     - meta.reference = ra_reference (the Word RA header and the SWP per-hazard
       "Associated risk assessment reference" rows both use this tag)
     - swp.version / swp.version_issue_date mapped from meta (Word SWP tags)
@@ -200,11 +203,11 @@ def derive(data: dict) -> dict:
     ctx = copy.deepcopy(data)
     meta, ra, swp = ctx["meta"], ctx["ra"], ctx["swp"]
 
-    abbrev = str(meta.get("abbrev") or meta["slug"]).upper()
-    number = int(meta["number"])
-    meta["abbrev"] = abbrev
-    meta["ra_reference"] = f"SAIL-RA-{abbrev}-{number:03d}"
-    meta["swp_reference"] = f"SAIL-SWP-{abbrev}-{number:03d}"
+    building = str(meta["building"]).strip()
+    rooms = "_".join(str(r).strip() for r in (meta.get("rooms") or []))
+    core = "-".join(p for p in (building, "SAIL", rooms, meta["slug"]) if p)
+    meta["ra_reference"] = f"RA-{core}"
+    meta["swp_reference"] = f"SWP-{core}"
     meta["reference"] = meta["ra_reference"]
 
     swp["version"] = meta["version"]

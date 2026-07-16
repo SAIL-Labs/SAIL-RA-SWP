@@ -4,8 +4,8 @@
 
 meta:
   slug: 3sae-cms
-  abbrev: CMS
-  number: 1
+  building: A28
+  rooms: ["218G"]
   name: "3SAE Combiner Manufacturing System (CMS)"
   title: "Operation of 3SAE Combiner Manufacturing System (CMS) for Fibre Optic Glass Processing"
   status: Draft
@@ -1235,7 +1235,7 @@ swp:
     - "3SAE CMS Operator's Manual and User Documentation"
     - "3SAE Combiner Manufacturing System technical specifications"
     - "Manufacturer training materials (3SAE Technologies Inc.)"
-    - "Risk Assessment SAIL-RA-CMS-001"
+    - "Risk Assessment RA-A28-SAIL-218G-3sae-cms"
     - "University WHS policies and procedures"
     - "Material Safety Data Sheets for all chemicals used with equipment"
     - "Code of Practice: Managing electrical risks in the workplace"

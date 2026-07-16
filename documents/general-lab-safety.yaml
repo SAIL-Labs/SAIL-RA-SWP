@@ -4,8 +4,7 @@
 
 meta:
   slug: general-lab-safety
-  abbrev: GENERAL
-  number: 1
+  building: A28
   name: "General Optical/Laser Lab Safety"
   title: "General Optical and Laser Laboratory Safety - All SAIL Lab Areas"
   status: Draft
@@ -328,7 +327,7 @@ ra:
       hazards: "Specific to 3D printers (fumes, thermal, mechanical)"
       harm: "See individual equipment RAs"
       controls: |-
-        - Bambu Lab H2D RA/SWP (SAIL-RA-BAMBU-H2D-001)
+        - Bambu Lab H2D RA/SWP (RA-A28-SAIL-bambu-h2d)
         - Form 3 printer RAs/SWPs
         - Dedicated 3D printing room with ventilation
       current_rating: "Medium"
@@ -1754,7 +1753,7 @@ swp:
     - "AS/NZS 2243.1:2005 Safety in laboratories - Planning and operational aspects"
     - "AS/NZS 2243.2:2006 Safety in laboratories - Chemical aspects"
     - "AS/NZS IEC 60825.1:2014 Safety of laser products - Equipment classification and requirements"
-    - "Risk Assessment SAIL-RA-GENERAL-001 (General Optical/Laser Lab Safety)"
+    - "Risk Assessment RA-A28-SAIL-general-lab-safety (General Optical/Laser Lab Safety)"
     - "Fibre Optics Handling RA/SWP (reference when developed)"
     - "Chemical Handling RA/SWP (reference when developed)"
     - "Electrical Safety RA/SWP (reference when developed)"
@@ -1833,7 +1832,7 @@ swp:
       - Competency assessment by authorised assessor
       - Sign-off on equipment-specific competency sheet
       - Name added to authorised users list for that equipment
-      Examples: Bambu Lab H2D Laser Edition (SAIL-RA-BAMBU-H2D-001, SAIL-SWP-BAMBU-H2D-001); CMS Combiner Manufacturing System (SAIL-RA-CMS-001, SAIL-SWP-CMS-001); Form 3 printers; specific laser systems (Class 3B, Class 4); high voltage equipment; other specialised equipment
+      Examples: Bambu Lab H2D Laser Edition (RA-A28-SAIL-bambu-h2d, SWP-A28-SAIL-bambu-h2d); CMS Combiner Manufacturing System (RA-A28-SAIL-218G-3sae-cms, SWP-A28-SAIL-218G-3sae-cms); Form 3 printers; specific laser systems (Class 3B, Class 4); high voltage equipment; other specialised equipment
     - |-
       MANDATORY TRAINING 4 - SPECIALIST ACTIVITY TRAINING (as applicable):
       - Fibre Optics Handling: required for fibre cleaving, splicing, handling; follow Fibre Optics Handling RA/SWP; training on sharps safety, disposal, eyewash use
@@ -1898,7 +1897,7 @@ swp:
       1. Schedule induction session (allow 1.5-2 hours; ensure laboratory areas accessible for tour)
       2. Deliver induction content: present all required topics; conduct laboratory tour; demonstrate emergency equipment locations; discuss room-specific hazards relevant to trainee's work; allow time for questions
       3. Assess competency: Q&A on safety-critical topics; practical demonstration (locate emergency equipment); verify understanding; identify gaps requiring additional training
-      4. If competent: sign trainee off on sign-off sheet; add trainee to authorised users list; arrange swipe card access activation; provide trainee with copy of SAIL-RA-GENERAL-001 and SAIL-SWP-GENERAL-001; inform trainee of additional requirements (Laser Operator Certificate, equipment-specific training)
+      4. If competent: sign trainee off on sign-off sheet; add trainee to authorised users list; arrange swipe card access activation; provide trainee with copy of RA-A28-SAIL-general-lab-safety and SWP-A28-SAIL-general-lab-safety; inform trainee of additional requirements (Laser Operator Certificate, equipment-specific training)
       5. If not yet competent: provide additional training and clarification; schedule reassessment; do NOT grant access until competent
       6. Record keeping: maintain training record (name, date, assessor, outcome); update authorised users list; file signed competency sheet; track refresher training due dates
     - |-

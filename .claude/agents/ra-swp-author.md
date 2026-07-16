@@ -44,8 +44,9 @@ update `meta.next_review_date` (typically issue date + 1 year).
 Top level: `meta:`, `ra:`, `swp:` — all three mappings must exist.
 
 ### meta (shared header)
-`slug`, `number` (positive integer; reference renders as
-`SAIL-{RA|SWP}-{ABBREV}-{NNN}`), `name` (short equipment/activity name for the
+`slug`, `building` (building code, no spaces, e.g. `A28`; reference renders as
+`{RA|SWP}-{building}-SAIL-{rooms "_"-joined, omitted if none}-{slug}`, e.g.
+`RA-A28-SAIL-218G-3sae-cms`), `name` (short equipment/activity name for the
 index card), `title` (full document title), `status` (`Draft` | `Approved`),
 `version` (string, e.g. `"1.0"`), `version_issue_date`, `description` (index
 card blurb, one sentence), `faculty_school` (normally
@@ -53,9 +54,10 @@ card blurb, one sentence), `faculty_school` (normally
 `supervisors` (list), `issue_date`, `next_review_date`. Dates are
 `"YYYY-MM-DD"` strings.
 
-Optional: `abbrev` (defaults to slug uppercased — set it only when a shorter or
-historical reference is wanted), `key_hazards` (RA card line; defaults to a
-summary derived from `ra.risks`), `includes` (SWP card line).
+Optional: `rooms` (list of room numbers, no spaces, e.g. `["218G"]` — omit the
+key entirely for lab-wide documents with no specific rooms), `key_hazards` (RA
+card line; defaults to a summary derived from `ra.risks`), `includes` (SWP card
+line).
 
 Do NOT set `meta.reference` or `meta.swp_reference` — reference numbers are
 derived at render time.

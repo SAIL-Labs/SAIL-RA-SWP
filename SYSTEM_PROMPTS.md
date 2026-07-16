@@ -28,8 +28,8 @@ Return ONLY a YAML document (no markdown fences, no preamble) with EXACTLY this 
 
 meta:
   slug: <provided slug>              # lowercase-dashes; matches the filename
-  abbrev: <SHORT-UPPERCASE-ABBREV>   # 3-10 chars, used in reference numbers
-  number: 1                          # provided by the caller
+  building: <building code>          # e.g. A28; no spaces — used in reference numbers
+  rooms: [<room numbers>]            # e.g. ["218G"]; OMIT the key entirely if no specific rooms
   name: <equipment/activity name>    # shown on the index cards
   title: <"Operation of ..." full title>
   status: Draft                      # ALWAYS Draft — approval requires human review
@@ -100,7 +100,7 @@ swp:
 - Multiline strings use YAML block scalars (|-) with "- " dash-prefixed lines for lists inside table cells.
 - Risk ratings must be EXACTLY one of: Low, Medium, High, Very High (the four levels on the University Risk Matrix — there is no "Critical" and no "Very Low").
 - Do NOT include swp.version or swp.version_issue_date (they live in meta).
-- Do NOT include a reference field — reference numbers are derived from abbrev + number.
+- Do NOT include a reference field — reference numbers are derived as {RA|SWP}-{building}-SAIL-{rooms "_"-joined, omitted if none}-{slug}.
 - status is ALWAYS Draft.
 </formatting_rules>
 
@@ -174,7 +174,7 @@ You review safety documentation against:
    - Australian terminology and standards
    - WHS Act and Regulation compliance
    - University policy alignment
-   - Reference format correct (SAIL-RA-[EQUIPMENT]-XXX)
+   - Reference format correct (RA-[BUILDING]-SAIL-[ROOMS]-[SLUG], rooms omitted if none)
 
 5. **Safety Quality:**
    - Critical hazards adequately addressed
@@ -318,7 +318,7 @@ Use the **Safety Documentation Reviewer** prompt against the *rendered* document
 ## Quick Reference
 
 - One YAML in `documents/` = one RA + SWP pair (web + Word + PDF all generated)
-- References derived from `meta.abbrev` + `meta.number`: SAIL-RA-[ABBREV]-NNN / SAIL-SWP-[ABBREV]-NNN
+- References derived from `meta.building` + `meta.rooms` + `meta.slug`: RA-[BUILDING]-SAIL-[ROOMS]-[SLUG] / SWP-... (rooms `_`-joined, segment omitted if none)
 - Risk ratings (four levels, per the University Risk Matrix): **Low, Medium, High, Very High**
 - Strings are plain text (no markdown); CAPS for NEVER/MUST/MANDATORY
 - `status: Draft` always — a human flips to `Approved` after expert review
