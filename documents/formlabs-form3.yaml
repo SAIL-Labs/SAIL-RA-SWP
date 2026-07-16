@@ -1,0 +1,387 @@
+# Combined RA + SWP data for the Formlabs Form 3 SLA 3D printer.
+# Converted from the Word original "SAIL-RA-SWP-03-Operation-Maintenance-Of-Formlabs-3-SLA-3D-Printer.docx"
+# (historical reference SAIL-RA-SWP-03; initial issue 2020-06-17, last revised 02-25).
+# Render: python docgen/render.py documents/formlabs-form3.yaml
+
+meta:
+  slug: formlabs-form3
+  abbrev: FORM3
+  number: 1
+  name: "Formlabs Form 3 SLA 3D Printer"
+  title: "Operation & Maintenance Of Formlabs Form 3 SLA 3D Printer"
+  status: Draft
+  version: "2.0"
+  version_issue_date: "2026-07-16"
+  description: "Risk assessment and safe work procedure for the SAIL Formlabs Form 3 stereolithography 3D printer, covering print preparation, printing, part washing in isopropyl alcohol, curing and maintenance."
+  key_hazards: "Skin and eye contact with uncured photopolymer resin, isopropyl alcohol (highly flammable), hot surfaces, moving parts"
+  includes: "Pre-start checks, printing and finishing procedure, maintenance schedule, emergency and spill procedures, training requirements"
+  faculty_school: "Faculty of Science — School of Physics (SAIL Labs)"
+  prepared_by: "Chris Betters, Justin Digweed"
+  supervisors:
+    - "Chris Betters"
+    - "Sergio Leon-Saval"
+  issue_date: "2020-06-17"
+  next_review_date: "2027-07-16"
+
+ra:
+  activity: |-
+    The Form 3 is a commercial, precision tool intended for use in the additive manufacture of
+    end-user supplied designs from photopolymer resin. The final performance characteristics of
+    cured photopolymer resin may vary according to compliance with the instructions for use,
+    application, operating conditions, material combined with, end use, or other factors.
+
+    This RA/SWP covers operation of the SAIL Form 3, including:
+    - Print preparation (file preparation in PreForm, resin cartridge and tank installation)
+    - Printing
+    - Finishing - washing printed parts in isopropyl alcohol (IPA), drying and curing
+    - Cleanup and waste disposal
+    - Routine user maintenance and inspection
+
+    TODO: The source document is titled "Formlabs 3" but the operating and maintenance text throughout
+    refers to the "Form 3B" (the biocompatible variant). Confirm which model is installed in A28-116C
+    and make the model designation consistent before approval.
+  location: "Room A28-116C, Physics Building A28"
+  persons_at_risk:
+    - "All staff and students of SAIL that use the Form 3"
+    - "Contractors and others in the vicinity"
+  team:
+    - "Physics WHS Committee"
+    - "SAIL Staff"
+    - "RPF Staff"
+  references:
+    - "Work Health and Safety Act 2011 (NSW)"
+    - "Work Health and Safety Regulation 2017 (NSW)"
+    - "Formlabs Form 3 Quick Start Guide (support.formlabs.com/s/article/Quick-Start-Guide-Form3)"
+    - "Formlabs Form 3 Manual (media.formlabs.com/m/5a3f3cadc639b857/original/-ENUS-Form-3-Manual.pdf)"
+    - "Safety Data Sheet - Formlabs Clear V4.1 Resin (media.formlabs.com/m/6552f8debd66e922/original/-ENAU-Safety-Data-Sheet-Clear-V4-1-Resin.pdf)"
+    - "Safety Data Sheet - Formlabs Black V4.1 Resin (media.formlabs.com/m/75811facbde95dad/original/-ENAU-Safety-Data-Sheet-Black-V4-1-Resin.pdf)"
+    - "Formlabs resin technical specifications and data sheets (formlabs.com/3d-printers/resin/tech-specs/#data-sheets)"
+    - "SAIL-RA-SWP-02 - Use, storage and disposal of flammable liquids"
+    - "ChemAlert report - isopropyl alcohol (chemalert.rmt.com.au/syduni/rest/reports/available-report/8447fba0-f957-4eab-a7c5-014e9e5c51b2)"
+    - "ChemSupply isopropyl alcohol SDS (shop.chemsupply.com.au/documents/PA0131CH5R.pdf)"
+    - |-
+      CHEMICALS INVOLVED:
+      - UV curable resins - MUST NOT come into contact with the skin. Respect Formlabs resin like any
+        household chemical. Follow standard chemical safety procedures and Formlabs resin handling
+        instructions. Formlabs resin is NOT approved for use with food, drink, or medical applications
+        on the human body. Refer to the SDS for each specific resin for more detail.
+      - IPA is used in the cleaning process. Formlabs does not manufacture IPA - consult the chemical
+        manufacturer or supplier for detailed safety information and carefully follow the safety
+        instructions provided with the IPA purchased. IPA is HIGHLY FLAMMABLE, even explosive, and MUST
+        be kept away from heat, fire, or sparks. Any containers holding IPA MUST be kept closed or
+        covered when not in use. Wear protective gloves and ensure good ventilation when working with IPA.
+  risks:
+    - task: "General usage"
+      hazards: "Hot surfaces within the system cabinet"
+      harm: |-
+        - Burns to hands or arms from contact with heated surfaces inside the cabinet
+        TODO: The "Associated harm" column was blank in the source document for every risk row. The harm
+        described here is inferred from the hazard and MUST be confirmed by the assessment team.
+      controls: |-
+        Engineering: Hot surfaces are present within the system cabinet. NEVER reach inside the unit
+        while it is in operation or in its cooling down phase.
+        PPE: Protective gloves and safety glasses MUST be worn when working with the Form 3 printer.
+      current_rating: "Low"
+      additional_controls: "None"
+      residual_rating: "Low"
+    - task: "General usage"
+      hazards: "Moving parts"
+      harm: |-
+        - Crushing, pinching or entanglement injuries to fingers and hands from the build platform,
+          lead screws and light processing unit
+        TODO: Harm inferred - the source document left this column blank. Confirm with the assessment team.
+      controls: |-
+        Engineering: NEVER reach inside the unit when the system is in operation.
+        Administrative: There is an interlock system in place.
+      current_rating: "Medium"
+      additional_controls: "None"
+      residual_rating: "Low"
+    - task: "Unloading part, swapping materials"
+      hazards: "Chemical contact with uncured Formlabs photopolymer resin"
+      harm: |-
+        - Skin irritation and sensitisation from contact with uncured resin
+        - Eye irritation from splashes
+        TODO: Harm inferred - the source document left this column blank. Confirm against the SDS for each
+        resin in use and with the assessment team.
+      controls: |-
+        Administrative: Personnel are made aware through signage that gloves MUST be worn at all times
+        whilst using any Formlabs process. Refer to the SDS for the resin in use before handling.
+        PPE: Safety glasses and gloves MUST be worn at all times during this process.
+      current_rating: "Low"
+      additional_controls: "None"
+      residual_rating: "Low"
+    - task: "Cleaning parts"
+      hazards: "Chemical contact with isopropyl alcohol (IPA) and uncured resin residue"
+      harm: |-
+        - Skin defatting, drying and irritation from IPA contact
+        - Eye irritation from splashes
+        - Inhalation of IPA vapour if used outside the fume hood
+        TODO: Harm inferred - the source document left this column blank. Confirm against the IPA SDS and
+        with the assessment team.
+      controls: |-
+        Engineering: The cleaning process involves washing printed parts in a bath of isopropyl alcohol
+        (IPA). This MUST only be done inside a fume hood.
+        Administrative: The cleaning process is automated but MUST NOT be performed outside of the fume
+        cabinet. Keep IPA containers closed or covered when not in use.
+        PPE: Safety glasses and gloves MUST be worn at all times during this process.
+      current_rating: "Low"
+      additional_controls: "None"
+      residual_rating: "Low"
+  implementation_date: "2026-07-16"
+  additional_controls:
+    - control: |-
+        TODO: The source document identifies IPA as "highly flammable, even explosive" in its reference
+        notes, but contains NO risk row assessing fire or ignition of IPA vapour. Add a fire/flammability
+        risk row (task, hazard, harm, controls, ratings) or record why SAIL-RA-SWP-02 (flammable liquids)
+        is considered to cover it in full. Ratings for any new row MUST be set by the assessment team.
+      resources: "Assessment team time; SAIL-RA-SWP-02; IPA SDS"
+      responsible: "Chris Betters"
+      date: "Before approval"
+      riskware_ref: "N/A"
+    - control: |-
+        TODO: The source document has an empty "Clean up and waste disposal requirements" section. The
+        cleanup and waste content in this document is derived from the surrounding text and MUST be
+        reviewed and completed - confirm the resin waste stream, IPA waste stream, and disposal route for
+        contaminated gloves, wipes and resin tanks.
+      resources: "Process owner time; USyd chemical waste guidance"
+      responsible: "Chris Betters"
+      date: "Before approval"
+      riskware_ref: "N/A"
+    - control: |-
+        TODO: Confirm the printer model (Form 3 vs Form 3B) and reconcile the document title, operating
+        steps and maintenance schedule to the correct model.
+      resources: "Equipment engineer time"
+      responsible: "Chris Betters"
+      date: "Before approval"
+      riskware_ref: "N/A"
+    - control: |-
+        TODO: The source document's risk ratings carried likelihood/consequence detail ("Unlikely, L2",
+        "Rare, L2", "Unlikely, L3") that the current template does not have a field for. Confirm the
+        four-level ratings recorded here still reflect the assessment team's intent.
+      resources: "Assessment team time; University Risk Matrix"
+      responsible: "Chris Betters"
+      date: "Before approval"
+      riskware_ref: "N/A"
+  emergency_controls:
+    - "An emergency stop button is located on the wall in the lab."
+    - "In the event of a power outage, leave the building immediately and assemble on the sports oval on Physics Road. If it occurs after hours, call one of the listed Emergency Contacts."
+    - "If the evacuation alarm sounds, leave the room immediately and assemble on the sports oval on Physics Road."
+    - "For resin or IPA contact with skin or eyes, refer to the SDS for the chemical and apply the first aid measures it specifies. Seek medical attention if irritation persists."
+    - "Report all incidents, injuries and near misses via RiskWare."
+    - "Emergency services: 000. USyd Security: 9351 3333."
+
+swp:
+  hazards:
+    - hazard: "Hot surfaces within the system cabinet"
+      controls: |-
+        - NEVER reach inside the unit while it is in operation or in its cooling down phase
+        - Protective gloves and safety glasses MUST be worn when working with the printer
+    - hazard: "Moving parts"
+      controls: |-
+        - NEVER reach inside the unit when the system is in operation
+        - Interlock system fitted - do not open the cover until the touchscreen indicates the print is complete
+        - Disconnect the power cable before maintenance - moving parts and lead screws present crushing and tangling hazards
+    - hazard: "Chemical contact with uncured Formlabs photopolymer resin"
+      controls: |-
+        - Resin MUST NOT come into contact with the skin
+        - Gloves MUST be worn at all times whilst using any Formlabs process (signage in place)
+        - Safety glasses MUST be worn
+        - Read the SDS for the specific resin before use
+    - hazard: "Chemical contact with isopropyl alcohol (IPA), and IPA flammability"
+      controls: |-
+        - Part washing MUST only be performed inside the fume hood
+        - IPA is HIGHLY FLAMMABLE - keep away from heat, fire or sparks
+        - Keep IPA containers closed or covered when not in use
+        - Safety glasses and gloves MUST be worn
+        - Refer to SAIL-RA-SWP-02 (Use, storage and disposal of flammable liquids)
+  resources:
+    - |-
+      PERSONAL PROTECTIVE EQUIPMENT (PPE):
+      - Protective gloves (MANDATORY for all Formlabs processes)
+      - Safety glasses (MANDATORY for all Formlabs processes)
+      - Closed-toe shoes
+      TODO: The source document has no dedicated PPE list - the above is drawn from the control measures.
+      Confirm the correct glove material against the resin and IPA SDS.
+    - |-
+      CHEMICALS:
+      - Formlabs photopolymer resin (see SDS for the specific resin in use)
+      - Isopropyl alcohol (IPA) - highly flammable
+    - |-
+      EQUIPMENT:
+      - Formlabs Form 3 printer, resin tank, build platform and resin cartridge
+      - Form Wash or Finish Kit (part washing)
+      - Curing unit
+      - Fume hood (part washing MUST be performed inside it)
+      - PreForm software (formlabs.com/tools/preform)
+      TODO: Confirm the specific wash and cure units installed at SAIL - the source names "Form Wash or
+      the Finish Kit" and refers only generically to curing.
+    - |-
+      SAFETY EQUIPMENT:
+      - Nearest suitable fire extinguisher (locate before starting)
+      - Emergency stop button on the lab wall
+      - SDS for all chemicals listed above
+  steps:
+    - |-
+      PREPARATION AND PRE-START CHECKS:
+      - Ensure you have met all SAIL booking rules
+      - Read the SDS for the chemicals listed above
+      - Check that no maintenance sign is erected on the fume hood
+      - Check the exhaust is operational and that the light is switched on
+      - Check the ergonomics of the level of the worktop relative to your height; use the stainless-steel
+        steps if necessary
+      - Check that the wet bench is clean and free from contamination and there is enough space for the
+        activities to be safely carried out
+      - Locate the nearest suitable fire extinguisher
+      - If you note any issues with any of the above points, inform a SAIL staff member immediately - DO
+        NOT proceed to processing
+    - |-
+      CHECK THE OPERATING ENVIRONMENT:
+      - The operating temperature for Formlabs printers is 18-28 degrees C (64-82 degrees F)
+      - For optimal printing, DO NOT exceed this range
+    - |-
+      PREPARE THE PRINT FILE:
+      - Open the PreForm program (download the latest version from formlabs.com/tools/preform)
+      - Use PreForm to process STL or OBJ files
+      - Prepare, save, and upload FORM files to the printer
+      - Tutorials are available in the software menu; for detailed guidance search support.formlabs.com
+    - |-
+      POWER THE PRINTER ON:
+      - Connect the power cable - the printer initiates automatically
+    - |-
+      PRE-PRINT CHECKS (performed automatically by the printer before each print job):
+      - Accessories - sensors check for the proper installation of the resin tank, build platform, and
+        resin cartridge
+      - Temperature - the print chamber and resin heat to around 35 degrees C. A heating fan blows air
+        across the heater into the resin tank to heat the resin
+      - Resin - resin flows from the cartridge into the tank when the cartridge dispense arm squeezes the
+        valve open. The volume of resin in the tank is regulated through the LevelSense sensor located
+        behind the resin tank. The printer begins to fill the resin tank once a print starts and maintains
+        the level during the print. Printing begins automatically when LevelSense detects the proper
+        amount of resin
+    - |-
+      START OR STOP A PRINT:
+      - To start a print, select the job on the touchscreen and follow the prompts
+      - To stop a print in progress, select pause, then abort the print
+      - MOVING PARTS: DO NOT open the printer cover until the touchscreen indicates the print is complete
+    - |-
+      FINISHING - WASH (wear gloves and safety glasses):
+      - Use Form Wash or the Finish Kit to rinse the remaining liquid resin from the printed parts' surfaces
+      - Washing MUST only be performed inside the fume hood
+      - Keep the IPA container closed or covered when not in use
+    - |-
+      FINISHING - DRY:
+      - Allow at least 30 minutes for IPA to fully evaporate after washing
+    - |-
+      FINISHING - CURE:
+      - Cure the washed and dried parts according to the manufacturer's recommendation to achieve the
+        maximum strength
+    - |-
+      MAINTENANCE - GENERAL REQUIREMENTS:
+      - The printer shall only be maintained by a qualified and trained person
+      - DO NOT open the printer and/or investigate internal components unless under the guidance of
+        Formlabs or a certified service provider
+      - Unauthorised disassembly or repair procedures may damage the printer and void the warranty
+      - Wear personal protective equipment when performing maintenance tasks
+      - Use tools only as described
+      - Disconnect the power cable before maintenance - moving parts and lead screws present crushing and
+        tangling hazards
+      - Contact Formlabs or a certified service provider for any additional guidance
+    - |-
+      MAINTENANCE - BEFORE EACH PRINT:
+      - Resin cartridge bite valve - inspect the bite valve
+      - Resin tank interior - maintain the resin tank
+    - |-
+      MAINTENANCE - MONTHLY:
+      - Protect the ID chips on the resin tank and resin cartridge
+      - Resin tank spring fingers - protect the ID chips on the resin tank and resin cartridge
+      - Resin tank exterior - maintain the resin tank
+    - |-
+      MAINTENANCE - EVERY 3 MONTHS:
+      - Inspect the display
+      - Drip catcher - inspect the drip catcher
+      - Inspect the shells
+      - X- and Z-axis lead screws - inspect and lubricate the X- and Z-axes
+    - |-
+      POWER OFF:
+      - Power the printer off as described in the Form 3 manual when work is complete
+      TODO: The source document refers to a "Power Off" section that was not reproduced in the body text.
+      Insert the manufacturer's power-off steps here.
+  emergency_shutdown:
+    - "There is an emergency stop button on the wall in the lab."
+    - "If there is a power outage, leave the building immediately and assemble on the sports oval on Physics Road. If it occurs after hours, call one of the listed Emergency Contacts."
+    - "If the evacuation alarm sounds, leave the room immediately and assemble on the sports oval on Physics Road."
+  emergency_procedures:
+    - |-
+      FIRE:
+      If the fire emergency alarm system is activated, you may be required to evacuate the building. The
+      alarm operates in two stages:
+      - A BEEPING sound of increasing loudness will be heard: secure your workplace by turning off all
+        non-vital equipment and securing all dangerous processes; collect or lock away your personal
+        belongings and get ready to evacuate
+      - A WHOOPING noise and an EVACUATION message will be heard over the system: move directly to your
+        nearest exit, or proceed as directed by a warden; DO NOT use the lifts
+      The assembly area during working hours (8am to 6pm) is the sports oval in front of the Physics
+      Building on Physics Road. DO NOT re-enter the building until clearance is provided by the Emergency
+      Warden.
+    - |-
+      SPILLS - STANDARD CHEMICALS:
+      - If a small, contained spill occurs of less than 100 mL, wipe off the spill with a dampened
+        cleanroom wipe / chemical wipe and dispose of it in the solvent waste container / acid waste bin
+      - If a minor spill occurs of more than 100 mL but less than 2.5 L, alert others in the local area and
+        evacuate the local area as appropriate
+      - Any spill larger than this is considered to be major: notify a SAIL staff member and evacuate the
+        lab. Clean up should only be performed by authorised personnel according to SDS guidelines
+    - |-
+      SPILLS - HIGH RISK CHEMICALS:
+      - If a small, contained spill occurs of less than 20 mL, wipe off the spill with a dampened
+        cleanroom wipe / chemical wipe and dispose of it in the solvent waste container / acid waste bin
+      - If a minor spill occurs of more than 20 mL but less than 100 mL, alert others in the local area and
+        evacuate the local area as appropriate
+      - Any spill larger than this is considered to be major: notify a SAIL staff member and evacuate the
+        lab. Clean up should only be performed by authorised personnel according to SDS guidelines
+    - |-
+      EXPOSURE:
+      - See the SDS for the chemical and apply the first aid measures it specifies
+      - Seek medical attention if irritation persists
+      - Report the incident via RiskWare
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency services: 000
+      - USyd Security: 9351 3333
+      - Supervisor: Chris Betters
+      TODO: Confirm the emergency contact list posted in A28-116C and reproduce it here.
+  cleanup_waste:
+    - |-
+      TODO: The "Clean up and waste disposal requirements" section was EMPTY in the source document. The
+      content below is derived from the spill and finishing text elsewhere in that document and is
+      INCOMPLETE - it MUST be reviewed and completed before approval.
+    - |-
+      AFTER EACH USE:
+      - Wear gloves and safety glasses until all uncured resin has been dealt with
+      - Keep the IPA container closed or covered when not in use
+      - Wipe up any resin drips with a chemical wipe and dispose of it in the solvent waste container
+      - Leave the fume hood and wet bench clean and free from contamination for the next user
+    - |-
+      WASTE STREAMS:
+      - Resin-contaminated wipes and gloves: solvent waste container
+      - Used IPA: solvent waste - refer to SAIL-RA-SWP-02 (Use, storage and disposal of flammable liquids)
+      - Uncured resin MUST NOT be poured down the sink
+      TODO: Confirm each waste stream and the disposal route for spent resin tanks and empty resin
+      cartridges with the process owner and USyd chemical waste guidance.
+  references:
+    - "Work Health and Safety Act 2011 (NSW)"
+    - "Work Health and Safety Regulation 2017 (NSW)"
+    - "Formlabs Form 3 Quick Start Guide (support.formlabs.com/s/article/Quick-Start-Guide-Form3)"
+    - "Formlabs Form 3 Manual (media.formlabs.com/m/5a3f3cadc639b857/original/-ENUS-Form-3-Manual.pdf)"
+    - "Safety Data Sheet - Formlabs Clear V4.1 Resin"
+    - "Safety Data Sheet - Formlabs Black V4.1 Resin"
+    - "Formlabs resin technical specifications and data sheets (formlabs.com/3d-printers/resin/tech-specs/#data-sheets)"
+    - "SAIL-RA-SWP-02 - Use, storage and disposal of flammable liquids"
+    - "ChemAlert report - isopropyl alcohol (University of Sydney)"
+    - "ChemSupply isopropyl alcohol SDS (shop.chemsupply.com.au/documents/PA0131CH5R.pdf)"
+    - "Risk Assessment SAIL-RA-FORM3-001"
+  competency:
+    - "Training by SAIL staff and certification of competency by the process owner / equipment engineer is required before this process can be performed / this tool can be operated independently."
+    - "Maintenance tasks shall only be performed by a qualified and trained person. DO NOT open the printer and/or investigate internal components unless under the guidance of Formlabs or a certified service provider."
+  assessors:
+    - "SAIL staff process owner, equipment engineer and/or technical staff"
