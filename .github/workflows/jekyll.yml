@@ -74,6 +74,13 @@ jobs:
           echo "Published document downloads:"
           find _site/docx _site/pdfs -type f | sort
 
+      - name: Bundle all documents into a download-all zip
+        run: |
+          cd _site
+          mkdir -p downloads
+          zip -r downloads/SAIL-safety-documents.zip pdfs docx
+          unzip -l downloads/SAIL-safety-documents.zip
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

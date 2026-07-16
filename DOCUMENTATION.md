@@ -13,8 +13,8 @@ Every RA/SWP pair is defined by a single data file, `documents/<slug>.yaml`, wit
 `docgen/render.py` renders each YAML into:
 
 1. `_risk_assessments/<slug>.md` + `_safe_work_procedures/<slug>.md` — Jekyll pages (**generated, gitignored — never edit**), via the Jinja2 templates `docgen/templates/{ra,swp}.md.j2`;
-2. `docgen/out/docx/**/SAIL-{RA,SWP}-<slug>.docx` — the official USyd Word forms, via docxtpl and the tagged templates `docgen/templates/*.docx`;
-3. `docgen/out/pdfs/**/SAIL-{RA,SWP}-<slug>.pdf` — converted from the Word docs by headless LibreOffice (`--pdf`).
+2. `docgen/out/docx/**/<reference>.docx` — the official USyd Word forms, via docxtpl and the tagged templates `docgen/templates/*.docx`;
+3. `docgen/out/pdfs/**/<reference>.pdf` — converted from the Word docs by headless LibreOffice (`--pdf`).
 
 The full schema is documented inline in [`documents/_example.yaml`](documents/_example.yaml); required keys are enforced by the `*_KEYS` constants in `docgen/render.py`.
 
@@ -48,7 +48,7 @@ The University Risk Matrix embedded in the RA form defines exactly four levels: 
 
 - YAML: `documents/<slug>.yaml`, where `<slug>` = `meta.slug` (lowercase, hyphen-separated — enforced).
 - Permalinks: `/risk-assessments/<slug>/` and `/safe-work-procedures/<slug>/` (emitted automatically).
-- Downloads: `/pdfs/<collection>/SAIL-{RA|SWP}-<slug>.pdf` and `/docx/<collection>/SAIL-{RA|SWP}-<slug>.docx` — the "Download PDF"/"Download Word" buttons in `_layouts/default.html` build these URLs from the page slug.
+- Downloads: `/pdfs/<collection>/<reference>.pdf` and `/docx/<collection>/<reference>.docx` — the "Download PDF"/"Download Word" buttons in `_layouts/default.html` build these URLs from `page.reference`. A `/downloads/SAIL-safety-documents.zip` bundle of everything is built by CI (and `serve.sh` locally) for the index page's Download All button.
 
 ## Testing Locally
 

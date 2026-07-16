@@ -26,7 +26,8 @@ python render.py --all --check               # validate + dry-run render, write 
 
 Output goes to `_risk_assessments/`, `_safe_work_procedures/` (web) and
 `docgen/out/{docx,pdfs}/` (documents). Filenames match the site's download-button URLs
-(`SAIL-RA-<slug>.pdf` etc.).
+(`<reference>.pdf`, e.g. `RA-A28-SAIL-218G-3sae-cms.pdf` — the buttons build URLs
+from `page.reference`).
 
 ## The data file
 

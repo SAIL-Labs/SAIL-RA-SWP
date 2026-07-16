@@ -62,17 +62,17 @@
           <span class="metadata-badge">Issued: {{ page.metadata.issue_date }}</span>
           {% endif %}
           {% if page.doc_type == "Risk Assessment" %}
-          <a href="{{ '/pdfs/risk-assessments/SAIL-RA-' | append: page.slug | append: '.pdf' | relative_url }}" class="pdf-download-btn" download>
+          <a href="{{ '/pdfs/risk-assessments/' | append: page.reference | append: '.pdf' | relative_url }}" class="pdf-download-btn" download>
             📄 Download PDF
           </a>
-          <a href="{{ '/docx/risk-assessments/SAIL-RA-' | append: page.slug | append: '.docx' | relative_url }}" class="pdf-download-btn" download>
+          <a href="{{ '/docx/risk-assessments/' | append: page.reference | append: '.docx' | relative_url }}" class="pdf-download-btn" download>
             📝 Download Word
           </a>
           {% elsif page.doc_type == "Safe Work Procedure" %}
-          <a href="{{ '/pdfs/safe-work-procedures/SAIL-SWP-' | append: page.slug | append: '.pdf' | relative_url }}" class="pdf-download-btn" download>
+          <a href="{{ '/pdfs/safe-work-procedures/' | append: page.reference | append: '.pdf' | relative_url }}" class="pdf-download-btn" download>
             📄 Download PDF
           </a>
-          <a href="{{ '/docx/safe-work-procedures/SAIL-SWP-' | append: page.slug | append: '.docx' | relative_url }}" class="pdf-download-btn" download>
+          <a href="{{ '/docx/safe-work-procedures/' | append: page.reference | append: '.docx' | relative_url }}" class="pdf-download-btn" download>
             📝 Download Word
           </a>
           {% endif %}

@@ -117,6 +117,12 @@ title: Home
   <a href="https://github.com/SAIL-Labs/SAIL-RA-SWP/blob/main/docgen/README.md">View Guide →</a>
 </div>
 
+<div class="feature-box">
+  <h4>⬇️ Download All Documents</h4>
+  <p>Every current Risk Assessment and Safe Work Procedure as PDF and Word, in a single zip archive.</p>
+  <a href="{{ '/downloads/SAIL-safety-documents.zip' | relative_url }}" download>Download zip →</a>
+</div>
+
 </div>
 
 ---

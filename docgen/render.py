@@ -244,12 +244,12 @@ def _wrap_multiline(value):
 
 
 def render_word(ctx: dict, templates_dir: Path, out_dir: Path, dry_run: bool = False) -> list[Path]:
-    slug = ctx["meta"]["slug"]
+    meta = ctx["meta"]
     word_ctx = _wrap_multiline(ctx)
     env = Environment(undefined=StrictUndefined, autoescape=False)
     jobs = [
-        (WORD_TEMPLATES["ra"], out_dir / "docx" / "risk-assessments" / f"SAIL-RA-{slug}.docx"),
-        (WORD_TEMPLATES["swp"], out_dir / "docx" / "safe-work-procedures" / f"SAIL-SWP-{slug}.docx"),
+        (WORD_TEMPLATES["ra"], out_dir / "docx" / "risk-assessments" / f"{meta['ra_reference']}.docx"),
+        (WORD_TEMPLATES["swp"], out_dir / "docx" / "safe-work-procedures" / f"{meta['swp_reference']}.docx"),
     ]
     written: list[Path] = []
     for template_name, out_path in jobs:

@@ -33,6 +33,12 @@ if [ -d docgen/out/pdfs ]; then
     cp -r docgen/out/pdfs/. pdfs/
     [ -d docgen/out/docx ] && cp -r docgen/out/docx/. docx/
     echo "Copied rendered PDFs/Word docs into ./pdfs and ./docx (served locally)."
+    if command -v zip >/dev/null; then
+        mkdir -p downloads
+        rm -f downloads/SAIL-safety-documents.zip
+        zip -qr downloads/SAIL-safety-documents.zip pdfs docx
+        echo "Built ./downloads/SAIL-safety-documents.zip (the Download All button)."
+    fi
 else
     echo "NOTE: no local PDFs yet — Download buttons will 404 locally until you run:"
     echo "      $VENV/bin/python docgen/render.py --all --pdf   (needs LibreOffice)"
