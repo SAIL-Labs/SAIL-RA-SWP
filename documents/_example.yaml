@@ -11,8 +11,10 @@
 
 meta:                          # shared header block — written once, used by both docs
   slug: example-femto-laser    # must match this filename; lowercase-dashes only
-  # abbrev: FEMTO              # optional; default = slug uppercased
-  number: 1                    # -> SAIL-RA-EXAMPLE-FEMTO-LASER-001 / SAIL-SWP-...-001
+  building: A28                # building code, no spaces
+  rooms: ["123"]               # optional; room numbers, omit if none
+                               # -> RA-A28-SAIL-123-example-femto-laser / SWP-...
+                               # (rooms segment is skipped when the list is omitted)
   name: "Femtosecond laser"    # equipment/activity name shown on the index cards
   title: "Operation of the femtosecond laser writing system"
   status: Draft                # Draft | Approved — Approved ONLY after expert review

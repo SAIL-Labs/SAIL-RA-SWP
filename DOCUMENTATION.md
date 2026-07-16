@@ -6,7 +6,7 @@ Every RA/SWP pair is defined by a single data file, `documents/<slug>.yaml`, wit
 
 | Section | Contents | Used by |
 | --- | --- | --- |
-| `meta:` | slug, abbrev, number, name, title, status, version, dates, preparer, supervisors, index-card text | **both** documents |
+| `meta:` | slug, building, rooms, name, title, status, version, dates, preparer, supervisors, index-card text | **both** documents |
 | `ra:` | activity, location, people, legislation, risk table, implementation actions, emergency controls | Risk Assessment |
 | `swp:` | hazards/controls, resources, steps, emergency procedures, cleanup, competency, assessors | Safe Work Procedure |
 
@@ -33,11 +33,12 @@ The generator emits all card fields into the front matter automatically from `me
 Derived — never typed:
 
 ```
-meta.abbrev: BAMBU-H2D     ┐
-meta.number: 1             ┴→  SAIL-RA-BAMBU-H2D-001  and  SAIL-SWP-BAMBU-H2D-001
+meta.building: A28         ┐
+meta.rooms: ["218G"]       ┼→  RA-A28-SAIL-218G-3sae-cms  and  SWP-A28-SAIL-218G-3sae-cms
+meta.slug: 3sae-cms        ┘
 ```
 
-`abbrev` defaults to `slug` uppercased; override it when the historical reference differs (e.g. `3sae-cms` uses `CMS`). The SWP's hazard rows cite the RA reference automatically.
+Format: `{RA|SWP}-{building}-SAIL-{rooms}-{slug}`. Multiple rooms join with `_` (e.g. `218G_218H`); when `meta.rooms` is omitted (lab-wide documents) the rooms segment is skipped entirely (`RA-A28-SAIL-general-lab-safety`). The SWP's hazard rows cite the RA reference automatically.
 
 ## Risk Ratings
 

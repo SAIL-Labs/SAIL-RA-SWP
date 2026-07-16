@@ -35,7 +35,7 @@ One file per document pair, three sections — see
 
 | Section | Purpose |
 | --- | --- |
-| `meta:` | slug, abbrev + number (→ derived references), name, title, status, version, dates, preparer, supervisors, index-card text |
+| `meta:` | slug, building + rooms (→ derived references), name, title, status, version, dates, preparer, supervisors, index-card text |
 | `ra:`   | activity, location, people, legislation, risk table, implementation actions, emergency controls |
 | `swp:`  | hazard/control rows, resources, steps, emergency shutdown & procedures, cleanup, references, competency, assessors |
 
@@ -44,8 +44,9 @@ templates and those constants must be kept in lock-step.
 
 ### Derived fields (never typed)
 
-- `SAIL-RA-{ABBREV}-{NNN}` / `SAIL-SWP-{ABBREV}-{NNN}` from `meta.abbrev`
-  (default: slug uppercased) + `meta.number`.
+- `RA-{building}-SAIL-{rooms}-{slug}` / `SWP-{building}-SAIL-{rooms}-{slug}`
+  from `meta.building` + optional `meta.rooms` (joined with `_`; segment omitted
+  when no rooms are listed) + `meta.slug`.
 - The SWP hazard rows cite the RA reference automatically.
 - `meta.key_hazards` defaults to the first line of each risk's hazards.
 

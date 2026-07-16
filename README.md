@@ -81,9 +81,9 @@ The full schema is documented in [`documents/_example.yaml`](documents/_example.
 
 ### Reference numbers
 
-Derived automatically from `meta.abbrev` + `meta.number` — never typed anywhere:
+Derived automatically from `meta.building` + optional `meta.rooms` + `meta.slug` — never typed anywhere:
 
-- `SAIL-RA-BAMBU-H2D-001` and `SAIL-SWP-BAMBU-H2D-001` from `abbrev: BAMBU-H2D`, `number: 1`.
+- `RA-A28-SAIL-218G-3sae-cms` and `SWP-A28-SAIL-218G-3sae-cms` from `building: A28`, `rooms: ["218G"]`, `slug: 3sae-cms`. Multiple rooms join with `_`; the rooms segment is omitted when the list is absent (e.g. `RA-A28-SAIL-general-lab-safety`).
 - The SWP's hazard table cites the RA's reference automatically.
 
 ### Risk ratings
