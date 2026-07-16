@@ -4,8 +4,8 @@
 
 meta:
   slug: fyla-supercon
-  abbrev: FYLA-SC
-  number: 1
+  building: A28
+  rooms: ["121C"]
   name: "Fyla Iceblink Supercontinuum Fibre Laser"
   title: "Operation of the Fyla Iceblink Supercontinuum Fibre Laser in the Photonic Lantern Wavefront Sensing Setup"
   status: Draft
@@ -468,7 +468,7 @@ swp:
     - "Work Health and Safety Regulation 2017 (NSW)"
     - "AS/NZS 3000:2018 - Electrical installations (Wiring Rules)"
     - "Fyla Iceblink Supercontinuum Fibre Laser User Manual (Iceblink-v3.rev04.pdf)"
-    - "Risk Assessment SAIL-RA-FYLA-SC-001"
+    - "Risk Assessment RA-A28-SAIL-121C-fyla-supercon"
     - "University of Sydney WHS Laser Safety Policy and Procedures"
   competency:
     - |-
