@@ -1,7 +1,7 @@
 meta:
   slug: temperature-controlled-room
-  abbrev: A28-116B
-  number: 1
+  building: A28
+  rooms: ["116B"]
   name: "SAIL Temperature Controlled Room (116B)"
   title: "Occupancy and Work Within the SAIL Temperature Controlled Room (Room 116B)"
   status: Draft

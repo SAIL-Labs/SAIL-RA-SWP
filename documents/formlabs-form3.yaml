@@ -5,8 +5,8 @@
 
 meta:
   slug: formlabs-form3
-  abbrev: FORM3
-  number: 1
+  building: A28
+  rooms: ["116C"]
   name: "Formlabs Form 3 SLA 3D Printer"
   title: "Operation & Maintenance Of Formlabs Form 3 SLA 3D Printer"
   status: Draft
@@ -379,7 +379,7 @@ swp:
     - "SAIL-RA-SWP-02 - Use, storage and disposal of flammable liquids"
     - "ChemAlert report - isopropyl alcohol (University of Sydney)"
     - "ChemSupply isopropyl alcohol SDS (shop.chemsupply.com.au/documents/PA0131CH5R.pdf)"
-    - "Risk Assessment SAIL-RA-FORM3-001"
+    - "Risk Assessment RA-A28-SAIL-116C-formlabs-form3"
   competency:
     - "Training by SAIL staff and certification of competency by the process owner / equipment engineer is required before this process can be performed / this tool can be operated independently."
     - "Maintenance tasks shall only be performed by a qualified and trained person. DO NOT open the printer and/or investigate internal components unless under the guidance of Formlabs or a certified service provider."
