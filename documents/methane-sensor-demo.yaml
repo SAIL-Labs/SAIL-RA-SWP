@@ -1,0 +1,545 @@
+# Combined RA + SWP data for the public methane sensor demonstration
+# (balloons filled with 1% CH4 / balance N2 calibration gas from a 103 L disposable cylinder).
+# Product details from CAC Gas quotation SQ1070 (15/09/2026) and SDS No. 303.
+# Render: python docgen/render.py documents/methane-sensor-demo.yaml
+
+meta:
+  slug: methane-sensor-demo
+  building: A14
+  name: "Methane sensor public demonstration (1% CH4 balloons)"
+  title: "Public demonstration of the SAIL fibre optic methane sensor using balloons filled with 1% CH4 / balance N2 calibration gas (103 L disposable cylinder)"
+  status: Draft
+  version: "1.0"
+  version_issue_date: "2026-09-18"
+  description: "Public outreach demonstration of the SAIL fibre optic methane sensor in the Main Quadrangle cloisters using balloons filled with 1% methane in nitrogen from a 103 L disposable calibration gas cylinder (UN1956, Class 2.2 non-flammable, non-toxic)."
+  key_hazards: "Compressed gas (70 bar), simple asphyxiant gas mixture, balloon burst and inhalation, latex and choking hazards, electrical equipment outdoors, public crowd environment"
+  includes: "Cylinder transport and checks, regulator fitting, balloon filling, public hand-over rules, sensor setup, emergency procedures, pack-down and disposal"
+  faculty_school: "School of Physics"
+  prepared_by: "Chris Betters"
+  supervisors:
+    - "Chris Betters"
+  issue_date: "2026-09-18"
+  next_review_date: "2027-09-18"
+
+ra:
+  activity: |-
+    - Transport and storage of one 103 L disposable steel cylinder of 1% methane (CH4) in nitrogen (N2), CAC Gas part 103DS1VCH4N, SDS No. 303, fill pressure 70 bar, net gas mass 140 g, C10 brass valve
+    - Fitting a C10 flow regulator and filling small balloons (approximately 1.5 to 2 L each) with the gas mixture
+    - Members of the public releasing balloon gas near the intake tube of the SAIL fibre optic methane sensor and watching the live reading respond
+    - Operation of the sensor apparatus (fibre-coupled interrogator, laptop, small sample pump) on a display table
+    - Pack-down, venting of any remaining gas, and disposal of balloons and the empty cylinder
+    - PRODUCT SUMMARY: 1.00% CH4 v/v (10,000 ppm), balance N2, no oxygen, no odorant. UN1956 Compressed gas, n.o.s. (methane, nitrogen mixture), Class 2.2 non-flammable, non-toxic gas (not Class 2.1 flammable gas, the class of LPG cooking cylinders). Cylinder approximately 1.5 L internal volume, roughly the size of a 1.25 L drink bottle, gross mass approximately 1 kg, 60 month shelf life, store below 50 degrees C
+    - QUANTITY: total gas 103 L at atmospheric pressure (140 g); total methane 1.03 L (0.74 g), chemical energy approximately 37 kJ, the same as a tea-light candle burning for about 17 minutes. An 8.5 kg LPG barbecue cylinder holds about 390 MJ, over 10,000 times more
+    - FLAMMABILITY: methane burns in air only between 5.0% and 15% v/v. The cylinder gas is 1% methane with no oxygen, so the cylinder contents cannot burn, and mixing with air only dilutes the methane further. There is NO ratio of this gas and air that is flammable
+    - WORST CASE RELEASE: if the whole cylinder emptied inside a closed 3 m x 3 m x 2.5 m room (22,500 L) the oxygen concentration would fall from 20.9% to 20.8% and the methane concentration would be 46 ppm. In the open-air cloisters the effect is not measurable
+  location: "Main Quadrangle cloisters (Building A14), among the interactive alley displays; alternative location Eastern Avenue (outdoors). Both locations are open-air with unrestricted natural ventilation. Cylinder stored before and after the event in the SAIL laboratory, Sydney Nanoscience Hub (A31), Level 2, Room P2012."
+  persons_at_risk:
+    - "Members of the public, including children and people with latex allergy"
+    - "SAIL staff and students acting as demonstrators"
+    - "Event and venue staff, other exhibitors"
+    - "Passers-by in the cloisters and adjoining walkways"
+  team:
+    - "Chris Betters (Senior Research Fellow, SAIL, activity supervisor)"
+    - "SAIL demonstrators rostered for the event"
+    - "TODO: event coordinator name"
+  references:
+    - "Work Health and Safety Act 2011 (NSW)"
+    - "Work Health and Safety Regulation 2017 (NSW), Chapter 7 Hazardous Chemicals"
+    - "Australian Code for the Transport of Dangerous Goods by Road and Rail (ADG Code), edition 7.9: classification of UN1956 as Class 2.2 non-flammable, non-toxic gas"
+    - "AS 4332-2004 The storage and handling of gases in cylinders"
+    - "AS/NZS 60079.10.1:2022 Explosive atmospheres, Classification of areas, Explosive gas atmospheres (confirms no hazardous area is created)"
+    - "AS/NZS 2243.1:2021 Safety in laboratories, Planning and operational aspects"
+    - "AS/NZS 2243.2:2021 Safety in laboratories, Chemical aspects and storage"
+    - "AS/NZS 3760:2022 In-service safety inspection and testing of electrical equipment"
+    - "AS/NZS 3000:2018 Wiring Rules (RCD protection for portable equipment)"
+    - "Safe Work Australia Code of Practice: Managing risks of hazardous chemicals in the workplace"
+    - "Safe Work Australia Workplace Exposure Standards for Airborne Contaminants (methane and nitrogen are simple asphyxiants with no exposure standard)"
+    - "CAC Gas and Instrumentation quotation SQ1070 and Safety Data Sheet No. 303 (1% CH4 in N2)"
+    - "Protection of the Environment Operations Act 1997 (NSW) (balloon release is littering)"
+    - "University of Sydney WHS Policy 2016 and event risk management requirements"
+    - "SAIL General Laboratory Risk Assessment (general-lab-safety)"
+  risks:
+    - task: "Transport of the cylinder from SAIL (A31 P2012) to the venue and storage during the event"
+      hazards: "Compressed gas at 70 bar in a small steel cylinder; cylinder dropped or valve struck"
+      harm: |-
+        - Valve damaged and cylinder vents rapidly; cylinder may skitter or become a projectile
+        - Crush or laceration injury to hands or feet from a dropped cylinder
+        - Rupture if heated above 50 degrees C (for example left in a closed car or in direct sun on a hot day)
+      controls: |-
+        - Cylinder is small (approximately 1 kg) with low stored energy compared with industrial cylinders
+        - Valve closed and regulator removed for transport
+        - Contents are non-flammable and non-toxic, so a venting cylinder creates no fire or poisoning hazard
+      current_rating: "Low"
+      additional_controls: |-
+        - Transport the cylinder upright in a padded box with the valve protected, never loose in a backpack
+        - Carry by hand or on a trolley; never throw or roll the cylinder
+        - Keep the cylinder out of direct sun and away from any heat source; do not leave it in a parked vehicle
+        - Keep the cylinder in the shaded, staffed part of the display, secured so it cannot be knocked over
+        - Only one cylinder taken to the venue
+      residual_rating: "Low"
+    - task: "Any release of the gas mixture (leak, valve left open, balloon burst, or complete loss of the cylinder contents)"
+      hazards: "Perceived fire or explosion hazard from a methane cylinder"
+      harm: |-
+        - No harm. The mixture is 1% methane in nitrogen with no oxygen; methane burns only between 5% and 15% in air
+        - The cylinder gas cannot ignite and no mixture of it with air is flammable
+        - Total methane in the cylinder is 1.03 L (0.74 g, about 37 kJ), less energy than a tea-light candle burns in 20 minutes
+      controls: |-
+        - Product classified Class 2.2 non-flammable, non-toxic (UN1956) by the supplier under the ADG Code
+        - No flames, heaters or hot surfaces used anywhere in the demonstration
+        - Open-air venue
+      current_rating: "Low"
+      additional_controls: |-
+        - Provide the venue with SDS No. 303, the product description and this risk assessment so the cylinder is not mistaken for a fuel gas cylinder
+        - Display a table sign: Calibration gas, 1% methane in nitrogen, non-flammable, Class 2.2
+      residual_rating: "Low"
+    - task: "Complete release of the cylinder contents in the display area"
+      hazards: "Simple asphyxiant (nitrogen, methane) displacing oxygen"
+      harm: |-
+        - Oxygen-deficient atmosphere causing dizziness or loss of consciousness
+        - Not credible here: the entire 103 L cylinder released in a closed 22,500 L room reduces oxygen from 20.9% to 20.8%; the cloisters and Eastern Avenue are open air with unlimited dilution
+      controls: |-
+        - Total gas quantity is 103 L (140 g), far below any quantity that could reduce oxygen in an open area
+        - Venue is open air with continuous natural ventilation
+      current_rating: "Low"
+      additional_controls: |-
+        - Do not store or use the cylinder in a small enclosed space (cupboard, van, small room with the door shut)
+        - Cylinder valve closed whenever balloons are not being filled
+      residual_rating: "Low"
+    - task: "Fitting the C10 regulator and filling balloons (staff task)"
+      hazards: "Gas jet from the C10 outlet at up to 70 bar if the regulator is cross-threaded or the balloon slips off; balloon over-inflated and bursts"
+      harm: |-
+        - Gas jet to the eye causing corneal injury
+        - Balloon burst causing a loud bang (startle) and latex fragments to the face or eye
+        - Regulator or fitting ejected if incorrectly fitted
+      controls: |-
+        - Regulator is a fixed-flow type (nominal 1 L/min) so the delivered flow is low even if the balloon detaches
+        - Balloons are small (23 cm size) and filled only to approximately 15 cm diameter (1.5 to 2 L), well below burst size
+        - Only trained SAIL demonstrators fill balloons
+      current_rating: "Low"
+      additional_controls: |-
+        - Filling done by staff only, at the back of the table facing away from the public, wearing safety glasses
+        - Check the regulator thread engages by hand and is fully seated before opening the valve; never force the thread
+        - Close the cylinder valve between fills and at any time the table is unattended
+        - Fill a batch of 10 to 15 balloons in advance and tie them off
+        - Inspect each balloon before handing over; discard any that are weak, perished or over-stretched
+      residual_rating: "Low"
+    - task: "Members of the public handling a balloon and releasing gas near the sensor intake"
+      hazards: "Inhalation of oxygen-free balloon gas (someone attempts the helium voice trick with a nitrogen balloon)"
+      harm: |-
+        - A single breath from a 2 L balloon causes at most brief light-headedness
+        - Repeated deliberate inhalation could cause fainting and a fall; nitrogen gives no warning of oxygen deficiency
+      controls: |-
+        - Balloons are small (1.5 to 2 L), so a single breath is a limited dose
+        - The gas does not float (density close to air) so it is not associated with the helium voice trick
+        - A demonstrator stands at the sensor table at all times
+      current_rating: "Medium"
+      additional_controls: |-
+        - A demonstrator hands each balloon over, stays within arm's reach and takes it back immediately after the release; balloons are NEVER given away or left on the table
+        - Demonstrator explains before handing over: squeeze the neck and let the gas out near the tube; do not breathe it in, it has no oxygen in it
+        - Table sign: Do not inhale balloon gas
+        - Children under 12 interact only with a parent or carer present; the demonstrator may hold the balloon for young children
+        - Any person who inhales gas is moved into fresh air and observed; first aid summoned if they feel faint
+      residual_rating: "Low"
+    - task: "Members of the public, particularly children, handling latex balloons"
+      hazards: "Latex allergy; choking hazard from burst balloon fragments; balloon litter"
+      harm: |-
+        - Allergic reaction (skin rash, in rare cases anaphylaxis) in latex-sensitised people
+        - Choking on latex fragments (young children)
+        - Balloon fragments or whole balloons left in the heritage cloisters or released as litter
+      controls: |-
+        - Balloons are handled for seconds and returned to the demonstrator
+        - Gas does not float so balloons cannot drift away
+        - Only a small number of balloons (10 to 15) in circulation at any time
+      current_rating: "Low"
+      additional_controls: |-
+        - Use latex-free (chloroprene or foil) balloons where practicable; if latex balloons are used, display a Contains latex notice and offer a demonstrator-operated release
+        - Burst balloon fragments picked up immediately by the demonstrator and binned
+        - Keep a lidded bin at the table; count balloons out and back; leave no balloon material at the venue
+      residual_rating: "Low"
+    - task: "Operation of the sensor apparatus (fibre-coupled interrogator, laptop, small diaphragm sample pump) on a table outdoors"
+      hazards: "Electrical equipment (240 V mains or battery) used outdoors; cables across walkways"
+      harm: |-
+        - Electric shock if mains equipment gets wet (rain, spilt drinks)
+        - Trip and fall on cables in a public walkway
+      controls: |-
+        - Interrogator and laptop are low-power (under 100 W) and battery-capable
+        - All mains equipment tested and tagged under AS/NZS 3760
+        - Venue supply is RCD protected
+      current_rating: "Low"
+      additional_controls: |-
+        - Run the demonstration from battery power where possible; if mains is used, use a single tested and tagged lead through a portable RCD and keep the connection under cover
+        - Route cables along the wall or under a cable cover, never across the pedestrian route
+        - Stop the demonstration and cover equipment if rain reaches the table
+      residual_rating: "Low"
+    - task: "Operation of the sensor optical source (fibre-coupled laser or broadband source in the 1600 to 1700 nm band)"
+      hazards: "Invisible infrared laser radiation if a fibre connector were opened"
+      harm: |-
+        - Eye exposure to an infrared beam from an open fibre end
+      controls: |-
+        - All light is contained within optical fibre and the interrogator enclosure; no beam is accessible in normal operation
+        - Fibre connectors are behind the table and out of public reach
+        - Source power is low (TODO: confirm laser class from the interrogator label)
+      current_rating: "Low"
+      additional_controls: |-
+        - Do not disconnect or reconnect any fibre connector while the source is on and while the public is present
+        - Tape or cable-tie the fibre run so it cannot be pulled or snagged
+        - Interrogator switched off if any fibre is damaged
+      residual_rating: "Low"
+    - task: "Public crowd around the display table in the cloisters"
+      hazards: "Crowding, queueing, children running, heritage sandstone surroundings"
+      harm: |-
+        - Trips and falls, bumps against the table, table tipped over (equipment and cylinder falling)
+        - Damage to heritage fabric
+      controls: |-
+        - Table set against the cloister wall so people approach from one side only
+        - Two demonstrators on the stand during opening hours
+        - Nothing fixed to walls or columns
+      current_rating: "Low"
+      additional_controls: |-
+        - Keep the cylinder, regulator and pump at the back of the table or in a box on the ground behind the table
+        - Maintain a clear 1.5 m path past the display
+        - Weight or sandbag the table if it is lightweight
+        - Follow event marshal directions on crowd flow
+      residual_rating: "Low"
+    - task: "Display located outdoors on Eastern Avenue (alternative location)"
+      hazards: "Sun and heat exposure of the cylinder and staff; wind"
+      harm: |-
+        - Cylinder pressure rises with temperature (rated for use below 50 degrees C); rupture is not credible below this
+        - Heat illness and sunburn for demonstrators
+        - Balloons and light equipment blown away
+      controls: |-
+        - Cylinder rated to 50 degrees C and kept in its box in shade
+        - Event provides marquee or shade
+      current_rating: "Low"
+      additional_controls: |-
+        - Position the display under a marquee or umbrella; keep the cylinder in shade at all times and touch-check it is not warm before filling
+        - Demonstrators use hat, sunscreen and water; rotate breaks every 2 hours
+        - Tie filled balloons to a weighted string or keep them in a lidded tub
+      residual_rating: "Low"
+    - task: "Pack-down: venting remaining gas and disposing of the empty cylinder"
+      hazards: "Compressed gas; disposal of a pressurised container"
+      harm: |-
+        - Cylinder disposed of with residual pressure into general waste, or attempted refill
+        - Cylinder valve opened indoors in a confined space
+      controls: |-
+        - Non-refillable cylinder with a supplier disposal instruction
+        - Contents non-flammable and non-toxic, so venting is harmless outdoors
+      current_rating: "Low"
+      additional_controls: |-
+        - If the cylinder is to be disposed of, vent it fully outdoors or in a fume cupboard (valve open until the regulator gauge reads zero), mark it EMPTY and dispose of it via the University scrap metal or hazardous waste stream
+        - If gas remains for future use, close the valve, remove the regulator and return the cylinder to the gas cabinet in A31 P2012
+      residual_rating: "Low"
+  implementation_date: "2026-09-18"
+  additional_controls:
+    - control: "Provide SDS No. 303, product description and this risk assessment to the event organiser and venue for approval"
+      resources: "Copies of SDS and RA"
+      responsible: "Chris Betters"
+      date: "At least 2 weeks before the event"
+      riskware_ref: "N/A"
+    - control: "Purchase and test-fit the C10 fixed-flow regulator with balloon nozzle; trial-fill balloons in the lab"
+      resources: "Regulator (approx $150), balloons, 1 hour"
+      responsible: "Chris Betters"
+      date: "Prior to event"
+      riskware_ref: "N/A"
+    - control: "Padded transport box for the cylinder; cable cover; portable RCD; lidded bin"
+      resources: "Approx $100"
+      responsible: "Chris Betters"
+      date: "Prior to event"
+      riskware_ref: "N/A"
+    - control: "Latex-free balloons (or Contains latex notice), Do not inhale balloon gas and Non-flammable calibration gas table signs"
+      resources: "Printing, balloons (approx $30)"
+      responsible: "Chris Betters"
+      date: "Prior to event"
+      riskware_ref: "N/A"
+    - control: "Brief all rostered demonstrators on this RA and the SWP, including the balloon hand-over rule and emergency contacts"
+      resources: "30 minute briefing"
+      responsible: "Chris Betters"
+      date: "Day before or morning of event"
+      riskware_ref: "N/A"
+    - control: "Confirm the interrogator laser classification from its label and that all fibre connections are enclosed"
+      resources: "15 minutes"
+      responsible: "Chris Betters"
+      date: "Prior to event"
+      riskware_ref: "N/A"
+    - control: "Test and tag any mains equipment taken to the venue"
+      resources: "Test and tag service"
+      responsible: "Chris Betters / School of Physics technical staff"
+      date: "Prior to event"
+      riskware_ref: "N/A"
+    - control: "Roster two demonstrators on the stand at all times during opening hours"
+      resources: "Staff time"
+      responsible: "Chris Betters"
+      date: "Event day"
+      riskware_ref: "N/A"
+  emergency_controls:
+    - |-
+      CRITICAL - COMPRESSED GAS AND PUBLIC INTERACTION:
+      - The cylinder gas is NON-FLAMMABLE and NON-TOXIC. A leak or burst balloon is not a fire or poisoning emergency. The only physical hazards are the 70 bar pressure in the cylinder and breathing oxygen-free gas from a balloon
+      - NEVER let anyone inhale from a balloon
+      - NEVER leave the cylinder unattended with the regulator fitted and the valve open
+      - NEVER heat the cylinder or leave it in direct sun or in a parked vehicle
+      - NEVER attempt to refill the cylinder
+      - The demonstration runs safely ONLY when a demonstrator controls every balloon and the cylinder valve is closed between fills
+    - |-
+      EMERGENCY SHUTDOWN:
+      - Close the cylinder valve by turning the C10 valve handwheel fully clockwise; gas flow stops immediately and the regulator empties in a few seconds
+      - If the valve cannot be closed (damaged or stuck open), carry the cylinder by the body to the nearest open space away from people and let it vent; a full cylinder empties in a few minutes through the regulator; there is no fire risk
+      - Switch off the interrogator and laptop at their power switches and unplug the mains lead (if used) from the RCD
+      - Do not resume until the cause is resolved and the supervisor has approved restart
+    - |-
+      CYLINDER DROPPED, VALVE DAMAGED OR REGULATOR EJECTED:
+      - Move people back at least 3 m; the risk is being struck by the cylinder or fitting, not the gas
+      - If the cylinder is venting and stationary, wait for it to empty (a few minutes); do not try to catch a moving cylinder
+      - Once silent, pick it up, mark it DAMAGED and take it out of service
+      - Treat any injury and report the incident to the supervisor and via RiskWare
+    - |-
+      PERSON INHALED BALLOON GAS OR FEELS FAINT:
+      - Take the balloon away and sit the person down in fresh air away from the crowd; stay with them
+      - Light-headedness from a single breath passes within a minute
+      - If they faint, lose colour or do not recover within 2 minutes: call 000, then University Security on 9351 3333, and request event first aid
+      - If unresponsive and not breathing normally, start CPR and send someone for the nearest AED (event first aid post)
+      - Record the incident and report via RiskWare
+    - |-
+      BALLOON FRAGMENT IN EYE OR CHOKING:
+      - Eye: do not rub; rinse with clean water or saline from the first aid kit; seek medical attention if pain or vision disturbance persists
+      - Choking (child with balloon fragment): call 000 and event first aid immediately; give back blows and chest thrusts as per first aid training
+    - |-
+      FIRE EMERGENCY (fire elsewhere at the event, not caused by this display):
+      - Close the cylinder valve and carry the cylinder with you if it can be done without delay; the contents do not add fuel to a fire, but a cylinder heated above 50 degrees C could rupture
+      - Follow the event evacuation procedure and directions of the wardens
+      - Call 000 if not already done; assemble at the designated assembly point
+    - |-
+      SEVERE WEATHER (rain, high wind, lightning):
+      - Close the cylinder valve, switch off and cover the electrical equipment, and stop the demonstration
+      - Move the cylinder, balloons and equipment under cover as directed by event staff
+    - |-
+      EQUIPMENT MALFUNCTION:
+      - Switch off the interrogator and laptop; do not open the interrogator or disconnect fibres with the source on
+      - If any fibre connector or cable is damaged, keep the source off for the rest of the event
+      - Report to the supervisor; do not attempt repairs at the venue
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency services: 000
+      - University of Sydney Security (24 hours, emergency): 9351 3333
+      - University of Sydney Security (general): 9351 3487
+      - Event first aid post: TODO: location and contact from event organiser
+      - Supervisor: Chris Betters, TODO: mobile number
+      - School of Physics WHS Officer: TODO: name and number
+      - Event coordinator: TODO: name and number
+
+swp:
+  hazards:
+    - hazard: "Compressed gas: 103 L disposable steel cylinder at 70 bar with a C10 brass valve"
+      controls: "Only one cylinder taken to the venue; transported upright in a padded box with the valve closed and regulator removed; kept in shade below 50 degrees C, secured at the back of the table; valve closed between fills; NEVER heated, NEVER refilled"
+    - hazard: "Gas mixture: 1% methane in nitrogen (UN1956, Class 2.2 non-flammable, non-toxic); simple asphyxiant only; cannot burn at any dilution in air"
+      controls: "Open-air venue only; NEVER run inside a small enclosed room with the door shut; SDS No. 303 and the RA provided to the venue and kept at the table; table sign: Calibration gas, 1% methane in nitrogen, non-flammable, Class 2.2"
+    - hazard: "Balloon filling: gas jet from the outlet, balloon burst, latex fragments"
+      controls: "Filled by trained demonstrators only, wearing safety glasses, using a C10 fixed-flow regulator (nominal 1 L/min); filled to no more than 15 cm diameter (1.5 to 2 L); regulator thread checked by hand before opening the valve"
+    - hazard: "Public interaction: inhalation of oxygen-free balloon gas, latex allergy, choking hazard for young children, balloon litter"
+      controls: "Every balloon handed over by a demonstrator, released within arm's reach and taken straight back; balloons NEVER given away, left on the table or inhaled from; sign: Do not inhale balloon gas; latex-free balloons where practicable or Contains latex notice; children under 12 only with a parent or carer present; fragments binned immediately; balloons counted out and back"
+    - hazard: "Electrical equipment outdoors: interrogator, laptop, sample pump, cables"
+      controls: "Battery power where possible; any mains lead tested and tagged and run through a portable RCD with the connection under cover; cables along the wall or under a cable cover, never across the walkway; stop and cover if rain reaches the table"
+    - hazard: "Optical source: fibre-enclosed infrared source (1600 to 1700 nm) inside the interrogator"
+      controls: "No fibre connector opened while the source is on; fibre run taped down out of public reach; source switched off if any fibre is damaged"
+    - hazard: "Public crowd environment: trips, table tipping, heritage venue; weather (heat, rain, wind)"
+      controls: "Table against the cloister wall, weighted if lightweight; cylinder and pump behind the table; clear 1.5 m walkway; two demonstrators on the stand at all times; cylinder and demonstrators in shade; event marshal directions followed"
+  resources:
+    - "PPE: safety glasses (AS/NZS 1337.1) for the demonstrator filling balloons; closed-toe shoes for all demonstrators; hat and sunscreen if the display is unshaded"
+    - "One 103 L disposable cylinder of 1% CH4 / balance N2, CAC Gas part 103DS1VCH4N (SDS No. 303), in a padded transport box"
+    - "C10-thread fixed-flow regulator for 103 L disposable cylinders (nominal 1 L/min) with on/off lever, short length of 6 mm tubing and balloon nozzle"
+    - "30 to 50 balloons, 23 cm (9 inch) size, latex-free (chloroprene) preferred; spare balloons in a sealed bag"
+    - "SAIL fibre optic methane sensor: interrogator unit, gas cell with sample intake tube, small diaphragm sample pump, laptop with sensor software, charged batteries or power bank"
+    - "Portable RCD and one tested and tagged extension lead (only if mains is required); cable cover or gaffer tape"
+    - "Table (weighted if lightweight), table cover, lidded bin, balloon count sheet"
+    - "Printed signs: Calibration gas, 1% methane in nitrogen, non-flammable, Class 2.2; Do not inhale balloon gas; Contains latex (if applicable)"
+    - "Printed copies of SDS No. 303 and the risk assessment"
+    - "Small first aid kit, bottle of clean water or saline for eye rinse, emergency contact card (000, Security 9351 3333, supervisor mobile, event coordinator, first aid post), charged mobile phone on each demonstrator"
+  steps:
+    - |-
+      BEFORE STARTING - CRITICAL SAFETY REQUIREMENTS:
+      - You must have completed the SAIL General Local Induction and been briefed on this RA and SWP by the supervisor
+      - You must be listed as a rostered demonstrator for this event
+      - You must NEVER let anyone inhale from a balloon, and you must NEVER give a balloon away
+      - You must NEVER leave the cylinder with the regulator fitted and the valve open while unattended
+      - You must NEVER expose the cylinder to heat, direct sun or a parked vehicle
+      - You must NEVER open a fibre connector while the interrogator is switched on
+    - "PRE-EVENT PREPARATION (in the laboratory, the day before):"
+    - |-
+      Check the cylinder:
+      - Confirm the label reads 1% CH4 / Bal. N2, part 103DS1VCH4N, SDS 303, Class 2.2
+      - Check the cylinder body for dents, corrosion or damage to the C10 valve outlet thread
+      - Check the shelf-life date on the label has not passed
+      - If ANY check fails: DO NOT USE, tag the cylinder and report to the supervisor
+    - |-
+      Test-fit the regulator:
+      - With the cylinder upright, screw the C10 regulator onto the valve outlet by hand until fully seated; the thread must engage smoothly without force
+      - Open the cylinder valve slowly (anticlockwise, one full turn); the regulator gauge should read approximately 70 bar (lower if partly used)
+      - Close the valve and listen for leaks at the joint; if hissing is heard, close the valve, remove and re-seat the regulator
+      - Operate the flow lever and confirm gas flows from the nozzle, then close it
+      - Close the cylinder valve, bleed the regulator until the gauge reads zero, and remove the regulator for transport
+    - "Trial-fill two balloons to approximately 15 cm diameter (about 1.5 to 2 minutes each at 1 L/min). Tie off and confirm they hold gas for at least an hour. Note how many seconds gives the right size"
+    - |-
+      Check the sensor apparatus:
+      - Charge the laptop and any battery packs
+      - Confirm the interrogator label laser class and that all fibre connectors are mated and the fibre run is secured
+      - Run the sensor software, release a trial balloon at the intake and confirm the reading responds
+      - Confirm any mains equipment carries a current test and tag label
+    - "Pack the kit against the resources list, including signs, SDS, RA, first aid kit and balloon count sheet"
+    - "Brief all demonstrators (30 minutes): hazards, the balloon hand-over rule, the no-inhalation rule, emergency contacts and the location of the event first aid post"
+    - "TRANSPORT TO THE VENUE:"
+    - "Close the cylinder valve and confirm the regulator is removed"
+    - "Place the cylinder upright in the padded transport box with the valve protected"
+    - "Carry the box by hand or on a trolley. Do not place it in a backpack, do not throw or roll it, and do not leave it in a vehicle in the sun"
+    - "On arrival, place the box in a shaded position behind the table"
+    - "SETTING UP THE DISPLAY (MANDATORY - DO NOT SKIP):"
+    - "Sign in with the event coordinator and record the start time and demonstrator names on the balloon count sheet"
+    - "Position the table against the cloister wall (or under the marquee on Eastern Avenue) so the public approach from one side only. Weight the table if it is lightweight. Keep a clear 1.5 m walkway past the display"
+    - |-
+      Set up the sensor:
+      - Place the interrogator, laptop and pump at the back of the table with the fibre run taped down and out of reach
+      - Route the sample intake tube to the front edge of the table where the public will release balloons
+      - Use battery power. If mains is unavoidable, plug the single tested and tagged lead into the portable RCD, press the RCD TEST button and confirm it trips, reset it, and cover the connection. Run the cable along the wall under a cable cover
+      - Switch on the interrogator and laptop and confirm a stable baseline reading
+    - |-
+      Set up the cylinder:
+      - Stand the cylinder upright in its box behind the table, in shade, where it cannot be knocked over
+      - Touch-check the cylinder is not warm
+      - Fit the C10 regulator by hand until fully seated
+      - Open the cylinder valve slowly one full turn, check the gauge, then close the valve again. Leave the valve CLOSED until filling
+    - "Display the signs (Non-flammable calibration gas; Do not inhale balloon gas; Contains latex if applicable) and place the SDS and RA in a folder on the table"
+    - "Confirm emergency arrangements: each demonstrator knows the location of the event first aid post, the nearest exit and assembly point, and has the emergency contact card"
+    - |-
+      Final check before opening:
+      - Cylinder valve closed, cylinder secured and shaded
+      - Cables clear of the walkway
+      - First aid kit and eye rinse at the table
+      - Lidded bin at the table
+      - Two demonstrators present
+      - If ANY check fails: DO NOT OPEN THE DISPLAY; resolve the issue or contact the supervisor
+    - "FILLING BALLOONS (demonstrators only):"
+    - "Put on safety glasses and stand at the back of the table facing away from the public"
+    - "Stretch a balloon over the regulator nozzle and hold the neck firmly"
+    - "Open the cylinder valve one full turn"
+    - "Operate the flow lever for the pre-timed number of seconds to reach approximately 15 cm diameter. NEVER fill beyond 15 cm; a small balloon is enough for the sensor and will not burst"
+    - "Release the lever, pinch the neck, remove the balloon and tie it off"
+    - "Repeat for a batch of 10 to 15 balloons, then CLOSE THE CYLINDER VALVE"
+    - "Inspect each balloon; discard any that are weak, perished or over-stretched into the lidded bin"
+    - "Store filled balloons in a lidded tub or tied to a weighted string behind the table (the gas does not float, but wind can move them). Record the number filled on the balloon count sheet"
+    - "Close the cylinder valve at any time the table is unattended or filling stops for more than a few minutes"
+    - "RUNNING THE DEMONSTRATION (public interaction):"
+    - "ATTENDANCE REQUIREMENT: two demonstrators MUST be on the stand at all times during opening hours. One runs the sensor and hands balloons over; the other manages the queue and fills balloons"
+    - |-
+      For each participant:
+      - Hand over one balloon and say: squeeze the neck and let the gas out near this tube, like a fart; please do not breathe it in, there is no oxygen in it
+      - Stay within arm's reach while they release the gas at the intake tube
+      - Point out the sensor reading rising on the laptop screen and explain the science
+      - Take the balloon straight back. Balloons are NEVER given away, left on the table, or handed to a second person unsupervised
+    - "For children under 12: only with a parent or carer present. For young children, the demonstrator holds the balloon and lets the child squeeze it"
+    - "If a balloon bursts: pick up every fragment immediately and bin it. Do not let children pick up fragments"
+    - "If anyone says they have a latex allergy: offer the demonstrator-operated release, or use a latex-free balloon"
+    - "If anyone inhales from a balloon: take it away, sit them in fresh air away from the crowd and follow the emergency procedure"
+    - |-
+      Periodic checks every 30 minutes:
+      - Cylinder valve closed and cylinder not warm
+      - Balloon count (out and back) matches
+      - Cables still covered and walkway clear
+      - No balloon fragments on the ground
+      - Sensor reading has returned to baseline between participants (if not, move the intake tube into cleaner air for a minute)
+    - "If it rains on the table, or wind makes the balloons or equipment unmanageable: close the valve, switch off and cover the equipment and pause the demonstration"
+    - "PACK-DOWN:"
+    - "Close the cylinder valve fully (clockwise)"
+    - "Bleed the regulator by operating the flow lever until the gauge reads zero, then unscrew the regulator"
+    - "Place the cylinder upright in its padded box"
+    - "Deflate all remaining balloons (cut the neck) and put all balloon material in the lidded bin. Reconcile the balloon count sheet; leave NO balloon material at the venue"
+    - "Switch off the interrogator, pump and laptop. Unplug and coil any mains lead and the RCD. Do not open fibre connectors at the venue"
+    - "Remove all signs, tape and cable covers, leaving the heritage surfaces as found"
+    - "Sign out with the event coordinator; note any incidents or near misses on the count sheet and report them to the supervisor"
+    - "Transport the cylinder and equipment back to A31 P2012 in the padded box, and return the cylinder to the gas storage cabinet with the valve closed, regulator removed and label facing out"
+  emergency_shutdown:
+    - "USE EMERGENCY SHUTDOWN IF: the cylinder is dropped, the valve is damaged, the regulator is ejected or hissing cannot be stopped; any person is faint, unwell or injured at the display; a fire alarm or evacuation instruction is given; rain reaches electrical equipment, or there is lightning or high wind; the crowd cannot be controlled; or any other unsafe condition"
+    - "CLOSE THE CYLINDER VALVE by turning the C10 valve handwheel fully clockwise. Gas flow stops immediately. There is no emergency stop button; the valve is the shutdown"
+    - "If the valve cannot be closed (damaged or stuck open), carry the cylinder by the body to the nearest open space away from people and let it vent. A full cylinder empties in a few minutes through the regulator. The gas is non-flammable and non-toxic; keep people 3 m away only because of the pressure, not the gas"
+    - "Switch off the interrogator and laptop at their power switches; unplug the mains lead from the RCD if used"
+    - "Assess the situation: injury (first aid), fire elsewhere (evacuate), weather (cover and pause)"
+    - "Do NOT restart until the emergency is resolved, the equipment is inspected and the supervisor approves. Repeat the setting-up checks before restarting. A dropped cylinder MUST NOT be used again"
+    - "Report: record the time, date and circumstances; report to the supervisor and via RiskWare"
+  emergency_procedures:
+    - |-
+      PERSON INHALED BALLOON GAS OR FEELS FAINT:
+      - Take the balloon away
+      - Sit the person down in fresh air away from the crowd; stay with them
+      - Light-headedness from one breath passes within a minute
+      - If they faint, lose colour or do not recover within 2 minutes: call 000, then University Security on 9351 3333, and send the second demonstrator to fetch event first aid
+      - If unresponsive and not breathing normally: start CPR and send for the nearest AED (event first aid post)
+      - Record the incident and report via RiskWare
+    - |-
+      CYLINDER DROPPED, VALVE DAMAGED OR REGULATOR EJECTED:
+      - Move people back at least 3 m
+      - If the cylinder is venting and stationary, wait for it to empty (a few minutes); do not try to catch a moving cylinder
+      - When silent, pick it up, mark it DAMAGED and take it out of service
+      - Treat any injury (first aid) and report to the supervisor and via RiskWare
+    - |-
+      GAS LEAK (hissing at the regulator or valve):
+      - Close the cylinder valve
+      - Remove and re-seat the regulator; if the leak persists, remove the regulator and do not use the cylinder
+      - There is no fire or health hazard from the leaked gas in the open air; no evacuation is required
+    - |-
+      BALLOON FRAGMENT IN EYE OR CHOKING:
+      - Eye: do not rub; rinse with clean water or saline; seek medical attention if pain or vision disturbance persists
+      - Choking (child with a balloon fragment): call 000 and event first aid immediately; give back blows and chest thrusts as per first aid training
+    - |-
+      FIRE EMERGENCY (fire elsewhere at the event):
+      - Close the cylinder valve; carry the cylinder in its box with you if it can be done without delay; the gas does not feed a fire, but a cylinder heated above 50 degrees C could rupture
+      - Follow the event evacuation procedure and the wardens' directions
+      - Call 000 if not already done; go to the assembly point; do not re-enter until cleared
+    - |-
+      SEVERE WEATHER:
+      - Close the cylinder valve, switch off and cover the electrical equipment
+      - Move the cylinder, balloons and equipment under cover as directed by event staff
+      - Resume only when conditions are safe and the supervisor agrees
+    - |-
+      EQUIPMENT MALFUNCTION:
+      - Switch off the interrogator, pump and laptop
+      - Do not open the interrogator or disconnect fibres with the source on; do not attempt repairs at the venue
+      - If any fibre or cable is damaged, keep the source off for the rest of the event
+      - Report to the supervisor
+    - |-
+      EMERGENCY CONTACTS:
+      - Emergency services: 000
+      - University of Sydney Security (24 hours, emergency): 9351 3333
+      - University of Sydney Security (general): 9351 3487
+      - Event first aid post: TODO: location and contact from event organiser
+      - Supervisor: Chris Betters, TODO: mobile number
+      - School of Physics WHS Officer: TODO: name and number
+      - Event coordinator: TODO: name and number
+  cleanup_waste:
+    - "Display area: pick up all balloon fragments, tape and cable ties; wipe the table and sample intake tube (the gas leaves no residue); remove signs and leave heritage surfaces as found"
+    - "Sensor apparatus: coil cables, cap the sample intake tube, pack the interrogator and laptop in their cases; do not clean or open fibre connectors at the venue"
+    - "Balloons and fragments: deflate and place all balloon material in general waste. NEVER release balloons; balloon release is littering under the Protection of the Environment Operations Act 1997 (NSW)"
+    - "Gas mixture: residual gas may be vented to the open air or a fume cupboard; it is non-flammable and non-toxic and needs no treatment"
+    - "Empty cylinder: non-refillable, NEVER attempt to refill. To dispose: outdoors or in a fume cupboard, fit the regulator, open the valve and vent until the gauge reads zero and no flow is heard; remove the regulator, mark the cylinder EMPTY, and dispose of it through the University scrap metal or hazardous waste stream in accordance with SDS No. 303. A cylinder with gas remaining is returned to the gas storage cabinet in A31 P2012"
+    - "Maintenance: inspect the regulator O-ring and nozzle tubing before each event and replace perished parts; check the cylinder shelf-life date before each event; record cylinder use (date, event, balloons filled, approximate remaining pressure) on the cylinder log"
+  references:
+    - "Work Health and Safety Act 2011 (NSW)"
+    - "Work Health and Safety Regulation 2017 (NSW), Chapter 7 Hazardous Chemicals"
+    - "Australian Code for the Transport of Dangerous Goods by Road and Rail (ADG Code), edition 7.9"
+    - "AS 4332-2004 The storage and handling of gases in cylinders"
+    - "AS/NZS 60079.10.1:2022 Explosive atmospheres, Classification of areas"
+    - "AS/NZS 2243.1:2021 and AS/NZS 2243.2:2021 Safety in laboratories"
+    - "AS/NZS 3760:2022 In-service safety inspection and testing of electrical equipment"
+    - "AS/NZS 1337.1:2010 Personal eye protection"
+    - "Safe Work Australia Code of Practice: Managing risks of hazardous chemicals in the workplace"
+    - "CAC Gas and Instrumentation quotation SQ1070 and Safety Data Sheet No. 303 (1% CH4 in N2)"
+    - "Protection of the Environment Operations Act 1997 (NSW)"
+    - "SAIL General Laboratory Risk Assessment and Safe Work Procedure (general-lab-safety)"
+    - "University of Sydney WHS Policy 2016 and event risk management requirements"
+  competency:
+    - "SAIL General Local Induction completed (laboratory hazards, emergency procedures and reporting)"
+    - "Demonstration-specific briefing delivered by the supervisor before each event: properties of the 1% CH4 / N2 mixture (non-flammable at any dilution, simple asphyxiant, Class 2.2); cylinder handling (transport, shade, valve closed between fills, never heat, never refill); regulator fitting, leak check and balloon filling to 15 cm; the balloon hand-over rule and the no-inhalation rule; sensor setup, battery and RCD use, fibre connector rule; emergency procedures, contacts, first aid post and assembly point"
+    - "Working with the public: supervising children with a parent or carer present; latex allergy and choking hazard awareness; crowd management and event marshal directions"
+    - "First aid awareness: response to a person who feels faint; when to call 000 and Security; location of the first aid kit, eye rinse and event AED"
+    - "Theory assessment (oral questioning by the supervisor): why the gas cannot burn and why it is Class 2.2; what to do if someone inhales from a balloon; when the cylinder valve must be closed; the balloon hand-over rule; emergency contacts. All safety-critical questions must be answered correctly"
+    - "Practical assessment (supervised): fitting the regulator, leak check and closing the valve; filling and tying off a balloon to 15 cm; handing a balloon to a participant, supervising the release and taking it back; emergency shutdown (closing the valve, switching off equipment). Any safety-critical error requires re-briefing and reassessment"
+    - "Ongoing: briefing repeated before every event; retraining after any incident or near miss, when this SWP or the RA is updated, or if unsafe practice is observed. Briefing attendance and sign-off recorded by the supervisor; balloon count sheets and cylinder log retained"
+  assessors:
+    - "Chris Betters (Senior Research Fellow, SAIL)"
